@@ -1,0 +1,928 @@
+fileFormatVersion: 2
+guid: 659b5aeae9b6c71478f4da3da7178973
+timeCreated: 1461684736
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: body
+    100002: bone
+    100004: crowler
+    100006: legLB1
+    100008: legLB2
+    100010: legLB3
+    100012: legLB_aim
+    100014: legLB_IK
+    100016: legLF1
+    100018: legLF2
+    100020: legLF3
+    100022: legLF_aim
+    100024: legLF_IK
+    100026: legRB1
+    100028: legRB2
+    100030: legRB3
+    100032: legRB_aim
+    100034: legRB_IK
+    100036: legRF1
+    100038: legRF2
+    100040: legRF3
+    100042: legRF_aim
+    100044: legRF_IK
+    100046: polySurface1
+    100048: polySurface7
+    100050: root
+    100052: //RootNode
+    100054: zako2:armor1
+    100056: zako2:armor2
+    100058: zako2:armor3
+    100060: zako2:armor4
+    100062: zako2:armor5
+    100064: zako2:armor6
+    100066: zako2:armor7
+    100068: zako2:armor_low
+    100070: zako2:core
+    100072: zako2:foot1
+    100074: zako2:foot2
+    100076: zako2:foot3
+    100078: zako2:foot4
+    100080: zako2:leg1
+    100082: zako2:leg2
+    100084: zako2:leg3
+    100086: zako2:leg4
+    100088: ik
+    400000: body
+    400002: bone
+    400004: crowler
+    400006: legLB1
+    400008: legLB2
+    400010: legLB3
+    400012: legLB_aim
+    400014: legLB_IK
+    400016: legLF1
+    400018: legLF2
+    400020: legLF3
+    400022: legLF_aim
+    400024: legLF_IK
+    400026: legRB1
+    400028: legRB2
+    400030: legRB3
+    400032: legRB_aim
+    400034: legRB_IK
+    400036: legRF1
+    400038: legRF2
+    400040: legRF3
+    400042: legRF_aim
+    400044: legRF_IK
+    400046: polySurface1
+    400048: polySurface7
+    400050: root
+    400052: //RootNode
+    400054: zako2:armor1
+    400056: zako2:armor2
+    400058: zako2:armor3
+    400060: zako2:armor4
+    400062: zako2:armor5
+    400064: zako2:armor6
+    400066: zako2:armor7
+    400068: zako2:armor_low
+    400070: zako2:core
+    400072: zako2:foot1
+    400074: zako2:foot2
+    400076: zako2:foot3
+    400078: zako2:foot4
+    400080: zako2:leg1
+    400082: zako2:leg2
+    400084: zako2:leg3
+    400086: zako2:leg4
+    400088: ik
+    4300000: zako2:core
+    4300002: zako2:armor3
+    4300004: zako2:armor6
+    4300006: zako2:armor2
+    4300008: zako2:armor1
+    4300010: zako2:armor7
+    4300012: zako2:armor4
+    4300014: zako2:armor5
+    4300016: zako2:armor_low
+    4300018: zako2:foot1
+    4300020: zako2:foot2
+    4300022: zako2:foot3
+    4300024: zako2:foot4
+    4300026: zako2:leg4
+    4300028: zako2:leg2
+    4300030: zako2:leg3
+    4300032: zako2:leg1
+    4300034: polySurface7
+    4300036: polySurface1
+    7400000: Take 001
+    7400002: idle
+    7400004: walk
+    7400006: attack_charge
+    7400008: attack_1
+    7400010: attack_2
+    9500000: //RootNode
+    13700000: polySurface1
+    13700002: polySurface7
+    13700004: zako2:armor1
+    13700006: zako2:armor2
+    13700008: zako2:armor3
+    13700010: zako2:armor4
+    13700012: zako2:armor5
+    13700014: zako2:armor6
+    13700016: zako2:armor7
+    13700018: zako2:armor_low
+    13700020: zako2:core
+    13700022: zako2:foot1
+    13700024: zako2:foot2
+    13700026: zako2:foot3
+    13700028: zako2:foot4
+    13700030: zako2:leg1
+    13700032: zako2:leg2
+    13700034: zako2:leg3
+    13700036: zako2:leg4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone
+        weight: 1
+      - path: bone/ik
+        weight: 1
+      - path: bone/ik/legLB_aim
+        weight: 1
+      - path: bone/ik/legLB_IK
+        weight: 1
+      - path: bone/ik/legLF_aim
+        weight: 1
+      - path: bone/ik/legLF_IK
+        weight: 1
+      - path: bone/ik/legRB_aim
+        weight: 1
+      - path: bone/ik/legRB_IK
+        weight: 1
+      - path: bone/ik/legRF_aim
+        weight: 1
+      - path: bone/ik/legRF_IK
+        weight: 1
+      - path: bone/root
+        weight: 1
+      - path: bone/root/body
+        weight: 1
+      - path: bone/root/legLB1
+        weight: 1
+      - path: bone/root/legLB1/legLB2
+        weight: 1
+      - path: bone/root/legLB1/legLB2/legLB3
+        weight: 1
+      - path: bone/root/legLF1
+        weight: 1
+      - path: bone/root/legLF1/legLF2
+        weight: 1
+      - path: bone/root/legLF1/legLF2/legLF3
+        weight: 1
+      - path: bone/root/legRB1
+        weight: 1
+      - path: bone/root/legRB1/legRB2
+        weight: 1
+      - path: bone/root/legRB1/legRB2/legRB3
+        weight: 1
+      - path: bone/root/legRF1
+        weight: 1
+      - path: bone/root/legRF1/legRF2
+        weight: 1
+      - path: bone/root/legRF1/legRF2/legRF3
+        weight: 1
+      - path: crowler
+        weight: 1
+      - path: crowler/polySurface1
+        weight: 1
+      - path: crowler/polySurface7
+        weight: 1
+      - path: crowler/zako2:armor1
+        weight: 1
+      - path: crowler/zako2:armor2
+        weight: 1
+      - path: crowler/zako2:armor3
+        weight: 1
+      - path: crowler/zako2:armor4
+        weight: 1
+      - path: crowler/zako2:armor5
+        weight: 1
+      - path: crowler/zako2:armor6
+        weight: 1
+      - path: crowler/zako2:armor7
+        weight: 1
+      - path: crowler/zako2:armor_low
+        weight: 1
+      - path: crowler/zako2:core
+        weight: 1
+      - path: crowler/zako2:foot1
+        weight: 1
+      - path: crowler/zako2:foot2
+        weight: 1
+      - path: crowler/zako2:foot3
+        weight: 1
+      - path: crowler/zako2:foot4
+        weight: 1
+      - path: crowler/zako2:leg1
+        weight: 1
+      - path: crowler/zako2:leg2
+        weight: 1
+      - path: crowler/zako2:leg3
+        weight: 1
+      - path: crowler/zako2:leg4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: -90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone
+        weight: 1
+      - path: bone/ik
+        weight: 1
+      - path: bone/ik/legLB_aim
+        weight: 1
+      - path: bone/ik/legLB_IK
+        weight: 1
+      - path: bone/ik/legLF_aim
+        weight: 1
+      - path: bone/ik/legLF_IK
+        weight: 1
+      - path: bone/ik/legRB_aim
+        weight: 1
+      - path: bone/ik/legRB_IK
+        weight: 1
+      - path: bone/ik/legRF_aim
+        weight: 1
+      - path: bone/ik/legRF_IK
+        weight: 1
+      - path: bone/root
+        weight: 1
+      - path: bone/root/body
+        weight: 1
+      - path: bone/root/legLB1
+        weight: 1
+      - path: bone/root/legLB1/legLB2
+        weight: 1
+      - path: bone/root/legLB1/legLB2/legLB3
+        weight: 1
+      - path: bone/root/legLF1
+        weight: 1
+      - path: bone/root/legLF1/legLF2
+        weight: 1
+      - path: bone/root/legLF1/legLF2/legLF3
+        weight: 1
+      - path: bone/root/legRB1
+        weight: 1
+      - path: bone/root/legRB1/legRB2
+        weight: 1
+      - path: bone/root/legRB1/legRB2/legRB3
+        weight: 1
+      - path: bone/root/legRF1
+        weight: 1
+      - path: bone/root/legRF1/legRF2
+        weight: 1
+      - path: bone/root/legRF1/legRF2/legRF3
+        weight: 1
+      - path: crowler
+        weight: 1
+      - path: crowler/polySurface1
+        weight: 1
+      - path: crowler/polySurface7
+        weight: 1
+      - path: crowler/zako2:armor1
+        weight: 1
+      - path: crowler/zako2:armor2
+        weight: 1
+      - path: crowler/zako2:armor3
+        weight: 1
+      - path: crowler/zako2:armor4
+        weight: 1
+      - path: crowler/zako2:armor5
+        weight: 1
+      - path: crowler/zako2:armor6
+        weight: 1
+      - path: crowler/zako2:armor7
+        weight: 1
+      - path: crowler/zako2:armor_low
+        weight: 1
+      - path: crowler/zako2:core
+        weight: 1
+      - path: crowler/zako2:foot1
+        weight: 1
+      - path: crowler/zako2:foot2
+        weight: 1
+      - path: crowler/zako2:foot3
+        weight: 1
+      - path: crowler/zako2:foot4
+        weight: 1
+      - path: crowler/zako2:leg1
+        weight: 1
+      - path: crowler/zako2:leg2
+        weight: 1
+      - path: crowler/zako2:leg3
+        weight: 1
+      - path: crowler/zako2:leg4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 50
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: -90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone
+        weight: 1
+      - path: bone/ik
+        weight: 1
+      - path: bone/ik/legLB_aim
+        weight: 1
+      - path: bone/ik/legLB_IK
+        weight: 1
+      - path: bone/ik/legLF_aim
+        weight: 1
+      - path: bone/ik/legLF_IK
+        weight: 1
+      - path: bone/ik/legRB_aim
+        weight: 1
+      - path: bone/ik/legRB_IK
+        weight: 1
+      - path: bone/ik/legRF_aim
+        weight: 1
+      - path: bone/ik/legRF_IK
+        weight: 1
+      - path: bone/root
+        weight: 1
+      - path: bone/root/body
+        weight: 1
+      - path: bone/root/legLB1
+        weight: 1
+      - path: bone/root/legLB1/legLB2
+        weight: 1
+      - path: bone/root/legLB1/legLB2/legLB3
+        weight: 1
+      - path: bone/root/legLF1
+        weight: 1
+      - path: bone/root/legLF1/legLF2
+        weight: 1
+      - path: bone/root/legLF1/legLF2/legLF3
+        weight: 1
+      - path: bone/root/legRB1
+        weight: 1
+      - path: bone/root/legRB1/legRB2
+        weight: 1
+      - path: bone/root/legRB1/legRB2/legRB3
+        weight: 1
+      - path: bone/root/legRF1
+        weight: 1
+      - path: bone/root/legRF1/legRF2
+        weight: 1
+      - path: bone/root/legRF1/legRF2/legRF3
+        weight: 1
+      - path: crowler
+        weight: 1
+      - path: crowler/polySurface1
+        weight: 1
+      - path: crowler/polySurface7
+        weight: 1
+      - path: crowler/zako2:armor1
+        weight: 1
+      - path: crowler/zako2:armor2
+        weight: 1
+      - path: crowler/zako2:armor3
+        weight: 1
+      - path: crowler/zako2:armor4
+        weight: 1
+      - path: crowler/zako2:armor5
+        weight: 1
+      - path: crowler/zako2:armor6
+        weight: 1
+      - path: crowler/zako2:armor7
+        weight: 1
+      - path: crowler/zako2:armor_low
+        weight: 1
+      - path: crowler/zako2:core
+        weight: 1
+      - path: crowler/zako2:foot1
+        weight: 1
+      - path: crowler/zako2:foot2
+        weight: 1
+      - path: crowler/zako2:foot3
+        weight: 1
+      - path: crowler/zako2:foot4
+        weight: 1
+      - path: crowler/zako2:leg1
+        weight: 1
+      - path: crowler/zako2:leg2
+        weight: 1
+      - path: crowler/zako2:leg3
+        weight: 1
+      - path: crowler/zako2:leg4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: attack_charge
+      takeName: Take 001
+      firstFrame: 75
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: -90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: AttackStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone
+        weight: 1
+      - path: bone/ik
+        weight: 1
+      - path: bone/ik/legLB_aim
+        weight: 1
+      - path: bone/ik/legLB_IK
+        weight: 1
+      - path: bone/ik/legLF_aim
+        weight: 1
+      - path: bone/ik/legLF_IK
+        weight: 1
+      - path: bone/ik/legRB_aim
+        weight: 1
+      - path: bone/ik/legRB_IK
+        weight: 1
+      - path: bone/ik/legRF_aim
+        weight: 1
+      - path: bone/ik/legRF_IK
+        weight: 1
+      - path: bone/root
+        weight: 1
+      - path: bone/root/body
+        weight: 1
+      - path: bone/root/legLB1
+        weight: 1
+      - path: bone/root/legLB1/legLB2
+        weight: 1
+      - path: bone/root/legLB1/legLB2/legLB3
+        weight: 1
+      - path: bone/root/legLF1
+        weight: 1
+      - path: bone/root/legLF1/legLF2
+        weight: 1
+      - path: bone/root/legLF1/legLF2/legLF3
+        weight: 1
+      - path: bone/root/legRB1
+        weight: 1
+      - path: bone/root/legRB1/legRB2
+        weight: 1
+      - path: bone/root/legRB1/legRB2/legRB3
+        weight: 1
+      - path: bone/root/legRF1
+        weight: 1
+      - path: bone/root/legRF1/legRF2
+        weight: 1
+      - path: bone/root/legRF1/legRF2/legRF3
+        weight: 1
+      - path: crowler
+        weight: 1
+      - path: crowler/polySurface1
+        weight: 1
+      - path: crowler/polySurface7
+        weight: 1
+      - path: crowler/zako2:armor1
+        weight: 1
+      - path: crowler/zako2:armor2
+        weight: 1
+      - path: crowler/zako2:armor3
+        weight: 1
+      - path: crowler/zako2:armor4
+        weight: 1
+      - path: crowler/zako2:armor5
+        weight: 1
+      - path: crowler/zako2:armor6
+        weight: 1
+      - path: crowler/zako2:armor7
+        weight: 1
+      - path: crowler/zako2:armor_low
+        weight: 1
+      - path: crowler/zako2:core
+        weight: 1
+      - path: crowler/zako2:foot1
+        weight: 1
+      - path: crowler/zako2:foot2
+        weight: 1
+      - path: crowler/zako2:foot3
+        weight: 1
+      - path: crowler/zako2:foot4
+        weight: 1
+      - path: crowler/zako2:leg1
+        weight: 1
+      - path: crowler/zako2:leg2
+        weight: 1
+      - path: crowler/zako2:leg3
+        weight: 1
+      - path: crowler/zako2:leg4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: attack_1
+      takeName: Take 001
+      firstFrame: 80
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: -90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone
+        weight: 1
+      - path: bone/ik
+        weight: 1
+      - path: bone/ik/legLB_aim
+        weight: 1
+      - path: bone/ik/legLB_IK
+        weight: 1
+      - path: bone/ik/legLF_aim
+        weight: 1
+      - path: bone/ik/legLF_IK
+        weight: 1
+      - path: bone/ik/legRB_aim
+        weight: 1
+      - path: bone/ik/legRB_IK
+        weight: 1
+      - path: bone/ik/legRF_aim
+        weight: 1
+      - path: bone/ik/legRF_IK
+        weight: 1
+      - path: bone/root
+        weight: 1
+      - path: bone/root/body
+        weight: 1
+      - path: bone/root/legLB1
+        weight: 1
+      - path: bone/root/legLB1/legLB2
+        weight: 1
+      - path: bone/root/legLB1/legLB2/legLB3
+        weight: 1
+      - path: bone/root/legLF1
+        weight: 1
+      - path: bone/root/legLF1/legLF2
+        weight: 1
+      - path: bone/root/legLF1/legLF2/legLF3
+        weight: 1
+      - path: bone/root/legRB1
+        weight: 1
+      - path: bone/root/legRB1/legRB2
+        weight: 1
+      - path: bone/root/legRB1/legRB2/legRB3
+        weight: 1
+      - path: bone/root/legRF1
+        weight: 1
+      - path: bone/root/legRF1/legRF2
+        weight: 1
+      - path: bone/root/legRF1/legRF2/legRF3
+        weight: 1
+      - path: crowler
+        weight: 1
+      - path: crowler/polySurface1
+        weight: 1
+      - path: crowler/polySurface7
+        weight: 1
+      - path: crowler/zako2:armor1
+        weight: 1
+      - path: crowler/zako2:armor2
+        weight: 1
+      - path: crowler/zako2:armor3
+        weight: 1
+      - path: crowler/zako2:armor4
+        weight: 1
+      - path: crowler/zako2:armor5
+        weight: 1
+      - path: crowler/zako2:armor6
+        weight: 1
+      - path: crowler/zako2:armor7
+        weight: 1
+      - path: crowler/zako2:armor_low
+        weight: 1
+      - path: crowler/zako2:core
+        weight: 1
+      - path: crowler/zako2:foot1
+        weight: 1
+      - path: crowler/zako2:foot2
+        weight: 1
+      - path: crowler/zako2:foot3
+        weight: 1
+      - path: crowler/zako2:foot4
+        weight: 1
+      - path: crowler/zako2:leg1
+        weight: 1
+      - path: crowler/zako2:leg2
+        weight: 1
+      - path: crowler/zako2:leg3
+        weight: 1
+      - path: crowler/zako2:leg4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: attack_2
+      takeName: Take 001
+      firstFrame: 95
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: -90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.9901306
+        functionName: AttackEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone
+        weight: 1
+      - path: bone/ik
+        weight: 1
+      - path: bone/ik/legLB_aim
+        weight: 1
+      - path: bone/ik/legLB_IK
+        weight: 1
+      - path: bone/ik/legLF_aim
+        weight: 1
+      - path: bone/ik/legLF_IK
+        weight: 1
+      - path: bone/ik/legRB_aim
+        weight: 1
+      - path: bone/ik/legRB_IK
+        weight: 1
+      - path: bone/ik/legRF_aim
+        weight: 1
+      - path: bone/ik/legRF_IK
+        weight: 1
+      - path: bone/root
+        weight: 1
+      - path: bone/root/body
+        weight: 1
+      - path: bone/root/legLB1
+        weight: 1
+      - path: bone/root/legLB1/legLB2
+        weight: 1
+      - path: bone/root/legLB1/legLB2/legLB3
+        weight: 1
+      - path: bone/root/legLF1
+        weight: 1
+      - path: bone/root/legLF1/legLF2
+        weight: 1
+      - path: bone/root/legLF1/legLF2/legLF3
+        weight: 1
+      - path: bone/root/legRB1
+        weight: 1
+      - path: bone/root/legRB1/legRB2
+        weight: 1
+      - path: bone/root/legRB1/legRB2/legRB3
+        weight: 1
+      - path: bone/root/legRF1
+        weight: 1
+      - path: bone/root/legRF1/legRF2
+        weight: 1
+      - path: bone/root/legRF1/legRF2/legRF3
+        weight: 1
+      - path: crowler
+        weight: 1
+      - path: crowler/polySurface1
+        weight: 1
+      - path: crowler/polySurface7
+        weight: 1
+      - path: crowler/zako2:armor1
+        weight: 1
+      - path: crowler/zako2:armor2
+        weight: 1
+      - path: crowler/zako2:armor3
+        weight: 1
+      - path: crowler/zako2:armor4
+        weight: 1
+      - path: crowler/zako2:armor5
+        weight: 1
+      - path: crowler/zako2:armor6
+        weight: 1
+      - path: crowler/zako2:armor7
+        weight: 1
+      - path: crowler/zako2:armor_low
+        weight: 1
+      - path: crowler/zako2:core
+        weight: 1
+      - path: crowler/zako2:foot1
+        weight: 1
+      - path: crowler/zako2:foot2
+        weight: 1
+      - path: crowler/zako2:foot3
+        weight: 1
+      - path: crowler/zako2:foot4
+        weight: 1
+      - path: crowler/zako2:leg1
+        weight: 1
+      - path: crowler/zako2:leg2
+        weight: 1
+      - path: crowler/zako2:leg3
+        weight: 1
+      - path: crowler/zako2:leg4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 30
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: root
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

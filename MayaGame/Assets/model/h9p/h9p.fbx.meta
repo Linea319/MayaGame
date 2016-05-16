@@ -1,0 +1,350 @@
+fileFormatVersion: 2
+guid: 4883cdfcd34ef4f4fa56d2c1a5e0bd1d
+timeCreated: 1454735658
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: frame
+    100002: //RootNode
+    100004: joint3
+    100006: magazine
+    100008: root
+    100010: sight_front
+    100012: sight_rear
+    100014: slide
+    100016: slider_bone
+    100018: trigger
+    400000: frame
+    400002: //RootNode
+    400004: joint3
+    400006: magazine
+    400008: root
+    400010: sight_front
+    400012: sight_rear
+    400014: slide
+    400016: slider_bone
+    400018: trigger
+    2300000: magazine
+    3300000: magazine
+    4300000: sight_front
+    4300002: frame
+    4300004: slide
+    4300006: sight_rear
+    4300008: magazine
+    4300010: trigger
+    7400000: Take 001
+    7400002: recoil
+    7400004: normal
+    7400006: slideStop
+    7400008: idle
+    9500000: //RootNode
+    13700000: frame
+    13700002: sight_front
+    13700004: sight_rear
+    13700006: slide
+    13700008: trigger
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame
+        weight: 1
+      - path: magazine
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/slider_bone
+        weight: 1
+      - path: root/slider_bone/joint3
+        weight: 1
+      - path: sight_front
+        weight: 1
+      - path: slide
+        weight: 1
+      - path: slide/sight_rear
+        weight: 1
+      - path: trigger
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: recoil
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 12.276
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame
+        weight: 1
+      - path: magazine
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/slider_bone
+        weight: 1
+      - path: root/slider_bone/joint3
+        weight: 1
+      - path: sight_front
+        weight: 1
+      - path: slide
+        weight: 1
+      - path: slide/sight_rear
+        weight: 1
+      - path: trigger
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: normal
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame
+        weight: 1
+      - path: magazine
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/slider_bone
+        weight: 1
+      - path: root/slider_bone/joint3
+        weight: 1
+      - path: sight_front
+        weight: 1
+      - path: slide
+        weight: 1
+      - path: slide/sight_rear
+        weight: 1
+      - path: trigger
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: slideStop
+      takeName: Take 001
+      firstFrame: 15
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame
+        weight: 1
+      - path: magazine
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/slider_bone
+        weight: 1
+      - path: root/slider_bone/joint3
+        weight: 1
+      - path: sight_front
+        weight: 1
+      - path: slide
+        weight: 1
+      - path: slide/sight_rear
+        weight: 1
+      - path: trigger
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame
+        weight: 1
+      - path: magazine
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/slider_bone
+        weight: 1
+      - path: root/slider_bone/joint3
+        weight: 1
+      - path: sight_front
+        weight: 1
+      - path: slide
+        weight: 1
+      - path: slide/sight_rear
+        weight: 1
+      - path: trigger
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 3
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
