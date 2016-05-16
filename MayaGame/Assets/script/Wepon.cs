@@ -162,8 +162,8 @@ public class Wepon : MonoBehaviour, WeponInterface
         Exploder = FindObjectOfType<ExploderObject>();
         AnimatorOverrideController newAnime = new AnimatorOverrideController();
         newAnime.runtimeAnimatorController = anim.runtimeAnimatorController;
-       /* for (int b = 0; b < newAnime.animationClips.Length; b++)
-        {
+        for (int b = 0; b < newAnime.animationClips.Length; b++)
+        /*{
             Debug.Log(newAnime.animationClips[b].name);
         }*/
         reloadAnimRate = reloadAnim.length / (parameters["reload"] * 0.01f);

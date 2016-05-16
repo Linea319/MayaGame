@@ -104,7 +104,7 @@ GameObject:
   - 4: {fileID: 474610}
   - 114: {fileID: 11437542}
   m_Layer: 0
-  m_Name: Lanceel
+  m_Name: LCE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -425,7 +425,7 @@ Animator:
   m_GameObject: {fileID: 109374}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 93ff1110fea2a05418eea2326035c68c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cdce8dd0d13759745920ec37cadea00b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -464,7 +464,7 @@ MonoBehaviour:
   idleAnim: {fileID: 7400020, guid: 78ff6669b9e026a409d331b39928f110, type: 3}
   chargeAnim: {fileID: 7400022, guid: 78ff6669b9e026a409d331b39928f110, type: 3}
   attackAnim: {fileID: 7400024, guid: 78ff6669b9e026a409d331b39928f110, type: 3}
-  runAnim: {fileID: 7400020, guid: 78ff6669b9e026a409d331b39928f110, type: 3}
+  runAnim: {fileID: 7400026, guid: 78ff6669b9e026a409d331b39928f110, type: 3}
   wepMask:
     serializedVersion: 2
     m_Bits: 1
