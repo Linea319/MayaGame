@@ -2033,13 +2033,13 @@ ModelImporter:
       - path: hip
         weight: 0
       - path: hip/spine
-        weight: 0
+        weight: 1
       - path: hip/spine/chest
-        weight: 0
+        weight: 1
       - path: hip/spine/chest/head 1
-        weight: 0
+        weight: 1
       - path: hip/spine/chest/head 1/head_end
-        weight: 0
+        weight: 1
       - path: hip/spine/chest/shoulder_L
         weight: 1
       - path: hip/spine/chest/shoulder_L/upperArm1_L
@@ -2197,7 +2197,7 @@ ModelImporter:
       - path: hip
         weight: 0
       - path: hip/spine
-        weight: 0
+        weight: 1
       - path: hip/spine/chest
         weight: 1
       - path: hip/spine/chest/head 1

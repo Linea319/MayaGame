@@ -597,6 +597,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446598}
+  - 114: {fileID: 11410518}
   m_Layer: 0
   m_Name: camPoint
   m_TagString: Untagged
@@ -1543,7 +1544,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156980}
-  m_LocalRotation: {x: -0.0008664725, y: -0.0007412762, z: 0.70642936, w: 0.7077826}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
   m_LocalPosition: {x: -0.46400002, y: -0.0050000935, z: -0.009000142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2018,6 +2019,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11410518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ff067806c543540b83c3e801facd8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stabX: 0
+  stabY: 1
+  stabZ: 1
 --- !u!114 &11420454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2060,8 +2075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091220b3672caa64c8e26806dba80ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  behaviours:
-  - {fileID: 0}
+  behaviours: []
   activeMesh:
   - {fileID: 13712208}
   - {fileID: 13753768}
@@ -2172,8 +2186,8 @@ MonoBehaviour:
   camShakeReturn: 5
   useWeponNum: 0
   weponPrefab:
-  - {fileID: 197760, guid: 5df8adeb44042394cbd0d0a58d960294, type: 2}
   - {fileID: 126710, guid: 2d524612a4c882e4eb3e03990fd3f19d, type: 2}
+  - {fileID: 141880, guid: 9dd5ecd06ec3a3d44bd330169e9ad903, type: 2}
   recoilVec: {x: 0, y: 0, z: 0}
   reload: 0
   UICon: {fileID: 0}

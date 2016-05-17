@@ -306,10 +306,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 581507050}
     m_Modifications:
-    - target: {fileID: 11447680, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
-      propertyPath: behaviours.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 486090, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 5.1137414
@@ -342,14 +338,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11479006, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
-      propertyPath: weponPrefab.Array.data[1]
-      value: 
-      objectReference: {fileID: 141880, guid: 9dd5ecd06ec3a3d44bd330169e9ad903, type: 2}
-    - target: {fileID: 11479006, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
-      propertyPath: weponPrefab.Array.data[0]
-      value: 
-      objectReference: {fileID: 126710, guid: 2d524612a4c882e4eb3e03990fd3f19d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
   m_IsPrefabParent: 0
@@ -2229,7 +2217,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
