@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class AnimEventSender : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 	
@@ -16,6 +15,6 @@ public class AnimEventSender : MonoBehaviour {
     void AnimEvent(string eventName)
     {
         Debug.Log(eventName);
-        transform.root.BroadcastMessage(eventName);
+            transform.root.BroadcastMessage(eventName);
     }
 }

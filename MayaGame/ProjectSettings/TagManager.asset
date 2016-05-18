@@ -7,6 +7,7 @@ TagManager:
   - Exploder
   - UseObject
   - FxTemporaire
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - 
   - AI
-  - 
+  - PlayerWepon
   - 
   - 
   - 

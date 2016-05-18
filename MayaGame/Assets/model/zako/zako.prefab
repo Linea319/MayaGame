@@ -1571,12 +1571,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11408844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1650,12 +1652,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11417986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1708,12 +1712,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11438892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1743,12 +1749,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11441050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1789,12 +1797,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 198604}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11453654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1813,12 +1823,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11456092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1870,12 +1882,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11468898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1894,12 +1908,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11471948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1918,12 +1934,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11477782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1953,7 +1971,7 @@ MonoBehaviour:
     m_Bits: 256
   anim: {fileID: 9563328}
   AIAnim: {fileID: 9517064}
-  moveSpeed: 8
+  moveSpeed: 6
   defDistance: 1
   target: {fileID: 0}
   atackCol:
@@ -1977,12 +1995,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11483250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2012,12 +2032,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11493964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2048,12 +2070,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11496658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2072,12 +2096,14 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
+  col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   sizeMagnitude: 0
   net: {fileID: 0}
   mesh: {fileID: 0}
+  colSize: 0
 --- !u!114 &11499866
 MonoBehaviour:
   m_ObjectHideFlags: 1

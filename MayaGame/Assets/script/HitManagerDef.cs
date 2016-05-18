@@ -8,7 +8,8 @@ public class HitManagerDef : MonoBehaviour {
     public float hitPoint;
     public ArmorParameter armor;
     public GameObject DestroyObj;
-    Collider col;
+    [HideInInspector]
+    public Collider col;
     [HideInInspector]
     public Bounds meshBounds;
     [HideInInspector]
@@ -17,6 +18,8 @@ public class HitManagerDef : MonoBehaviour {
     public NetAdapter net;
     [HideInInspector]
     public Renderer mesh;
+    [HideInInspector]
+    public float colSize;
 
     // Use this for initialization
     void Start()
@@ -28,6 +31,7 @@ public class HitManagerDef : MonoBehaviour {
     public virtual void Initialize()
     {
         col = GetComponent<Collider>();
+        colSize = col.bounds.size.magnitude;
         meshBounds =col.bounds;
         sizeMagnitude = meshBounds.extents.magnitude;
         net = transform.root.GetComponent<NetAdapter>();
@@ -72,9 +76,9 @@ public class HitManagerDef : MonoBehaviour {
         pointRate = Mathf.Clamp01(pointRate);
         //Debug.Log(pointRate);
         float damage = damages.shock / armor.shockResist * pointRate;
-        Ray returnRay = new Ray(ray.GetPoint(hitInfo.distance * 2f), -ray.direction);
+        Ray returnRay = new Ray(ray.GetPoint(hitInfo.distance * 2f+colSize), -ray.direction);
         RaycastHit returnHit;
-        hitInfo.collider.Raycast(returnRay, out returnHit, hitInfo.distance);
+        hitInfo.collider.Raycast(returnRay, out returnHit, hitInfo.distance+colSize);
         float penetrateLength = Vector3.Distance(hitInfo.point, returnHit.point);
         float penetrateNum = damages.penetration * 0.001f - penetrateLength * armor.armorResist;
 
@@ -85,7 +89,7 @@ public class HitManagerDef : MonoBehaviour {
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
-        //Debug.Log("damage:" + damage);
+        Debug.Log("damage:" + damage);
         return rePoint;
     }
 

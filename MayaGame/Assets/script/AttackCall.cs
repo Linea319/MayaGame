@@ -17,7 +17,7 @@ public class AttackCall : MonoBehaviour {
         Instantiate(effect, transform.position, Quaternion.identity);
         if (col.CompareTag("Player"))
         {
-            transform.GetComponent<EnemyAI>().AttackHit(col);
+            transform.root.GetComponent<EnemyAI>().AttackHit(col);
         }
     }
 }

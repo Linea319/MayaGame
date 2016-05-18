@@ -31,11 +31,14 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
     public AnimationClip chargeAnim;
     public AnimationClip attackAnim;
     public AnimationClip runAnim;
+    public Collider WeponCollieder;
     public LayerMask wepMask;
 
     bool ADS;
     bool reload;
     bool sear;
+    bool attackNow;
+    bool canHit;
     bool first = true;
     int burst = 3;
     float burstDelay = 0.4f;
@@ -66,7 +69,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
 
     public void initialize()
     {
-
+        WeponCollieder.enabled = false;
         transform.localPosition = Vector3.zero;
         transform.localEulerAngles = Vector3.zero;
         myCamera = Camera.main;
@@ -99,7 +102,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
         reload = false;
         SendUI();
         effecter = FindObjectOfType<HitEffectManeger>();
-        Debug.Log(magPos);
+
     }
 
     public void Setup(int slot)
@@ -128,6 +131,9 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
             anim.SetTrigger("MeleeAttack");
             weponAnim.SetBool("Charge", false);
             sear = false;
+            attackNow = true;
+            canHit = true;
+            WeponCollieder.enabled = true;
         }
 
     }
@@ -167,6 +173,12 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
 
     }
 
+    public void AttackEnd()
+    {
+        attackNow = false;
+        WeponCollieder.enabled = false;
+    }
+
     public void CantAttack()
     {
         FPSCon.ADS = false;
@@ -196,42 +208,48 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
         //Debug.Log("UI");
     }
 
-    void ShootHit(Ray ray, float rayRange, int penetrateNum)
-    {
-        RaycastHit hit;
-        LayerMask mask = ~(1 << 2 | 1 << 8);
-        if (Physics.Raycast(ray, out hit, rayRange, wepMask) && penetrateNum < 3)
-        {
-            //Debug.Log(hit.transform.name);
 
-            Vector3 fracVec = hit.point;
-            HitManagerDef hitM = hit.transform.GetComponent<HitManagerDef>();
+
+    public void MeleeHit(Collider col)
+    {
+        if (attackNow && canHit)
+        {
+            canHit = false;
+            
+            HitManagerDef hitM = col.transform.GetComponent<HitManagerDef>();
             if (hitM != null)
             {
+                
                 GameObject efect = Instantiate<GameObject>(effecter.ReturnEffect(hitM.effectType));
-                efect.transform.position = hit.point;
-                efect.transform.LookAt(efect.transform.position + hit.normal);
-                efect.transform.parent = hit.transform;
+                efect.transform.position = col.ClosestPointOnBounds(WeponCollieder.bounds.center);
+                efect.transform.LookAt(WeponCollieder.bounds.center);
+                efect.transform.parent = col.transform;
 
-                DamageParameter newDam = dam.multiple(1 - penetrateNum * 0.4f);
-                Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
-
-                FPSCon.CmdSendHP(hitM.transform.root.name, hitM.name, hitM.hitPoint);
-                if (penetratePoint != Vector3.zero)
+                DamageParameter newDam = dam;
+                Ray ray = new Ray(WeponCollieder.bounds.center, (col.bounds.center - WeponCollieder.bounds.center));
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 10f, wepMask))
                 {
+                    Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
 
-                    Ray newRay = new Ray(penetratePoint, ray.direction);
-                    ShootHit(newRay, rayRange - hit.distance, ++penetrateNum);
+                    FPSCon.CmdSendHP(hitM.transform.root.name, hitM.name, hitM.hitPoint);
+                    if (penetratePoint != Vector3.zero)
+                    {
+                        Debug.Log("penetration");
+                        canHit = true;
+                    }
                 }
             }
             else
             {
                 GameObject efect = Instantiate<GameObject>(effecter.ReturnEffect(EffectType.misc));
-                efect.transform.position = hit.point;
-                efect.transform.LookAt(efect.transform.position + hit.normal);
-                efect.transform.parent = hit.transform;
+                efect.transform.position = col.ClosestPointOnBounds(WeponCollieder.bounds.center);
+                efect.transform.LookAt(WeponCollieder.bounds.center);
+                efect.transform.parent = col.transform;
 
             }
+
+
         }
     }
 }

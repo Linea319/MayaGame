@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class CamStabilaizer : MonoBehaviour {
+    public Transform target;
     public bool stabX;
     public bool stabY;
     public bool stabZ;
@@ -16,15 +17,15 @@ public class CamStabilaizer : MonoBehaviour {
         Vector3 rotVec = transform.eulerAngles;
         if (stabX)
         {
-            rotVec.x = transform.root.eulerAngles.x;
+            rotVec.x = target.eulerAngles.x;
         }
         if (stabY)
         {
-            rotVec.y = transform.root.eulerAngles.y;
+            rotVec.y = target.eulerAngles.y;
         }
         if (stabZ)
         {
-            rotVec.z = transform.root.eulerAngles.z;
+            rotVec.z = target.eulerAngles.z;
         }
         Quaternion rot = Quaternion.Euler(rotVec);
         transform.rotation = rot;

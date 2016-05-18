@@ -40,9 +40,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.329022
-  m_TransitionOffset: 3.9292767
-  m_ExitTime: 3.1434216
+  m_TransitionDuration: 0.32902187
+  m_TransitionOffset: 0
+  m_ExitTime: 0.68041366
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -64,9 +64,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.2027661
-  m_TransitionOffset: 0.9784878
-  m_ExitTime: 0.5454716
+  m_TransitionDuration: 0.20276606
+  m_TransitionOffset: 0
+  m_ExitTime: 0
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -151,7 +151,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: discharge
-  m_Speed: 1
+  m_Speed: 0.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110164234}

@@ -29,9 +29,9 @@ public class HitManeger : HitManagerDef {
         {
             meshBounds = gameObject.GetComponent<Renderer>().bounds;
         }
-        
+        colSize = meshBounds.size.magnitude;
         sizeMagnitude = meshBounds.extents.magnitude;
-
+        
         net = transform.root.GetComponent<NetAdapter>();
         
         if (net != null)
@@ -71,9 +71,9 @@ public class HitManeger : HitManagerDef {
         pointRate = Mathf.Clamp01(pointRate);
         //Debug.Log(pointRate);
         float damage = damages.shock / armor.shockResist*pointRate;
-        Ray returnRay = new Ray(ray.GetPoint(hitInfo.distance*2f), -ray.direction);
+        Ray returnRay = new Ray(ray.GetPoint(hitInfo.distance*2f+colSize), -ray.direction);
         RaycastHit returnHit;
-        hitInfo.collider.Raycast(returnRay, out returnHit, hitInfo.distance);
+        hitInfo.collider.Raycast(returnRay, out returnHit, hitInfo.distance+colSize);
         float penetrateLength = Vector3.Distance(hitInfo.point,returnHit.point);
         float penetrateNum = damages.penetration*0.001f - penetrateLength * armor.armorResist;
         
@@ -84,7 +84,7 @@ public class HitManeger : HitManagerDef {
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
-        //Debug.Log("damage:"+damage);
+        Debug.Log("damage:"+damage);
         return rePoint;
     }
 }
