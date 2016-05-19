@@ -52,7 +52,7 @@ public class HitManagerDef : MonoBehaviour {
             {
                 if (net.isServer)
                 {
-                    NetworkServer.Destroy(DestroyObj);
+                    StartCoroutine( net.Death());
                 }
             }
             else
@@ -62,6 +62,8 @@ public class HitManagerDef : MonoBehaviour {
         }
         // Debug.Log(meshBounds.center);
     }
+
+   
 
     public virtual void Destruct()
     {

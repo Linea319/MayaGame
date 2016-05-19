@@ -39,11 +39,10 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         //nav.updatePosition = false;
         //nav.updateRotation = false;
 	}
-	
-	// Update is called once per frame
 
-    [Server]
-	public virtual void Update () {
+    // Update is called once per frame
+    [ServerCallback]
+    public virtual void Update () {
 	    if(Time.time > thinkTimer)
         {
             //Think();

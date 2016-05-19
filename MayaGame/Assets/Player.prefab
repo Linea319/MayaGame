@@ -2030,7 +2030,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ff067806c543540b83c3e801facd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabX: 0
+  target: {fileID: 417774}
+  stabX: 1
   stabY: 1
   stabZ: 1
 --- !u!114 &11420454

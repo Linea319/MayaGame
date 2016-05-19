@@ -4,6 +4,8 @@ using System.Collections;
 
 public class ZakoAI : EnemyAI {
 
+
+    [ServerCallback]
     public override void Update()
     {
         base.Update();

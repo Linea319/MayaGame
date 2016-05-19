@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.Networking;
 
 public class NetAdapter : NetworkBehaviour {
@@ -20,6 +21,13 @@ public class NetAdapter : NetworkBehaviour {
         RpcCrack(objName);
     }
 
+    [Server]
+    public IEnumerator Death()
+    {
+        yield return new WaitForEndOfFrame();
+        NetworkServer.Destroy(gameObject);
+    }
+
     [ClientRpc]
     public void RpcCrack(string objName)
     {
@@ -32,7 +40,7 @@ public class NetAdapter : NetworkBehaviour {
     [ClientRpc]
     public void RpcSetHP(string objName,float hp)
     {
-        //Debug.Log(objName+":"+hp.ToString());
+        Debug.Log(objName+":"+hp.ToString());
         if (crackObjs[objName] != null)
         {
             crackObjs[objName].SetHP(hp);

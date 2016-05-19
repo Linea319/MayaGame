@@ -489,7 +489,7 @@ MonoBehaviour:
     mobility: 200
   dam:
     damage: 200
-    shock: 200
+    shock: 250
     penetration: 300
     heat: 0
   idleAnim: {fileID: 7400020, guid: 78ff6669b9e026a409d331b39928f110, type: 3}

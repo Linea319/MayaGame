@@ -338,22 +338,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11410518, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
-      propertyPath: stabZ
-      value: 1
+    - target: {fileID: 11420454, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
+      propertyPath: m_ParameterSendBits
+      value: 6956
       objectReference: {fileID: 0}
-    - target: {fileID: 11410518, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
-      propertyPath: stabY
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410518, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410518, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 574545124}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
   m_IsPrefabParent: 0
@@ -473,10 +461,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 492934, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
   m_PrefabInternal: {fileID: 681526945}
---- !u!4 &574545124 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 417774, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
-  m_PrefabInternal: {fileID: 244480844}
 --- !u!1 &580112937
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,10 +807,6 @@ Prefab:
     - target: {fileID: 403488, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198604, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}

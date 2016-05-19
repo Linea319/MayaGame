@@ -208,7 +208,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
         //Debug.Log("UI");
     }
 
-
+    
 
     public void MeleeHit(Collider col)
     {
@@ -228,14 +228,14 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
                 DamageParameter newDam = dam;
                 Ray ray = new Ray(WeponCollieder.bounds.center, (col.bounds.center - WeponCollieder.bounds.center));
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 10f, wepMask))
+                if (col.Raycast(ray, out hit, 10f))
                 {
                     Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
 
                     FPSCon.CmdSendHP(hitM.transform.root.name, hitM.name, hitM.hitPoint);
                     if (penetratePoint != Vector3.zero)
                     {
-                        Debug.Log("penetration");
+                        //Debug.Log("penetration");
                         canHit = true;
                     }
                 }

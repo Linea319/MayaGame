@@ -757,6 +757,8 @@ GameObject:
   - 114: {fileID: 11479212}
   - 114: {fileID: 11493964}
   - 195: {fileID: 19548432}
+  - 114: {fileID: 11458102}
+  - 114: {fileID: 11471462}
   m_Layer: 2
   m_Name: zako
   m_TagString: Untagged
@@ -1495,7 +1497,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 0.4}
+  m_Size: {x: 0.4, y: 0.4, z: 0.5}
   m_Center: {x: 0, y: -0.1, z: -0.2}
 --- !u!95 &9517064
 Animator:
@@ -1568,7 +1570,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.6
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -1649,7 +1651,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.6
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -1709,7 +1711,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.6
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -1746,7 +1748,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.8
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -1820,7 +1822,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.6
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -1853,6 +1855,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f120f8750aa92434999dfab21b1a1b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11458102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 9563328}
+  m_ParameterSendBits: 3
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &11462894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1879,7 +1900,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.6
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -1905,7 +1926,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.6
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -1916,6 +1937,26 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+--- !u!114 &11471462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.09090909
+  m_SyncRotationAxis: 4
+  m_RotationSyncCompression: 1
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.01
+  m_SnapThreshold: 1
+  m_InterpolateRotation: 2
+  m_InterpolateMovement: 10
 --- !u!114 &11471948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1931,7 +1972,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.8
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -1992,7 +2033,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.6
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -2029,7 +2070,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.8
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -2067,7 +2108,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.8
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}
@@ -2093,7 +2134,7 @@ MonoBehaviour:
   hitPoint: 300
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.6
     heatResist: 1
   DestroyObj: {fileID: 0}
   col: {fileID: 0}

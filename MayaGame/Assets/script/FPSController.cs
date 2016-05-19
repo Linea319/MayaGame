@@ -463,7 +463,7 @@ public class FPSController : NetworkBehaviour {
     {
         GameObject target = GameObject.Find(uniqueID);
         NetAdapter targetAdapter = target.GetComponent<NetAdapter>();
-        if(targetAdapter != null){
+        if(targetAdapter != null ){
             targetAdapter.RpcSetHP(objName, HP);
         }
     }
