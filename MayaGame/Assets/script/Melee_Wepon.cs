@@ -58,6 +58,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
     public Selector selector;
     public ExploderObject Exploder;
     Transform parent;
+    int hitNum;
 
 
     // Use this for initialization
@@ -134,6 +135,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
             attackNow = true;
             canHit = true;
             WeponCollieder.enabled = true;
+            hitNum = 0;
         }
 
     }
@@ -217,7 +219,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
             canHit = false;
             
             HitManagerDef hitM = col.transform.GetComponent<HitManagerDef>();
-            if (hitM != null)
+            if (hitM != null && hitNum < 3)
             {
                 
                 GameObject efect = Instantiate<GameObject>(effecter.ReturnEffect(hitM.effectType));
@@ -225,7 +227,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
                 efect.transform.LookAt(WeponCollieder.bounds.center);
                 efect.transform.parent = col.transform;
 
-                DamageParameter newDam = dam;
+                DamageParameter newDam = dam.multiple(1f-0.25f*hitNum);
                 Ray ray = new Ray(WeponCollieder.bounds.center, (col.bounds.center - WeponCollieder.bounds.center));
                 RaycastHit hit;
                 if (col.Raycast(ray, out hit, 10f))
@@ -233,6 +235,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
                     Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
 
                     FPSCon.CmdSendHP(hitM.transform.root.name, hitM.name, hitM.hitPoint);
+                    hitNum++;
                     if (penetratePoint != Vector3.zero)
                     {
                         //Debug.Log("penetration");

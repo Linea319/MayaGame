@@ -76,7 +76,7 @@ public class HitManeger : HitManagerDef {
         hitInfo.collider.Raycast(returnRay, out returnHit, hitInfo.distance+colSize);
         float penetrateLength = Vector3.Distance(hitInfo.point,returnHit.point);
         float penetrateNum = damages.penetration*0.001f - penetrateLength * armor.armorResist;
-        Debug.Log("armorLength:"+penetrateLength+",penetrate:"+penetrateNum);
+        //Debug.Log("armorLength:"+penetrateLength+",penetrate:"+penetrateNum);
         Vector3 rePoint = Vector3.zero;
         if(penetrateNum >0)
         {
@@ -84,7 +84,7 @@ public class HitManeger : HitManagerDef {
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
-        Debug.Log("damage:"+damage);
+        //Debug.Log("damage:"+damage);
         return rePoint;
     }
 }
