@@ -722,7 +722,7 @@ MonoBehaviour:
   yakkyou: {fileID: 19805108}
   pa:
     accuracy: 150
-    recoil: 150
+    recoil: 250
     rate: 250
     range: 50
     mobility: 50
@@ -732,7 +732,7 @@ MonoBehaviour:
   dam:
     damage: 0
     shock: 140
-    penetration: 60
+    penetration: 80
     heat: 0
   ADSRate: 1
   idleAnim: {fileID: 7400010, guid: 00a27141d8475d24aaf45c9705527d3e, type: 3}

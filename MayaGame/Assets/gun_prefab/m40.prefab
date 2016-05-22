@@ -1032,7 +1032,7 @@ MonoBehaviour:
     totalAmmo: 180
   dam:
     damage: 0
-    shock: 80
+    shock: 90
     penetration: 150
     heat: 0
   ADSRate: 1.25

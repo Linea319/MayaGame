@@ -91,7 +91,7 @@ public class HitManagerDef : MonoBehaviour {
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
-        Debug.Log("damage:" + damage);
+        
         return rePoint;
     }
 

@@ -545,7 +545,7 @@ MonoBehaviour:
   pa:
     chargeTime: 3.5
     chargeDamageRaate: 3.5
-    useStamina: 15
+    useStamina: 25
     mobility: 200
   dam:
     damage: 70
@@ -785,7 +785,7 @@ ParticleSystem:
   speed: 1
   randomSeed: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 0
   moveWithTransform: 1
   scalingMode: 1
@@ -1095,7 +1095,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 2
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1386,15 +1386,20 @@ ParticleSystem:
   UVModule:
     enabled: 1
     frameOverTime:
-      scalar: 1
+      scalar: 0.16666667
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 10
+        - time: 1
           value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 10
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
@@ -1409,12 +1414,12 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-      minMaxState: 3
+      minMaxState: 1
     tilesX: 2
     tilesY: 3
     animationType: 0
     rowIndex: 0
-    cycles: 1
+    cycles: 5
     randomRow: 0
   VelocityModule:
     enabled: 0
