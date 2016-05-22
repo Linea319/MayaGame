@@ -40,7 +40,7 @@ public class NetAdapter : NetworkBehaviour {
     [ClientRpc]
     public void RpcSetHP(string objName,float hp)
     {
-        Debug.Log(objName+":"+hp.ToString());
+        //Debug.Log(objName+":"+hp.ToString());
         if (crackObjs[objName] != null)
         {
             crackObjs[objName].SetHP(hp);

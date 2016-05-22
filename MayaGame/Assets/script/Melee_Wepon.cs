@@ -7,9 +7,10 @@ using Exploder;
 public class MeleeParameter : System.Object
 {
     public float chargeTime = 1f;
-    public float chargeDamageRaate = 1.5f;
+    public float chargeDamageRaate = 3f;
     public float useStamina;
     public float mobility = 0;
+    
 }
 
 public class Melee_Wepon : MonoBehaviour, WeponInterface {
@@ -33,6 +34,8 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
     public AnimationClip runAnim;
     public Collider WeponCollieder;
     public LayerMask wepMask;
+    public ParticleSystem chargeEffect;
+    public ParticleSystem chargeCompEffect;
 
     bool ADS;
     bool reload;
@@ -59,6 +62,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
     public ExploderObject Exploder;
     Transform parent;
     int hitNum;
+    float chargeTimer;
 
 
     // Use this for initialization
@@ -117,7 +121,31 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
     void Update()
     {
         if (Pause.pause) { return; }
-
+        if (sear)
+        {
+            anim.SetBool("Melee", true);           
+            chargeTimer += Time.deltaTime;
+            weponAnim.SetFloat("ChargeRate", chargeTimer / pa.chargeTime);
+            if(chargeEffect != null && !chargeEffect.isPlaying)
+            {
+                chargeEffect.Play();
+            }
+            if (chargeCompEffect != null && !chargeCompEffect.isPlaying && chargeTimer >= pa.chargeTime)
+            {
+                chargeCompEffect.Play();
+            }
+        }
+        else
+        {
+            if (chargeEffect != null && chargeEffect.isPlaying)
+            {
+                chargeEffect.Stop();
+            }
+            if (chargeCompEffect != null && chargeCompEffect.isPlaying )
+            {
+                chargeCompEffect.Stop();
+            }
+        }
 
     }
     void LateUpdate()
@@ -127,25 +155,28 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
 
     public void ReturnPrimaly()
     {
-        if (sear)
-        {
-            anim.SetTrigger("MeleeAttack");
-            weponAnim.SetBool("Charge", false);
-            sear = false;
-            attackNow = true;
-            canHit = true;
-            WeponCollieder.enabled = true;
-            hitNum = 0;
+        if (sear) {
+        anim.SetTrigger("MeleeAttack");
+        weponAnim.SetBool("Charge", false);
+        sear = false;
+        attackNow = true;
+        canHit = true;
+        WeponCollieder.enabled = true;
+        hitNum = 0;
+            FPSCon.stamina -= pa.useStamina;
         }
 
     }
+
     public void Primaly()
     {
         if (!sear)
         {
-            anim.SetTrigger("Melee");
+            anim.SetBool("Melee", false);
+            anim.SetTrigger("MeleeTrigger");
             weponAnim.SetBool("Charge", true);
             sear = true;
+            chargeTimer = 0;
         }
     }
 
@@ -179,6 +210,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
     {
         attackNow = false;
         WeponCollieder.enabled = false;
+        anim.SetBool("Melee", false);
     }
 
     public void CantAttack()
@@ -219,15 +251,16 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
             canHit = false;
             
             HitManagerDef hitM = col.transform.GetComponent<HitManagerDef>();
-            if (hitM != null && hitNum < 3)
+            if (hitM != null && hitNum < 4)
             {
                 
                 GameObject efect = Instantiate<GameObject>(effecter.ReturnEffect(hitM.effectType));
                 efect.transform.position = col.ClosestPointOnBounds(WeponCollieder.bounds.center);
                 efect.transform.LookAt(WeponCollieder.bounds.center);
                 efect.transform.parent = col.transform;
-
-                DamageParameter newDam = dam.multiple(1f-0.25f*hitNum);
+                float chargeRate = chargeTimer / pa.chargeTime;
+                chargeRate = Mathf.Clamp01(chargeRate);
+                DamageParameter newDam = dam.multiple((1f-0.2f*hitNum)*(pa.chargeDamageRaate * chargeRate));
                 Ray ray = new Ray(WeponCollieder.bounds.center, (col.bounds.center - WeponCollieder.bounds.center));
                 RaycastHit hit;
                 if (col.Raycast(ray, out hit, 10f))
@@ -235,10 +268,11 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
                     Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
 
                     FPSCon.CmdSendHP(hitM.transform.root.name, hitM.name, hitM.hitPoint);
+                    Debug.Log(hitNum+":"+hit.collider.name+":"+ hitM.hitPoint);
                     hitNum++;
                     if (penetratePoint != Vector3.zero)
                     {
-                        //Debug.Log("penetration");
+                        
                         canHit = true;
                     }
                 }

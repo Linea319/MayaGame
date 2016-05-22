@@ -323,7 +323,7 @@ public class FPSController : NetworkBehaviour {
         {
             xVec = Mathf.Clamp(xVec, 0, 1);
         }
-        chara.transform.RotateAround(myCamera.transform.position, chara.transform.right, (xVec-recoilVec.x*Time.deltaTime*100f) * -1 *mouseSensi);
+        chara.transform.RotateAround(chara.transform.position, chara.transform.right, (xVec-recoilVec.x*Time.deltaTime*100f) * -1 *mouseSensi);
         
         transform.eulerAngles = new Vector3(0,mouseVec.y,0);
         shakeVec = Vector3.Lerp(shakeVec, Vector3.zero,camShakeReturn * Time.deltaTime);

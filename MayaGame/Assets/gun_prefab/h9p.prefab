@@ -722,17 +722,17 @@ MonoBehaviour:
   yakkyou: {fileID: 19805108}
   pa:
     accuracy: 150
-    recoil: 100
+    recoil: 150
     rate: 250
     range: 50
     mobility: 50
     reload: 100
-    magazine: 10
+    magazine: 9
     totalAmmo: 90
   dam:
     damage: 0
-    shock: 110
-    penetration: 75
+    shock: 140
+    penetration: 60
     heat: 0
   ADSRate: 1
   idleAnim: {fileID: 7400010, guid: 00a27141d8475d24aaf45c9705527d3e, type: 3}
