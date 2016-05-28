@@ -24,7 +24,9 @@ public class NetAdapter : NetworkBehaviour {
     [Server]
     public IEnumerator Death()
     {
-        yield return new WaitForEndOfFrame();
+        GetComponent<SyncAnim>().CmdSetTrigger("death");
+        GetComponent<EnemyAI>().Stop();
+        yield return new WaitForSeconds(5f);
         NetworkServer.Destroy(gameObject);
     }
 

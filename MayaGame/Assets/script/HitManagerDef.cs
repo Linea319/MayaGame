@@ -20,6 +20,8 @@ public class HitManagerDef : MonoBehaviour {
     public Renderer mesh;
     [HideInInspector]
     public float colSize;
+    bool death;
+    [HideInInspector]public float maxHitPoint;
 
     // Use this for initialization
     void Start()
@@ -34,6 +36,7 @@ public class HitManagerDef : MonoBehaviour {
         colSize = col.bounds.size.magnitude;
         meshBounds =col.bounds;
         sizeMagnitude = meshBounds.extents.magnitude;
+        maxHitPoint = hitPoint;
         net = transform.root.GetComponent<NetAdapter>();
 
         if (net != null)
@@ -46,7 +49,7 @@ public class HitManagerDef : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (hitPoint <= 0 && DestroyObj!=null)
+        if (hitPoint <= 0 && !death && DestroyObj!=null)
         {
             if (DestroyObj == net.gameObject)
             {
@@ -59,6 +62,7 @@ public class HitManagerDef : MonoBehaviour {
             {
                 Destroy(DestroyObj);
             }
+            death = true;
         }
         // Debug.Log(meshBounds.center);
     }

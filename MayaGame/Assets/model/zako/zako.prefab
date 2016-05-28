@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 405866}
   - 137: {fileID: 13770520}
+  - 114: {fileID: 11485026}
   m_Layer: 0
   m_Name: zako2:core
   m_TagString: Untagged
@@ -427,6 +428,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 437688}
   - 137: {fileID: 13740374}
+  - 114: {fileID: 11420810}
   m_Layer: 0
   m_Name: polySurface7
   m_TagString: Untagged
@@ -443,6 +445,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 460638}
   - 137: {fileID: 13705620}
+  - 114: {fileID: 11470424}
   m_Layer: 0
   m_Name: polySurface1
   m_TagString: Untagged
@@ -1212,7 +1215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07571524, y: 0, z: 0.06571413}
+  m_LocalPosition: {x: -0.07571524, y: 0.139, z: 0.06571413}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408696}
@@ -1528,7 +1531,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 9050f862cfafc0d48876e9c22f3f6a15, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1581,6 +1584,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11408844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1662,6 +1666,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11417986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1673,6 +1678,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8336f93afaa904c8e0e076006192a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11420810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997190c6b258d514e98e80e49ed8660b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullColor: {r: 0, g: 1.5, b: 1.5, a: 1}
+  deathColor: {r: 1.5, g: 0, b: 0, a: 1}
+  hp: {fileID: 11448374}
+  rend: {fileID: 13740374}
 --- !u!114 &11423838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1722,6 +1742,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11438892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1759,6 +1780,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11441050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1807,6 +1829,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11453654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1833,6 +1856,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11456092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1911,6 +1935,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11468898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1937,6 +1962,22 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
+--- !u!114 &11470424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997190c6b258d514e98e80e49ed8660b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullColor: {r: 0, g: 1.5, b: 1.5, a: 1}
+  deathColor: {r: 1.5, g: 0, b: 0, a: 1}
+  hp: {fileID: 11448374}
+  rend: {fileID: 13705620}
 --- !u!114 &11471462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1983,6 +2024,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11477782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2012,12 +2054,13 @@ MonoBehaviour:
     m_Bits: 256
   anim: {fileID: 9563328}
   AIAnim: {fileID: 9517064}
-  moveSpeed: 6
+  moveSpeed: 5.5
   defDistance: 1
   target: {fileID: 0}
   atackCol:
   - {fileID: 6577488}
   - {fileID: 6591960}
+  dead: 0
 --- !u!114 &11482218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2044,6 +2087,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11483250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2055,6 +2099,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8336f93afaa904c8e0e076006192a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11485026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997190c6b258d514e98e80e49ed8660b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullColor: {r: 0, g: 1.5, b: 1.5, a: 1}
+  deathColor: {r: 1.5, g: 0, b: 0, a: 1}
+  hp: {fileID: 11448374}
+  rend: {fileID: 13770520}
 --- !u!114 &11487928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2081,6 +2140,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11493964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2119,6 +2179,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11496658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2145,6 +2206,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!114 &11499866
 MonoBehaviour:
   m_ObjectHideFlags: 1

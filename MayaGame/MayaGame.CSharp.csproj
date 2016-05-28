@@ -161,6 +161,7 @@
     <Compile Include="Assets\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\script\AttackCall.cs" />
     <Compile Include="Assets\script\CamStabilaizer.cs" />
+    <Compile Include="Assets\script\DamagetoColor.cs" />
     <Compile Include="Assets\script\EnemyAI.cs" />
     <Compile Include="Assets\script\FPSController.cs" />
     <Compile Include="Assets\script\FPS_UI.cs" />

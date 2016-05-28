@@ -346,7 +346,7 @@ Prefab:
     - target: {fileID: 11479006, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
       propertyPath: weponPrefab.Array.data[0]
       value: 
-      objectReference: {fileID: 197760, guid: 5df8adeb44042394cbd0d0a58d960294, type: 2}
+      objectReference: {fileID: 126710, guid: 2d524612a4c882e4eb3e03990fd3f19d, type: 2}
     - target: {fileID: 11479006, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
       propertyPath: weponPrefab.Array.data[1]
       value: 
@@ -409,6 +409,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!65 &249958963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -525,6 +526,7 @@ MonoBehaviour:
   net: {fileID: 0}
   mesh: {fileID: 0}
   colSize: 0
+  maxHitPoint: 0
 --- !u!65 &580112940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -686,7 +688,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198604, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}
@@ -728,7 +730,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 457190, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9568806, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
       propertyPath: m_Controller
@@ -915,7 +917,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483782, guid: 56a2f340314d5e749ac1237c75fde18e, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 117976, guid: 56a2f340314d5e749ac1237c75fde18e, type: 2}
       propertyPath: m_Name
@@ -1245,7 +1247,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483782, guid: 56a2f340314d5e749ac1237c75fde18e, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 117976, guid: 56a2f340314d5e749ac1237c75fde18e, type: 2}
       propertyPath: m_Name
@@ -1798,6 +1800,7 @@ MonoBehaviour:
   defDistance: 10
   target: {fileID: 0}
   atackCol: []
+  dead: 0
 --- !u!1001 &1720363602
 Prefab:
   m_ObjectHideFlags: 0
@@ -1835,7 +1838,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22402362, guid: 7fe590647e892b1469c1dfa046e06551, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 22402362, guid: 7fe590647e892b1469c1dfa046e06551, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2287,7 +2290,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483782, guid: 56a2f340314d5e749ac1237c75fde18e, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6563112, guid: 56a2f340314d5e749ac1237c75fde18e, type: 2}
       propertyPath: m_IsTrigger
@@ -2837,7 +2840,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198604, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}

@@ -31,6 +31,9 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     float thinkEmotion=50f;
     float distanceEmotion=50f;
 
+    //state 
+    [HideInInspector] public bool dead;
+
 	// Use this for initialization
 	void Start () {
 
@@ -43,6 +46,8 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     // Update is called once per frame
     [ServerCallback]
     public virtual void Update () {
+        if (dead) return;
+
 	    if(Time.time > thinkTimer)
         {
             //Think();
@@ -136,5 +141,11 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         {
             AIAnim.SetTrigger("near");
         }
+    }
+
+    public virtual void Stop()
+    {
+        dead = true;
+        nav.Stop();
     }
 }
