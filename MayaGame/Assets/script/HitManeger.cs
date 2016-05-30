@@ -55,9 +55,19 @@ public class HitManeger : HitManagerDef {
 
     public override void Destruct()
     {
+        if (yoroke)
+        {
+            EnemyAI ai = transform.root.GetComponent<EnemyAI>();
+            ai.moveSpeed *= speedDebufRate;
+            ai.attackDamage *= damageDebufRate;
+            ai.GetComponent<SyncAnim>().SetTrigger("hit");
+            StartCoroutine(ai.StopOnTime(0.6f));
+        }
+
         if(mesh != null)
         {
             exploder.ExplodeObject(mesh.gameObject);
+            
             return;
         }
         exploder.ExplodeObject(gameObject);

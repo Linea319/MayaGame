@@ -26,6 +26,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     Vector3 moveTarget;
     bool atack;
     public Collider[] atackCol;
+    public float attackDamage = 25f;
 
     //emotion
     float thinkEmotion=50f;
@@ -33,6 +34,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     //state 
     [HideInInspector] public bool dead;
+    [HideInInspector] public float shock;
 
 	// Use this for initialization
 	void Start () {
@@ -148,4 +150,11 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         dead = true;
         nav.Stop();
     }
+
+    public virtual IEnumerator StopOnTime(float time)
+    {
+        nav.Stop();
+        yield return new WaitForSeconds(time);
+        nav.Resume();
+    } 
 }

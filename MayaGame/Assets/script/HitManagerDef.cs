@@ -8,6 +8,10 @@ public class HitManagerDef : MonoBehaviour {
     public float hitPoint;
     public ArmorParameter armor;
     public GameObject DestroyObj;
+    public bool yoroke;
+    public float speedDebufRate=1f;
+    public float damageDebufRate = 1f;
+
     [HideInInspector]
     public Collider col;
     [HideInInspector]

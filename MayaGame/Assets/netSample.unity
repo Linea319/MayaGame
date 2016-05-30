@@ -401,6 +401,9 @@ MonoBehaviour:
     armorResist: 3
     heatResist: 2
   DestroyObj: {fileID: 1667826032}
+  yoroke: 0
+  speedDebufRate: 1
+  damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -518,6 +521,9 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 1667826032}
+  yoroke: 0
+  speedDebufRate: 1
+  damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -1800,7 +1806,9 @@ MonoBehaviour:
   defDistance: 10
   target: {fileID: 0}
   atackCol: []
+  attackDamage: 25
   dead: 0
+  shock: 0
 --- !u!1001 &1720363602
 Prefab:
   m_ObjectHideFlags: 0

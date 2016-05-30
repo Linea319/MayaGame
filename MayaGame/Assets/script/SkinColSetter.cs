@@ -21,6 +21,9 @@ public class SkinColSetter : MonoBehaviour {
         hit.armor = hitOri.armor;
         hit.hitPoint = hitOri.hitPoint;
         hit.effectType = hitOri.effectType;
+        hit.yoroke = hitOri.yoroke;
+        hit.damageDebufRate = hitOri.damageDebufRate;
+        hit.speedDebufRate = hitOri.speedDebufRate;
         hit.Initialize();
         
 	}
