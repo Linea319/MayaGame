@@ -50,6 +50,9 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     public virtual void Update () {
         if (dead) return;
 
+        nav.speed = Mathf.Lerp(moveSpeed, 0, shock / 100f);
+        shock = Mathf.Lerp(shock, 0, Time.deltaTime*0.5f);
+
 	    if(Time.time > thinkTimer)
         {
             //Think();

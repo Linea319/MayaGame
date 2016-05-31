@@ -99,7 +99,10 @@ public class HitManagerDef : MonoBehaviour {
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
-        
+
+        EnemyAI ai = transform.root.GetComponent<EnemyAI>();
+        ai.shock += damages.shock / armor.shockResist * 0.16f;
+
         return rePoint;
     }
 

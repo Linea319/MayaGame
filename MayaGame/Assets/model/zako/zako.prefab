@@ -1782,7 +1782,7 @@ MonoBehaviour:
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 1
-  speedDebufRate: 0.8
+  speedDebufRate: 0.9
   damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
@@ -2041,7 +2041,7 @@ MonoBehaviour:
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 1
-  speedDebufRate: 0.8
+  speedDebufRate: 0.9
   damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
@@ -2081,7 +2081,7 @@ MonoBehaviour:
     m_Bits: 256
   anim: {fileID: 9563328}
   AIAnim: {fileID: 9517064}
-  moveSpeed: 6
+  moveSpeed: 6.5
   defDistance: 1
   target: {fileID: 0}
   atackCol:
@@ -2165,7 +2165,7 @@ MonoBehaviour:
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 1
-  speedDebufRate: 0.8
+  speedDebufRate: 0.9
   damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
@@ -2207,7 +2207,7 @@ MonoBehaviour:
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 1
-  speedDebufRate: 0.8
+  speedDebufRate: 0.9
   damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:

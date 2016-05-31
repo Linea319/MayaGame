@@ -95,6 +95,10 @@ public class HitManeger : HitManagerDef {
         }
         hitPoint -= damage;
         //Debug.Log("damage:"+damage);
+
+        EnemyAI ai = transform.root.GetComponent<EnemyAI>();
+        ai.shock += damages.shock / armor.shockResist * 0.06f;
+
         return rePoint;
     }
 }
