@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effects:
-  - {fileID: 100002, guid: caa8bd0d2623acf4d915f16e0ab71218, type: 2}
+  - {fileID: 153812, guid: 6b531ca3616524e4fa6ebfe50fa1b56a, type: 2}
   - {fileID: 107480, guid: d286febc392b16a49a2cc4065917d3aa, type: 2}
 --- !u!1001 &244480844
 Prefab:
