@@ -1830,7 +1830,7 @@ MonoBehaviour:
   hitPoint: 100
   armor:
     shockResist: 1
-    armorResist: 1
+    armorResist: 0.5
     heatResist: 1
   DestroyObj: {fileID: 198604}
   yoroke: 0
@@ -3007,7 +3007,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 1.2
   m_Speed: 6
   m_Acceleration: 8

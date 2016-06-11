@@ -396,7 +396,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     }
     void StopShot()
     {
-        if (muzuleFlash.isPlaying) muzuleFlash.Stop();
+        if (muzuleFlash != null && muzuleFlash.isPlaying) muzuleFlash.Stop();
     }
 
     public float ReturnChangeSpeed(float changeAnimLength)
@@ -432,15 +432,20 @@ public class Wepon : MonoBehaviour, WeponInterface
 
     public void ShotEffect()
     {
-
-
-        muzuleFlash.Play();
-        if (!yakkyou.IsAlive())
+        if (muzuleFlash != null)
         {
-            //Debug.Log("dead");
-            yakkyou.enableEmission = true;
+
+            muzuleFlash.Play();
         }
-        yakkyou.Emit(1);
+        if (yakkyou != null)
+        {
+            if (!yakkyou.IsAlive())
+            {
+                //Debug.Log("dead");
+                yakkyou.enableEmission = true;
+            }
+            yakkyou.Emit(1);
+        }
         shotSound.Play();
     }
 

@@ -90,11 +90,13 @@ public class HitManeger : HitManagerDef {
         Vector3 rePoint = Vector3.zero;
         if(penetrateNum >0)
         {
-            damage += penetrateNum*1000f * pointRate*pointRate;
+            
+            damage += penetrateNum*1000f * pointRate * pointRate;
+            
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
-        //Debug.Log("damage:"+damage);
+        Debug.Log("col:" + name + " damage:" + damage + " penetrate:"+ pointRate);
 
         EnemyAI ai = transform.root.GetComponent<EnemyAI>();
         ai.shock += damages.shock / armor.shockResist * 0.06f;

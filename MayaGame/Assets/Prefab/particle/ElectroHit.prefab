@@ -292,7 +292,7 @@ ParticleSystem:
         rgba: 2164260863
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3307,7 +3307,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 2
-    radius: 0.6
+    radius: 1
     angle: 25
     length: 5
     boxX: 1
@@ -3362,11 +3362,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    cnt0: 5
+    cnt0: 6
     cnt1: 30
     cnt2: 30
     cnt3: 30
-    cntmax0: 8
+    cntmax0: 9
     cntmax1: 30
     cntmax2: 30
     cntmax3: 30

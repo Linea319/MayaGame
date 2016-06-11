@@ -95,10 +95,12 @@ public class HitManagerDef : MonoBehaviour {
         Vector3 rePoint = Vector3.zero;
         if (penetrateNum > 0)
         {
-            damage += penetrateNum * 1000f * pointRate * pointRate;
+            
+            damage += penetrateNum * 1000f * pointRate;
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
+        Debug.Log("col:" + name + " damage:" + damage + " penetrate:" + penetrateNum * 1000f * pointRate);
 
         EnemyAI ai = transform.root.GetComponent<EnemyAI>();
         ai.shock += damages.shock / armor.shockResist * 0.16f;
@@ -109,5 +111,11 @@ public class HitManagerDef : MonoBehaviour {
     public virtual void SetHP(float hp)
     {
         hitPoint = hp;
+    }
+
+    public float rayDistance(Ray ray,Vector3 point)
+    {
+        float distance = Vector3.Cross(point+ray.direction, meshBounds.center-point).magnitude/(point + ray.direction).magnitude;
+        return distance;                                                                                                                                                                                                                                 
     }
 }

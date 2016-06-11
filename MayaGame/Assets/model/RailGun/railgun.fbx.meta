@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: 503751f4b8227044ea1e86016ccc6641
+timeCreated: 1465654513
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: armRig_R
+    100002: chest
+    100004: foreArm_R
+    100006: group1
+    100008: hand1_R
+    100010: hand2_R
+    100012: handRig_R
+    100014: hip
+    100016: pasted__foreArm_R
+    100018: pasted__hand1_R
+    100020: pasted__upperArm1_R
+    100022: //RootNode
+    100024: railgun
+    100026: railgun_anim1:joint1
+    100028: railgun_anim1:joint3
+    100030: railgun_anim1:joint4
+    100032: railgun_anim1:joint5
+    100034: railgun_anim1:joint6
+    100036: railgun_anim1:pCube5
+    100038: rig
+    100040: rigborne
+    100042: shoulder_R
+    100044: spine
+    100046: upperArm1_R
+    100048: upperArm2_R
+    100050: upperArm3_R
+    100052: joint1
+    100054: joint3
+    100056: joint4
+    100058: joint5
+    100060: joint6
+    100062: pCube5
+    400000: armRig_R
+    400002: chest
+    400004: foreArm_R
+    400006: group1
+    400008: hand1_R
+    400010: hand2_R
+    400012: handRig_R
+    400014: hip
+    400016: pasted__foreArm_R
+    400018: pasted__hand1_R
+    400020: pasted__upperArm1_R
+    400022: //RootNode
+    400024: railgun
+    400026: railgun_anim1:joint1
+    400028: railgun_anim1:joint3
+    400030: railgun_anim1:joint4
+    400032: railgun_anim1:joint5
+    400034: railgun_anim1:joint6
+    400036: railgun_anim1:pCube5
+    400038: rig
+    400040: rigborne
+    400042: shoulder_R
+    400044: spine
+    400046: upperArm1_R
+    400048: upperArm2_R
+    400050: upperArm3_R
+    400052: joint1
+    400054: joint3
+    400056: joint4
+    400058: joint5
+    400060: joint6
+    400062: pCube5
+    2300000: pCube5
+    3300000: pCube5
+    4300000: railgun_anim1:pCube5
+    4300002: pCube5
+    7400000: Take 001
+    7400002: wep_railgun_idle
+    7400004: wep_railgun_open
+    9500000: //RootNode
+    13700000: railgun_anim1:pCube5
+    13700002: pCube5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: '
+
+      Imported file ''railgun'' conversion failed: Cannot find root motion transform
+      ''railgun_anim1:joint5''
+
+
+'
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths:
+    - railgun/railgun_anim1:joint1
+    - railgun/railgun_anim1:joint1/railgun_anim1:joint3
+    - railgun/railgun_anim1:joint1/railgun_anim1:joint5
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint3
+        weight: 1
+      - path: joint1/joint3/joint4
+        weight: 1
+      - path: joint1/joint5
+        weight: 1
+      - path: joint1/joint5/joint6
+        weight: 1
+      - path: pCube5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: wep_railgun_idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint3
+        weight: 1
+      - path: joint1/joint3/joint4
+        weight: 1
+      - path: joint1/joint5
+        weight: 1
+      - path: joint1/joint5/joint6
+        weight: 1
+      - path: pCube5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: wep_railgun_open
+      takeName: Take 001
+      firstFrame: 15
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint3
+        weight: 1
+      - path: joint1/joint3/joint4
+        weight: 1
+      - path: joint1/joint5
+        weight: 1
+      - path: joint1/joint5/joint6
+        weight: 1
+      - path: pCube5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 5.8
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: railgun_anim1:joint5
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

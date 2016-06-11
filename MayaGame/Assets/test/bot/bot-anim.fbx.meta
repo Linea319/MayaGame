@@ -160,6 +160,9 @@ ModelImporter:
     7400022: lance_charge
     7400024: lance_attack
     7400026: lance_run
+    7400028: railgun_idle
+    7400030: railgun_run
+    7400032: railgun_reload
     9500000: //RootNode
     13700000: arm
     13700002: body1
@@ -2486,6 +2489,426 @@ ModelImporter:
       - path: rig/sumIK_L
         weight: 1
       - path: rig/sumIK_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: railgun_idle
+      takeName: Take 001
+      firstFrame: 380
+      lastFrame: 390
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bots
+        weight: 0
+      - path: bots/arm
+        weight: 0
+      - path: bots/body1
+        weight: 0
+      - path: bots/fingers
+        weight: 0
+      - path: bots/head
+        weight: 0
+      - path: bots/leg
+        weight: 0
+      - path: hip
+        weight: 0
+      - path: hip/spine
+        weight: 0
+      - path: hip/spine/chest
+        weight: 1
+      - path: hip/spine/chest/head 1
+        weight: 1
+      - path: hip/spine/chest/head 1/head_end
+        weight: 1
+      - path: hip/spine/chest/shoulder_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L/finger3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L/finger3_L/finger4_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/fingerIK_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L/sum2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L/sum2_L/sum3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sumIK_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R/finger3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R/finger3_R/finger4_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/fingerIK_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R/sum2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R/sum2_R/sum3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sumIK_R
+        weight: 1
+      - path: hip/upperLeg_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L/foot_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L/foot_L/footEnd_L
+        weight: 0
+      - path: hip/upperLeg_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R/foot_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R/foot_R/footEnd_R
+        weight: 0
+      - path: rig
+        weight: 1
+      - path: rig/hipRig
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: railgun_run
+      takeName: Take 001
+      firstFrame: 400
+      lastFrame: 411
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bots
+        weight: 0
+      - path: bots/arm
+        weight: 0
+      - path: bots/body1
+        weight: 0
+      - path: bots/fingers
+        weight: 0
+      - path: bots/head
+        weight: 0
+      - path: bots/leg
+        weight: 0
+      - path: hip
+        weight: 0
+      - path: hip/spine
+        weight: 0
+      - path: hip/spine/chest
+        weight: 1
+      - path: hip/spine/chest/head 1
+        weight: 1
+      - path: hip/spine/chest/head 1/head_end
+        weight: 1
+      - path: hip/spine/chest/shoulder_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L/finger3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L/finger3_L/finger4_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/fingerIK_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L/sum2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L/sum2_L/sum3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sumIK_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R/finger3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R/finger3_R/finger4_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/fingerIK_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R/sum2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R/sum2_R/sum3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sumIK_R
+        weight: 1
+      - path: hip/upperLeg_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L/foot_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L/foot_L/footEnd_L
+        weight: 0
+      - path: hip/upperLeg_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R/foot_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R/foot_R/footEnd_R
+        weight: 0
+      - path: rig
+        weight: 1
+      - path: rig/hipRig
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: railgun_reload
+      takeName: Take 001
+      firstFrame: 420
+      lastFrame: 495
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bots
+        weight: 0
+      - path: bots/arm
+        weight: 0
+      - path: bots/body1
+        weight: 0
+      - path: bots/fingers
+        weight: 0
+      - path: bots/head
+        weight: 0
+      - path: bots/leg
+        weight: 0
+      - path: hip
+        weight: 0
+      - path: hip/spine
+        weight: 0
+      - path: hip/spine/chest
+        weight: 1
+      - path: hip/spine/chest/head 1
+        weight: 1
+      - path: hip/spine/chest/head 1/head_end
+        weight: 1
+      - path: hip/spine/chest/shoulder_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L/finger3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L/finger3_L/finger4_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/fingerIK_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L/sum2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L/sum2_L/sum3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sumIK_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R/finger3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R/finger3_R/finger4_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/fingerIK_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R/sum2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R/sum2_R/sum3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sumIK_R
+        weight: 1
+      - path: hip/upperLeg_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L/foot_L
+        weight: 0
+      - path: hip/upperLeg_L/lowLeg_L/foot_L/footEnd_L
+        weight: 0
+      - path: hip/upperLeg_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R/foot_R
+        weight: 0
+      - path: hip/upperLeg_R/lowLeg_R/foot_R/footEnd_R
+        weight: 0
+      - path: rig
+        weight: 1
+      - path: rig/hipRig
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
