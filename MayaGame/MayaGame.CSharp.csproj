@@ -159,6 +159,7 @@
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\WFX_LightFlicker.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
+    <Compile Include="Assets\script\AnimSendTrigger.cs" />
     <Compile Include="Assets\script\AttackCall.cs" />
     <Compile Include="Assets\script\CamStabilaizer.cs" />
     <Compile Include="Assets\script\DamagetoColor.cs" />

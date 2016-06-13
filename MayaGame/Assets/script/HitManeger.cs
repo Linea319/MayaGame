@@ -90,7 +90,7 @@ public class HitManeger : HitManagerDef {
         Vector3 rePoint = Vector3.zero;
         if(penetrateNum >0)
         {
-            
+            //pointRate = (1f - rayDistance(ray, hitInfo.point) / sizeMagnitude);
             damage += penetrateNum*1000f * pointRate * pointRate;
             
             rePoint = returnHit.point;

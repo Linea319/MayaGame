@@ -1017,7 +1017,7 @@ MonoBehaviour:
   muzuleTr: {fileID: 418896}
   ADSTime: 0.3
   FPSCon: {fileID: 0}
-  hitEffect: {fileID: 100002, guid: 627bfa08ce624ab40ab2fea71785b5f0, type: 2}
+  hitEffect: {fileID: 0}
   shotSound: {fileID: 8278492}
   muzuleFlash: {fileID: 19834530}
   yakkyou: {fileID: 19830722}

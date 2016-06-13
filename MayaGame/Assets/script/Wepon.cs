@@ -98,6 +98,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     float ADSTimer = 0;
     float rpmTimer = 0;
     int mySlot;
+    Transform magParent;
     HitEffectManeger effecter;
 
     Vector3 recoilDmp;
@@ -152,6 +153,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         {
             magPos = magazineTr.localPosition;
             magRot = magazineTr.localRotation;
+            magParent = magazineTr.parent;
             magazine = (int)parameters["magazine"];
             first = false;
         }
@@ -330,7 +332,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         FPSCon.ADS = false;
 
 
-        if (magazine <= 0)
+        if (magazine <= 0 && !noCock)
         {
             anim.SetBool("Cock", true);
         }
@@ -349,7 +351,7 @@ public class Wepon : MonoBehaviour, WeponInterface
 
     public void MagReturn()
     {
-        magazineTr.SetParent(transform);
+        magazineTr.SetParent(magParent);
         magazineTr.localRotation = magRot;
         magazineTr.localPosition = magPos;
     }
@@ -469,6 +471,14 @@ public class Wepon : MonoBehaviour, WeponInterface
         {
             //Debug.Log(hit.transform.name);
             
+            if(hitEffect != null)
+            {
+                GameObject efect = Instantiate<GameObject>(hitEffect);
+                efect.transform.position = hit.point;
+                efect.transform.LookAt(efect.transform.position + hit.normal);
+                efect.transform.parent = hit.transform;
+            }
+
             Vector3 fracVec = hit.point;
             HitManagerDef hitM = hit.transform.GetComponent<HitManagerDef>();
             if (hitM != null)
@@ -485,7 +495,7 @@ public class Wepon : MonoBehaviour, WeponInterface
                 if (penetratePoint != Vector3.zero)
                 {
                     
-                    Ray newRay = new Ray(penetratePoint, ray.direction);
+                    Ray newRay = new Ray((hit.point + penetratePoint)/2f, ray.direction);
                     ShootHit(newRay,rayRange-hit.distance, ++penetrateNum);
                 }
             }
