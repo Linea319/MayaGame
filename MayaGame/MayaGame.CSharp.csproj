@@ -205,6 +205,7 @@
     <Compile Include="Assets\script\slotButton.cs" />
     <Compile Include="Assets\script\stock.cs" />
     <Compile Include="Assets\script\upper.cs" />
+    <Compile Include="Assets\test\VRblade\lineController.cs" />
     <Compile Include="Assets\test\bot\AnimEventSender.cs" />
   </ItemGroup>
   <ItemGroup>
