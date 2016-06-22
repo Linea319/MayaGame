@@ -968,6 +968,7 @@ GameObject:
   - 95: {fileID: 9556882}
   - 114: {fileID: 11467144}
   - 114: {fileID: 11442818}
+  - 114: {fileID: 11480728}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -1031,6 +1032,22 @@ GameObject:
   m_Layer: 0
   m_Name: sum1_R
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &193840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 469462}
+  - 136: {fileID: 13642360}
+  m_Layer: 2
+  m_Name: collision
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1666,6 +1683,18 @@ Transform:
   - {fileID: 414318}
   m_Father: {fileID: 482430}
   m_RootOrder: 0
+--- !u!4 &469462
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486090}
+  m_RootOrder: 1
 --- !u!4 &473324
 Transform:
   m_ObjectHideFlags: 1
@@ -1820,6 +1849,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 484678}
+  - {fileID: 469462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &488018
@@ -2046,7 +2076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 9556882}
-  m_ParameterSendBits: 812
+  m_ParameterSendBits: 6956
   param0: 
   param1: 
   param2: 
@@ -2188,11 +2218,42 @@ MonoBehaviour:
   useWeponNum: 0
   weponPrefab:
   - {fileID: 126710, guid: 2d524612a4c882e4eb3e03990fd3f19d, type: 2}
-  - {fileID: 141880, guid: 9dd5ecd06ec3a3d44bd330169e9ad903, type: 2}
+  - {fileID: 190502, guid: e991330d1320e6d47ae43f8df693bc14, type: 2}
   recoilVec: {x: 0, y: 0, z: 0}
   reload: 0
   UICon: {fileID: 0}
   stamina: 0
+  hpMng: {fileID: 0}
+--- !u!114 &11480728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ef7b04fea0b5640baedd19589f33ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoint: 100
+  armor: 100
+  rechargeDelay: 5
+  rechargeRate: 30
+  maxArmor: 0
+  maxHP: 0
+--- !u!136 &13642360
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!137 &13712208
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

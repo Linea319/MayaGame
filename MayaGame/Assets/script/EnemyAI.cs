@@ -135,9 +135,11 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         atack = false;
     }
 
-    public void AttackHit(Collider col)
+    public void AttackHit(Transform target)
     {
-
+        HitManagerPlayer playerHP = target.GetComponent<HitManagerPlayer>();
+        playerHP.HitDamage(attackDamage);
+        Debug.Log("attackhit");
     }
 
     public void EnterNear(Collider col)

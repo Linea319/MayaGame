@@ -14,6 +14,8 @@ public class FPS_UI : MonoBehaviour {
     public Image pitchBar;
     public Text pitchText;
     public Image yawBar;
+    public Image hpBar;
+    public Image armorBar;
 
     float crosshairScale;
     float throttleScale;
@@ -54,6 +56,9 @@ public class FPS_UI : MonoBehaviour {
             yawAngle -= 360;
         }
         yawBar.rectTransform.localPosition = yawDef + new Vector3(yawLimit/13.3f*yawAngle, 0, 0);
+
+        hpBar.fillAmount = FPSCon.hpMng.hitPoint / FPSCon.hpMng.maxHP;
+        armorBar.fillAmount = FPSCon.hpMng.armor / FPSCon.hpMng.maxArmor;
 
     }
 

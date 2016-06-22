@@ -1476,6 +1476,8 @@ MonoBehaviour:
   pitchBar: {fileID: 11409090}
   pitchText: {fileID: 11458522}
   yawBar: {fileID: 11457664}
+  hpBar: {fileID: 11415488}
+  armorBar: {fileID: 11472128}
 --- !u!114 &11485918
 MonoBehaviour:
   m_ObjectHideFlags: 1

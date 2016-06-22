@@ -62,6 +62,8 @@ public class FPSController : NetworkBehaviour {
     public FPS_UI UICon;
     [HideInInspector]
     public float stamina;
+    [HideInInspector]
+    public HitManagerPlayer hpMng;
     
 
 
@@ -94,7 +96,7 @@ public class FPSController : NetworkBehaviour {
     [Client]
     void Initialize()
     {
-        
+        hpMng = GetComponent<HitManagerPlayer>();
         anim = GetComponent<Animator>();
         control = GetComponent<CharacterController>();
         if (wepons[0] != null) { 
