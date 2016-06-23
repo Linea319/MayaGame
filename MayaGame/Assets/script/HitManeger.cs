@@ -61,7 +61,7 @@ public class HitManeger : HitManagerDef {
             ai.moveSpeed *= speedDebufRate;
             ai.attackDamage *= damageDebufRate;
             ai.GetComponent<SyncAnim>().SetTrigger("hit");
-            StartCoroutine(ai.StopOnTime(0.6f));
+            ai.StopSend(1.5f);
         }
 
         if(mesh != null)

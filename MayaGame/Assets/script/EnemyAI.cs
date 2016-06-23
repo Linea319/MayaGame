@@ -68,7 +68,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         {
 
         }
-
+        
 	}
 
     public virtual void Think()
@@ -88,15 +88,14 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
                 posNum = Random.Range(0,points.Length);
             }
             moveTarget = points[posNum].transform.position;
-            nav.destination = moveTarget;
+            
         }
         else
         {
             moveTarget = (target.position + vec * distance)+Random.insideUnitSphere*5f;
-            nav.destination = moveTarget;
+            
         }
-        
-
+        nav.SetDestination(moveTarget);
         thinkTimer = Time.time + thinkRate;
     }
 
@@ -156,10 +155,21 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         nav.Stop();
     }
 
-    public virtual IEnumerator StopOnTime(float time)
+
+    public void StopSend(float time)
     {
+        StartCoroutine(StopOnTime(time));
+    }
+
+     IEnumerator StopOnTime(float time)
+    {
+        Debug.Log("Yoroke");
         nav.Stop();
         yield return new WaitForSeconds(time);
+        Debug.Log("ReturnYoroke");
         nav.Resume();
+        //AIAnim.SetTrigger("start");
+        //thinkTimer = Time.time + thinkRate;
+        
     } 
 }

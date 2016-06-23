@@ -13,7 +13,7 @@ public class AttackCall : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
     {
-        Debug.Log(col.name);
+        //Debug.Log(col.name);
         Instantiate(effect, transform.position, Quaternion.identity);
         if (col.CompareTag("Player"))
         {
@@ -24,7 +24,7 @@ public class AttackCall : MonoBehaviour {
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log(hit.transform.name);
+        //Debug.Log(hit.transform.name);
         // hit.gameObjectで衝突したオブジェクト情報が得られる
         if (hit.transform.CompareTag("Player"))
         {
