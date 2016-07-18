@@ -420,7 +420,7 @@ public class Wepon : MonoBehaviour, WeponInterface
             FPSCon.ADSTimer = FPSCon.ADSTime;
             myCamera.fov *= ADSRate;
         }
-        magazineTr.SetParent(transform);
+        magazineTr.SetParent(magParent);
         magazineTr.localRotation = magRot;
         magazineTr.localPosition = magPos;
         FPSCon.ADS = false;
