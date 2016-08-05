@@ -202,6 +202,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         StartCoroutine(StopOnTime(time));
     }
 
+    [Server]
      IEnumerator StopOnTime(float time)
     {
         Debug.Log("Yoroke");

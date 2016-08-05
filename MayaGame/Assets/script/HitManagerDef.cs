@@ -46,7 +46,7 @@ public class HitManagerDef : MonoBehaviour {
         if (net != null )
         {
             //Debug.Log(this.name);
-           // net.crackObjs.Add(gameObject.name, this);
+            net.crackObjs.Add(gameObject.name, this);
         }
     }
 

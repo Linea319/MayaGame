@@ -7,7 +7,7 @@ public class Chase : StateMachineBehaviour
     public float zigzagTime;
     [Range(0,1)]
     public float zigzagRate;
-
+    EnemyAI ai;
     NavMeshAgent nav;
     Transform target;
     float zigzagTimer=0;
@@ -15,7 +15,9 @@ public class Chase : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        EnemyAI ai = animator.transform.root.GetComponent<EnemyAI>();
+        ai = animator.transform.root.GetComponent<EnemyAI>();
+        if (!ai.isServer) return;
+
         if(ai.target == null)
         {
             ai.SearchTarget();
@@ -26,6 +28,7 @@ public class Chase : StateMachineBehaviour
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (!ai.isServer) return;
         if (zigzag && zigzagTimer<Time.time)
         {
             float dis = Vector3.Distance(animator.transform.position, target.position);

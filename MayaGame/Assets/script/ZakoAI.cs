@@ -27,13 +27,20 @@ public class ZakoAI : EnemyAI {
     public override void AttackStart(int num)
     {
         base.AttackStart(num);
-        nav.Stop();
+        if (isServer)
+        {
+            nav.Stop();
+        }
+        
         //Debug.Log("attack_start");
     }
 
     public override void AttackEnd(int num)
     {
         base.AttackEnd(num);
-        nav.Resume();
+        if (isServer)
+        {
+            nav.Resume();
+        }
     }
 }
