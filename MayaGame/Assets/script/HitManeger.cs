@@ -34,7 +34,7 @@ public class HitManeger : HitManagerDef {
         
         net = transform.root.GetComponent<NetAdapter>();
         
-        if (net != null)
+        if (net.isServer && GetComponent<SkinColSetter>() == null)
         {
             //Debug.Log(this.name);
             net.crackObjs.Add(gameObject.name, this);
@@ -61,7 +61,7 @@ public class HitManeger : HitManagerDef {
             ai.moveSpeed *= speedDebufRate;
             ai.attackDamage *= damageDebufRate;
             ai.GetComponent<SyncAnim>().SetTrigger("hit");
-            ai.StopSend(1.5f);
+            ai.StopSend(2.5f);
         }
 
         if(mesh != null)

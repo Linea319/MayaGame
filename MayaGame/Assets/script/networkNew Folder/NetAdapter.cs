@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.Networking;
 
 public class NetAdapter : NetworkBehaviour {
-    public Dictionary<string, HitManagerDef> crackObjs = new Dictionary<string, HitManagerDef>();
+    public Dictionary<string, HitManagerDef> crackObjs = new Dictionary<string, HitManagerDef>();//5.4からユニークID付きで保管
 	// Use this for initialization
 	void Start () {
         gameObject.name += netId.ToString();
@@ -19,6 +19,7 @@ public class NetAdapter : NetworkBehaviour {
     public void CmdCrack(string objName)
     {
         RpcCrack(objName);
+        Debug.Log("crack");
     }
 
     [Server]
@@ -26,6 +27,7 @@ public class NetAdapter : NetworkBehaviour {
     {
         GetComponent<SyncAnim>().CmdSetTrigger("death");
         GetComponent<EnemyAI>().Stop();
+        Debug.Log(crackObjs.Count);
         yield return new WaitForSeconds(5f);
         NetworkServer.Destroy(gameObject);
     }
@@ -43,7 +45,8 @@ public class NetAdapter : NetworkBehaviour {
     public void RpcSetHP(string objName,float hp)
     {
         //Debug.Log(objName+":"+hp.ToString());
-        if (crackObjs[objName] != null)
+        
+        if (crackObjs.ContainsKey(objName) && crackObjs[objName] != null)
         {
             crackObjs[objName].SetHP(hp);
         }

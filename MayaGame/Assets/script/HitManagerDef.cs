@@ -43,10 +43,10 @@ public class HitManagerDef : MonoBehaviour {
         maxHitPoint = hitPoint;
         net = transform.root.GetComponent<NetAdapter>();
 
-        if (net != null)
+        if (net != null )
         {
             //Debug.Log(this.name);
-            net.crackObjs.Add(gameObject.name, this);
+           // net.crackObjs.Add(gameObject.name, this);
         }
     }
 

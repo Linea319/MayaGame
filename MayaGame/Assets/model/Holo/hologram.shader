@@ -1,4 +1,6 @@
-﻿Shader "Custom/hologram" {
+﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
+Shader "Custom/hologram" {
 	Properties{
 		_Color("Main Color", Color) = (1,1,1,1)
 		_Emission("emission rate",Float) = 0.0
@@ -38,7 +40,7 @@
 		pos.xyz = normalize(_WorldSpaceCameraPos - IN.worldPos);
 		pos.w = h;
 		float3 dir = normalize(_WorldSpaceCameraPos - IN.worldPos);
-		dir = mul(_World2Object, pos).xyz;
+		dir = mul(unity_WorldToObject, pos).xyz;
 		
 		float2 offset = ParallaxOffset(h, _Height, dir);
 		

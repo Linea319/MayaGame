@@ -5,6 +5,7 @@ using System.Collections;
 public interface BehaveInterface
 {
    void Think();
+    void Jump();
 }
 
 
@@ -35,11 +36,15 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     //state 
     [HideInInspector] public bool dead;
     [HideInInspector] public float shock;
+    bool jumpNow;
+    float jumpTimer;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    [ServerCallback]
+    void Start () {
 
         nav = GetComponent<NavMeshAgent>();
+        nav.enabled = true;
         nav.speed = moveSpeed;
         //nav.updatePosition = false;
         //nav.updateRotation = false;
@@ -48,7 +53,11 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     // Update is called once per frame
     [ServerCallback]
     public virtual void Update () {
-        if (dead) return;
+        if (dead)
+        {
+            nav.Stop();
+            return;
+        }
 
         nav.speed = Mathf.Lerp(moveSpeed, 0, shock / 100f);
         shock = Mathf.Lerp(shock, 0, Time.deltaTime*0.5f);
@@ -68,8 +77,40 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         {
 
         }
-        
+
+        if (nav.isOnOffMeshLink)
+        {
+            Jump();
+        }
+
 	}
+
+    public void Jump()
+    {
+        OffMeshLinkData data = nav.currentOffMeshLinkData;
+        Vector3 endPos = data.endPos;
+        Vector3 startPos = data.startPos;
+        float height = Mathf.Abs(endPos.y - startPos.y);
+        if (!jumpNow)
+        {
+            transform.LookAt(new Vector3(endPos.x, transform.position.y, endPos.z));
+            jumpNow = true;
+            jumpTimer = 0;
+        }
+        jumpTimer += Time.deltaTime;
+        if (jumpTimer > 1)
+        {
+            transform.position = Vector3.Lerp(startPos, endPos, jumpTimer - 1) + new Vector3(0, Mathf.Sin((jumpTimer - 1) * Mathf.PI) * height, 0);
+        }
+            
+        //transform.position.y = Mathf.Sin((jumpTimer - 1) * Mathf.PI);
+        Debug.Log(Mathf.Sin((jumpTimer - 1) * Mathf.PI));
+        if ((transform.position - endPos).sqrMagnitude < 0.1) 
+        {
+            nav.CompleteOffMeshLink();
+            jumpNow = false;
+        }
+    }
 
     public virtual void Think()
     {
