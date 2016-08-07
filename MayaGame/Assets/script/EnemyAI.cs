@@ -96,6 +96,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             transform.LookAt(new Vector3(endPos.x, transform.position.y, endPos.z));
             jumpNow = true;
             jumpTimer = 0;
+            anim.SetTrigger("Jump");
         }
         jumpTimer += Time.deltaTime;
         if (jumpTimer > 1)
@@ -104,11 +105,12 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         }
             
         //transform.position.y = Mathf.Sin((jumpTimer - 1) * Mathf.PI);
-        Debug.Log(Mathf.Sin((jumpTimer - 1) * Mathf.PI));
-        if ((transform.position - endPos).sqrMagnitude < 0.1) 
+        //Debug.Log(Mathf.Sin((jumpTimer - 1) * Mathf.PI));
+        if ((transform.position - endPos).sqrMagnitude < 0.5) 
         {
             nav.CompleteOffMeshLink();
             jumpNow = false;
+            anim.SetTrigger("JumpEnd");
         }
     }
 

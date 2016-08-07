@@ -123,6 +123,7 @@ ModelImporter:
     7400012: down
     7400014: hit1
     7400016: hit2
+    7400018: Jump
     9500000: //RootNode
     13700000: polySurface1
     13700002: polySurface7
@@ -150,7 +151,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -1138,6 +1139,124 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone
+        weight: 1
+      - path: bone/ik
+        weight: 1
+      - path: bone/ik/legLB_aim
+        weight: 1
+      - path: bone/ik/legLB_IK
+        weight: 1
+      - path: bone/ik/legLF_aim
+        weight: 1
+      - path: bone/ik/legLF_IK
+        weight: 1
+      - path: bone/ik/legRB_aim
+        weight: 1
+      - path: bone/ik/legRB_IK
+        weight: 1
+      - path: bone/ik/legRF_aim
+        weight: 1
+      - path: bone/ik/legRF_IK
+        weight: 1
+      - path: bone/root
+        weight: 1
+      - path: bone/root/body
+        weight: 1
+      - path: bone/root/legLB1
+        weight: 1
+      - path: bone/root/legLB1/legLB2
+        weight: 1
+      - path: bone/root/legLB1/legLB2/legLB3
+        weight: 1
+      - path: bone/root/legLF1
+        weight: 1
+      - path: bone/root/legLF1/legLF2
+        weight: 1
+      - path: bone/root/legLF1/legLF2/legLF3
+        weight: 1
+      - path: bone/root/legRB1
+        weight: 1
+      - path: bone/root/legRB1/legRB2
+        weight: 1
+      - path: bone/root/legRB1/legRB2/legRB3
+        weight: 1
+      - path: bone/root/legRF1
+        weight: 1
+      - path: bone/root/legRF1/legRF2
+        weight: 1
+      - path: bone/root/legRF1/legRF2/legRF3
+        weight: 1
+      - path: crowler
+        weight: 1
+      - path: crowler/polySurface1
+        weight: 1
+      - path: crowler/polySurface7
+        weight: 1
+      - path: crowler/zako2:armor1
+        weight: 1
+      - path: crowler/zako2:armor2
+        weight: 1
+      - path: crowler/zako2:armor3
+        weight: 1
+      - path: crowler/zako2:armor4
+        weight: 1
+      - path: crowler/zako2:armor5
+        weight: 1
+      - path: crowler/zako2:armor6
+        weight: 1
+      - path: crowler/zako2:armor7
+        weight: 1
+      - path: crowler/zako2:armor_low
+        weight: 1
+      - path: crowler/zako2:core
+        weight: 1
+      - path: crowler/zako2:foot1
+        weight: 1
+      - path: crowler/zako2:foot2
+        weight: 1
+      - path: crowler/zako2:foot3
+        weight: 1
+      - path: crowler/zako2:foot4
+        weight: 1
+      - path: crowler/zako2:leg1
+        weight: 1
+      - path: crowler/zako2:leg2
+        weight: 1
+      - path: crowler/zako2:leg3
+        weight: 1
+      - path: crowler/zako2:leg4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      firstFrame: 165
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0

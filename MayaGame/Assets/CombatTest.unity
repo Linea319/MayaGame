@@ -2650,6 +2650,10 @@ Prefab:
       propertyPath: m_Name
       value: zako (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 198604, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}
   m_IsPrefabParent: 0
