@@ -159,6 +159,7 @@
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\WFX_LightFlicker.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
+    <Compile Include="Assets\model\bot\AnimEventSender.cs" />
     <Compile Include="Assets\script\AnimSendTrigger.cs" />
     <Compile Include="Assets\script\AttackCall.cs" />
     <Compile Include="Assets\script\CamStabilaizer.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Assets\script\grip.cs" />
     <Compile Include="Assets\script\gun.cs" />
     <Compile Include="Assets\script\handguard.cs" />
+    <Compile Include="Assets\script\kesyouAI.cs" />
     <Compile Include="Assets\script\lower.cs" />
     <Compile Include="Assets\script\magazine.cs" />
     <Compile Include="Assets\script\magwell.cs" />
@@ -206,7 +208,6 @@
     <Compile Include="Assets\script\stock.cs" />
     <Compile Include="Assets\script\upper.cs" />
     <Compile Include="Assets\test\VRblade\lineController.cs" />
-    <Compile Include="Assets\test\bot\AnimEventSender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Exploder\Demo\Shaders\VertexColor.shader" />
