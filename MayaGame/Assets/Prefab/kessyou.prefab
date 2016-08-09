@@ -2157,6 +2157,7 @@ GameObject:
   - 114: {fileID: 114000012548405056}
   - 114: {fileID: 114000010091411762}
   - 114: {fileID: 114000013239549642}
+  - 114: {fileID: 114000012410843932}
   m_Layer: 2
   m_Name: kessyou
   m_TagString: Untagged
@@ -4588,7 +4589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 500
+  hitPoint: 300
   armor:
     shockResist: 1
     armorResist: 1
@@ -4618,7 +4619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 500
+  hitPoint: 300
   armor:
     shockResist: 1
     armorResist: 1
@@ -4659,7 +4660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 500
+  hitPoint: 200
   armor:
     shockResist: 1
     armorResist: 1
@@ -4719,7 +4720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 500
+  hitPoint: 400
   armor:
     shockResist: 1
     armorResist: 1
@@ -4749,7 +4750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 500
+  hitPoint: 200
   armor:
     shockResist: 1
     armorResist: 1
@@ -4779,7 +4780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 700
+  hitPoint: 200
   armor:
     shockResist: 1
     armorResist: 1
@@ -4809,7 +4810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 500
+  hitPoint: 400
   armor:
     shockResist: 1
     armorResist: 1
@@ -4839,7 +4840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 1000
+  hitPoint: 500
   armor:
     shockResist: 1
     armorResist: 1
@@ -4869,7 +4870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 700
+  hitPoint: 500
   armor:
     shockResist: 1
     armorResist: 1
@@ -4899,7 +4900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 700
+  hitPoint: 500
   armor:
     shockResist: 1
     armorResist: 1
@@ -4961,7 +4962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 700
+  hitPoint: 200
   armor:
     shockResist: 1
     armorResist: 1
@@ -6083,7 +6084,7 @@ Animator:
   m_GameObject: {fileID: 1000011531939730}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 55a7adbb3ec928c4e9b58fc106cf6819, type: 2}
+  m_Controller: {fileID: 9100000, guid: c2907deaa9a9c4c4094c161be2ec5b44, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6119,8 +6120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e4b6f5242c2f047a4461b97d2c7111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thinkRate: 5
-  effectionRate: 50
+  thinkRate: 3
+  effectionRate: 55
   mask:
     serializedVersion: 2
     m_Bits: 0
@@ -6131,8 +6132,16 @@ MonoBehaviour:
   target: {fileID: 0}
   atackCol: []
   attackDamage: 25
+  jumpDelay: 0.4
   dead: 0
   shock: 0
+  bullet: {fileID: 1000013905553688, guid: aebeaff805b0c5447920d15c36923f53, type: 2}
+  bulletSpeed: 5
+  spread: 5
+  gunPos: {fileID: 4000010452187764}
+  eyeMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &114000010438874822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6292,6 +6301,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8336f93afaa904c8e0e076006192a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000012410843932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 9568806}
+  m_ParameterSendBits: 956
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &114000012548405056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6335,8 +6363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997190c6b258d514e98e80e49ed8660b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullColor: {r: 0, g: 1.5, b: 1.5, a: 1}
-  deathColor: {r: 1.5, g: 0, b: 0, a: 1}
+  fullColor: {r: 0, g: 3, b: 3, a: 1}
+  deathColor: {r: 3, g: 0, b: 0, a: 1}
   hp: {fileID: 114000010500264796}
   rend: {fileID: 13775840}
 --- !u!114 &114000013473873542

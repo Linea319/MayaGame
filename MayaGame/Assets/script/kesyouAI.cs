@@ -3,6 +3,12 @@ using UnityEngine.Networking;
 using System.Collections;
 
 public class kesyouAI : EnemyAI {
+    public GameObject bullet;
+    public float bulletSpeed;
+    public float spread;
+    public Transform gunPos;
+    public LayerMask eyeMask;
+
 
     [ServerCallback]
     public override void Update()
@@ -16,30 +22,77 @@ public class kesyouAI : EnemyAI {
         {
             anim.SetBool("move", true);
         }
+
+        if(target != null)
+        {
+            if (!Physics.Linecast(transform.position, target.position,eyeMask))
+            {
+                if (atack)
+                {
+                    attackEmotion += Time.deltaTime * 15f;
+                }
+                else
+                {
+                    attackEmotion += Time.deltaTime * 20f;
+                } 
+            }
+            else
+            {
+                if (atack)
+                {
+                    attackEmotion -= Time.deltaTime * 30f;
+                }
+                else
+                {
+                    attackEmotion -= Time.deltaTime * 10f;
+                }
+            }
+            attackEmotion = Mathf.Clamp(attackEmotion, 0, 100);
+        }
+        AIAnim.SetFloat("atacking", attackEmotion);
     }
 
     public override void Attack()
     {
-        anim.SetTrigger("Attack");
+            Shot();   
+
+    }
+
+    public override void Think()
+    {
+        base.Think();
+        nav.Resume();
+    }
+
+    public void Shot()
+    {
+        Quaternion rot = Quaternion.LookRotation(gunPos.position-target.position);
+        Quaternion spreadRot = Quaternion.Euler(Random.Range(-spread, spread), Random.Range(-spread, spread), 0);
+        GameObject bulletObj = (GameObject)Instantiate(bullet, gunPos.position, rot);
+        Rigidbody bulletRigid = bulletObj.GetComponent<Rigidbody>();
+        bulletRigid.velocity = spreadRot*(target.position - gunPos.position).normalized*bulletSpeed;
     }
 
     public override void AttackStart(int num)
     {
-        base.AttackStart(num);
+        anim.SetBool("shot", true);
+        //base.AttackStart(num);
         if (isServer)
         {
             nav.Stop();
         }
-
+        atack = true;
         //Debug.Log("attack_start");
     }
 
     public override void AttackEnd(int num)
     {
-        base.AttackEnd(num);
+        anim.SetBool("shot", false);
+        //base.AttackEnd(num);
         if (isServer)
         {
             nav.Resume();
         }
+        atack = false;
     }
 }

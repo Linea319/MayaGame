@@ -25,13 +25,15 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     float thinkTimer;
     public Transform target;
     Vector3 moveTarget;
-    bool atack;
+    protected bool atack;
     public Collider[] atackCol;
     public float attackDamage = 25f;
+    public float jumpDelay = 1f;
 
     //emotion
-    float thinkEmotion=50f;
-    float distanceEmotion=50f;
+    protected float thinkEmotion=50f;
+    protected float distanceEmotion=50f;
+    protected float attackEmotion = 0f;
 
     //state 
     [HideInInspector] public bool dead;
@@ -99,9 +101,9 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             anim.SetTrigger("Jump");
         }
         jumpTimer += Time.deltaTime;
-        if (jumpTimer > 1)
+        if (jumpTimer > jumpDelay)
         {
-            transform.position = Vector3.Lerp(startPos, endPos, jumpTimer - 1) + new Vector3(0, Mathf.Sin((jumpTimer - 1) * Mathf.PI) * height, 0);
+            transform.position = Vector3.Lerp(startPos, endPos, jumpTimer - jumpDelay) + new Vector3(0, Mathf.Sin((jumpTimer - jumpDelay) * Mathf.PI) * height, 0);
         }
             
         //transform.position.y = Mathf.Sin((jumpTimer - 1) * Mathf.PI);
@@ -139,7 +141,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             
         }
         nav.SetDestination(moveTarget);
-        thinkTimer = Time.time + thinkRate;
+        //thinkTimer = Time.time + thinkRate;
     }
 
     public virtual void Attack()

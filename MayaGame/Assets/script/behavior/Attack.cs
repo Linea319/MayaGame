@@ -3,10 +3,22 @@ using System.Collections;
 
 public class Attack : StateMachineBehaviour
 {
+    public bool attackStart;
+    public bool attackEnd;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (attackStart)
+        {
+            animator.transform.root.GetComponent<EnemyAI>().AttackStart(0);
+            return;
+        }
+        if (attackEnd)
+        {
+            animator.transform.root.GetComponent<EnemyAI>().AttackEnd(0);
+            return;
+        }
         animator.transform.root.GetComponent<EnemyAI>().Attack();
     }
 

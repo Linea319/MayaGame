@@ -1080,7 +1080,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 623f94628a6152f45b0150e46f682299, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1253,20 +1253,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013267650218, guid: 5e8451c6e2954ad4497f48d9a1a7aca5,
+    - target: {fileID: 114000010091411762, guid: 5e8451c6e2954ad4497f48d9a1a7aca5,
         type: 2}
-      propertyPath: fullColor.g
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013267650218, guid: 5e8451c6e2954ad4497f48d9a1a7aca5,
-        type: 2}
-      propertyPath: fullColor.b
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013267650218, guid: 5e8451c6e2954ad4497f48d9a1a7aca5,
-        type: 2}
-      propertyPath: deathColor.r
-      value: 2
+      propertyPath: bulletSpeed
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
@@ -2894,7 +2884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    threshold: 1
+    threshold: 0.9
     radius: 2
     intensity: 2
     highQuality: 1

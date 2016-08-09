@@ -26,6 +26,7 @@ public class ZakoAI : EnemyAI {
 
     public override void AttackStart(int num)
     {
+        
         base.AttackStart(num);
         if (isServer)
         {
@@ -37,6 +38,7 @@ public class ZakoAI : EnemyAI {
 
     public override void AttackEnd(int num)
     {
+        
         base.AttackEnd(num);
         if (isServer)
         {
