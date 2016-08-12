@@ -39,9 +39,16 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     protected float distanceEmotion=50f;
     protected float attackEmotion = 0f;
 
+    //hate
+    protected float hatepool;
+    protected float currentHate;
+    protected Transform hateTarget;
+
     //state 
     [HideInInspector] public bool dead;
+    protected bool stopAI;
     [HideInInspector] public float shock;
+    
     bool jumpNow;
     float jumpTimer;
 
@@ -59,12 +66,13 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     // Update is called once per frame
     [ServerCallback]
     public virtual void Update () {
-        if (dead)
+        if (dead || stopAI)
         {
             nav.Stop();
             return;
         }
 
+        currentHate -= 25 * Time.deltaTime;
         nav.speed = Mathf.Lerp(moveSpeed, 0, shock / 100f);
         shock = Mathf.Lerp(shock, 0, Time.deltaTime*0.5f);
 
@@ -171,6 +179,29 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         }
     }
 
+    public void searchTargetFar()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        if (players.Length > 0)
+        {
+            float distance = 0;
+            for (int i = 0; i < players.Length; i++)
+            {
+                float cDis = (transform.position - players[i].transform.position).sqrMagnitude;
+                if (distance < cDis)
+                {
+                    target = players[i].transform;
+                    distance = cDis;
+                }
+            }
+        }
+    }
+
+    public void searchTargetHate()
+    {
+        target = hateTarget;
+    }
+
     public virtual void AttackStart(int num)
     {
         atackCol[num].enabled = true;         
@@ -214,12 +245,32 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
      IEnumerator StopOnTime(float time)
     {
         Debug.Log("Yoroke");
+        stopAI = true;
         nav.Stop();
+        attackEmotion = 0f;
         yield return new WaitForSeconds(time);
         Debug.Log("ReturnYoroke");
+        stopAI = false;
         nav.Resume();
         //AIAnim.SetTrigger("start");
         //thinkTimer = Time.time + thinkRate;
         
     } 
+
+    public virtual void SetHate(Transform target,float hate)
+    {
+        if (target != hateTarget)
+        {
+            hatepool += hate;
+            if (hatepool > currentHate)
+            {
+                currentHate = hatepool;
+                hateTarget = target;
+            }
+        }
+        else
+        {
+            currentHate += hate;
+         }
+    }
 }

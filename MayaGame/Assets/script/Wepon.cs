@@ -495,7 +495,7 @@ public class Wepon : MonoBehaviour, WeponInterface
                 DamageParameter newDam = dam.multiple(1-penetrateNum*0.4f);
                 Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
                 
-                FPSCon.CmdSendHP(hitM.transform.root.name,hitM.name,hitM.hitPoint);
+                FPSCon.CmdSendHP(hitM.transform.root.name,hitM.name,hitM.hitPoint,hitM.lastDamage);
                 if (penetratePoint != Vector3.zero)
                 {
                     
