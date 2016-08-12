@@ -162,9 +162,11 @@
     <Compile Include="Assets\model\bot\AnimEventSender.cs" />
     <Compile Include="Assets\script\AnimSendTrigger.cs" />
     <Compile Include="Assets\script\AttackCall.cs" />
+    <Compile Include="Assets\script\AttackCall_stand.cs" />
     <Compile Include="Assets\script\CamStabilaizer.cs" />
     <Compile Include="Assets\script\DamagetoColor.cs" />
     <Compile Include="Assets\script\EnemyAI.cs" />
+    <Compile Include="Assets\script\Enemy_bullet.cs" />
     <Compile Include="Assets\script\FPSController.cs" />
     <Compile Include="Assets\script\FPS_UI.cs" />
     <Compile Include="Assets\script\GunCustom.cs" />
@@ -180,6 +182,7 @@
     <Compile Include="Assets\script\Pause.cs" />
     <Compile Include="Assets\script\SendTrigger.cs" />
     <Compile Include="Assets\script\SkinColSetter.cs" />
+    <Compile Include="Assets\script\SyncPosition.cs" />
     <Compile Include="Assets\script\Wepon.cs" />
     <Compile Include="Assets\script\WeponController.cs" />
     <Compile Include="Assets\script\ZakoAI.cs" />

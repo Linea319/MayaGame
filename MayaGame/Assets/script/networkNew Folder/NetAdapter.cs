@@ -44,7 +44,7 @@ public class NetAdapter : NetworkBehaviour {
     [ClientRpc]
     public void RpcSetHP(string objName,float hp)
     {
-        //Debug.Log(objName+":"+hp.ToString());
+        Debug.Log(objName+":"+hp.ToString());
         
         if (crackObjs.ContainsKey(objName) && crackObjs[objName] != null)
         {

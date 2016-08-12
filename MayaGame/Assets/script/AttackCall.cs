@@ -11,24 +11,30 @@ public class AttackCall : MonoBehaviour {
         effect = hitMng.effects[(int)type];
     }
 
-	void OnTriggerEnter(Collider col)
+	 void OnTriggerEnter(Collider col)
     {
-        //Debug.Log(col.name);
+        Debug.Log(col.name);
         Instantiate(effect, transform.position, Quaternion.identity);
         if (col.CompareTag("Player"))
         {
-            transform.root.GetComponent<EnemyAI>().AttackHit(col.transform.root);
-            this.GetComponent<Collider>().enabled = false;
+            HitPlayer(col.transform);
         }
     }
 
-    void OnControllerColliderHit(ControllerColliderHit hit)
+    /* void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        //Debug.Log(hit.transform.name);
+        Debug.Log(hit.transform.name);
         // hit.gameObjectで衝突したオブジェクト情報が得られる
+        Instantiate(effect, transform.position, Quaternion.identity);
         if (hit.transform.CompareTag("Player"))
         {
-            transform.root.GetComponent<EnemyAI>().AttackHit(hit.transform.root);
+            HitPlayer(hit.transform);
         }
+    }*/
+
+    public virtual void HitPlayer(Transform target)
+    {
+        transform.root.GetComponent<EnemyAI>().AttackHit(target.root);
+        this.GetComponent<Collider>().enabled = false;
     }
 }

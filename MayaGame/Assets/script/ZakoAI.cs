@@ -21,7 +21,7 @@ public class ZakoAI : EnemyAI {
 
     public override void Attack()
     {
-        anim.SetTrigger("Attack");
+        syncAnim.SetTrigger("Attack");
     }
 
     public override void AttackStart(int num)

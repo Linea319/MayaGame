@@ -761,8 +761,8 @@ GameObject:
   - 114: {fileID: 11493964}
   - 195: {fileID: 19548432}
   - 114: {fileID: 11458102}
-  - 114: {fileID: 11471462}
   - 65: {fileID: 6564168}
+  - 114: {fileID: 114000013982634818}
   m_Layer: 2
   m_Name: zako
   m_TagString: Untagged
@@ -1947,7 +1947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 9563328}
-  m_ParameterSendBits: 71
+  m_ParameterSendBits: 38
   param0: 
   param1: 
   param2: 
@@ -2040,26 +2040,6 @@ MonoBehaviour:
   deathColor: {r: 1.5, g: 0, b: 0, a: 1}
   hp: {fileID: 11448374}
   rend: {fileID: 13705620}
---- !u!114 &11471462
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 198604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &11471948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2119,6 +2099,7 @@ MonoBehaviour:
     m_Bits: 256
   anim: {fileID: 9563328}
   AIAnim: {fileID: 9517064}
+  syncAnim: {fileID: 11493964}
   moveSpeed: 5
   defDistance: 1
   target: {fileID: 0}
@@ -2126,6 +2107,7 @@ MonoBehaviour:
   - {fileID: 135000013743356934}
   - {fileID: 135000012497727694}
   attackDamage: 25
+  jumpDelay: 1
   dead: 0
   shock: 0
 --- !u!114 &11482218
@@ -3146,6 +3128,19 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 198604}
   m_IsPrefabParent: 1
+--- !u!114 &114000013982634818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a954e1ecc934ebe45a696c948e3ff121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 403488}
+  lerpRate: 15
 --- !u!135 &135000012497727694
 SphereCollider:
   m_ObjectHideFlags: 1

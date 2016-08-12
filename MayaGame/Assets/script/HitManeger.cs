@@ -34,7 +34,7 @@ public class HitManeger : HitManagerDef {
         
         net = transform.root.GetComponent<NetAdapter>();
         
-        if (net.isServer && GetComponent<SkinColSetter>() == null)
+        if (net.isClient && GetComponent<SkinColSetter>() == null)
         {
             //Debug.Log(this.name);
             net.crackObjs.Add(gameObject.name, this);

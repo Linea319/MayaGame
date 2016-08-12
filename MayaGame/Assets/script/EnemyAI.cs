@@ -16,6 +16,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     public LayerMask mask;
     public Animator anim;
     public Animator AIAnim;
+    public SyncAnim syncAnim;
 
     //parameter
     public float moveSpeed = 4f;
@@ -29,6 +30,9 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     public Collider[] atackCol;
     public float attackDamage = 25f;
     public float jumpDelay = 1f;
+
+    //emotionRate
+    public Vector2 attackEmotionRate;
 
     //emotion
     protected float thinkEmotion=50f;
@@ -98,7 +102,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             transform.LookAt(new Vector3(endPos.x, transform.position.y, endPos.z));
             jumpNow = true;
             jumpTimer = 0;
-            anim.SetTrigger("Jump");
+            syncAnim.SetTrigger("Jump");
         }
         jumpTimer += Time.deltaTime;
         if (jumpTimer > jumpDelay)
@@ -112,7 +116,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         {
             nav.CompleteOffMeshLink();
             jumpNow = false;
-            anim.SetTrigger("JumpEnd");
+            syncAnim.SetTrigger("JumpEnd");
         }
     }
 
@@ -200,7 +204,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         nav.Stop();
     }
 
-
+    [Server]
     public void StopSend(float time)
     {
         StartCoroutine(StopOnTime(time));

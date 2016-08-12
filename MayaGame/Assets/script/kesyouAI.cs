@@ -29,31 +29,39 @@ public class kesyouAI : EnemyAI {
             {
                 if (atack)
                 {
-                    attackEmotion += Time.deltaTime * 15f;
+                    attackEmotion += Time.deltaTime * attackEmotionRate.x*0.7f;
                 }
                 else
                 {
-                    attackEmotion += Time.deltaTime * 20f;
+                    attackEmotion += Time.deltaTime * attackEmotionRate.x;
                 } 
             }
             else
             {
                 if (atack)
                 {
-                    attackEmotion -= Time.deltaTime * 30f;
+                    attackEmotion -= Time.deltaTime * attackEmotionRate.y*1.5f;
                 }
                 else
                 {
-                    attackEmotion -= Time.deltaTime * 10f;
+                    attackEmotion -= Time.deltaTime * attackEmotionRate.y;
                 }
             }
             attackEmotion = Mathf.Clamp(attackEmotion, 0, 100);
         }
+
+        if (atack)
+        {
+            transform.rotation = Quaternion.LookRotation(target.position - transform.position);
+            anim.SetBool("move", false);
+        }
+
         AIAnim.SetFloat("atacking", attackEmotion);
     }
 
     public override void Attack()
     {
+        
             Shot();   
 
     }
@@ -64,13 +72,16 @@ public class kesyouAI : EnemyAI {
         nav.Resume();
     }
 
+    [Server]
     public void Shot()
     {
         Quaternion rot = Quaternion.LookRotation(gunPos.position-target.position);
         Quaternion spreadRot = Quaternion.Euler(Random.Range(-spread, spread), Random.Range(-spread, spread), 0);
+        //GameObject bulletObj = (GameObject)Network.Instantiate(bullet, gunPos.position, rot,0);
         GameObject bulletObj = (GameObject)Instantiate(bullet, gunPos.position, rot);
         Rigidbody bulletRigid = bulletObj.GetComponent<Rigidbody>();
         bulletRigid.velocity = spreadRot*(target.position - gunPos.position).normalized*bulletSpeed;
+        NetworkServer.Spawn(bulletObj);
     }
 
     public override void AttackStart(int num)

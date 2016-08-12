@@ -2154,10 +2154,10 @@ GameObject:
   - 114: {fileID: 11482366}
   - 114: {fileID: 11434002}
   - 195: {fileID: 195000010649945732}
-  - 114: {fileID: 114000012548405056}
   - 114: {fileID: 114000010091411762}
   - 114: {fileID: 114000013239549642}
   - 114: {fileID: 114000012410843932}
+  - 114: {fileID: 114000010387181644}
   m_Layer: 2
   m_Name: kessyou
   m_TagString: Untagged
@@ -3653,7 +3653,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.524757, y: -2.2500002, z: 1.5083416}
+  m_LocalPosition: {x: -4.524757, y: -2.2500002, z: -0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -6127,21 +6127,36 @@ MonoBehaviour:
     m_Bits: 0
   anim: {fileID: 9568806}
   AIAnim: {fileID: 95000011451472688}
+  syncAnim: {fileID: 114000013239549642}
   moveSpeed: 6
   defDistance: 10
   target: {fileID: 0}
   atackCol: []
   attackDamage: 25
   jumpDelay: 0.4
+  attackEmotionRate: {x: 30, y: 50}
   dead: 0
   shock: 0
   bullet: {fileID: 1000013905553688, guid: aebeaff805b0c5447920d15c36923f53, type: 2}
-  bulletSpeed: 5
+  bulletSpeed: 50
   spread: 5
   gunPos: {fileID: 4000010452187764}
   eyeMask:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &114000010387181644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a954e1ecc934ebe45a696c948e3ff121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 457190}
+  lerpRate: 15
 --- !u!114 &114000010438874822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6313,33 +6328,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 9568806}
-  m_ParameterSendBits: 956
+  m_ParameterSendBits: 140
   param0: 
   param1: 
   param2: 
   param3: 
   param4: 
   param5: 
---- !u!114 &114000012548405056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114000013239549642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6417,7 +6412,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192460}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.6
   m_Speed: 5
   m_Acceleration: 8
