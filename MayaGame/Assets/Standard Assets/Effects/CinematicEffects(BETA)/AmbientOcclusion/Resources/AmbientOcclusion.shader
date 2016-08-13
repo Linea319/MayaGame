@@ -41,12 +41,6 @@ Shader "Hidden/Image Effects/Cinematic/AmbientOcclusion"
 
     #include "UnityCG.cginc"
 
-    // Source texture type (CameraDepthNormals or G-buffer)
-    #pragma multi_compile _SOURCE_DEPTHNORMALS _SOURCE_GBUFFER
-
-    // Sample count; given-via-uniform (default) or lowest
-    #pragma multi_compile _ _SAMPLECOUNT_LOWEST
-
     #if _SAMPLECOUNT_LOWEST
     static const int _SampleCount = 3;
     #else
@@ -110,7 +104,12 @@ Shader "Hidden/Image Effects/Cinematic/AmbientOcclusion"
     // (returns a very large value if it lies out of bounds)
     float CheckBounds(float2 uv, float d)
     {
-        float ob = any(uv < 0) + any(uv > 1) + (d >= 0.99999);
+        float ob = any(uv < 0) + any(uv > 1);
+    #if defined(UNITY_REVERSED_Z)
+        ob += (d <= 0.00001);
+    #else
+        ob += (d >= 0.99999);
+    #endif
         return ob * 1e8;
     }
 
@@ -328,6 +327,8 @@ Shader "Hidden/Image Effects/Cinematic/AmbientOcclusion"
         return o;
     }
 
+#if !SHADER_API_GLES // excluding the MRT pass under GLES2
+
     struct CombinerOutput
     {
         half4 gbuffer0 : SV_Target0;
@@ -343,6 +344,15 @@ Shader "Hidden/Image Effects/Cinematic/AmbientOcclusion"
         return o;
     }
 
+#else
+
+    fixed4 frag_gbuffer_combine(v2f_img i) : SV_Target0
+    {
+        return 0;
+    }
+
+#endif
+
     ENDCG
 
     SubShader
@@ -351,6 +361,8 @@ Shader "Hidden/Image Effects/Cinematic/AmbientOcclusion"
         {
             ZTest Always Cull Off ZWrite Off
             CGPROGRAM
+            #pragma multi_compile _SOURCE_DEPTHNORMALS _SOURCE_GBUFFER
+            #pragma multi_compile _ _SAMPLECOUNT_LOWEST
             #pragma vertex vert_img
             #pragma fragment frag_ao
             #pragma target 3.0
@@ -360,6 +372,7 @@ Shader "Hidden/Image Effects/Cinematic/AmbientOcclusion"
         {
             ZTest Always Cull Off ZWrite Off
             CGPROGRAM
+            #pragma multi_compile _SOURCE_DEPTHNORMALS _SOURCE_GBUFFER
             #pragma vertex vert_img
             #pragma fragment frag_blur
             #pragma target 3.0

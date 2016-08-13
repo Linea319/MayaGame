@@ -6,6 +6,9 @@ namespace UnityStandardAssets.CinematicEffects
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]
     [AddComponentMenu("Image Effects/Cinematic/Ambient Occlusion")]
+#if UNITY_5_4_OR_NEWER
+    [ImageEffectAllowedInSceneView]
+#endif
     public partial class AmbientOcclusion : MonoBehaviour
     {
         #region Public Properties
@@ -154,6 +157,7 @@ namespace UnityStandardAssets.CinematicEffects
             var th = targetCamera.pixelHeight;
             var format = RenderTextureFormat.R8;
             var rwMode = RenderTextureReadWrite.Linear;
+            var filter = FilterMode.Bilinear;
 
             if (downsampling)
             {
@@ -164,7 +168,7 @@ namespace UnityStandardAssets.CinematicEffects
             // AO buffer
             var m = aoMaterial;
             var rtMask = Shader.PropertyToID("_OcclusionTexture");
-            cb.GetTemporaryRT(rtMask, tw, th, 0, FilterMode.Bilinear, format, rwMode);
+            cb.GetTemporaryRT(rtMask, tw, th, 0, filter, format, rwMode);
 
             // AO estimation
             cb.Blit((Texture)null, rtMask, m, 0);
@@ -173,19 +177,20 @@ namespace UnityStandardAssets.CinematicEffects
             {
                 // Blur buffer
                 var rtBlur = Shader.PropertyToID("_OcclusionBlurTexture");
-                cb.GetTemporaryRT(rtBlur, tw, th, 0, FilterMode.Bilinear, format, rwMode);
 
                 // Blur iterations
                 for (var i = 0; i < blurIterations; i++)
                 {
+                    cb.GetTemporaryRT(rtBlur, tw, th, 0, filter, format, rwMode);
                     cb.SetGlobalVector("_BlurVector", Vector2.right);
                     cb.Blit(rtMask, rtBlur, m, 1);
+                    cb.ReleaseTemporaryRT(rtMask);
 
+                    cb.GetTemporaryRT(rtMask, tw, th, 0, filter, format, rwMode);
                     cb.SetGlobalVector("_BlurVector", Vector2.up);
                     cb.Blit(rtBlur, rtMask, m, 1);
+                    cb.ReleaseTemporaryRT(rtBlur);
                 }
-
-                cb.ReleaseTemporaryRT(rtBlur);
             }
 
             // Combine AO to the G-buffer.
@@ -230,9 +235,11 @@ namespace UnityStandardAssets.CinematicEffects
                 {
                     m.SetVector("_BlurVector", Vector2.right);
                     Graphics.Blit(rtMask, rtBlur, m, 1);
+                    rtMask.DiscardContents();
 
                     m.SetVector("_BlurVector", Vector2.up);
                     Graphics.Blit(rtBlur, rtMask, m, 1);
+                    rtBlur.DiscardContents();
                 }
 
                 RenderTexture.ReleaseTemporary(rtBlur);
