@@ -190,7 +190,6 @@
     <Compile Include="Assets\script\behavior\BlockerInOut.cs" />
     <Compile Include="Assets\script\behavior\ChangePosition.cs" />
     <Compile Include="Assets\script\behavior\Chase.cs" />
-    <Compile Include="Assets\script\behavior\TargetSelect.cs" />
     <Compile Include="Assets\script\behavior\decideParameter.cs" />
     <Compile Include="Assets\script\behavior\move.cs" />
     <Compile Include="Assets\script\canvasCamera.cs" />

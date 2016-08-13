@@ -26,7 +26,6 @@ public class HitManagerDef : MonoBehaviour {
     public float colSize;
     bool death;
     [HideInInspector]public float maxHitPoint;
-    [HideInInspector]public float lastDamage;
 
     // Use this for initialization
     void Start()
@@ -101,7 +100,6 @@ public class HitManagerDef : MonoBehaviour {
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
-        lastDamage = damage;
         Debug.Log("col:" + name + " damage:" + damage + " penetrate:" + penetrateNum * 1000f * pointRate);
 
         EnemyAI ai = transform.root.GetComponent<EnemyAI>();

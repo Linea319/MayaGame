@@ -4565,7 +4565,7 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
+  yoroke: 0
   speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
@@ -4595,8 +4595,8 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
-  speedDebufRate: 0.9
+  yoroke: 0
+  speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
@@ -4625,8 +4625,8 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
-  speedDebufRate: 0.9
+  yoroke: 0
+  speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
@@ -4696,7 +4696,7 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
+  yoroke: 0
   speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
@@ -4726,9 +4726,9 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
+  yoroke: 0
   speedDebufRate: 1
-  damageDebufRate: 0.9
+  damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -4788,7 +4788,7 @@ MonoBehaviour:
   DestroyObj: {fileID: 0}
   yoroke: 0
   speedDebufRate: 1
-  damageDebufRate: 0.8
+  damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -4816,9 +4816,9 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
+  yoroke: 0
   speedDebufRate: 1
-  damageDebufRate: 0.9
+  damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -4846,7 +4846,7 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
+  yoroke: 0
   speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
@@ -4876,8 +4876,8 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
-  speedDebufRate: 0.9
+  yoroke: 0
+  speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
@@ -4906,8 +4906,8 @@ MonoBehaviour:
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 1
-  speedDebufRate: 0.9
+  yoroke: 0
+  speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
@@ -4970,7 +4970,7 @@ MonoBehaviour:
   DestroyObj: {fileID: 0}
   yoroke: 0
   speedDebufRate: 1
-  damageDebufRate: 0.8
+  damageDebufRate: 1
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}

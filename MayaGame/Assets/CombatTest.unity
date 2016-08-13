@@ -31,7 +31,7 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 112000013, guid: 1daee6b46a9c91944aa6453c0932d9de,
+  m_LightingDataAsset: {fileID: 112000001, guid: 4f19c246b36ad794c8a324c564e30339,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -1254,22 +1254,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11427060, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
-      propertyPath: yorokePatern
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477176, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
-      propertyPath: yorokePatern
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11478196, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
-      propertyPath: yorokePatern
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11420430, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
-      propertyPath: yorokePatern
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
   m_IsPrefabParent: 0
@@ -1916,67 +1900,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 466208, guid: fb17055d05b33d343ba33601c5d7ab16, type: 2}
   m_PrefabInternal: {fileID: 1812424401}
---- !u!1 &1053999475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1053999477}
-  - 215: {fileID: 1053999476}
-  m_Layer: 0
-  m_Name: Reflection Probe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!215 &1053999476
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1053999475}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 1
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 100, y: 10, z: 100}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
---- !u!4 &1053999477
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1053999475}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1.6, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
 --- !u!1 &1070682949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4562,7 +4485,6 @@ GameObject:
   - 124: {fileID: 1935096350}
   - 92: {fileID: 1935096349}
   - 81: {fileID: 1935096348}
-  - 114: {fileID: 1935096353}
   - 114: {fileID: 1935096355}
   - 114: {fileID: 1935096354}
   m_Layer: 0
@@ -4634,57 +4556,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935096347}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.467415, y: -0.6, z: -5.6535873}
+  m_LocalPosition: {x: 5.467415, y: 6.9806356, z: -5.6535873}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1512402121}
   m_Father: {fileID: 0}
   m_RootOrder: 8
---- !u!114 &1935096353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1935096347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da3ff4a1bef2e8d47a1dfb734aa54de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings:
-    basicSettings:
-      reflectionMultiplier: 1
-      maxDistance: 100
-      fadeDistance: 100
-      screenEdgeFading: 0.03
-      enableHDR: 1
-      additiveReflection: 0
-    reflectionSettings:
-      maxSteps: 128
-      rayStepSize: 3
-      widthModifier: 0.5
-      smoothFallbackThreshold: 0.2
-      smoothFallbackDistance: 0.05
-      fresnelFade: 0.2
-      fresnelFadePower: 2
-      distanceBlur: 1
-    advancedSettings:
-      temporalFilterStrength: 0.7
-      useTemporalConfidence: 1
-      traceBehindObjects: 1
-      highQualitySharpReflections: 1
-      traceEverywhere: 1
-      treatBackfaceHitAsMiss: 0
-      allowBackwardsRays: 0
-      improveCorners: 1
-      resolution: 1
-      bilateralUpsample: 1
-      reduceBanding: 1
-      highlightSuppression: 0
-    debugSettings:
-      debugMode: 0
-  m_Shader: {fileID: 4800000, guid: 7e2fcc83af19e744787647ec0ac5d42c, type: 3}
 --- !u!114 &1935096354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4698,15 +4576,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualizeFocus: 0
   focalLength: 8
-  focalSize: 2
-  aperture: 2.5
+  focalSize: 1
+  aperture: 3
   focalTransform: {fileID: 1512402121}
   maxBlurSize: 2
   highResolution: 0
   blurType: 1
   blurSampleCount: 2
   nearBlur: 0
-  foregroundOverlap: 2
+  foregroundOverlap: 1
   dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
   dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
   dx11BokehThreshold: 0.5

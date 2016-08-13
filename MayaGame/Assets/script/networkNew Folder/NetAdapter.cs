@@ -51,10 +51,4 @@ public class NetAdapter : NetworkBehaviour {
             crackObjs[objName].SetHP(hp);
         }
     }
-
-    [ServerCallback]
-    public void SetHate(Transform target ,float hateNum)
-    {
-        GetComponent<EnemyAI>().SetHate(target,hateNum);
-    }
 }

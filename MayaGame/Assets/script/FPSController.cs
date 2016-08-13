@@ -469,13 +469,12 @@ public class FPSController : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdSendHP(string uniqueID,string objName, float HP,float hateNum)
+    public void CmdSendHP(string uniqueID,string objName, float HP)
     {
         GameObject target = GameObject.Find(uniqueID);
         NetAdapter targetAdapter = target.GetComponent<NetAdapter>();
         if(targetAdapter != null ){
             targetAdapter.RpcSetHP(objName, HP);
-            targetAdapter.SetHate(transform, hateNum);
         }
     }
 

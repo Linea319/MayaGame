@@ -20,10 +20,5 @@ public class Enemy_bullet : NetworkBehaviour {
         }
 	}
 
-    [ServerCallback]
-    void OnTriggerEnter(Collider col)
-    {
-        NetworkServer.Destroy(gameObject);
-    }
 
 }

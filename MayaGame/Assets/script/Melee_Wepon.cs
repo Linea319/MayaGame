@@ -267,7 +267,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
                 {
                     Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
 
-                    FPSCon.CmdSendHP(hitM.transform.root.name, hitM.name, hitM.hitPoint,hitM.lastDamage);
+                    FPSCon.CmdSendHP(hitM.transform.root.name, hitM.name, hitM.hitPoint);
                     Debug.Log(hitNum+":"+hit.collider.name+":"+ hitM.hitPoint);
                     hitNum++;
                     if (penetratePoint != Vector3.zero)

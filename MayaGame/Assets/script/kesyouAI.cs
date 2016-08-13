@@ -14,10 +14,6 @@ public class kesyouAI : EnemyAI {
     public override void Update()
     {
         base.Update();
-        if (dead || stopAI)
-        {
-            return;
-        }
         if (nav.remainingDistance <= nav.stoppingDistance * 1.1f)
         {
             anim.SetBool("move", false);
