@@ -22,7 +22,7 @@ public class FPS_UI : MonoBehaviour {
     Vector3 pitchDef;
     float pitchLimit;
     Vector3 yawDef;
-    float yawLimit;
+    float yawRate;
 
     // Use this for initialization
     void Start () {
@@ -30,8 +30,8 @@ public class FPS_UI : MonoBehaviour {
         pitchLimit = pitchBar.rectTransform.sizeDelta.y*2f;
         Debug.Log(pitchLimit);
         yawDef = yawBar.rectTransform.localPosition;
-        yawLimit = yawBar.rectTransform.rect.width;
-        Debug.Log(yawLimit);
+        yawRate = yawBar.rectTransform.rect.width/(540f+30f);
+        Debug.Log(yawRate);
     }
 	
 	// Update is called once per frame
@@ -55,7 +55,8 @@ public class FPS_UI : MonoBehaviour {
         {
             yawAngle -= 360;
         }
-        yawBar.rectTransform.localPosition = yawDef + new Vector3(yawLimit/13.3f*yawAngle, 0, 0);
+        yawBar.rectTransform.localPosition = yawDef + new Vector3(yawRate*yawAngle, 0, 0);
+        //13.3f
 
         hpBar.fillAmount = FPSCon.hpMng.hitPoint / FPSCon.hpMng.maxHP;
         armorBar.fillAmount = FPSCon.hpMng.armor / FPSCon.hpMng.maxArmor;

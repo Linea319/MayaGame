@@ -162,21 +162,25 @@ public class Wepon : MonoBehaviour, WeponInterface
             MagReturn();
         }
         Exploder = FindObjectOfType<ExploderObject>();
-        AnimatorOverrideController newAnime = new AnimatorOverrideController();
-        newAnime.runtimeAnimatorController = anim.runtimeAnimatorController;
-        for (int b = 0; b < newAnime.animationClips.Length; b++)
-        /*{
-            Debug.Log(newAnime.animationClips[b].name);
-        }*/
+        Debug.Log("anim:"+anim.isInitialized);
+        AnimatorOverrideController overAnim = new AnimatorOverrideController();
+        /*
+        for (int b = 0; b < anim.runtimeAnimatorController.animationClips.Length; b++)
+        {
+            Debug.Log(anim.runtimeAnimatorController.animationClips[b].name);
+        }
+        */
+        overAnim.runtimeAnimatorController = FPSCon.defAnim;
+
         reloadAnimRate = reloadAnim.length / (parameters["reload"] * 0.01f);
-        // Debug.Log(reloadAnimRate);
         anim.SetFloat("ReloadSpeed", reloadAnimRate);
-        newAnime[anim.runtimeAnimatorController.animationClips[2].name] = idleAnim;
-        newAnime[anim.runtimeAnimatorController.animationClips[3].name] = reloadAnim;
-        newAnime[anim.runtimeAnimatorController.animationClips[4].name] = cockAnim;
-        newAnime[anim.runtimeAnimatorController.animationClips[6].name] = runAnim;
+
+        overAnim[FPSCon.defAnim.animationClips[2].name] = idleAnim;
+        overAnim[FPSCon.defAnim.animationClips[3].name] = reloadAnim;
+        overAnim[FPSCon.defAnim.animationClips[4].name] = cockAnim;
+        overAnim[FPSCon.defAnim.animationClips[6].name] = runAnim;
         // Debug.Log(newAnime.animationClips[1].name);
-        anim.runtimeAnimatorController = newAnime;
+        anim.runtimeAnimatorController = overAnim;
         // Debug.Log(anim.runtimeAnimatorController.animationClips[1].name);
         reload = false;
         SendUI();
@@ -491,7 +495,7 @@ public class Wepon : MonoBehaviour, WeponInterface
                 DamageParameter newDam = dam.multiple(1-penetrateNum*0.4f);
                 Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
                 
-                FPSCon.CmdSendHP(hitM.transform.root.name,hitM.name,hitM.hitPoint);
+                FPSCon.CmdSendHP(hitM.transform.root.name,hitM.name,hitM.hitPoint,hitM.lastDamage);
                 if (penetratePoint != Vector3.zero)
                 {
                     

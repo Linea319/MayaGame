@@ -9,7 +9,11 @@ public class ZakoAI : EnemyAI {
     public override void Update()
     {
         base.Update();
-        if(nav.remainingDistance <= nav.stoppingDistance*1.1f)
+        if (dead || stopAI)
+        {
+            return;
+        }
+        if (nav.remainingDistance <= nav.stoppingDistance*1.1f)
         {
             anim.SetBool("move", false);
         }
@@ -21,19 +25,28 @@ public class ZakoAI : EnemyAI {
 
     public override void Attack()
     {
-        anim.SetTrigger("Attack");
+        syncAnim.SetTrigger("Attack");
     }
 
     public override void AttackStart(int num)
     {
+        
         base.AttackStart(num);
-        nav.Stop();
+        if (isServer)
+        {
+            nav.Stop();
+        }
+        
         //Debug.Log("attack_start");
     }
 
     public override void AttackEnd(int num)
     {
+        
         base.AttackEnd(num);
-        nav.Resume();
+        if (isServer)
+        {
+            nav.Resume();
+        }
     }
 }

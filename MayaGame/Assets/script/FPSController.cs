@@ -64,6 +64,8 @@ public class FPSController : NetworkBehaviour {
     public float stamina;
     [HideInInspector]
     public HitManagerPlayer hpMng;
+    [HideInInspector]
+    public RuntimeAnimatorController defAnim;
     
 
 
@@ -73,21 +75,24 @@ public class FPSController : NetworkBehaviour {
         Debug.Log("start");
         gameObject.name = "Player_" + netId.ToString();
         myCamera = Camera.main;
+        
         if (isLocalPlayer)
         {
             GameObject ui = Instantiate(UIObj);
             UICon = ui.GetComponent<FPS_UI>();
             UICon.FPSCon = this;
-            wepons[0].GetComponent<WeponInterface>().SendUI();
-            wepons[1].GetComponent<WeponInterface>().SendUI();
+            
         }
+
     }
 
     public override void OnStartClient()
     {
+        
         Debug.Log("client");
         
         Debug.Log(useWeponNum);
+        defAnim = anim.runtimeAnimatorController;
         spawnWepon(1);
         spawnWepon(0);
         Initialize();
@@ -96,22 +101,24 @@ public class FPSController : NetworkBehaviour {
     [Client]
     void Initialize()
     {
+        Debug.Log("player_Initialized");
         hpMng = GetComponent<HitManagerPlayer>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         control = GetComponent<CharacterController>();
         if (wepons[0] != null) { 
             useWepon = wepons[useWeponNum].GetComponent<WeponInterface>();
             wepons[useWeponNum].SetActive(true);
             if (useWeponNum > 0)
             {
-                wepons[useWeponNum - 1].SetActive(false);
+                wepons[0].SetActive(false);
             }
             else
             {
-                wepons[wepons.Length-1].SetActive(false);
+                wepons[1].SetActive(false);
             }
         }
         nAnim = this.GetComponent<SyncAnim>();
+       
     }
 	
 	// Update is called once per frame
@@ -410,6 +417,7 @@ public class FPSController : NetworkBehaviour {
         useWeponNum = num;
         RpcChangeWepon( num);
     }
+
     [ClientRpc]
     void RpcChangeWepon(int num)
     {
@@ -461,12 +469,13 @@ public class FPSController : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdSendHP(string uniqueID,string objName, float HP)
+    public void CmdSendHP(string uniqueID,string objName, float HP,float hateNum)
     {
         GameObject target = GameObject.Find(uniqueID);
         NetAdapter targetAdapter = target.GetComponent<NetAdapter>();
         if(targetAdapter != null ){
             targetAdapter.RpcSetHP(objName, HP);
+            targetAdapter.SetHate(transform, hateNum);
         }
     }
 

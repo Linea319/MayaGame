@@ -5,6 +5,7 @@ using System.Collections;
 public interface BehaveInterface
 {
    void Think();
+    void Jump();
 }
 
 
@@ -15,6 +16,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     public LayerMask mask;
     public Animator anim;
     public Animator AIAnim;
+    public SyncAnim syncAnim;
 
     //parameter
     public float moveSpeed = 4f;
@@ -24,22 +26,38 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     float thinkTimer;
     public Transform target;
     Vector3 moveTarget;
-    bool atack;
+    protected bool atack;
     public Collider[] atackCol;
     public float attackDamage = 25f;
+    public float jumpDelay = 1f;
+
+    //emotionRate
+    public Vector2 attackEmotionRate;
 
     //emotion
-    float thinkEmotion=50f;
-    float distanceEmotion=50f;
+    protected float thinkEmotion=50f;
+    protected float distanceEmotion=50f;
+    protected float attackEmotion = 0f;
+
+    //hate
+    protected float hatepool;
+    protected float currentHate;
+    protected Transform hateTarget;
 
     //state 
     [HideInInspector] public bool dead;
+    protected bool stopAI;
     [HideInInspector] public float shock;
+    
+    bool jumpNow;
+    float jumpTimer;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    [ServerCallback]
+    void Start () {
 
         nav = GetComponent<NavMeshAgent>();
+        nav.enabled = true;
         nav.speed = moveSpeed;
         //nav.updatePosition = false;
         //nav.updateRotation = false;
@@ -48,8 +66,13 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     // Update is called once per frame
     [ServerCallback]
     public virtual void Update () {
-        if (dead) return;
+        if (dead || stopAI)
+        {
+            nav.Stop();
+            return;
+        }
 
+        currentHate -= 25 * Time.deltaTime;
         nav.speed = Mathf.Lerp(moveSpeed, 0, shock / 100f);
         shock = Mathf.Lerp(shock, 0, Time.deltaTime*0.5f);
 
@@ -68,8 +91,42 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         {
 
         }
-        
+
+        if (nav.isOnOffMeshLink)
+        {
+            Jump();
+        }
+
 	}
+
+    public void Jump()
+    {
+        OffMeshLinkData data = nav.currentOffMeshLinkData;
+        Vector3 endPos = data.endPos;
+        Vector3 startPos = data.startPos;
+        float height = Mathf.Abs(endPos.y - startPos.y);
+        if (!jumpNow)
+        {
+            transform.LookAt(new Vector3(endPos.x, transform.position.y, endPos.z));
+            jumpNow = true;
+            jumpTimer = 0;
+            syncAnim.SetTrigger("Jump");
+        }
+        jumpTimer += Time.deltaTime;
+        if (jumpTimer > jumpDelay)
+        {
+            transform.position = Vector3.Lerp(startPos, endPos, jumpTimer - jumpDelay) + new Vector3(0, Mathf.Sin((jumpTimer - jumpDelay) * Mathf.PI) * height, 0);
+        }
+            
+        //transform.position.y = Mathf.Sin((jumpTimer - 1) * Mathf.PI);
+        //Debug.Log(Mathf.Sin((jumpTimer - 1) * Mathf.PI));
+        if ((transform.position - endPos).sqrMagnitude < 0.5) 
+        {
+            nav.CompleteOffMeshLink();
+            jumpNow = false;
+            syncAnim.SetTrigger("JumpEnd");
+        }
+    }
 
     public virtual void Think()
     {
@@ -96,7 +153,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             
         }
         nav.SetDestination(moveTarget);
-        thinkTimer = Time.time + thinkRate;
+        //thinkTimer = Time.time + thinkRate;
     }
 
     public virtual void Attack()
@@ -120,6 +177,29 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
                 }
             }
         }
+    }
+
+    public void searchTargetFar()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        if (players.Length > 0)
+        {
+            float distance = 0;
+            for (int i = 0; i < players.Length; i++)
+            {
+                float cDis = (transform.position - players[i].transform.position).sqrMagnitude;
+                if (distance < cDis)
+                {
+                    target = players[i].transform;
+                    distance = cDis;
+                }
+            }
+        }
+    }
+
+    public void searchTargetHate()
+    {
+        target = hateTarget;
     }
 
     public virtual void AttackStart(int num)
@@ -155,21 +235,42 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         nav.Stop();
     }
 
-
+    [Server]
     public void StopSend(float time)
     {
         StartCoroutine(StopOnTime(time));
     }
 
+    [Server]
      IEnumerator StopOnTime(float time)
     {
         Debug.Log("Yoroke");
+        stopAI = true;
         nav.Stop();
+        attackEmotion = 0f;
         yield return new WaitForSeconds(time);
         Debug.Log("ReturnYoroke");
+        stopAI = false;
         nav.Resume();
         //AIAnim.SetTrigger("start");
         //thinkTimer = Time.time + thinkRate;
         
     } 
+
+    public virtual void SetHate(Transform target,float hate)
+    {
+        if (target != hateTarget)
+        {
+            hatepool += hate;
+            if (hatepool > currentHate)
+            {
+                currentHate = hatepool;
+                hateTarget = target;
+            }
+        }
+        else
+        {
+            currentHate += hate;
+         }
+    }
 }
