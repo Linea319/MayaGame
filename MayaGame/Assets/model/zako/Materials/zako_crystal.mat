@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: zako_crystal
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
+  m_Shader: {fileID: 4800000, guid: b8d229c7d8b299d42be8a88aa90a604f, type: 3}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: 3000
   stringTagMap:
@@ -55,7 +55,7 @@ Material:
     - first:
         name: _MetallicGlossMap
       second:
-        m_Texture: {fileID: 2800000, guid: d43c82ecd536e914bb8e393a0266c32d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -70,16 +70,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _SpecGlossMap
-      second:
-        m_Texture: {fileID: 2800000, guid: d43c82ecd536e914bb8e393a0266c32d, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _BumpScale
-      second: 1
+      second: 2
     - first:
         name: _Cutoff
       second: 0.5
@@ -90,17 +84,11 @@ Material:
         name: _DstBlend
       second: 10
     - first:
-        name: _GlossMapScale
-      second: 1
-    - first:
         name: _Glossiness
-      second: 0.719
-    - first:
-        name: _GlossyReflections
-      second: 1
+      second: 0.4
     - first:
         name: _Metallic
-      second: 0.935
+      second: 0.2
     - first:
         name: _Mode
       second: 3
@@ -110,12 +98,6 @@ Material:
     - first:
         name: _Parallax
       second: 0.02
-    - first:
-        name: _SmoothnessTextureChannel
-      second: 0
-    - first:
-        name: _SpecularHighlights
-      second: 1
     - first:
         name: _SrcBlend
       second: 1
@@ -128,10 +110,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 0.49019608}
+      second: {r: 1, g: 1, b: 1, a: 0.784}
     - first:
         name: _EmissionColor
-      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - first:
-        name: _SpecColor
       second: {r: 0.2, g: 0.2, b: 0.2, a: 1}

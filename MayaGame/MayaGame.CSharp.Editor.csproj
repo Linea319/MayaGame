@@ -91,6 +91,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Ionic.Zip.Unity">
+      <HintPath>Assets\Editor\ImageEffectFetcher\Lib\Ionic.Zip.Unity.dll</HintPath>
+    </Reference>
     <Reference Include="P2T">
       <HintPath>Assets\Exploder\Exploder\3rd\P2T.dll</HintPath>
     </Reference>
@@ -99,9 +102,6 @@
     </Reference>
     <Reference Include="PlayMaker">
       <HintPath>Assets\Plugins\PlayMaker\PlayMaker.dll</HintPath>
-    </Reference>
-    <Reference Include="Ionic.Zip.Unity">
-      <HintPath>Assets\Editor\ImageEffectFetcher\Lib\Ionic.Zip.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-UnityScript">
       <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
@@ -157,6 +157,7 @@
     <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Editor\ImageEffectFetcher\Lib\Ionic.Zip.Unity.XML" />
     <None Include="Assets\Exploder\Demo\Shaders\VertexColor.shader" />
     <None Include="Assets\Exploder\Demo\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
     <None Include="Assets\Exploder\Exploder\3rd\P2T.txt" />
