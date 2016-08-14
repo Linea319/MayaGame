@@ -32,7 +32,7 @@ public class HitManagerPlayer :MonoBehaviour{
 
     public void HitDamage(float damage)
     {
-        Debug.Log("hit:"+damage);
+        //Debug.Log("hit:"+damage);
         if (armor <= damage)
         {
             hitPoint -= (damage - armor);

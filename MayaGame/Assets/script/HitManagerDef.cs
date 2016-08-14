@@ -112,6 +112,7 @@ public class HitManagerDef : MonoBehaviour {
 
     public virtual void SetHP(float hp)
     {
+        lastDamage = hitPoint-hp;
         hitPoint = hp;
     }
 

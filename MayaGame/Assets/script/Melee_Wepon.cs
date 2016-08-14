@@ -10,12 +10,14 @@ public class MeleeParameter : System.Object
     public float chargeDamageRaate = 3f;
     public float useStamina;
     public float mobility = 0;
+    public float range = 3.5f;
     
 }
 
 public class Melee_Wepon : MonoBehaviour, WeponInterface {
 
     Camera myCamera;
+    public bool RayHit;
     [HideInInspector]
     public Animator anim;
     public Animator weponAnim;
@@ -90,7 +92,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
         }
         Exploder = FindObjectOfType<ExploderObject>();
         AnimatorOverrideController newAnime = new AnimatorOverrideController();
-        newAnime.runtimeAnimatorController = anim.runtimeAnimatorController;
+        newAnime.runtimeAnimatorController = FPSCon.defAnim;
         /* for (int b = 0; b < newAnime.animationClips.Length; b++)
          {
              Debug.Log(newAnime.animationClips[b].name);
@@ -161,7 +163,16 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
         sear = false;
         attackNow = true;
         canHit = true;
-        WeponCollieder.enabled = true;
+            if (RayHit)
+            {
+                Ray wepRay = new Ray(myCamera.transform.position, myCamera.transform.forward);
+                MeleeRay(wepRay,pa.range,0);
+            }
+            else
+            {
+                WeponCollieder.enabled = true;
+            }
+        
         hitNum = 0;
             FPSCon.stamina -= pa.useStamina;
         }
@@ -287,6 +298,48 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
             }
 
 
+        }
+    }
+
+    public void MeleeRay(Ray ray, float rayRange, int penetrateNum)
+    {
+        RaycastHit hit;
+        LayerMask mask = ~(1 << 2 | 1 << 8);
+        if (Physics.SphereCast(ray.origin,0.1f,ray.direction, out hit, rayRange, wepMask) && penetrateNum < 3)
+        {
+            //Debug.Log(hit.transform.name);
+
+            Vector3 fracVec = hit.point;
+            HitManagerDef hitM = hit.transform.GetComponent<HitManagerDef>();
+            if (hitM != null)
+            {
+                GameObject efect = Instantiate<GameObject>(effecter.ReturnEffect(hitM.effectType));
+                efect.transform.position = hit.point;
+                efect.transform.LookAt(efect.transform.position + hit.normal);
+                efect.transform.parent = hit.transform;
+
+                float chargeRate = chargeTimer / pa.chargeTime;
+                chargeRate = Mathf.Clamp01(chargeRate);
+                DamageParameter newDam = dam.multiple((1f - 0.2f * hitNum) * (pa.chargeDamageRaate * chargeRate));
+                Ray hitRay = new Ray(ray.origin, hit.point - ray.origin);
+                Vector3 penetratePoint = hitM.HitDamage(newDam, hit, hitRay);
+
+                FPSCon.CmdSendHP(hitM.transform.root.name, hitM.name, hitM.hitPoint, hitM.lastDamage);
+                if (penetratePoint != Vector3.zero)
+                {
+
+                    Ray newRay = new Ray(hit.point - ray.direction*0.1f, ray.direction);
+                    MeleeRay(newRay, rayRange, ++penetrateNum);
+                }
+            }
+            else
+            {
+                GameObject efect = Instantiate<GameObject>(effecter.ReturnEffect(EffectType.misc));
+                efect.transform.position = hit.point;
+                efect.transform.LookAt(efect.transform.position + hit.normal);
+                efect.transform.parent = hit.transform;
+
+            }
         }
     }
 }

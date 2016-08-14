@@ -13,7 +13,7 @@ public class AttackCall : MonoBehaviour {
 
 	 void OnTriggerEnter(Collider col)
     {
-        Debug.Log(col.name);
+        //Debug.Log(col.name);
         Instantiate(effect, transform.position, Quaternion.identity);
         if (col.CompareTag("Player"))
         {

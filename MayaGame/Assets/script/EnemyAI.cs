@@ -38,6 +38,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     protected float thinkEmotion=50f;
     protected float distanceEmotion=50f;
     protected float attackEmotion = 0f;
+    protected float retreatEmotion = 0f;
 
     //hate
     protected float hatepool;
@@ -48,6 +49,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     [HideInInspector] public bool dead;
     protected bool stopAI;
     [HideInInspector] public float shock;
+    protected bool retreat;
     
     bool jumpNow;
     float jumpTimer;
@@ -81,11 +83,12 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             //Think();
             AIAnim.SetTrigger("start");
             thinkTimer = Time.time + thinkRate;
+            retreat = false;
         }
 
         if((moveTarget-transform.position).sqrMagnitude > 1f)
         {
-
+            
         }
         else
         {
@@ -132,28 +135,54 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     {
         if (target == null) SearchTarget();
 
-        Vector3 vec = (transform.position - target.position);
+        Move();
+        //thinkTimer = Time.time + thinkRate;
+    }
+
+    public virtual void Move()
+    {
+        Vector3 vec = (transform.position - target.position).normalized;
         vec.y = 0;
         vec = vec.normalized;
-        float distance = defDistance * (1f - distanceEmotion / 100f) * 2f;
+        float distance = defDistance * (1f - distanceEmotion / 100f);
         Collider[] points = Physics.OverlapSphere(target.position + vec * distance, 10f, mask);
-        Debug.DrawLine(target.position + vec * distance, transform.position,Color.blue,1f);
+        
         int posNum = 0;
-        if (points.Length > 0 ){
-            if(moveTarget == points[posNum].transform.position)
+        if (points.Length > 0)
+        {
+            if (moveTarget == points[posNum].transform.position)
             {
-                posNum = Random.Range(0,points.Length);
+                posNum = Random.Range(0, points.Length);
             }
             moveTarget = points[posNum].transform.position;
-            
+
         }
         else
         {
-            moveTarget = (target.position + vec * distance)+Random.insideUnitSphere*5f;
-            
+            moveTarget = (target.position + vec * distance) + Random.insideUnitSphere * 5f;
+
         }
+        Debug.DrawLine(moveTarget, transform.position, Color.blue, 1f);
         nav.SetDestination(moveTarget);
-        //thinkTimer = Time.time + thinkRate;
+    } 
+
+    public virtual void Retreat()
+    {
+        Vector3 vec = (transform.position - target.position).normalized;
+        vec.y = 0;
+        vec = vec.normalized;
+        float distance = defDistance * (retreatEmotion / 100f) * 0.5f;
+        //Collider[] points = Physics.OverlapSphere(transform.position + vec * distance, 10f, mask); 
+        moveTarget = (transform.position + vec * distance)+ Random.insideUnitSphere * 5f;
+        nav.SetDestination(moveTarget);
+        if (retreatEmotion < 90f)
+        {
+            nav.updateRotation = false;
+        }
+        Debug.DrawLine(moveTarget, transform.position, Color.green, 1.5f);
+        retreatEmotion *= 0.5f;
+        retreat = true;
+        nav.Resume();
     }
 
     public virtual void Attack()
@@ -248,6 +277,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         stopAI = true;
         nav.Stop();
         attackEmotion = 0f;
+        retreatEmotion += 30f;
         yield return new WaitForSeconds(time);
         Debug.Log("ReturnYoroke");
         stopAI = false;

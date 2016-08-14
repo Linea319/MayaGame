@@ -8,6 +8,7 @@ public class kesyouAI : EnemyAI {
     public float spread;
     public Transform gunPos;
     public LayerMask eyeMask;
+    bool canRot;
 
 
     [ServerCallback]
@@ -16,15 +17,29 @@ public class kesyouAI : EnemyAI {
         base.Update();
         if (dead || stopAI)
         {
+            anim.SetBool("move", false);
+            anim.SetBool("back", false);
+            canRot = true;
             return;
         }
         if (nav.remainingDistance <= nav.stoppingDistance * 1.1f)
         {
             anim.SetBool("move", false);
+            anim.SetBool("back", false);
         }
         else
         {
-            anim.SetBool("move", true);
+            if (retreat)
+            {
+                anim.SetBool("back", true);
+              
+            }
+            else
+            {
+                anim.SetBool("move", true);
+                canRot = false;
+            }
+            
         }
 
         if(target != null)
@@ -33,7 +48,7 @@ public class kesyouAI : EnemyAI {
             {
                 if (atack)
                 {
-                    attackEmotion += Time.deltaTime * attackEmotionRate.x*0.7f;
+                    attackEmotion += Time.deltaTime * attackEmotionRate.x*1.5f;
                 }
                 else
                 {
@@ -44,23 +59,38 @@ public class kesyouAI : EnemyAI {
             {
                 if (atack)
                 {
-                    attackEmotion -= Time.deltaTime * attackEmotionRate.y*1.5f;
+                    attackEmotion -= Time.deltaTime * attackEmotionRate.y*0.7f;
                 }
                 else
                 {
                     attackEmotion -= Time.deltaTime * attackEmotionRate.y;
                 }
             }
-            attackEmotion = Mathf.Clamp(attackEmotion, 0, 100);
+            
         }
 
-        if (atack)
+        if (atack || retreat)
         {
-            transform.rotation = Quaternion.LookRotation(target.position - transform.position);
             anim.SetBool("move", false);
+            canRot = true;
+            //anim.SetBool("back", false);
         }
+
+        if (canRot)
+        {
+            Vector3 tarVec = target.position - transform.position;
+            tarVec.y = 0f;
+            Quaternion newRot = Quaternion.LookRotation(tarVec, Vector3.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * 6);
+        }
+
+        //emotion
+        attackEmotion = Mathf.Clamp(attackEmotion, 0, 100);
+        retreatEmotion -= 5 * Time.deltaTime;
+        retreatEmotion = Mathf.Clamp(retreatEmotion, 0, 100);
 
         AIAnim.SetFloat("atacking", attackEmotion);
+        AIAnim.SetFloat("retreate", retreatEmotion);
     }
 
     public override void Attack()
@@ -72,7 +102,14 @@ public class kesyouAI : EnemyAI {
 
     public override void Think()
     {
-        base.Think();
+        if (retreatEmotion > 70f)
+        {
+            Retreat();
+        }
+        else
+        {
+            base.Think();
+        }
         nav.Resume();
     }
 
@@ -109,5 +146,13 @@ public class kesyouAI : EnemyAI {
             nav.Resume();
         }
         atack = false;
+    }
+
+    public override void SetHate(Transform target, float hate)
+    {
+        base.SetHate(target, hate);
+        retreatEmotion += hate*0.05f;
+        //Debug.Log("hate:"+hate);
+        
     }
 }

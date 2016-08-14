@@ -4577,6 +4577,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!114 &11420430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4607,6 +4609,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 1
 --- !u!114 &11427060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4637,6 +4641,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 1
 --- !u!114 &11434002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4678,6 +4684,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!114 &11436596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4708,6 +4716,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!114 &11438684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4738,6 +4748,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!114 &11439962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4768,6 +4780,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!114 &11447502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4798,6 +4812,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!114 &11473798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4828,6 +4844,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!114 &11474862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4858,6 +4876,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!114 &11477176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4888,6 +4908,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 1
 --- !u!114 &11478196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4918,6 +4940,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 1
 --- !u!114 &11482366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4980,6 +5004,8 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
+  yorokePatern: 0
 --- !u!137 &13703320
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -6129,7 +6155,7 @@ MonoBehaviour:
   AIAnim: {fileID: 95000011451472688}
   syncAnim: {fileID: 114000013239549642}
   moveSpeed: 6
-  defDistance: 10
+  defDistance: 15
   target: {fileID: 0}
   atackCol: []
   attackDamage: 25
@@ -6198,6 +6224,7 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
 --- !u!114 &114000010518330750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6250,6 +6277,7 @@ MonoBehaviour:
   mesh: {fileID: 0}
   colSize: 0
   maxHitPoint: 0
+  lastDamage: 0
 --- !u!114 &114000011074238558
 MonoBehaviour:
   m_ObjectHideFlags: 1

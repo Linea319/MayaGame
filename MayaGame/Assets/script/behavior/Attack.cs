@@ -5,7 +5,7 @@ public class Attack : StateMachineBehaviour
 {
     public bool attackStart;
     public bool attackEnd;
-    public int attackNum;
+    public Vector2 attackNum;
     public float attackDelay;
     float timer;
     int cAttacknum;
@@ -24,7 +24,8 @@ public class Attack : StateMachineBehaviour
         }
         animator.transform.root.GetComponent<EnemyAI>().Attack();
         timer = Time.time+attackDelay;
-        cAttacknum = attackNum;
+        cAttacknum = (int)Random.Range(attackNum.x,attackNum.y);
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -78,13 +78,14 @@ public class HitManeger : HitManagerDef {
     {
         
         float pointRate = (1f - Vector3.Distance(mesh.bounds.center, hitInfo.point) / sizeMagnitude)*1.5f;
-        Debug.DrawLine(mesh.bounds.center, ray.origin,Color.red,1f);
+        Debug.DrawLine(hitInfo.point, ray.origin,Color.red,1f);
         pointRate = Mathf.Clamp01(pointRate);
         //Debug.Log(pointRate);
         float damage = damages.shock / armor.shockResist*pointRate;
-        Ray returnRay = new Ray(ray.GetPoint(hitInfo.distance*2f+colSize), -ray.direction);
+        Ray returnRay = new Ray(ray.GetPoint((hitInfo.distance+colSize) * 2f), -ray.direction);
         RaycastHit returnHit;
-        hitInfo.collider.Raycast(returnRay, out returnHit, hitInfo.distance+colSize);
+        hitInfo.collider.Raycast(returnRay, out returnHit, (hitInfo.distance+colSize)*4f);
+        Debug.DrawLine(returnHit.point, returnRay.origin, Color.yellow, 1f);
         float penetrateLength = Vector3.Distance(hitInfo.point,returnHit.point);
         float penetrateNum = damages.penetration*0.001f - penetrateLength * armor.armorResist;
         //Debug.Log("armorLength:"+penetrateLength+",penetrate:"+penetrateNum);
@@ -97,7 +98,8 @@ public class HitManeger : HitManagerDef {
             rePoint = returnHit.point;
         }
         hitPoint -= damage;
-        //Debug.Log("col:" + name + " damage:" + damage + " penetrate:"+ pointRate);
+        lastDamage = damage;
+        Debug.Log("col:" + name + " damage:" + damage + " penetrate:"+ penetrateNum);
 
         EnemyAI ai = transform.root.GetComponent<EnemyAI>();
         ai.shock += damages.shock / armor.shockResist * 0.06f;
