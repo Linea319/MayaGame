@@ -2158,6 +2158,7 @@ GameObject:
   - 114: {fileID: 114000013239549642}
   - 114: {fileID: 114000012410843932}
   - 114: {fileID: 114000010387181644}
+  - 114: {fileID: 114000012985183398}
   m_Layer: 2
   m_Name: kessyou
   m_TagString: Untagged
@@ -5857,7 +5858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000013304885612
 GameObject:
   m_ObjectHideFlags: 1
@@ -6153,7 +6154,7 @@ MonoBehaviour:
     m_Bits: 0
   anim: {fileID: 9568806}
   AIAnim: {fileID: 95000011451472688}
-  syncAnim: {fileID: 114000013239549642}
+  syncAnim: {fileID: 0}
   moveSpeed: 6
   defDistance: 15
   target: {fileID: 0}
@@ -6163,10 +6164,10 @@ MonoBehaviour:
   attackEmotionRate: {x: 30, y: 50}
   dead: 0
   shock: 0
-  bullet: {fileID: 1000013905553688, guid: aebeaff805b0c5447920d15c36923f53, type: 2}
+  bullet: {fileID: 1950959481, guid: aebeaff805b0c5447920d15c36923f53, type: 2}
   bulletSpeed: 50
   spread: 5
-  gunPos: {fileID: 4000010452187764}
+  gunPos: {fileID: 4096}
   eyeMask:
     serializedVersion: 2
     m_Bits: 1
@@ -6363,6 +6364,22 @@ MonoBehaviour:
   param3: 
   param4: 
   param5: 
+--- !u!114 &114000012985183398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b84d327516c751418e59cab538b6064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messagaeText: Press F:Repair
+  useProgress: 1
+  progressTime: 2
+  compMethhod: 
+  progress: 0
 --- !u!114 &114000013239549642
 MonoBehaviour:
   m_ObjectHideFlags: 1

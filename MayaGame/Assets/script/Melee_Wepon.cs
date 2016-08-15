@@ -305,7 +305,7 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
     {
         RaycastHit hit;
         LayerMask mask = ~(1 << 2 | 1 << 8);
-        if (Physics.SphereCast(ray.origin,0.1f,ray.direction, out hit, rayRange, wepMask) && penetrateNum < 3)
+        if (Physics.SphereCast(ray.origin,0.1f,ray.direction, out hit, rayRange, wepMask) && penetrateNum < 4)
         {
             //Debug.Log(hit.transform.name);
 

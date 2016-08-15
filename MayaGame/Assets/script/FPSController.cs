@@ -66,7 +66,10 @@ public class FPSController : NetworkBehaviour {
     public HitManagerPlayer hpMng;
     [HideInInspector]
     public RuntimeAnimatorController defAnim;
-    
+    public UIMessenger otherPlayer;
+
+    //state
+    public bool dead;
 
 
     // Use this for initialization
@@ -81,7 +84,9 @@ public class FPSController : NetworkBehaviour {
             GameObject ui = Instantiate(UIObj);
             UICon = ui.GetComponent<FPS_UI>();
             UICon.FPSCon = this;
-            
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Confined;
+
         }
 
     }
@@ -138,6 +143,11 @@ public class FPSController : NetworkBehaviour {
         }
          
             if (Pause.pause) return;
+        if (dead)
+        {
+            deathUpdate();
+            return;
+        }
 		yVec += -9.8f*Time.deltaTime;
 		if(control.isGrounded){//ground
 			if(!run){
@@ -314,6 +324,32 @@ public class FPSController : NetworkBehaviour {
             reload = false;
         }
 
+        if (otherPlayer != null)
+        {
+           
+            if (Input.GetButtonDown("Action"))
+            {
+
+                otherPlayer.SetProgress(true);
+            }
+            if (Input.GetButtonUp("Action"))
+            {
+                otherPlayer.SetProgress(false);
+            }
+          bool distOther = (otherPlayer.transform.position - transform.position).sqrMagnitude < 25;
+            if (!distOther)
+            { 
+                otherPlayer.SetProgress(false);
+                UICon.SetMessageText(null);
+                otherPlayer = null;
+            }
+           
+        }
+        else
+        {
+            UICon.SetMessageText(null);
+        }
+
         //anim.SetBool("air",!control.isGrounded);
         control.Move(moveVec*Time.deltaTime);
         stamina += staminaRegene * Time.deltaTime;
@@ -338,6 +374,42 @@ public class FPSController : NetworkBehaviour {
         shakeVec = Vector3.Lerp(shakeVec, Vector3.zero,camShakeReturn * Time.deltaTime);
 
 	}
+
+    void deathUpdate()
+    {
+        yVec += -9.8f * Time.deltaTime;
+        moveVec = new Vector3(0, yVec, 0);
+        control.Move(moveVec * Time.deltaTime);
+        stamina += staminaRegene * Time.deltaTime;
+        stamina = Mathf.Clamp(stamina, 0, 100);
+
+        mouseVec += new Vector3(Input.GetAxisRaw("Mouse Y") * -1, Input.GetAxisRaw("Mouse X"), 0) * mouseSensi;
+        mouseVec = new Vector3(Mathf.Clamp(mouseVec.x, -89, 80), mouseVec.y, mouseVec.z);
+        //chara.transform.localEulerAngles = new Vector3(mouseVec.x,0,0);
+        float xVec = Input.GetAxisRaw("Mouse Y");
+        float nowX = chara.transform.localEulerAngles.x + xVec * -1 * mouseSensi * 1.1f;
+        if (nowX < 271 && nowX > 180)
+        {
+            xVec = Mathf.Clamp(xVec, -1, 0) + recoilVec.x * Time.deltaTime * 100f;
+        }
+        if (nowX > 89 && nowX < 180)
+        {
+            xVec = Mathf.Clamp(xVec, 0, 1);
+        }
+        chara.transform.RotateAround(chara.transform.position, chara.transform.right, (xVec - recoilVec.x * Time.deltaTime * 100f) * -1 * mouseSensi);
+
+        transform.eulerAngles = new Vector3(0, mouseVec.y, 0);
+        shakeVec = Vector3.Lerp(shakeVec, Vector3.zero, camShakeReturn * Time.deltaTime);
+        useWepon.ReturnPrimaly();
+        
+        run = false;
+        changeNow = false;
+        reload = false;
+        ADS = false;
+
+        anim.SetBool("crouch", true);
+        anim.SetBool("Run", false);
+    }
 
     void LateUpdate()
     {
@@ -479,6 +551,21 @@ public class FPSController : NetworkBehaviour {
         }
     }
 
+    [Command]
+    public void CmdPlayerDeath()
+    {
+        RpcPlayerDeath();
+    }
+
+    [ClientRpc]
+    public void RpcPlayerDeath()
+    {
+        if (!isLocalPlayer)
+        {
+            hpMng.Death();
+        }
+    }
+
     void SendAnimMove()
     {
 
@@ -488,5 +575,15 @@ public class FPSController : NetworkBehaviour {
     }
 
     
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (!isLocalPlayer) return;
+        UIMessenger messe = hit.transform.GetComponent<UIMessenger>();
+        if (messe == null || !messe.enabled) return;
+        otherPlayer = messe;
+        UICon.SetMessageText(otherPlayer);
+    }
 
-}
+
+
+    }

@@ -9,6 +9,9 @@ public class FPS_UI : MonoBehaviour {
     public Text secondalyText;
     public Text grenadeText;
     public Text specialText;
+    public GameObject message;
+    public Text MessageText;
+    public Image MessageProgress;
     public Image crossHair;
     public Image throttle;
     public Image pitchBar;
@@ -23,6 +26,7 @@ public class FPS_UI : MonoBehaviour {
     float pitchLimit;
     Vector3 yawDef;
     float yawRate;
+    UIMessenger messager;
 
     // Use this for initialization
     void Start () {
@@ -55,6 +59,18 @@ public class FPS_UI : MonoBehaviour {
         {
             yawAngle -= 360;
         }
+
+        if(messager != null)
+        {
+            MessageText.text = messager.messagaeText;
+            MessageProgress.fillAmount = messager.progress/ messager.progressTime;
+        }
+        else
+        {
+            MessageText.text = null;
+            MessageProgress.fillAmount = 0;
+        }
+
         yawBar.rectTransform.localPosition = yawDef + new Vector3(yawRate*yawAngle, 0, 0);
         //13.3f
 
@@ -80,5 +96,11 @@ public class FPS_UI : MonoBehaviour {
                 specialText.text =  name + " " + mag + " / " + total;
                 break;
         }
+    }
+
+    public void SetMessageText(UIMessenger messageTarget)
+    {
+        messager = messageTarget;
+        
     }
 }

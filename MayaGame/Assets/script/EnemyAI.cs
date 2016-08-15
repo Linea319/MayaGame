@@ -46,7 +46,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     protected Transform hateTarget;
 
     //state 
-    [HideInInspector] public bool dead;
+    [SyncVar][HideInInspector] public bool dead;
     protected bool stopAI;
     [HideInInspector] public float shock;
     protected bool retreat;
@@ -133,7 +133,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     public virtual void Think()
     {
-        if (target == null) SearchTarget();
+        if (target == null || target.GetComponent<HitManagerPlayer>().hitPoint<=0) SearchTarget();
 
         Move();
         //thinkTimer = Time.time + thinkRate;
@@ -199,7 +199,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             for(int i = 0; i < players.Length; i++)
             {
                 float cDis = (transform.position - players[i].transform.position).sqrMagnitude;
-                if (distance > cDis)
+                if (distance > cDis && players[i].GetComponent<HitManagerPlayer>().hitPoint >0)
                 {
                     target = players[i].transform;
                     distance = cDis;
@@ -217,7 +217,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             for (int i = 0; i < players.Length; i++)
             {
                 float cDis = (transform.position - players[i].transform.position).sqrMagnitude;
-                if (distance < cDis)
+                if (distance < cDis && players[i].GetComponent<HitManagerPlayer>().hitPoint > 0)
                 {
                     target = players[i].transform;
                     distance = cDis;
@@ -228,6 +228,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     public void searchTargetHate()
     {
+        if(hateTarget.GetComponent<HitManagerPlayer>().hitPoint > 0)
         target = hateTarget;
     }
 

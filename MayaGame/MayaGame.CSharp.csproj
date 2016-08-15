@@ -183,6 +183,7 @@
     <Compile Include="Assets\script\SendTrigger.cs" />
     <Compile Include="Assets\script\SkinColSetter.cs" />
     <Compile Include="Assets\script\SyncPosition.cs" />
+    <Compile Include="Assets\script\UIMessenger.cs" />
     <Compile Include="Assets\script\Wepon.cs" />
     <Compile Include="Assets\script\WeponController.cs" />
     <Compile Include="Assets\script\ZakoAI.cs" />
