@@ -566,6 +566,14 @@ public class FPSController : NetworkBehaviour {
         }
     }
 
+
+   [Command]
+    public void CmdTargetResulect(string uniqueID)
+    {
+        GameObject target = GameObject.Find(uniqueID);
+       target.GetComponent<HitManagerPlayer>().RpcResulect();
+    }
+
     void SendAnimMove()
     {
 

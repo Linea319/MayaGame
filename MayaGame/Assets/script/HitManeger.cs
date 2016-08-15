@@ -67,6 +67,7 @@ public class HitManeger : HitManagerDef {
 
         if(mesh != null)
         {
+            Debug.Log("destruct");
             exploder.ExplodeObject(mesh.gameObject);
             
             return;
@@ -99,7 +100,7 @@ public class HitManeger : HitManagerDef {
         }
         hitPoint -= damage;
         lastDamage = damage;
-        Debug.Log("col:" + name + " damage:" + damage + " penetrate:"+ penetrateNum);
+        //Debug.Log("col:" + name + " damage:" + damage + " penetrate:"+ penetrateNum);
 
         EnemyAI ai = transform.root.GetComponent<EnemyAI>();
         ai.shock += damages.shock / armor.shockResist * 0.06f;

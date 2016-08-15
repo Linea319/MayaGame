@@ -626,10 +626,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 192460, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
   m_IsPrefabParent: 0
@@ -1127,102 +1123,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5be944d116dd0345bf6c078cb64795c, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1219019797
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1219019802}
-  - 33: {fileID: 1219019801}
-  - 135: {fileID: 1219019800}
-  - 23: {fileID: 1219019799}
-  - 114: {fileID: 1219019798}
-  m_Layer: 0
-  m_Name: Sphere (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1219019798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1219019797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b84d327516c751418e59cab538b6064, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messagaeText: aaa
-  useProgress: 1
-  progressTime: 2
-  compMethhod: 
-  progress: 0
---- !u!23 &1219019799
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1219019797}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!135 &1219019800
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1219019797}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1219019801
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1219019797}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1219019802
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1219019797}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.522777, y: -0.7373817, z: -8.493964}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
 --- !u!1 &1247502670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,7 +2647,7 @@ MonoBehaviour:
       saturation: 1.105
       vibrance: 0
       value: 1
-      contrast: 1.2
+      contrast: 1
       gain: 1
       gamma: 0.9
     channelMixer:
@@ -2852,23 +2752,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DontUseTag: 0
-  Radius: 10
+  Radius: 1
   CubeRadius: {x: 0, y: 0, z: 0}
   UseCubeRadius: 0
   ForceVector: {x: 0, y: 1, z: 0}
   UseForceVector: 0
-  Force: 30
+  Force: 5
   FrameBudget: 15
-  TargetFragments: 30
+  TargetFragments: 10
   DeactivateOptions: 0
   DeactivateTimeout: 10
   FadeoutOptions: 0
   MeshColliders: 0
-  ExplodeSelf: 1
+  ExplodeSelf: 0
   DisableRadiusScan: 0
-  HideSelf: 1
+  HideSelf: 0
   DestroyOriginalObject: 0
-  ExplodeFragments: 1
+  ExplodeFragments: 0
   UniformFragmentDistribution: 0
   SplitMeshIslands: 0
   AllowOpenMeshCutting: 0
@@ -2890,7 +2790,7 @@ MonoBehaviour:
     FreezeRotationY: 0
     FreezeRotationZ: 0
     Layer: Default
-    MaxVelocity: 1000
+    MaxVelocity: 100
     InheritParentPhysicsProperty: 1
     Mass: 20
     UseGravity: 1
@@ -2907,7 +2807,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1983761987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.467415, y: 6.9806356, z: -5.6535873}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []

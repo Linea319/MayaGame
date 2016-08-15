@@ -79,6 +79,16 @@ public class HitManagerPlayer :NetworkBehaviour{
         messenger.enabled = true;
     }
 
+    [Client]
+    public void Resulect()
+    {
+        armor = maxArmor;
+        hitPoint = maxHP;
+        controller.dead = false;
+        messenger.SetProgress(false);
+        messenger.enabled = false;
+    }
+
     [Command]
     public void CmdResulect()
     {

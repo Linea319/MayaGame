@@ -14,7 +14,7 @@ public class UIMessenger : MonoBehaviour {
         if (progressNow)
         {
             progress += Time.deltaTime;
-            if(progress > progressTime && compMethhod != null)
+            if(progress > progressTime && compMethhod != null && compMethhod.Length > 0)
             {
                 gameObject.SendMessage(compMethhod);
             }

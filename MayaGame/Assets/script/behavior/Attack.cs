@@ -12,6 +12,7 @@ public class Attack : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.SetBool("blocker", true);
         if (attackStart)
         {
             animator.transform.root.GetComponent<EnemyAI>().AttackStart(0);
@@ -25,22 +26,27 @@ public class Attack : StateMachineBehaviour
         animator.transform.root.GetComponent<EnemyAI>().Attack();
         timer = Time.time+attackDelay;
         cAttacknum = (int)Random.Range(attackNum.x,attackNum.y);
-
+        Debug.Log(cAttacknum);
+        if(cAttacknum <= 1)
+        {
+            animator.SetBool("blocker", false);
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    if(cAttacknum > 1 && Time.time > timer)
+        if(cAttacknum > 1 && Time.time > timer)
         {
             cAttacknum--;
-            
             animator.transform.root.GetComponent<EnemyAI>().Attack();
             timer = Time.time + attackDelay;
+            if (cAttacknum <= 1)
+            {
+                animator.SetBool("blocker", false);
+            }
         }
-    if(cAttacknum < 1)
-        {
-            animator.SetBool("blocker", false);
-        }
+        
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

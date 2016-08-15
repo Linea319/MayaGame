@@ -70,6 +70,11 @@ public class FPS_UI : MonoBehaviour {
             MessageText.text = null;
             MessageProgress.fillAmount = 0;
         }
+        if(MessageProgress.fillAmount >= 1)
+        {
+            FPSCon.CmdTargetResulect(messager.name);
+        }
+
 
         yawBar.rectTransform.localPosition = yawDef + new Vector3(yawRate*yawAngle, 0, 0);
         //13.3f

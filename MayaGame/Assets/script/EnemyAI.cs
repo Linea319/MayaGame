@@ -187,7 +187,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     public virtual void Attack()
     {
-
+        thinkTimer  = Time.time + 1f;
     }
 
     public void SearchTarget()
@@ -228,6 +228,11 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     public void searchTargetHate()
     {
+        if (hateTarget == null)
+        {
+            SearchTarget();
+            return;
+        }
         if(hateTarget.GetComponent<HitManagerPlayer>().hitPoint > 0)
         target = hateTarget;
     }
@@ -296,6 +301,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             if (hatepool > currentHate)
             {
                 currentHate = hatepool;
+                hatepool = 0;
                 hateTarget = target;
             }
         }
@@ -303,5 +309,6 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         {
             currentHate += hate;
          }
+        Debug.Log("hatetarget:"+hateTarget);
     }
 }
