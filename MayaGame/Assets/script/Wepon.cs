@@ -89,7 +89,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     public LayerMask wepMask;
 
     bool ADS;
-    bool reload;
+    protected bool reload;
     bool sear;
     bool first = true;
     int burst = 3;
@@ -104,8 +104,8 @@ public class Wepon : MonoBehaviour, WeponInterface
     Vector3 recoilDmp;
     float recoilOffset;
     bool prePause;
-    Vector3 magPos;
-    Quaternion magRot;
+    protected Vector3 magPos;
+    protected Quaternion magRot;
     float reloadAnimRate = 1f;
     public Dictionary<string, float> parameters = new Dictionary<string, float>(){
         {"accuracy",0 },
@@ -117,7 +117,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         {"magazine",0 },
         {"totalAmmo",0 }
     };
-    int magazine = 0;
+    protected int magazine = 0;
     public Selector selector;
     public ExploderObject Exploder;
     Transform parent;
@@ -130,7 +130,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         
     }
 
-    public void initialize()
+    public virtual void initialize()
     {
         
         transform.localPosition = Vector3.zero;
@@ -267,20 +267,8 @@ public class Wepon : MonoBehaviour, WeponInterface
 
         ShotEffect();
         FPSCon.CmdShot();
-        float accuracy = (parameters["accuracy"] * 0.01f);
-        Vector3 randomCone = ( myCamera.transform.forward);
-        Vector3 move = FPSCon.moveVec;
-        move.y = 0;
-        accuracy *= 1f + (move.magnitude / FPSCon.moveSpeed);
 
-        
-        if (FPSCon.ADS) { accuracy *= 0.14f; }
-        accuracy = Mathf.Clamp(accuracy, 0.001f, 10f);
-        //Debug.Log(accuracy);
-        randomCone = Quaternion.Euler(new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy))) * randomCone;
-        
-        Ray ray = new Ray(myCamera.transform.position, randomCone);
-        ShootHit(ray, parameters["range"],0);
+        Shot();
 
         //muzuleFlash.emissionRate = parameters["rate"] / 60f;       		
         float recoil = (parameters["recoil"] / 100f);
@@ -313,6 +301,24 @@ public class Wepon : MonoBehaviour, WeponInterface
         }
         SendUI();
 
+    }
+
+    public virtual void Shot(float ADSHosei = 1f)
+    {
+        float accuracy = (parameters["accuracy"] * 0.01f) ;
+        Vector3 randomCone = (myCamera.transform.forward);
+        Vector3 move = FPSCon.moveVec;
+        move.y = 0;
+        accuracy *= 1f + (move.magnitude / FPSCon.moveSpeed)*0.5f;
+
+
+        if (FPSCon.ADS) { accuracy *= 0.2f * ADSHosei; }
+        accuracy = Mathf.Clamp(accuracy, 0.001f, 10f);
+        //Debug.Log(accuracy);
+        randomCone = Quaternion.Euler(new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy))) * randomCone;
+
+        Ray ray = new Ray(myCamera.transform.position, randomCone);
+        ShootHit(ray, parameters["range"], 0);
     }
 
     public void Secondary()
@@ -348,7 +354,7 @@ public class Wepon : MonoBehaviour, WeponInterface
 
     }
 
-    void MagDetach()
+    protected virtual void MagDetach()
     {
         magazineTr.SetParent(FPSCon.handPosL);
     }
@@ -360,7 +366,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         magazineTr.localPosition = magPos;
     }
 
-    void ReloadEnd()
+    protected virtual void ReloadEnd()
     {
         MagReturn();
         if (magazine > 0 || noCock)

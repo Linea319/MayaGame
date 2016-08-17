@@ -574,7 +574,7 @@ MonoBehaviour:
   muzuleFlash: {fileID: 19806480}
   yakkyou: {fileID: 0}
   pa:
-    accuracy: 40
+    accuracy: 50
     recoil: 500
     rate: 800
     range: 300

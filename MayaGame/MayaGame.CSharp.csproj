@@ -16,7 +16,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>5.4.0f3</UnityVersion>
+    <UnityVersion>5.4.0p1</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
@@ -181,6 +181,7 @@
     <Compile Include="Assets\script\PartsSave.cs" />
     <Compile Include="Assets\script\Pause.cs" />
     <Compile Include="Assets\script\SendTrigger.cs" />
+    <Compile Include="Assets\script\Shotgun.cs" />
     <Compile Include="Assets\script\SkinColSetter.cs" />
     <Compile Include="Assets\script\SyncPosition.cs" />
     <Compile Include="Assets\script\UIMessenger.cs" />
@@ -378,7 +379,6 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
-    <None Include="Assets\Standard.shader" />
     <None Include="Assets\model\Holo\hologram.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
