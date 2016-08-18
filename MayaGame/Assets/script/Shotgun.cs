@@ -53,6 +53,25 @@ public class Shotgun : Wepon {
         }
     }
 
+    public override void ShotEffect()
+    {
+        if (muzuleFlash != null)
+        {
+
+            muzuleFlash.Play();
+        }
+        if (yakkyou != null && !pompAction)
+        {
+            if (!yakkyou.IsAlive())
+            {
+                //Debug.Log("dead");
+                yakkyou.enableEmission = true;
+            }
+            yakkyou.Emit(1);
+        }
+        shotSound.Play();
+    }
+
     void CompReload()
     {
         anim.SetBool("Cock", true);
@@ -72,6 +91,15 @@ public class Shotgun : Wepon {
         if (weponAnim != null)
         {
             weponAnim.SetTrigger("Pomp");
+        }
+        if (yakkyou != null)
+        {
+            if (!yakkyou.IsAlive())
+            {
+                //Debug.Log("dead");
+                yakkyou.enableEmission = true;
+            }
+            yakkyou.Emit(1);
         }
     }
 }

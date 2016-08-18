@@ -442,7 +442,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         reload = false;
     }
 
-    public void ShotEffect()
+    public virtual void ShotEffect()
     {
         if (muzuleFlash != null)
         {
