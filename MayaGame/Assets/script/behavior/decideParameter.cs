@@ -17,17 +17,20 @@ public class decideParameter : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         float param = animator.GetFloat(paramName);
+        
         if(type == SetNumType.set)
         {
             animator.SetFloat(paramName, defParam);
         }
         if (type == SetNumType.add)
         {
-            animator.SetFloat(paramName, param+defParam);
+            param = param + defParam;
+            animator.SetFloat(paramName, param);
         }
         if (type == SetNumType.subtractive)
         {
-            animator.SetFloat(paramName, param-defParam);
+            param = param - defParam;
+            animator.SetFloat(paramName, param);
         }
 
     }

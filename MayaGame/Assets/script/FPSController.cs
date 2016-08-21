@@ -107,6 +107,7 @@ public class FPSController : NetworkBehaviour {
     [Client]
     void Initialize()
     {
+        transform.position = Vector3.up * 2;
         Debug.Log("player_Initialized");
         hpMng = GetComponent<HitManagerPlayer>();
         //anim = GetComponent<Animator>();

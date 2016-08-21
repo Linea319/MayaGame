@@ -15,14 +15,14 @@ public class kesyouAI : EnemyAI {
     public override void Update()
     {
         base.Update();
-        if (dead || stopAI)
+        if (dead || stopAI )
         {
             anim.SetBool("move", false);
             anim.SetBool("back", false);
             canRot = true;
             return;
         }
-        if (nav.remainingDistance <= nav.stoppingDistance * 1.1f)
+        if (nav.desiredVelocity.sqrMagnitude < 1f)
         {
             anim.SetBool("move", false);
             anim.SetBool("back", false);
@@ -44,7 +44,8 @@ public class kesyouAI : EnemyAI {
 
         if(target != null)
         {
-            if (!Physics.Linecast(transform.position, target.position,eyeMask))
+            Vector3 eyePos = transform.position + new Vector3(0,3f,0);
+            if (!Physics.Linecast(eyePos, target.position,eyeMask))
             {
                 if (atack)
                 {
@@ -71,7 +72,7 @@ public class kesyouAI : EnemyAI {
 
         if (atack || retreat)
         {
-            anim.SetBool("move", false);
+            //anim.SetBool("move", false);
             canRot = true;
             //anim.SetBool("back", false);
         }
@@ -86,6 +87,7 @@ public class kesyouAI : EnemyAI {
 
         //emotion
         attackEmotion = Mathf.Clamp(attackEmotion, 0, 100);
+        retreatEmotion = AIAnim.GetFloat("retreate");
         retreatEmotion -= 5 * Time.deltaTime;
         retreatEmotion = Mathf.Clamp(retreatEmotion, 0, 100);
 
@@ -93,10 +95,31 @@ public class kesyouAI : EnemyAI {
         AIAnim.SetFloat("retreate", retreatEmotion);
     }
 
+    public override void Dodge()
+    {
+        int dir = (int)Random.value;
+        anim.SetInteger("dodgeDir",dir);
+        anim.SetTrigger("dodge");
+        distanceEmotion -= 10f;
+    }
+
+    public override void Dodge(int dir)
+    {
+        anim.SetInteger("dodgeDir", dir);
+        anim.SetTrigger("dodge");
+    }
+
+    public override void Retreat()
+    {
+        base.Retreat();
+        distanceEmotion = 50f;
+    }
+
     public override void Attack()
     {
         
-            Shot();   
+            Shot();
+        distanceEmotion += 5f;
 
     }
 
@@ -109,6 +132,7 @@ public class kesyouAI : EnemyAI {
         else
         {
             base.Think();
+            distanceEmotion += 10f;
         }
         nav.Resume();
     }
@@ -152,6 +176,7 @@ public class kesyouAI : EnemyAI {
     {
         base.SetHate(target, hate);
         retreatEmotion += hate*0.05f;
+        AIAnim.SetFloat("retreate", retreatEmotion);
         //Debug.Log("hate:"+hate);
         
     }

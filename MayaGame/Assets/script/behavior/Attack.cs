@@ -26,7 +26,7 @@ public class Attack : StateMachineBehaviour
         animator.transform.root.GetComponent<EnemyAI>().Attack();
         timer = Time.time+attackDelay;
         cAttacknum = (int)Random.Range(attackNum.x,attackNum.y);
-        Debug.Log(cAttacknum);
+       // Debug.Log(cAttacknum);
         if(cAttacknum <= 1)
         {
             animator.SetBool("blocker", false);

@@ -180,9 +180,19 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             nav.updateRotation = false;
         }
         Debug.DrawLine(moveTarget, transform.position, Color.green, 1.5f);
-        retreatEmotion *= 0.5f;
+        //retreatEmotion *= 0.5f;
         retreat = true;
         nav.Resume();
+    }
+
+    public virtual void Dodge()
+    {
+
+    }
+
+    public virtual void Dodge(int dir)
+    {
+
     }
 
     public virtual void Attack()
@@ -283,7 +293,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         stopAI = true;
         nav.Stop();
         attackEmotion = 0f;
-        retreatEmotion += 30f;
+        retreatEmotion += 10f;
         yield return new WaitForSeconds(time);
         Debug.Log("ReturnYoroke");
         stopAI = false;

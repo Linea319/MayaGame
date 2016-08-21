@@ -6165,7 +6165,7 @@ MonoBehaviour:
   shock: 0
   bullet: {fileID: 1000013905553688, guid: aebeaff805b0c5447920d15c36923f53, type: 2}
   bulletSpeed: 50
-  spread: 5
+  spread: 4
   gunPos: {fileID: 4000011985244150}
   eyeMask:
     serializedVersion: 2
