@@ -1001,13 +1001,14 @@ MonoBehaviour:
     recoil: 500
     rate: 55
     range: 25
+    startGensui: 5
     mobility: 200
     reload: 100
     magazine: 6
     totalAmmo: 32
   dam:
-    damage: 120
-    shock: 100
+    damage: 150
+    shock: 180
     penetration: 50
     heat: 0
   ADSRate: 1.2

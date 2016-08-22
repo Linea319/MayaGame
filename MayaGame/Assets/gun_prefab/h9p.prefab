@@ -746,7 +746,8 @@ MonoBehaviour:
     accuracy: 250
     recoil: 250
     rate: 250
-    range: 50
+    range: 40
+    startGensui: 15
     mobility: 50
     reload: 100
     magazine: 9

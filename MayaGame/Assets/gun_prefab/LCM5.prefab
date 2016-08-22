@@ -577,7 +577,8 @@ MonoBehaviour:
     accuracy: 50
     recoil: 500
     rate: 800
-    range: 300
+    range: 150
+    startGensui: 75
     mobility: 250
     reload: 300
     magazine: 1
@@ -585,7 +586,7 @@ MonoBehaviour:
   dam:
     damage: 0
     shock: 250
-    penetration: 450
+    penetration: 470
     heat: 0
   ADSRate: 2
   idleAnim: {fileID: 7400028, guid: 78ff6669b9e026a409d331b39928f110, type: 3}

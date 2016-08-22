@@ -24,6 +24,7 @@ public class GunParameter : System.Object
     public float recoil = 0;
     public float rate = 0;
     public float range = 0;
+    public float startGensui = 0;
     public float mobility = 0;
     public float reload = 0;
     public int magazine = 0;
@@ -473,7 +474,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         //Debug.Log("UI");
     }
 
-    void ShootHit(Ray ray,float rayRange,int penetrateNum)
+    void ShootHit(Ray ray,float rayRange,int penetrateNum=0)
     {
         RaycastHit hit;
         LayerMask mask = ~(1<<2 | 1 << 8);
@@ -489,6 +490,7 @@ public class Wepon : MonoBehaviour, WeponInterface
                 efect.transform.parent = hit.transform;
             }
 
+
             Vector3 fracVec = hit.point;
             HitManagerDef hitM = hit.transform.GetComponent<HitManagerDef>();
             if (hitM != null)
@@ -498,7 +500,21 @@ public class Wepon : MonoBehaviour, WeponInterface
                 efect.transform.LookAt(efect.transform.position + hit.normal);
                 efect.transform.parent = hit.transform;
 
-                DamageParameter newDam = dam.multiple(1-penetrateNum*0.4f);
+                DamageParameter newDam = dam; 
+
+                if (penetrateNum == 0)
+                {
+                    float distanceRate = 1-(Vector3.Distance(ray.origin, fracVec) - pa.startGensui) /(pa.range);
+                    distanceRate = Mathf.Clamp01(distanceRate);
+                    if(distanceRate < 1)
+                    {
+                        newDam = newDam.multiple(distanceRate);
+                       // Debug.Log("gensui" + distanceRate);
+                    }
+                    
+                }
+                newDam = newDam.multiple(1 - penetrateNum * 0.4f);
+
                 Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
                 
                 FPSCon.CmdSendHP(hitM.transform.root.name,hitM.name,hitM.hitPoint,hitM.lastDamage);
