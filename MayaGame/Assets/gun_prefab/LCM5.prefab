@@ -582,11 +582,11 @@ MonoBehaviour:
     mobility: 250
     reload: 300
     magazine: 1
-    totalAmmo: 27
+    totalAmmo: 15
   dam:
     damage: 0
     shock: 250
-    penetration: 470
+    penetration: 500
     heat: 0
   ADSRate: 2
   idleAnim: {fileID: 7400028, guid: 78ff6669b9e026a409d331b39928f110, type: 3}

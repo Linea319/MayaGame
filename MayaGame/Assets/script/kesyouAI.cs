@@ -44,7 +44,7 @@ public class kesyouAI : EnemyAI {
 
         if(target != null)
         {
-            Vector3 eyePos = transform.position + new Vector3(0,3f,0);
+            Vector3 eyePos = transform.position + new Vector3(0,2.5f,0);
             if (!Physics.Linecast(eyePos, target.position,eyeMask))
             {
                 if (atack)
