@@ -23,7 +23,7 @@ public class Shotgun : Wepon {
         }
         if (pompAction)
         {
-            StartCoroutine( PompAction(0.5f));
+            StartCoroutine( PompAction(0.4f));
         }
         
     }

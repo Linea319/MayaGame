@@ -319,6 +319,6 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         {
             currentHate += hate;
          }
-        Debug.Log("hatetarget:"+hateTarget);
+        //Debug.Log("hatetarget:"+hateTarget);
     }
 }

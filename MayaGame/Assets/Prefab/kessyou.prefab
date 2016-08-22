@@ -41,7 +41,7 @@ GameObject:
   - 137: {fileID: 13763110}
   - 114: {fileID: 11474862}
   - 114: {fileID: 114000011318622254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chest
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - 137: {fileID: 13730058}
   - 114: {fileID: 11435862}
   - 114: {fileID: 114000013542977158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: upperR
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   - 137: {fileID: 13703320}
   - 114: {fileID: 11439962}
   - 114: {fileID: 114000010518330750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: upperL
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   - 137: {fileID: 13790842}
   - 114: {fileID: 11438684}
   - 114: {fileID: 114000011074238558}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shoulderR
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   - 4: {fileID: 487564}
   - 137: {fileID: 13775840}
   - 114: {fileID: 114000013267650218}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   - 137: {fileID: 13741206}
   - 114: {fileID: 11447502}
   - 114: {fileID: 114000012313199344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: foreL
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -836,7 +836,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 408188}
   - 137: {fileID: 13773286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +897,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 458774}
   - 137: {fileID: 13795842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hand1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -958,7 +958,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 454716}
   - 137: {fileID: 13708492}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: footL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -991,7 +991,7 @@ GameObject:
   - 137: {fileID: 13794246}
   - 114: {fileID: 11402096}
   - 114: {fileID: 114000011663994282}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: back
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -1114,7 +1114,7 @@ GameObject:
   - 137: {fileID: 13790548}
   - 114: {fileID: 11436596}
   - 114: {fileID: 114000011163617098}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -1145,7 +1145,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 446312}
   - 137: {fileID: 13779470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: footR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1568,7 +1568,7 @@ GameObject:
   - 137: {fileID: 13730740}
   - 114: {fileID: 11485150}
   - 114: {fileID: 114000011459964066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: foreR
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -1706,7 +1706,7 @@ GameObject:
   - 137: {fileID: 13735112}
   - 114: {fileID: 11473798}
   - 114: {fileID: 114000013709990930}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shoulderL
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -1859,7 +1859,7 @@ GameObject:
   - 137: {fileID: 13760116}
   - 114: {fileID: 11420430}
   - 114: {fileID: 114000010654253984}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sinR
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -1967,7 +1967,7 @@ GameObject:
   - 137: {fileID: 13728548}
   - 114: {fileID: 11477176}
   - 114: {fileID: 114000013473873542}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: thinL
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -2060,7 +2060,7 @@ GameObject:
   - 137: {fileID: 13777288}
   - 114: {fileID: 11427060}
   - 114: {fileID: 114000010438874822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sinL
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -2311,7 +2311,7 @@ GameObject:
   - 137: {fileID: 13784544}
   - 114: {fileID: 11478196}
   - 114: {fileID: 114000013721011708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: thinR
   m_TagString: Exploder
   m_Icon: {fileID: 0}
@@ -3653,7 +3653,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.524757, y: -2.2500002, z: -0.32}
+  m_LocalPosition: {x: 11.47, y: 0.133, z: 28.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:

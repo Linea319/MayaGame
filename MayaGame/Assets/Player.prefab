@@ -2272,8 +2272,8 @@ MonoBehaviour:
   stepDistance: 1
   stepEnergy: 28
   staminaRegene: 15
-  airPower: 5
-  airDrag: 0.2
+  airPower: 3
+  airDrag: 0.5
   moveShake: 0.1
   shakeRate: 7
   moveVec: {x: 0, y: 0, z: 0}
@@ -2291,7 +2291,7 @@ MonoBehaviour:
   useWeponNum: 0
   weponPrefab:
   - {fileID: 126710, guid: 2d524612a4c882e4eb3e03990fd3f19d, type: 2}
-  - {fileID: 141880, guid: 9dd5ecd06ec3a3d44bd330169e9ad903, type: 2}
+  - {fileID: 1000014172697622, guid: 47917f9720e95d1439d2a416be48cd8a, type: 2}
   recoilVec: {x: 0, y: 0, z: 0}
   reload: 0
   UICon: {fileID: 0}

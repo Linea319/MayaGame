@@ -97,7 +97,7 @@ public class kesyouAI : EnemyAI {
 
     public override void Dodge()
     {
-        int dir = (int)Random.value;
+        int dir = (int)Random.Range(-2,2);
         anim.SetInteger("dodgeDir",dir);
         anim.SetTrigger("dodge");
         distanceEmotion -= 10f;

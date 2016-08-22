@@ -999,7 +999,7 @@ MonoBehaviour:
   pa:
     accuracy: 450
     recoil: 500
-    rate: 50
+    rate: 55
     range: 25
     mobility: 200
     reload: 100
