@@ -99,10 +99,10 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
          }*/
         // Debug.Log(reloadAnimRate);
         anim.SetFloat("ReloadSpeed", reloadAnimRate);
-        newAnime[anim.runtimeAnimatorController.animationClips[2].name] = idleAnim;
-        newAnime[anim.runtimeAnimatorController.animationClips[8].name] = chargeAnim;
-        newAnime[anim.runtimeAnimatorController.animationClips[7].name] = attackAnim;
-        newAnime[anim.runtimeAnimatorController.animationClips[6].name] = runAnim;
+        newAnime[FPSCon.defAnim.animationClips[2].name] = idleAnim;
+        newAnime[FPSCon.defAnim.animationClips[8].name] = chargeAnim;
+        newAnime[FPSCon.defAnim.animationClips[7].name] = attackAnim;
+        newAnime[FPSCon.defAnim.animationClips[6].name] = runAnim;
         // Debug.Log(newAnime.animationClips[1].name);
         anim.runtimeAnimatorController = newAnime;
         // Debug.Log(anim.runtimeAnimatorController.animationClips[1].name);

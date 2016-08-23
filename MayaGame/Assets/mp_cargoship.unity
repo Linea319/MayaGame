@@ -4330,11 +4330,12 @@ Prefab:
     - target: {fileID: 11479006, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
       propertyPath: weponPrefab.Array.data[0]
       value: 
-      objectReference: {fileID: 190502, guid: e991330d1320e6d47ae43f8df693bc14, type: 2}
+      objectReference: {fileID: 1000014172697622, guid: 47917f9720e95d1439d2a416be48cd8a,
+        type: 2}
     - target: {fileID: 11479006, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
       propertyPath: weponPrefab.Array.data[1]
       value: 
-      objectReference: {fileID: 197760, guid: 5df8adeb44042394cbd0d0a58d960294, type: 2}
+      objectReference: {fileID: 190502, guid: e991330d1320e6d47ae43f8df693bc14, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
   m_IsPrefabParent: 0

@@ -559,14 +559,14 @@ MonoBehaviour:
   yakkyou: {fileID: 0}
   pa:
     chargeTime: 3.5
-    chargeDamageRaate: 3.5
+    chargeDamageRaate: 4
     useStamina: 25
     mobility: 200
     range: 5
   dam:
     damage: 70
     shock: 85
-    penetration: 105
+    penetration: 115
     heat: 0
   idleAnim: {fileID: 7400020, guid: 78ff6669b9e026a409d331b39928f110, type: 3}
   chargeAnim: {fileID: 7400022, guid: 78ff6669b9e026a409d331b39928f110, type: 3}
