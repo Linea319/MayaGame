@@ -1,0 +1,826 @@
+﻿using UnityEngine;
+using System.Runtime.InteropServices;
+
+public class PPFX
+{
+    public const uint GPUFMT_UNKNOWN = 0;
+
+    //const uint GPUCLEAR_DEPTHSTENCIL = GPUCLEAR_DEPTH | GPUCLEAR_STENCIL;
+    //public const uint GPUCLEAR_ALL = GPUCLEAR_COLOR | GPUCLEAR_DEPTHSTENCIL;
+
+    public const float PFX_CLEARDEPTH_AUTO = -float.MaxValue; // -FLT_MAX;
+    public const float PFX_DITHERSCALE_AUTO = -float.MaxValue; // -FLT_MAX;
+
+    public const float PFX_TONEMAP_MAPPINGFACTOR_DEFAULT = 32.0f;
+    public const float PFX_VIGNETTE_DEFAULT = 0.0f;
+    public const float PFX_VIGNETTE_AUTO = -float.MaxValue; // -FLT_MAX;
+    public const float PFX_VIGNETTE_FOVDEPENDENCE_DEFAULT = 0.05f;
+    public const float PFX_VIGNETTE_FOVDEPENDENCE_OPTICS_DEFAULT = 0.2f;
+    public const float PFX_VIGNETTE_FOVDEPENDENCE_PENUMBRA_DEFAULT = 0.1f;
+
+    public const int PFX_APERTUREFILTER_MAX_LEVELS = 7;
+
+    public const float PFX_FEEDBACK_WEIGHT_CURRENT_DEFAULT = -float.MaxValue; // -FLT_MAX;
+
+    public const float PFX_MOTIONBLUR_VELOCITYDOT_THRESHOLD_DEFAULT = 0.15f;
+    public const float PFX_MOTIONBLUR_DISTANCE_THRESHOLD_DEFAULT = -0.01f;
+
+
+    public enum EPFX_VIEWINDEX : int
+	{
+		PFXVIEW_CURRENT		= -1,
+		PFXVIEW_ALL			= 0x7fffffff,
+		PFXVIEW_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_LIGHTINDEX
+	{
+		PFXLIGHT_CURRENT	= -1,
+		PFXLIGHT_ALL		= 0x7fffffff,
+		PFXLIGHT_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_DOFEDGEQUALITY
+	{
+		PFXDOFEDGE_REDUCED			= 0,	
+		PFXDOFEDGE_NONE,
+		PFXDOFEDGE_FBLUR,
+		PFXDOFEDGE_FBLUR_BMASK,
+		PFXDOFEDGE_FBLUR_BMASK_FMASK,	
+		PFXDOFEDGE_NUM,
+		PFXDOFEDGE_AUTO				= -1,
+		PFXDOFEDGE_UNKNOWN			= -2,
+		PFXDOFEDGE_DEFAULT			= PFXDOFEDGE_AUTO,
+		PFXDOFEDGE_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_APERTURESHAPE
+	{
+		PFXAPS_DISC			= 0,
+		PFXAPS_GAUSSIAN,
+		PFXAPS_SQUARE,
+		PFXAPS_HEXAGON,
+		PFXAPS_HEXAGONFLAT,
+		PFXAPS_BOKEH,
+		PFXAPS_BOKEH_L1,
+		PFXAPS_BOKEH_L2,
+		PFXAPS_NUM,
+		PFXAPS_AUTO			= -1,
+		PFXAPS_DEFAULT		= PFXAPS_AUTO,
+		PFXAPS_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_RESAMPLEFILTER
+	{
+		PFXRSF_LINEAR				= 0,
+		PFXRSF_CONVOLUTION,
+		PFXRSF_NUM,
+		PFXRSF_AUTO					= -1,
+		PFXRSF_UNKNOWN				= -2,
+		PFXRSF_DEFAULT				= PFXRSF_AUTO,
+		PFXRSF_FORCEINT32			= 0x7fffffff,
+	}
+
+    public enum EPFX_DYNAMICRANGESPACE
+	{
+		PFXDRS_HDR_PRETONEMAP	= 0,
+		PFXDRS_LDR_POSTTONEMAP,
+		PFXDRS_AUTO				= -1,
+		PFXDRS_DEFAULT			= PFXDRS_AUTO,
+		PFXDRS_FORCEINT32		= 0x7fffffff,
+	}
+
+    public enum EPFX_AUTOADJUSTDELAYMODE
+	{
+		PFXAAD_PHYSICALTIME		= 0,
+		PFXAAD_FRAMECOUNT,
+		PFXAAD_DEFAULT			= PFXAAD_PHYSICALTIME,
+		PFXAAD_FORCEINT32		= 0x7fffffff,
+	}
+
+    public enum EPFXALPHAOUTPUT
+	{
+		PFXALPHAOUT_DONOTCARE			= 0,
+		PFXALPHAOUT_RENDERSCENE_ALPHA,
+		PFXALPHAOUT_EFFECTSOURCE_ALPHA	= PFXALPHAOUT_RENDERSCENE_ALPHA,
+		PFXALPHAOUT_EFFECTRESULT_ALPHA,
+		PFXALPHAOUT_NUM,
+		PFXALPHAOUT_AUTO				= -1,
+#if IS_ENABLED
+		PFXALPHAOUT_DEFAULT				= -2,
+#endif
+	}
+
+    public enum EPFX_MAPPINGTYPE
+	{
+		EPFXMT_LINEAR			= 0,
+		EPFXMT_LINEARSAT,
+		EPFXMT_SENSITOMETRIC,
+		EPFXMT_REINHARD,
+		EPFXMT_REINHARDLUM,
+		EPFXMT_LOG,
+		EPFXMT_LOGLUM,
+		EPFXMT_ALPHALUM,
+		EPFXMT_TMAP_LDR_LINEAR,	
+		EPFXMT_NUM,
+		EPFXMT_TONEMAPLDR_SHIFT		= 0,
+		EPFXMT_TONEMAPLDR_MASK		= 0x0000ffff,
+		EPFXMT_REMAPHDR_SHIFT		= 16,
+		EPFXMT_REMAPHDR_MASK		= unchecked((int)0xffff0000),
+		EPFXMT_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_TONEMAPLDR
+	{
+		PFXTONEMAPLDR_LINEAR		= EPFX_MAPPINGTYPE.EPFXMT_LINEAR			<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,
+		PFXTONEMAPLDR_LINEARSAT		= EPFX_MAPPINGTYPE.EPFXMT_LINEARSAT			<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,
+		PFXTONEMAPLDR_SENSITOMETRIC	= EPFX_MAPPINGTYPE.EPFXMT_SENSITOMETRIC		<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,
+		PFXTONEMAPLDR_REINHARD		= EPFX_MAPPINGTYPE.EPFXMT_REINHARD			<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,
+		PFXTONEMAPLDR_REINHARDLUM	= EPFX_MAPPINGTYPE.EPFXMT_REINHARDLUM		<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,
+		PFXTONEMAPLDR_LOG			= EPFX_MAPPINGTYPE.EPFXMT_LOG				<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,
+		PFXTONEMAPLDR_LOGLUM		= EPFX_MAPPINGTYPE.EPFXMT_LOGLUM			<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,
+		PFXTONEMAPLDR_ALPHALUM		= EPFX_MAPPINGTYPE.EPFXMT_ALPHALUM			<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,	
+		PFXTONEMAPLDR_LDRLINEAR		= EPFX_MAPPINGTYPE.EPFXMT_TMAP_LDR_LINEAR	<< EPFX_MAPPINGTYPE.EPFXMT_TONEMAPLDR_SHIFT,	
+		PFXTONEMAPLDR_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_REMAPHDR
+	{
+		PFXREMAPHDR_DISABLE			= 0,
+		PFXREMAPHDR_REINHARD		= EPFX_MAPPINGTYPE.EPFXMT_REINHARD		<< EPFX_MAPPINGTYPE.EPFXMT_REMAPHDR_SHIFT,
+		PFXREMAPHDR_REINHARDLUM		= EPFX_MAPPINGTYPE.EPFXMT_REINHARDLUM	<< EPFX_MAPPINGTYPE.EPFXMT_REMAPHDR_SHIFT,
+		PFXREMAPHDR_LOG				= EPFX_MAPPINGTYPE.EPFXMT_LOG			<< EPFX_MAPPINGTYPE.EPFXMT_REMAPHDR_SHIFT,
+		PFXREMAPHDR_LOGLUM			= EPFX_MAPPINGTYPE.EPFXMT_LOGLUM		<< EPFX_MAPPINGTYPE.EPFXMT_REMAPHDR_SHIFT,
+		PFXREMAPHDR_ALPHALUM		= EPFX_MAPPINGTYPE.EPFXMT_ALPHALUM		<< EPFX_MAPPINGTYPE.EPFXMT_REMAPHDR_SHIFT,
+		PFXREMAPHDR_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_TONEMAP
+	{
+		PFXTM_LINEAR					= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LINEAR,
+		PFXTM_LINEARSAT					= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LINEARSAT,
+		PFXTM_SENSITOMETRIC				= EPFX_TONEMAPLDR.PFXTONEMAPLDR_SENSITOMETRIC,
+		PFXTM_REINHARD					= EPFX_TONEMAPLDR.PFXTONEMAPLDR_REINHARD,
+		PFXTM_REINHARDLUM				= EPFX_TONEMAPLDR.PFXTONEMAPLDR_REINHARDLUM,
+		PFXTM_LOG						= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LOG,
+		PFXTM_LOGLUM					= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LOGLUM,
+		PFXTM_REMAP_REINHARD			= EPFX_TONEMAPLDR.PFXTONEMAPLDR_REINHARD | EPFX_REMAPHDR.PFXREMAPHDR_REINHARD,
+		PFXTM_REMAP_REINHARDLUM			= EPFX_TONEMAPLDR.PFXTONEMAPLDR_REINHARDLUM | EPFX_REMAPHDR.PFXREMAPHDR_REINHARDLUM,
+		PFXTM_REMAP_LOG					= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LOG | EPFX_REMAPHDR.PFXREMAPHDR_LOG,
+		PFXTM_REMAP_LOGLUM				= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LOGLUM | EPFX_REMAPHDR.PFXREMAPHDR_LOGLUM,
+		PFXTM_REMAP_ALPHALUM			= EPFX_TONEMAPLDR.PFXTONEMAPLDR_ALPHALUM | EPFX_REMAPHDR.PFXREMAPHDR_ALPHALUM,
+		PFXTM_REMAP_REINHARD_LINEARSAT		= EPFX_REMAPHDR.PFXREMAPHDR_REINHARD | EPFX_TONEMAPLDR.PFXTONEMAPLDR_LINEARSAT,
+		PFXTM_REMAP_REINHARD_SENSITOMETRIC	= EPFX_REMAPHDR.PFXREMAPHDR_REINHARD | EPFX_TONEMAPLDR.PFXTONEMAPLDR_SENSITOMETRIC,
+		PFXTM_LDR_REMAP_REINHARD		= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LDRLINEAR | EPFX_REMAPHDR.PFXREMAPHDR_REINHARD,
+		PFXTM_LDR_REMAP_REINHARDLUM		= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LDRLINEAR | EPFX_REMAPHDR.PFXREMAPHDR_REINHARDLUM,
+		PFXTM_LDR_REMAP_LOG				= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LDRLINEAR | EPFX_REMAPHDR.PFXREMAPHDR_LOG,
+		PFXTM_LDR_REMAP_LOGLUM			= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LDRLINEAR | EPFX_REMAPHDR.PFXREMAPHDR_LOGLUM,
+		PFXTM_LDR_REMAP_ALPHALUM		= EPFX_TONEMAPLDR.PFXTONEMAPLDR_LDRLINEAR | EPFX_REMAPHDR.PFXREMAPHDR_ALPHALUM,
+		PFXTM_REMAP_REINHARD_LINEAR			= EPFX_REMAPHDR.PFXREMAPHDR_REINHARD | EPFX_TONEMAPLDR.PFXTONEMAPLDR_LINEAR,
+		PFXTM_REMAP_REINHARD_REINHARDLUM	= EPFX_REMAPHDR.PFXREMAPHDR_REINHARD | EPFX_TONEMAPLDR.PFXTONEMAPLDR_REINHARDLUM,
+		PFXTM_REMAP_REINHARD_LOG			= EPFX_REMAPHDR.PFXREMAPHDR_REINHARD | EPFX_TONEMAPLDR.PFXTONEMAPLDR_LOG,
+		PFXTM_REMAP_REINHARD_LOGLUM			= EPFX_REMAPHDR.PFXREMAPHDR_REINHARD | EPFX_TONEMAPLDR.PFXTONEMAPLDR_LOGLUM,
+		PFXTM_REMAP_ALPHALUM_LINEAR			= EPFX_REMAPHDR.PFXREMAPHDR_ALPHALUM | EPFX_TONEMAPLDR.PFXTONEMAPLDR_LINEAR,
+		PFXTM_REMAP_ALPHALUM_SENSITOMETRIC	= EPFX_REMAPHDR.PFXREMAPHDR_ALPHALUM | EPFX_TONEMAPLDR.PFXTONEMAPLDR_SENSITOMETRIC,
+		PFXTM_REMAP_ALPHALUM_REINHARD		= EPFX_REMAPHDR.PFXREMAPHDR_ALPHALUM | EPFX_TONEMAPLDR.PFXTONEMAPLDR_REINHARD,
+		PFXTM_REMAP_ALPHALUM_REINHARDLUM	= EPFX_REMAPHDR.PFXREMAPHDR_ALPHALUM | EPFX_TONEMAPLDR.PFXTONEMAPLDR_REINHARDLUM,
+		PFXTM_REMAP_ALPHALUM_LOG			= EPFX_REMAPHDR.PFXREMAPHDR_ALPHALUM | EPFX_TONEMAPLDR.PFXTONEMAPLDR_LOG,
+		PFXTM_REMAP_ALPHALUM_LOGLUM			= EPFX_REMAPHDR.PFXREMAPHDR_ALPHALUM | EPFX_TONEMAPLDR.PFXTONEMAPLDR_LOGLUM,
+		PFXTM_AUTO							= -1,
+		PFXTM_DEFAULT						= PFXTM_AUTO,
+		PFXTM_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum GlareShape
+    {
+        AppDef = -1,
+        Disable = 0,
+        Bloom,
+        LensFlare,
+        Standard,
+        CheapLens,
+        AfterImage,
+        FilterCrossScreen,
+        FilterCrossScreenSpectral,
+        FilterSnowCross,
+        FilterSnowCrossSpectral,
+        FilterSunnyCross,
+        FilterSunnyCrossSpectral,
+        HorizontalStreak,
+        VerticalStreak,
+        Num,
+
+        Default = Bloom,
+        ForceInt32 = 0x7fffffff,
+    }
+
+    public enum EPFX_GLARESHAPE
+    {
+        PFXGS_APPDEF = -1,
+        PFXGS_DISABLE = 0,
+        PFXGS_BLOOM,
+        PFXGS_LENSFLARE,
+        PFXGS_STANDARD,
+        PFXGS_CHEAPLENS,
+        PFXGS_AFTERIMAGE,
+        PFXGS_FILTER_CROSSSCREEN,
+        PFXGS_FILTER_CROSSSCREEN_SPECTRAL,
+        PFXGS_FILTER_SNOWCROSS,
+        PFXGS_FILTER_SNOWCROSS_SPECTRAL,
+        PFXGS_FILTER_SUNNYCROSS,
+        PFXGS_FILTER_SUNNYCROSS_SPECTRAL,
+        PFXGS_HORIZONTALSTREAK,
+        PFXGS_VERTICALSTREAK,
+        PFXGS_NUM,
+        PFXGS_DEFAULT = PFXGS_BLOOM,
+        PFXGS_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_DOFAPERTUREPARAM
+	{
+		PFXAPP_FNUMBER			= 0,
+		PFXAPP_DIAMETER,
+		PFXAPP_FNUMBER_ADAPTIVE,
+		PFXAPP_DIAMETER_ADAPTIVE,
+		PFXAPP_NUM,
+		PFXAPP_DEFAULT			= PFXAPP_DIAMETER_ADAPTIVE,
+		PFXAPP_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_DEPTHFACTORFORMAT
+	{
+		PFXDFFMT_UNKNOWN			= -1,
+		PFXDFFMT_DEPTHVALUE				= 0,
+		PFXDFFMT_EFFECTFACTOR,
+		PFXDFFMT_EFFECTFACTOR_OPTIMIZED,
+		PFXDFFMT_CIRCLEOFCONFUSION_TOSCREENRATIO,
+		PFXDFFMT_NUM,
+		PFXDFFMT_AUTO,
+		PFXDFFMT_CURRENT,
+		PFXDFFMT_VIEWSPACEDISTANCE,
+		PFXDFFMT_DEFAULT			= PFXDFFMT_AUTO,
+		PFXDFFMT_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_EFFECTFLAG
+	{
+        PFXFX_DEFAULT = 0x00000000,
+        PFXFX_RESTORESTATES = 0x00000001,
+		PFXFX_DONOTAPPLY			= 0x00000002,
+		PFXFX_DONOTUPDATEFRAME		= 0x00000010,
+		PFXFX_IGNOREDOFENABLESTATE	= 0x00001000,
+		PFXFX_FORCEINT32	= 0x7fffffff,
+	}
+
+
+    /*
+    public struct PFX_APERTURELEVELBUFFER
+    {
+        public int m_iBufferSizeShift;
+        public int m_iFilterRadiusLevel;
+
+        static public PFX_APERTURELEVELBUFFER Create(
+            int iBufferSizeShift = -1,
+            int iFilterRadiusLevel = -1)
+        {
+            PFX_APERTURELEVELBUFFER buffer = new PFX_APERTURELEVELBUFFER();
+            buffer.Set(iBufferSizeShift, iFilterRadiusLevel);
+            return buffer;
+        }
+
+        public PFX_APERTURELEVELBUFFER(
+            int iBufferSizeShift = -1,
+            int iFilterRadiusLevel = -1)
+        {
+            Set(iBufferSizeShift, iFilterRadiusLevel);
+        }
+
+        public PFX_APERTURELEVELBUFFER(
+            ref PFX_APERTURELEVELBUFFER src)
+	    {
+		    m_iBufferSizeShift		= src.m_iBufferSizeShift;
+		    m_iFilterRadiusLevel	= src.m_iFilterRadiusLevel;
+	    }
+
+        public void Set(
+            int iBufferSizeShift = -1,
+            int iFilterRadiusLevel = -1)
+        {
+            m_iBufferSizeShift = iBufferSizeShift;
+            m_iFilterRadiusLevel = iFilterRadiusLevel;
+        }
+
+        public void Initialize()
+        {
+            m_iBufferSizeShift = -1;
+            m_iFilterRadiusLevel = -1;
+        }
+    }
+    */
+
+    /*
+    public struct PFX_INITPARAM
+    {
+        public int m_nEffectViews;
+        public uint m_eEffectBufferFormat;
+        public uint m_eRenderSceneFormat;
+        public uint m_eDepthStencilFormat;
+        public uint m_uiEffectBufferWidth;
+        public uint m_uiEffectBufferHeight;
+        public uint m_uiRenderSceneWidth;
+        public uint m_uiRenderSceneHeight;
+        public float m_fAspectRatio;
+        public float m_fAnamorphicSqueezeFactor;
+        public float m_fAnamorphicSqueezeFactorGlare;
+        public float m_fAnamorphicSqueezeFactorAperture;
+        public bool m_bAnamorphicPrioritizeQuality;
+        public EPFX_RESAMPLEFILTER m_eTonemapResampleFilter;
+        public int m_nMultisamples;
+        public int m_iMultisampleQuality;
+        public int m_nAuxiliaryRenderSceneBuffers;
+        public int m_nAuxiliaryEffectBuffers;
+        public uint m_uiEffectBufferCriterionWidth;
+        public float m_fGlareWidthScale;
+        public uint m_uiGlareWidth;
+        public uint m_uiGlareBloomLevels;
+        public uint m_eGlareFormat;
+        public uint m_eGlarePartialFormat;
+        public float m_fGlareResultBlur;
+        public uint m_uiGlareResultBlurMaxWidth;
+        public bool m_bGlareGhost;
+        public bool m_bGlareAfterimage;
+        public uint m_uiGlareStarMaxStreaks;
+        public float m_fGlareStarSoftness;
+        public uint m_eGlareModulatorFormat;
+        public uint m_uiLightShaftMaxSources;
+        public float m_fDepthOfFieldWidthScale;
+        public uint m_uiDepthOfFieldWidth;
+        public uint m_uiDepthOfFieldApertureLevels;
+        public EPFX_DOFEDGEQUALITY m_eDepthOfFieldEdgeQuality;
+        public int m_iApertureLevelCombination;
+        public PFX_APERTURELEVELBUFFER[] m_aApertureLevelCombination; // = new PFX_APERTURELEVELBUFFER[PFX_APERTUREFILTER_MAX_LEVELS];
+        public uint m_eApertureFilterFormat;
+        public EPFX_APERTURESHAPE m_eApertureShape;
+        public float m_fApertureCorrugation;
+        public float m_fApertureCorrugationShift;
+        public uint m_uiApertureResultBlurWidth;
+        public float m_fApertureResultBlurScale;
+        public bool m_bApertureResultBlurModify;
+        public float m_fVelocityWidthScale;
+        public uint m_uiVelocityWidth;
+        public uint m_eVelocityFormat;
+        public float m_fAmbientOcclusionWidthScale;
+        public uint m_uiAmbientOcclusionWidth;
+        public uint m_uiMaxParticles;
+        public bool m_bRenderSceneAdditionalBuffer;
+        public EPFXALPHAOUTPUT m_eAlphaOutput;
+
+        static public PFX_INITPARAM Create()
+        {
+            PFX_INITPARAM initParam = new PFX_INITPARAM();
+            initParam.Initialize();
+            return initParam;
+        }
+
+        void Initialize()
+        {
+            m_nEffectViews = 1;
+
+            m_eEffectBufferFormat = GPUFMT_UNKNOWN;
+            m_eRenderSceneFormat = GPUFMT_UNKNOWN;
+
+            m_uiEffectBufferWidth = 0;
+            m_uiEffectBufferHeight = 0;
+            m_uiRenderSceneWidth = 0;
+            m_uiRenderSceneHeight = 0;
+
+            m_fAspectRatio = 0.0f;
+            m_fAnamorphicSqueezeFactor = 0.0f;
+            m_fAnamorphicSqueezeFactorGlare = 0.0f;
+            m_fAnamorphicSqueezeFactorAperture = 0.0f;
+            m_bAnamorphicPrioritizeQuality = true;
+
+            m_eTonemapResampleFilter = EPFX_RESAMPLEFILTER.PFXRSF_AUTO;
+
+            m_nMultisamples = 1;
+            m_iMultisampleQuality = 0;
+
+            m_nAuxiliaryRenderSceneBuffers = 0;
+            m_nAuxiliaryEffectBuffers = 0;
+
+            m_uiEffectBufferCriterionWidth = 0;
+
+            m_fGlareWidthScale = 0.0f;
+            m_uiGlareWidth = 0;
+            m_uiGlareBloomLevels = 0;
+            m_eGlareFormat = GPUFMT_UNKNOWN;
+            m_eGlarePartialFormat = GPUFMT_UNKNOWN;
+
+            m_fGlareResultBlur = 0.25f;
+            m_uiGlareResultBlurMaxWidth = 0;
+
+            m_bGlareGhost = true;
+            m_bGlareAfterimage = true;
+            m_uiGlareStarMaxStreaks = 8;
+            m_fGlareStarSoftness = 0.25f;
+            m_eGlareModulatorFormat = GPUFMT_UNKNOWN;
+
+            m_uiLightShaftMaxSources = 1;
+
+            m_fDepthOfFieldWidthScale = 0.0f;
+            m_uiDepthOfFieldWidth = 0;
+            m_uiDepthOfFieldApertureLevels = 0;
+            m_eDepthOfFieldEdgeQuality = EPFX_DOFEDGEQUALITY.PFXDOFEDGE_DEFAULT;
+            m_iApertureLevelCombination = -1;
+            m_eApertureShape = EPFX_APERTURESHAPE.PFXAPS_DEFAULT;
+            m_eDepthStencilFormat = GPUFMT_UNKNOWN;
+            m_eApertureFilterFormat = GPUFMT_UNKNOWN;
+
+            m_fApertureCorrugation = 0.85f;
+            m_fApertureCorrugationShift = 0.75f;
+
+            m_uiApertureResultBlurWidth = 0;
+            m_fApertureResultBlurScale = 0.0f;
+            m_bApertureResultBlurModify = false;
+
+            m_aApertureLevelCombination = new PFX_APERTURELEVELBUFFER[PFX_APERTUREFILTER_MAX_LEVELS];
+            for (int i = 0; i < PFX_APERTUREFILTER_MAX_LEVELS; i++)
+            {
+                m_aApertureLevelCombination[i] = new PFX_APERTURELEVELBUFFER();
+                m_aApertureLevelCombination[i].Initialize();
+            }
+
+            m_fVelocityWidthScale = 0.0f;
+            m_uiVelocityWidth = 0;
+            m_eVelocityFormat = GPUFMT_UNKNOWN;
+
+            m_fAmbientOcclusionWidthScale = 0.0f;
+            m_uiAmbientOcclusionWidth = 0;
+
+            m_uiMaxParticles = 256;
+
+            m_bRenderSceneAdditionalBuffer = false;
+
+            m_eAlphaOutput = EPFXALPHAOUTPUT.PFXALPHAOUT_DONOTCARE;
+        }
+    }
+    */
+
+    public enum EPFX_GLAREBRIGHTPASS
+	{
+		PFXGBP_THRESHOLD,
+		PFXGBP_THRESHOLD_LUMINANCE,
+		PFXGBP_NUM,
+		PFXGBP_DEFAULT					= PFXGBP_THRESHOLD_LUMINANCE,
+		PFXGBP_FORCEINT32	= 0x7fffffff,
+	}
+
+    public enum EPFX_MOTIONBLURMODE
+    {
+        PFXMB_CAMERA_UNKNOWN = -1,
+        PFXMB_CAMERA_ROTATION_UNIFORM = 0,
+        PFXMB_CAMERA_ROTATION_PERSPECTIVE,
+        PFXMB_VELOCITYBASE,
+        PFXMB_NUM,
+        PFXMB_DEFAULT = PFXMB_CAMERA_ROTATION_PERSPECTIVE,
+        PFXMB_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_VELOCITYSOURCE
+    {
+        PFXVS_UNKNOWN = -1,
+        PFXVS_AUTOGEN = 0,
+        PFXVS_AUTOGEN_APPOVERWRITE,
+        PFXVS_APPGEN,
+        PFXVS_NUM,
+        PFXVS_AUTO = -2,
+        PFXVS_DEFAULT = PFXVS_AUTO,
+        PFXVS_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_VELOCITYFORMAT
+    {
+        PFXVFMT_UNKNOWN = -1,
+        PFXVFMT_DIRECT = 0,
+        PFXVFMT_UNORM,
+        PFXVFMT_NUM,
+        PFXVFMT_AUTO = -2,
+        PFXVFMT_DEFAULT = PFXVFMT_AUTO,
+        PFXVFMT_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_COLORSPACE
+    {
+        PFXCOLORS_BT709RGB = 0,
+        PFXCOLORS_ADOBERGB,
+        PFXCOLORS_BT2020RGB,
+        PFXCOLORS_ACESRGB,
+        PFXCOLORS_WIDEGAMUTRGB,
+        PFXCOLORS_PROPHOTORGB,
+        PFXCOLORS_NUM,
+        PFXCOLORS_SRGB = PFXCOLORS_BT709RGB,
+        PFXCOLORS_DEFAULT = PFXCOLORS_BT709RGB,
+        PFXCOLORS_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_DISTORTIONFOVBASE
+    {
+        PFXDISTFOV_VERTICAL = 0,
+        PFXDISTFOV_HORIZONTAL,
+        PFXDISTFOV_DIAGONAL,
+        PFXDISTFOV_NUM,
+        PFXDISTFOV_DEFAULT = PFXDISTFOV_HORIZONTAL,
+        PFXDISTFOV_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_SAMPLEWRAPMODE
+    {
+        PFXSW_CLAMP = 0,
+        PFXSW_REPEAT,
+        PFXSW_MIRROR,
+        PFXSW_BORDERBLACK,
+        PFXSW_NUM,
+        PFXSW_AUTO = -1,
+        PFXSW_UNKNOWN = -2,
+        PFXSW_DEFAULT = PFXSW_AUTO,
+    }
+
+    public enum EPFX_TEMPORALANTIALIASMODE
+    {
+        PFXTAA_UNIFORM_ALLPIXELS = 0,
+        PFXTAA_ADAPTIVE_STATICPIXELS,
+        PFXTAA_ADAPTIVE_ALLPIXELS,
+        PFXTAA_NUM,
+        PFXTAA_DEFAULT = PFXTAA_ADAPTIVE_ALLPIXELS,
+        PFXTAA_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_APERTURECIRCULARITYMODE
+    {
+        PFXAPC_UNKNOWN = -1,
+        PFXAPC_ADAPTIVE = 0,
+        PFXAPC_DIRECT,
+        PFXAPC_NUM,
+        PFXAPC_DEFAULT = PFXAPC_ADAPTIVE,
+    }
+
+    public enum EPFX_BOKEHABERRATIONTYPE
+    {
+        PFXBOKEHABE_UNKNOWN = -1,
+        PFXBOKEHABE_SPHERICAL = 0,
+        PFXBOKEHABE_ASPHERICAL,
+        PFXBOKEHABE_ACHROMATIC,
+        PFXBOKEHABE_ACHROMATIC2,
+        PFXBOKEHABE_APOCHROMATIC,
+        PFXBOKEHABE_APODIZATION,
+        PFXBOKEHABE_NUM,
+        PFXBOKEHABE_DEFAULT = PFXBOKEHABE_APOCHROMATIC,
+        PFXBOKEHABE_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_MULTISAMPLEMODE
+    {
+        PFXMSM_MULTISAMPLE_AUTO = 0,
+        PFXMSM_SINGLESAMPLE_AUTO = 3,
+        PFXMSM_MULTISAMPLE = 2,
+        PFXMSM_SINGLESAMPLE = 1,
+        PFXMSM_NUM = 4,
+        PFXMSM_AUTO = PFXMSM_MULTISAMPLE_AUTO,
+        PFXMSM_UNKNOWN = -2,
+        PFXMSM_DEFAULT = PFXMSM_AUTO,
+        PFXMSM_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_DOWNSAMPLEFILTER
+    {
+        PFXDSF_POINT = 0,
+        PFXDSF_LINEAR,
+#if PFX_API_GCM
+		PFXDSF_CONVOLUTION_AUTO_GCM,
+		PFXDSF_CONVOLUTION_AUTO_ALT_GCM,
+		PFXDSF_CONVOLUTION_AUTO_ACCUVIEWSHIFTED_GCM,
+		PFXDSF_CONVOLUTION_QUINCUNX_GCM,
+		PFXDSF_CONVOLUTION_QUINCUNX_ALT_GCM,
+		PFXDSF_CONVOLUTION_QUINCUNX_ACCUVIEWSHIFTED_GCM,
+		PFXDSF_CONVOLUTION_GAUSSIAN_GCM,
+		PFXDSF_CONVOLUTION_GAUSSIAN_ALT_GCM,
+		PFXDSF_CONVOLUTION_GAUSSIAN_ACCUVIEWSHIFTED_GCM,
+#endif
+        PFXDSF_NUM,
+        PFXDSF_AUTO = -1,
+        PFXDSF_UNKNOWN = -2,
+        PFXDSF_DEFAULT = PFXDSF_AUTO,
+        PFXDSF_FORCEINT32 = 0x7fffffff,
+    }
+
+    public enum EPFX_DIAPHRAGMROTATE
+    {
+        PFXDIAROT_RCP_FOCALLENGTH,
+        PFXDIAROT_LOG_RCP_FOCALLENGTH,
+        PFXDIAROT_LINEAR_FOCALLENGTH,
+        PFXDIAROT_ANGLE_DIRECT,
+        PFXDIAROT_NUM,
+        PFXDIAROT_DEFAULT = PFXDIAROT_LOG_RCP_FOCALLENGTH,
+        PFXDIAROT_FORCEINT32 = 0x7fffffff,
+    }
+
+    public static float PFXRadian(float degree)
+    {
+        return degree * Mathf.Deg2Rad;
+    }
+
+    public static float PFXNanometerToMeter(float nanometer)
+    {
+        return (nanometer * (1.0f / (1000.0f * 1000.0f * 1000.0f)));
+    }
+
+    public static float PFXMillimeterToMeter(float millimeter)
+    {
+        return (millimeter * (1.0f / 1000.0f));
+    }
+
+    [System.Serializable]
+    [StructLayout(LayoutKind.Explicit, CharSet = CharSet.Ansi)]
+    public struct PFX_PARTICLE_HEATSHIMMER
+    {
+        [FieldOffsetAttribute(0)]
+        public Vector3 position;
+        [FieldOffsetAttribute(12)]
+        public float radius;
+        [FieldOffsetAttribute(16)]
+        public Vector4 intensity;
+        [FieldOffsetAttribute(32)]
+        public Vector2 texCoordScale;
+        [FieldOffsetAttribute(40)]
+        public Vector3 texCoordOffset;
+        [FieldOffsetAttribute(52)]
+        public float depthFalloff;
+
+        public static PFX_PARTICLE_HEATSHIMMER Create()
+        {
+            PFX_PARTICLE_HEATSHIMMER obj = new PFX_PARTICLE_HEATSHIMMER();
+            obj.position = Vector3.zero;
+            obj.radius = 1.0f;
+            obj.intensity = Vector4.one;
+            obj.texCoordScale = Vector2.one;
+            obj.texCoordOffset = Vector3.zero;
+            obj.depthFalloff = 1.0f;
+            return obj;
+        }
+    };
+
+    // Todo: Init Flags in ES3 differ from those in ES2, and therefore we should handle that!
+	public enum EPFX_INITFLAG
+	{
+		PFXINIT_MASK							= unchecked((int)0xfffffe00),
+		PFXINIT_PARTICLE_FLAG					= 0x00000000,	
+		PFXINIT_DISTANCEFALLOFF_FLAG			= 0x00000000,	
+		PFXINIT_NOIZETEXTURE_FLAG				= 0x00000000,	
+		PFXINIT_FIXEDWIDTH_EFFECT				= 0x00000200,
+		PFXINIT_DESTINATIONWORK_FLAG			= 0x00000400,
+		PFXINIT_EFFECTMASK						= PFXINIT_DESTINATIONWORK_FLAG,
+		PFXINIT_RENDERSCENE_EXTERNAL			= 0x00000800,
+		PFXINIT_RENDERSCENE_BLENDING			= 0x00001000,
+		PFXINIT_RENDERSCENE_MULTISAMPLEMODE		= 0x00002000,
+		PFXINIT_RENDERSCENE_SRGB				= 0x00004000,
+		PFXINIT_GLAREMODULATOR					= 0x00008000,
+		PFXINIT_DEPTHTEXTURE					= 0x00010000,
+		PFXINIT_DEPTHFACTORSOURCETEXTURE		= 0x00020000,
+		PFXINIT_AUXEFFECTBUFFER_ATLEAST_1		= 0x00040000,
+		PFXINIT_AUXEFFECTBUFFER_ATLEAST_2		= 0x00080000,
+		PFXINIT_LENSDISTORTION					= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1,
+		PFXINIT_OPTICALVIGNETTING				= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1,
+		PFXINIT_APERTUREAIRYDISC				= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1,
+		PFXINIT_MOTIONBLUR						= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1,
+		PFXINIT_BLUR_UNLIMITEDRECURSION_FLAG	= PFXINIT_AUXEFFECTBUFFER_ATLEAST_2,
+		PFXINIT_MOTIONBLUR_UNLIMITEDRECURSION	= PFXINIT_BLUR_UNLIMITEDRECURSION_FLAG
+												| PFXINIT_MOTIONBLUR,
+		PFXINIT_ANTIALIAS_TEMPORAL_FLAG			= 0x00100000,
+		PFXINIT_INTERNALVELOCITYTEXTURE_FLAG	= 0x00200000,
+		PFXINIT_MOTIONBLUR_INTERNALVELOCITYTEXTURE	= PFXINIT_INTERNALVELOCITYTEXTURE_FLAG
+													| PFXINIT_MOTIONBLUR,
+		PFXINIT_GEOMETRYBLUR						= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1,
+		PFXINIT_GEOMETRYBLUR_UNLIMITEDRECURSION		= PFXINIT_BLUR_UNLIMITEDRECURSION_FLAG
+													| PFXINIT_GEOMETRYBLUR,
+		PFXINIT_ANTIALIAS_TEMPORAL							= PFXINIT_ANTIALIAS_TEMPORAL_FLAG,
+		PFXINIT_ANTIALIAS_TEMPORAL_INTERNALVELOCITYTEXTURE	= PFXINIT_INTERNALVELOCITYTEXTURE_FLAG
+															| PFXINIT_ANTIALIAS_TEMPORAL_FLAG,
+		PFXINIT_CHROMATICABERRATION				= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1,
+		PFXINIT_CHROMATICABERRATION_MASK		= PFXINIT_CHROMATICABERRATION
+												| PFXINIT_NOIZETEXTURE_FLAG,
+		PFXINIT_GAUSSIANBLUR					= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1,
+		PFXINIT_AUXREDUCEBUFFER					= 0x00400000,	
+		PFXINIT_BLUR_UNLIMITEDRADIUS_FLAG		= PFXINIT_AUXEFFECTBUFFER_ATLEAST_2
+												| PFXINIT_AUXREDUCEBUFFER,
+		PFXINIT_GAUSSIANBLUR_UNLIMITEDRADIUS		= PFXINIT_BLUR_UNLIMITEDRADIUS_FLAG
+													| PFXINIT_GAUSSIANBLUR,
+		PFXINIT_APERTUREAIRYDISC_UNLIMITEDRADIUS	= PFXINIT_BLUR_UNLIMITEDRADIUS_FLAG
+													| PFXINIT_APERTUREAIRYDISC,
+		PFXINIT_FEEDBACK						= 0x00800000,
+		PFXINIT_FEEDBACK_BLENDING_FLAG			= 0x01000000,
+		PFXINIT_FEEDBACK_BLENDING				= PFXINIT_FEEDBACK_BLENDING_FLAG
+												| PFXINIT_FEEDBACK,
+		PFXINIT_INTERNALNORMALTEXTURE_FLAG		= 0x02000000,
+		PFXINIT_INTERNALLINEARDEPTHTEXTURE_FLAG	= PFXINIT_INTERNALNORMALTEXTURE_FLAG,
+		PFXINIT_AMBIENTOCCLUSION_FLAG			= 0x04000000,
+		PFXINIT_AMBIENTOCCLUSION				= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1
+												| PFXINIT_INTERNALNORMALTEXTURE_FLAG
+												| PFXINIT_AMBIENTOCCLUSION_FLAG,
+		PFXINIT_HEATSHIMMER						= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1
+												| PFXINIT_NOIZETEXTURE_FLAG,
+		PFXINIT_HEATSHIMMER_PARTICLE			= PFXINIT_PARTICLE_FLAG
+												| PFXINIT_HEATSHIMMER,
+		PFXINIT_ANTIALIAS_FLAG					= 0x08000000,
+		PFXINIT_ANTIALIAS						= PFXINIT_AUXEFFECTBUFFER_ATLEAST_1
+												| PFXINIT_ANTIALIAS_FLAG,
+		PFXINIT_ANTIALIAS_DISTANCEFALLOFF		= PFXINIT_ANTIALIAS
+												| PFXINIT_DISTANCEFALLOFF_FLAG,
+		PFXINIT_LIGHTSHAFT_FLAG					= 0x10000000,
+		PFXINIT_LIGHTSHAFT						= PFXINIT_LIGHTSHAFT_FLAG
+												| PFXINIT_NOIZETEXTURE_FLAG,
+		PFXINIT_IMAGESENSORNOISE				= PFXINIT_NOIZETEXTURE_FLAG,
+#if IS_ENABLED
+		PFXINIT_ANAMORPHICLENS_FLARE			= 0x20000000,
+#endif	
+		PFXINIT_ANAMORPHICLENS_SQUEEZE			= 0x20000000,
+		PFXINIT_ANAMORPHICLENS_ASPECTRATIO		= PFXINIT_ANAMORPHICLENS_SQUEEZE,
+		PFXINIT_ANAMORPHICLENS_APERTURE			= 0x40000000,
+		PFXINIT_ANAMORPHICLENS					= PFXINIT_ANAMORPHICLENS_SQUEEZE
+												| PFXINIT_ANAMORPHICLENS_APERTURE,
+		PFXINIT_INDIRECTTONEMAP_FLAG			= unchecked((int)0x80000000),
+		PFXINIT_COLORGRADINGLUT					= PFXINIT_INDIRECTTONEMAP_FLAG,
+#if IS_ENABLED
+		PFXINIT_RENDERSCENE_ADDITIONALBUFFER	= unchecked((int)0x80000000),
+#endif	
+		PFXINIT_DEFAULT							= 0x00000000,
+		PFXINIT_FORCEINT32	= 0x7fffffff,
+	}
+
+    //public enum EPFX_INITFLAG_ES2
+    //{
+    //    PFXINIT_MASK = 0x00ffff00,
+    //    PFXINIT_DEPTHTEXTURE = 0x00010000,
+    //    PFXINIT_ANTIALIAS = 0x08000000,
+    //    PFXINIT_DEFAULT = 0x00000000,
+    //};
+
+    public enum HRESULT
+    {
+        S_OK = 0,
+        S_FALSE = 1,
+
+        E_FAIL = -1,
+        E_ABORT = -2,
+        E_UNEXPECTED = -3,
+        E_NOTIMPL = -4,
+        E_OUTOFMEMORY = -5,
+        E_INVALIDARG = -6,
+    };
+
+
+	public enum EPFX_MATRIXTYPE
+	{
+		PFXMTX_UNKNOWN					= -1,
+		PFXMTX_TONEMAP_COLOR			= 0,
+		PFXMTX_TONEMAP_COLOR_HDRSPACE,
+		PFXMTX_FEEDBACK_COLOR,
+		PFXMTX_FEEDBACK_POSITION,
+		PFXMTX_GEOMETRYBLUR_COLOR,
+		PFXMTX_GEOMETRYBLUR_POSITION,
+		PFXMTX_NUM,
+		PFXMTX_ALL					= -2,
+		PFXMTX_FORCEINT32	= 0x7fffffff,
+	}
+
+	public enum EPFX_APERTUREFILTERSIZEPARAM
+	{
+		PFXAPFSP_LEVEL_ROUNDDOWN		= 0,
+		PFXAPFSP_LEVEL_BLEND,
+		PFXAPFSP_COCRATIO_ROUNDOFF,
+		PFXAPFSP_COCRATIO_BLEND,
+		PFXAPFSP_NUM,
+		PFXAPFSP_DEFAULT			= PFXAPFSP_LEVEL_ROUNDDOWN,
+		PFXAPFSP_FORCEINT32	= 0x7fffffff,
+	}
+
+	public enum EPFX_DYNAMICRANGEMODE
+	{
+		PFXDR_MODE_MASK							= 0x0000000f,	
+		PFXDR_LDR_REMAP_RENDERSCENE_HDR_FLAG	= 0x00000100,
+		PFXDR_MASK								= PFXDR_LDR_REMAP_RENDERSCENE_HDR_FLAG | PFXDR_MODE_MASK,
+		PFXDR_HDR_DIRECT				= 0x00000001,
+		PFXDR_LDR_REMAP_GLARE			= 0x00000002,
+		PFXDR_LDR_REMAP_EFFECTS			= 0x00000004,
+		PFXDR_LDR_REMAP_DOFGLARE		= PFXDR_LDR_REMAP_EFFECTS,
+		PFXDR_LDR_REMAP_EFFECTSOURCE	= 0x00000008,
+		PFXDR_LDR_REMAP_ALL				= PFXDR_LDR_REMAP_EFFECTSOURCE,
+		PFXDR_LDR_REMAP					= PFXDR_LDR_REMAP_DOFGLARE
+			| PFXDR_LDR_REMAP_GLARE
+			| PFXDR_LDR_REMAP_ALL,
+		PFXDR_LDR_REMAP_GLARE_RENDERSCENE_HDR		= PFXDR_LDR_REMAP_RENDERSCENE_HDR_FLAG | PFXDR_LDR_REMAP_GLARE,
+		PFXDR_LDR_REMAP_DOFGLARE_RENDERSCENE_HDR	= PFXDR_LDR_REMAP_RENDERSCENE_HDR_FLAG | PFXDR_LDR_REMAP_DOFGLARE,
+		PFXDR_LDR_REMAP_RENDERSCENE_HDR				= PFXDR_LDR_REMAP_RENDERSCENE_HDR_FLAG | PFXDR_LDR_REMAP,
+		PFXDR_FORCEINT32	= 0x7fffffff,
+	}
+
+}

@@ -20,14 +20,14 @@ public class Pause : MonoBehaviour {
                 {
                     customUI.SetActive(true);
                 }
-				depth.enabled = false;
+				//depth.enabled = false;
 			}
 			else{
                 if (customUI != null)
                 {
                     customUI.SetActive(false);
                 }
-				depth.enabled = true;
+				//depth.enabled = true;
 			}
 		}
 	}
