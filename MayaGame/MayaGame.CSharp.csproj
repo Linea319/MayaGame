@@ -173,11 +173,6 @@
     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EditorLabel.cs" />
     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EnableCameraDepthInForward.cs" />
     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\SoftNormalsToVertexColor.cs" />
-    <Compile Include="Assets\TestScene\Scripts\OrbitCamera.cs" />
-    <Compile Include="Assets\TestScene\Scripts\YebisEnable.cs" />
-    <Compile Include="Assets\YEBIS\Scripts\Wrapper\PPFX.cs" />
-    <Compile Include="Assets\YEBIS\Scripts\Wrapper\YebisLib.cs" />
-    <Compile Include="Assets\YEBIS\Scripts\YebisPostEffects.cs" />
     <Compile Include="Assets\model\bot\AnimEventSender.cs" />
     <Compile Include="Assets\script\AnimSendTrigger.cs" />
     <Compile Include="Assets\script\AttackCall.cs" />
@@ -596,7 +591,6 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
-    <None Include="Assets\YEBIS\Shaders\YebisInputRender.shader" />
     <None Include="Assets\model\Holo\hologram.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

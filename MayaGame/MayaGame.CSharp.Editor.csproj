@@ -160,7 +160,6 @@
     <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
     <Compile Include="Assets\ShaderForge\Editor\InternalResources\Inspectors\ShaderForgeInspector.cs" />
     <Compile Include="Assets\ShaderForge\Editor\InternalResources\Inspectors\ShaderForgeMaterialInspector.cs" />
-    <Compile Include="Assets\YEBIS\Editor\YebisPostEffectsEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\ImageEffectFetcher\Lib\Ionic.Zip.Unity.XML" />
@@ -523,7 +522,6 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
-    <None Include="Assets\YEBIS\Shaders\YebisInputRender.shader" />
     <None Include="Assets\model\Holo\hologram.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
