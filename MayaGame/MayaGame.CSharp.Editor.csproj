@@ -167,6 +167,7 @@
     <None Include="Assets\Exploder\Demo\Shaders\VertexColor.shader" />
     <None Include="Assets\Exploder\Demo\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
     <None Include="Assets\Exploder\Exploder\3rd\P2T.txt" />
+    <None Include="Assets\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Fracture\Shaders\Diffuse Bumped Triplanar.shader" />
     <None Include="Assets\Fracture\Shaders\Diffuse Triplanar.shader" />
     <None Include="Assets\Invisible Shader.shader" />
@@ -186,6 +187,8 @@
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Smoke Scroll.shader" />
     <None Include="Assets\JMO Assets\WarFX\_Effects (Mobile)\MuzzleFlashes\!MuzzleFlash Differences.txt" />
     <None Include="Assets\JMO Assets\WarFX\_Effects\MuzzleFlashes\!MuzzleFlash Differences.txt" />
+    <None Include="Assets\Lobby\Documentation.txt" />
+    <None Include="Assets\Lobby\Instruction.txt" />
     <None Include="Assets\Save\grip1.txt" />
     <None Include="Assets\Save\grip2.txt" />
     <None Include="Assets\Save\grip3.txt" />

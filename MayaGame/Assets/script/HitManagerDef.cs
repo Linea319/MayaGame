@@ -102,7 +102,7 @@ public class HitManagerDef : MonoBehaviour {
         }
         hitPoint -= damage;
         lastDamage = damage;
-        Debug.Log("col:" + name + " damage:" + damage + " penetrate:" + penetrateNum * 1000f * pointRate);
+        //Debug.Log("col:" + name + " damage:" + damage + " penetrate:" + penetrateNum * 1000f * pointRate);
 
         EnemyAI ai = transform.root.GetComponent<EnemyAI>();
         ai.shock += damages.shock / armor.shockResist * 0.16f;
