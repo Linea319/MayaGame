@@ -5372,7 +5372,8 @@ Prefab:
     - target: {fileID: 11479006, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
       propertyPath: weponPrefab.Array.data[1]
       value: 
-      objectReference: {fileID: 141880, guid: 9dd5ecd06ec3a3d44bd330169e9ad903, type: 2}
+      objectReference: {fileID: 1000014172697622, guid: 47917f9720e95d1439d2a416be48cd8a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2af8990c9656ab5458c6f033aebd38f1, type: 2}
   m_IsPrefabParent: 0
@@ -9823,7 +9824,6 @@ GameObject:
   - 114: {fileID: 1935096353}
   - 114: {fileID: 1935096355}
   - 114: {fileID: 1935096354}
-  - 114: {fileID: 1935096356}
   - 114: {fileID: 1935096357}
   m_Layer: 0
   m_Name: Camera
@@ -10130,100 +10130,6 @@ MonoBehaviour:
     useDithering: 0
     showDebug: 0
   m_Shader: {fileID: 4800000, guid: 964b34bbab7f5e64fa40f37eaccac1ad, type: 3}
---- !u!114 &1935096356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1935096347}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e51f5fb256d63524da16479d4d599c3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableYebis: 1
-  enableFXAA: 1
-  tonemap:
-    autoExposure: 1
-    exposure: 0.21367443
-    middleGray: 0.25
-  glare:
-    enableGlare: 1
-    quality: 1
-    shape: 2
-    luminance: 5
-    threshold: 0
-    remapFactor: 1
-    lightShaft:
-      enableLightShaft: 0
-      lookAt: {fileID: 0}
-      position: {x: 0, y: 0}
-      color: {r: 1, g: 1, b: 1, a: 1}
-      scale: 1
-      length: 1
-      glareRatio: 0.25
-      maskBias: 1
-      angleAttenuation: 1
-      noiseMask: 1
-      noiseFrequency: 1
-      diffractionRing: 0.5
-      diffractionRingRadius: 15
-      diffractionRingAttenuation: 0.5
-      diffractionRingSpectrumOrder: 1
-      diffractionRingOuterColor: {r: 1, g: 1, b: 1, a: 1}
-  depthOfField:
-    enableDof: 1
-    quality: 3
-    apertureShape: -1
-    filmSize: 0.05
-    apertureFnumber: 10
-    autoFocus: 1
-    focusDistance: 4.303225
-    visualizeApertureFilterLevel: 0
-  lensSimulation:
-    lensDistortion: 0
-    anamorphicLens: 0
-    vignetteMode: 1
-    vignetteIntensity: 0.2
-    vignetteFovDependence: 0
-    powerOfCosine: 1
-    imageCircle: 2
-    penumbraWidth: 1
-    imageCircleFovDependence: 0
-    penumbraFovDependence: 0
-    ignoreDepthOfFieldEnable: 1
-    opticalVignetting: 0
-  colorCorrection:
-    colorHue: 0
-    colorSaturation: 1
-    colorContrast: 1
-    colorBrightness: 1
-    colorSepia: 0
-    colorTemperature: 6500
-    colorWhiteBalance: 6500
-    colorGamma: 1
-  motionBlur:
-    enableMotionBlur: 0
-    blurTimeRatio: 1
-    maxBlurLength: 0.1
-  sSAO:
-    enableSSAO: 0
-    samples: 16
-    sampleRadius: 1
-    scale: 1
-    contrast: 1
-    bias: 0
-    epsilon: 0.0001
-    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  feedbackEffect:
-    feedbackEffect: 0
-    feedbackWeight: 0
-    feedbackRotation: 0
-    feedbackScaling: 1
-    feedbackHue: 0
-    feedbackSaturation: 1
-    feedbackContrast: 1
-    feedbackBrightness: 1
 --- !u!114 &1935096357
 MonoBehaviour:
   m_ObjectHideFlags: 0

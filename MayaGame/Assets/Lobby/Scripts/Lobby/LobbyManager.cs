@@ -335,6 +335,8 @@ namespace Prototype.NetworkLobby
             return true;
         }
 
+        
+
         // --- Countdown management
 
         public override void OnLobbyServerPlayersReady()
@@ -387,6 +389,9 @@ namespace Prototype.NetworkLobby
             ServerChangeScene(playScene);
         }
 
+        
+
+
         // ----------------- Client callbacks ------------------
 
         public override void OnClientConnect(NetworkConnection conn)
@@ -418,4 +423,6 @@ namespace Prototype.NetworkLobby
             infoPanel.Display("Cient error : " + (errorCode == 6 ? "timeout" : errorCode.ToString()), "Close", null);
         }
     }
+
+    
 }

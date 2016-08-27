@@ -174,6 +174,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         overAnim.runtimeAnimatorController = FPSCon.defAnim;
 
         reloadAnimRate = reloadAnim.length / (parameters["reload"] * 0.01f);
+        //Debug.Log(reloadAnimRate);
         anim.SetFloat("ReloadSpeed", reloadAnimRate);
 
         overAnim[FPSCon.defAnim.animationClips[2].name] = idleAnim;

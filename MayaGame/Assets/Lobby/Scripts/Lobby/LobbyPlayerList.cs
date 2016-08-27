@@ -14,6 +14,8 @@ namespace Prototype.NetworkLobby
         public GameObject warningDirectPlayServer;
         public Transform addButtonRow;
 
+        public Text ParameterText;
+
         protected VerticalLayoutGroup _layout;
         protected List<LobbyPlayer> _players = new List<LobbyPlayer>();
 
@@ -64,6 +66,30 @@ namespace Prototype.NetworkLobby
             {
                 p.OnPlayerListChanged(i);
                 ++i;
+            }
+        }
+
+        public void SetPrimaly(string name)
+        {
+            
+            foreach (LobbyPlayer p in _players)
+            {
+                if (p.isLocalPlayer)
+                {
+                    p.loadoutPrim = name;
+                }
+            }
+        }
+
+        public void SetSecondaly(string name)
+        {
+
+            foreach (LobbyPlayer p in _players)
+            {
+                if (p.isLocalPlayer)
+                {
+                    p.loadoutSecond = name;
+                }
             }
         }
     }
