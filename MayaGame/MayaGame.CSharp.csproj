@@ -191,7 +191,6 @@
     <Compile Include="Assets\script\Inventory.cs" />
     <Compile Include="Assets\script\MeleeSender.cs" />
     <Compile Include="Assets\script\Melee_Wepon.cs" />
-    <Compile Include="Assets\script\ParamText.cs" />
     <Compile Include="Assets\script\PartsCreater.cs" />
     <Compile Include="Assets\script\PartsSave.cs" />
     <Compile Include="Assets\script\Pause.cs" />
@@ -199,6 +198,8 @@
     <Compile Include="Assets\script\Shotgun.cs" />
     <Compile Include="Assets\script\SkinColSetter.cs" />
     <Compile Include="Assets\script\SyncPosition.cs" />
+    <Compile Include="Assets\script\UI\ParamText.cs" />
+    <Compile Include="Assets\script\UI\ParamTextSetter.cs" />
     <Compile Include="Assets\script\UIMessenger.cs" />
     <Compile Include="Assets\script\Wepon.cs" />
     <Compile Include="Assets\script\WeponController.cs" />
