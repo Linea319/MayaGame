@@ -297,6 +297,18 @@ namespace Prototype.NetworkLobby
             playerName = name;
         }
 
+        [Command]
+        public void CmdSetPrim(string path)
+        {
+            loadoutPrim = path;
+        }
+
+        [Command]
+        public void CmdSetSecond(string path)
+        {
+            loadoutSecond = path;
+        }
+
         //Cleanup thing when get destroy (which happen when client kick or disconnect)
         public void OnDestroy()
         {

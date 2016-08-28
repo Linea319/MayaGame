@@ -1903,7 +1903,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1137414, y: 2.82, z: -6.5616}
+  m_LocalPosition: {x: -1.5056598, y: -0.1319766, z: 29.563572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 9556882}
-  m_ParameterSendBits: 6956
+  m_ParameterSendBits: 45868
   param0: 
   param1: 
   param2: 
@@ -2343,7 +2343,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c8315dac62b76c643a6c8b6567965445, type: 2}
+  - {fileID: 2100000, guid: 5f203f381c7f86a4e9eee2b0133c919b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -2448,7 +2448,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 826f4cf104785bd4bb41d7f181584c9b, type: 2}
+  - {fileID: 2100000, guid: f4d6b7ea8e91eae40ac1ffbf55678d2c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -2505,7 +2505,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0535759d8bce06d4596a469512f1a2bf, type: 2}
+  - {fileID: 2100000, guid: adfb32f5d3b33884aa67e3ea4ae27db7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -2555,7 +2555,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fb5423cc0ed323842bad28ece7954a63, type: 2}
+  - {fileID: 2100000, guid: 0d7c5641b8eac8840af1d813d9e3185a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}

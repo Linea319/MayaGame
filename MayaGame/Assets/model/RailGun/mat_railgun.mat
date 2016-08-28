@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mat_railgun
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: d1fdccccd0daf534b96edbe7495795fa, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -35,6 +35,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - first:
         name: _DetailNormalMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Emission
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -69,6 +75,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _metalic_tex
+      second:
+        m_Texture: {fileID: 2800000, guid: 85a41c4148c2bcd41a5a2f29bfd0ea3f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _BumpScale
@@ -81,6 +93,9 @@ Material:
       second: 1
     - first:
         name: _DstBlend
+      second: 0
+    - first:
+        name: _Emission_Power
       second: 0
     - first:
         name: _GlossMapScale
@@ -118,6 +133,9 @@ Material:
     - first:
         name: _ZWrite
       second: 1
+    - first:
+        name: _outline_width
+      second: 0
     m_Colors:
     - first:
         name: _Color
@@ -125,3 +143,6 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _OutlineColor
+      second: {r: 0.07843138, g: 0.3921569, b: 0.7843137, a: 1}

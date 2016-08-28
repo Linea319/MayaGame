@@ -40,6 +40,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _Emission
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
@@ -69,6 +75,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _metalic_tex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _BumpScale
@@ -81,6 +93,9 @@ Material:
       second: 1
     - first:
         name: _DstBlend
+      second: 0
+    - first:
+        name: _Emission_Power
       second: 0
     - first:
         name: _GlossMapScale
@@ -118,10 +133,16 @@ Material:
     - first:
         name: _ZWrite
       second: 1
+    - first:
+        name: _outline_width
+      second: 0
     m_Colors:
     - first:
         name: _Color
       second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0, g: 0, b: 0, a: 0}
+    - first:
+        name: _OutlineColor
+      second: {r: 0.07843138, g: 0.3921569, b: 0.7843137, a: 1}

@@ -197,8 +197,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: Event AnimEvent of Animation Clip change has a time  (0.416667)
-      outside the clip's valid range (0.000000..0.416667). It will never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1

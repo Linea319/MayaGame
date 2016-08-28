@@ -49,6 +49,7 @@ public class FPSController : NetworkBehaviour {
     Vector3 inputVector;
     public GameObject[] weponPrefab;
 
+    [HideInInspector] public SyncListString weponPath = new SyncListString();
     GameObject[] wepons = new GameObject[2];
     float[] changeSpeed = new float[2];
     bool changeNow;
@@ -78,6 +79,7 @@ public class FPSController : NetworkBehaviour {
     void Start () {
         Debug.Log("start");
         gameObject.name = "Player_" + netId.ToString();
+        
         myCamera = Camera.main;
         focusTr = myCamera.transform.GetChild(0);
         if (isLocalPlayer)
@@ -92,11 +94,17 @@ public class FPSController : NetworkBehaviour {
 
     }
 
+    public override void OnStartServer()
+    {
+        //RpcSetWeponPrefab(weponPrefab[0], weponPrefab[1]);
+    }
+
     public override void OnStartClient()
     {
         
         Debug.Log("client");
-        
+        weponPrefab[0] = Resources.Load(weponPath[0]) as GameObject;
+        weponPrefab[1] = Resources.Load(weponPath[1]) as GameObject;
         Debug.Log(useWeponNum);
         defAnim = anim.runtimeAnimatorController;
         spawnWepon(1);
@@ -568,6 +576,14 @@ public class FPSController : NetworkBehaviour {
         {
             hpMng.Death();
         }
+    }
+
+    [ClientRpc]
+    public void RpcSetWeponPrefab(GameObject prim, GameObject second)
+    {
+        Debug.Log("Set Wepon from Lobby");
+        weponPrefab[0] = prim;
+        weponPrefab[1] = second;
     }
 
 

@@ -76,7 +76,7 @@ namespace Prototype.NetworkLobby
             {
                 if (p.isLocalPlayer)
                 {
-                    p.loadoutPrim = name;
+                    p.CmdSetPrim(name);
                 }
             }
         }
@@ -88,7 +88,7 @@ namespace Prototype.NetworkLobby
             {
                 if (p.isLocalPlayer)
                 {
-                    p.loadoutSecond = name;
+                    p.CmdSetSecond(name);
                 }
             }
         }
