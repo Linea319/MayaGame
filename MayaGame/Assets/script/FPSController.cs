@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.Networking;
 
 public class FPSController : NetworkBehaviour {
-	public Animator anim;
+    public bool debug;
+    public Animator anim;
     public GameObject UIObj;
     SyncAnim nAnim;
 	CharacterController control;
@@ -103,8 +104,13 @@ public class FPSController : NetworkBehaviour {
     {
         
         Debug.Log("client");
-        weponPrefab[0] = Resources.Load(weponPath[0]) as GameObject;
-        weponPrefab[1] = Resources.Load(weponPath[1]) as GameObject;
+
+        if (!debug)
+        {
+            weponPrefab[0] = Resources.Load(weponPath[0]) as GameObject;
+            weponPrefab[1] = Resources.Load(weponPath[1]) as GameObject;
+        }
+
         Debug.Log(useWeponNum);
         defAnim = anim.runtimeAnimatorController;
         spawnWepon(1);
