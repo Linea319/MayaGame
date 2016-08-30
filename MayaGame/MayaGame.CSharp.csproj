@@ -194,6 +194,7 @@
     <Compile Include="Assets\script\PartsCreater.cs" />
     <Compile Include="Assets\script\PartsSave.cs" />
     <Compile Include="Assets\script\Pause.cs" />
+    <Compile Include="Assets\script\Payload.cs" />
     <Compile Include="Assets\script\SendTrigger.cs" />
     <Compile Include="Assets\script\Shotgun.cs" />
     <Compile Include="Assets\script\SkinColSetter.cs" />
