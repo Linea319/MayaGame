@@ -5,8 +5,12 @@ using System.Collections;
 public class Payload : NetworkBehaviour {
     public Transform[] Target;
     public bool canMove;
+    public float stopRate;
+    public float timeRate;
     NavMeshAgent agent;
+    UIMessenger messager;
     int targetNum = 0;
+    float timer;
 	// Use this for initialization
 	void Start () {
         if (isServer)
@@ -14,7 +18,9 @@ public class Payload : NetworkBehaviour {
             agent = GetComponent<NavMeshAgent>();
             agent.enabled = true;
             agent.SetDestination(Target[targetNum].position);
+            Stop();
         }
+        messager = GetComponent<UIMessenger>();
         //agent.CalculatePath();
         
 	}
@@ -48,18 +54,50 @@ public class Payload : NetworkBehaviour {
                     agent.Move(dir.normalized * 1.5f * Time.deltaTime);
                 
             }
+
+            if (Time.time > timer)
+            {
+                float num = Random.Range(0, 100f);
+                if (num < stopRate)
+                {
+                    Stop();
+                }
+                timer = Time.time + timeRate;
+            }
+
             //agent.Resume();
         }
         else
         {
-            agent.Stop();
+            Stop();
         }
+
+        
+
 	}
+
+    [Server]
+    public void Stop()
+    {
+        canMove = false;
+        agent.Stop();
+        RpcSetMove(true);
+        timer = Time.time + timeRate;
+    } 
 
     [Command]
     public void CmdSetMove()
     {
         canMove = true;
         agent.Resume();
+        RpcSetMove(false);
+        
     }
+
+    [ClientRpc]
+    public void RpcSetMove(bool hyouzi)
+    {
+        messager.enabled = hyouzi;
+    }
+
 }
