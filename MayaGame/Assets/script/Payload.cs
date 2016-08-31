@@ -1,21 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class Payload : MonoBehaviour {
+public class Payload : NetworkBehaviour {
     public Transform[] Target;
     public bool canMove;
     NavMeshAgent agent;
     int targetNum = 0;
 	// Use this for initialization
 	void Start () {
-        agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(Target[targetNum].position);
+        if (isServer)
+        {
+            agent = GetComponent<NavMeshAgent>();
+            agent.enabled = true;
+            agent.SetDestination(Target[targetNum].position);
+        }
         //agent.CalculatePath();
         
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (!isServer) return;
         if (canMove )
         {
             /*
@@ -24,7 +30,7 @@ public class Payload : MonoBehaviour {
                 Debug.DrawLine(agent.path.corners[i], agent.path.corners[i + 1], Color.red, 1f);
             }
             */
-            Debug.Log(agent.pathStatus);
+           // Debug.Log(agent.pathStatus);
             if (Vector3.Distance(transform.position, Target[targetNum].position) < 0.5)
             {
                     targetNum++;
@@ -35,11 +41,11 @@ public class Payload : MonoBehaviour {
                     }
                     agent.SetDestination(Target[targetNum].position);
             }
-            if (agent.pathStatus != NavMeshPathStatus.PathComplete)
+            if (agent.pathStatus != NavMeshPathStatus.PathComplete || agent.speed <= 0)
             {
                 
                     Vector3 dir = transform.position - agent.destination;
-                    agent.Move(dir.normalized * agent.speed * Time.deltaTime);
+                    agent.Move(dir.normalized * 1.5f * Time.deltaTime);
                 
             }
             //agent.Resume();
@@ -49,4 +55,11 @@ public class Payload : MonoBehaviour {
             agent.Stop();
         }
 	}
+
+    [Command]
+    public void CmdSetMove()
+    {
+        canMove = true;
+        agent.Resume();
+    }
 }

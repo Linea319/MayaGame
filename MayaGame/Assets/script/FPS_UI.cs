@@ -70,7 +70,7 @@ public class FPS_UI : MonoBehaviour {
             MessageText.text = null;
             MessageProgress.fillAmount = 0;
         }
-        if(MessageProgress.fillAmount >= 1)
+        if(MessageProgress.fillAmount >= 1 && messager.usePlayer)
         {
             FPSCon.CmdTargetResulect(messager.name);
         }

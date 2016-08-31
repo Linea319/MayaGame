@@ -224,7 +224,7 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: 0.7
+    agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -232,7 +232,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 3
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: 0.23333333
+    cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: 2957c16f5544218409b339f71176286b, type: 2}
 --- !u!1001 &11339006
@@ -2036,48 +2036,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000012802713252, guid: 271ec34aea7fdbe4f9406622c9a73d68,
     type: 2}
   m_PrefabInternal: {fileID: 349688053}
---- !u!1 &359714454 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013471342300, guid: 563d0c256d0f8f240b3083cb9f8891bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1399067825}
---- !u!114 &359714455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 359714454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9d6d78194b0744094f9005629d16b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target:
-  - {fileID: 41418794}
-  - {fileID: 1967978243}
-  - {fileID: 1571093735}
-  - {fileID: 1916653004}
-  canMove: 1
---- !u!195 &359714456
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 359714454}
-  m_Enabled: 1
-  m_Radius: 3
-  m_Speed: 5
-  m_Acceleration: 8
-  avoidancePriority: 30
-  m_AngularSpeed: 90
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 0
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 3.4
-  m_BaseOffset: 0.4
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &377611895
 Prefab:
   m_ObjectHideFlags: 0
@@ -6261,16 +6219,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 191000011839790696, guid: 563d0c256d0f8f240b3083cb9f8891bc,
+    - target: {fileID: 114000012823990084, guid: 563d0c256d0f8f240b3083cb9f8891bc,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 191000013349467754, guid: 563d0c256d0f8f240b3083cb9f8891bc,
+      propertyPath: Target.Array.data[0]
+      value: 
+      objectReference: {fileID: 41418794}
+    - target: {fileID: 114000012823990084, guid: 563d0c256d0f8f240b3083cb9f8891bc,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: Target.Array.data[1]
+      value: 
+      objectReference: {fileID: 1967978243}
+    - target: {fileID: 114000012823990084, guid: 563d0c256d0f8f240b3083cb9f8891bc,
+        type: 2}
+      propertyPath: Target.Array.data[2]
+      value: 
+      objectReference: {fileID: 1571093735}
+    - target: {fileID: 114000012823990084, guid: 563d0c256d0f8f240b3083cb9f8891bc,
+        type: 2}
+      propertyPath: Target.Array.data[3]
+      value: 
+      objectReference: {fileID: 1916653004}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 563d0c256d0f8f240b3083cb9f8891bc, type: 2}
   m_IsPrefabParent: 0

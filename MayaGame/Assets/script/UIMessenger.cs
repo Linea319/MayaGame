@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UIMessenger : MonoBehaviour {
     public string messagaeText;
-    public bool useProgress = true;
+    public bool usePlayer = true;
     public float progressTime=2f;
     public string compMethhod;
     [HideInInspector] public float progress;

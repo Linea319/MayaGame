@@ -142,6 +142,20 @@ MonoBehaviour:
   useIn: 0
   useOut: 1
   blockerName: blocker
+--- !u!114 &114000011544040020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f00b4ceb6dba5c43a49befc2cd709d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paramName: atacking
+  type: 0
+  defParam: 0
 --- !u!114 &114000011997373554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,7 +647,10 @@ AnimatorStateTransition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 4
+    m_ConditionEvent: moving
+    m_EventTreshold: 95
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102000013896477722}
   m_Solo: 0
@@ -958,7 +975,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.1
   m_TransitionOffset: 0
   m_ExitTime: 0.9
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -1025,6 +1042,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: 114000012593081298}
   - {fileID: 114000012060713202}
+  - {fileID: 114000011544040020}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

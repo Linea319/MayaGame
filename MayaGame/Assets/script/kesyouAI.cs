@@ -163,6 +163,7 @@ public class kesyouAI : EnemyAI {
 
     public override void AttackEnd(int num)
     {
+        Debug.Log("atackEnd");
         anim.SetBool("shot", false);
         //base.AttackEnd(num);
         if (isServer)

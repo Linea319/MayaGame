@@ -612,7 +612,7 @@ public class FPSController : NetworkBehaviour {
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (!isLocalPlayer) return;
-        UIMessenger messe = hit.transform.GetComponent<UIMessenger>();
+        UIMessenger messe = hit.transform.root.GetComponent<UIMessenger>();
         if (messe == null || !messe.enabled) return;
         otherPlayer = messe;
         UICon.SetMessageText(otherPlayer);
