@@ -223,8 +223,10 @@
     <Compile Include="Assets\script\magwell.cs" />
     <Compile Include="Assets\script\muzule.cs" />
     <Compile Include="Assets\script\networkNew Folder\DisableNetObj.cs" />
+    <Compile Include="Assets\script\networkNew Folder\GamePhaseManager.cs" />
     <Compile Include="Assets\script\networkNew Folder\LobbyManager_Custom.cs" />
     <Compile Include="Assets\script\networkNew Folder\NetAdapter.cs" />
+    <Compile Include="Assets\script\networkNew Folder\Phase.cs" />
     <Compile Include="Assets\script\networkNew Folder\SetLoadout.cs" />
     <Compile Include="Assets\script\networkNew Folder\SyncAnim.cs" />
     <Compile Include="Assets\script\networkNew Folder\spawnTest.cs" />
