@@ -1729,6 +1729,10 @@ Prefab:
       propertyPath: m_AutoCreatePlayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013689358044, guid: 1d5cb1793aea98e4f93e477395c02f54, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d5cb1793aea98e4f93e477395c02f54, type: 2}
   m_IsPrefabParent: 0

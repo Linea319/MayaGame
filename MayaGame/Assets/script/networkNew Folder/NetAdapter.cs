@@ -5,8 +5,12 @@ using UnityEngine.Networking;
 
 public class NetAdapter : NetworkBehaviour {
     public Dictionary<string, HitManagerDef> crackObjs = new Dictionary<string, HitManagerDef>();//5.4からユニークID付きで保管
-	// Use this for initialization
-	void Start () {
+    //network
+    [HideInInspector]
+    public EnemySpawner spawnMng;
+
+    // Use this for initialization
+    void Start () {
         gameObject.name += netId.ToString();
     }
 	
@@ -27,6 +31,7 @@ public class NetAdapter : NetworkBehaviour {
     {
         GetComponent<SyncAnim>().CmdSetTrigger("death");
         GetComponent<EnemyAI>().Stop();
+        if (spawnMng != null) spawnMng.deathEnemy();
         Debug.Log(crackObjs.Count);
         yield return new WaitForSeconds(5f);
         NetworkServer.Destroy(gameObject);

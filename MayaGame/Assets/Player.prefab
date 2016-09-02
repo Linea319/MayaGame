@@ -2258,6 +2258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3046891b4ac600c448ac3520eb2386de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   anim: {fileID: 9556882}
   UIObj: {fileID: 166906, guid: 7fe590647e892b1469c1dfa046e06551, type: 2}
   moveSpeed: 5
@@ -2311,8 +2312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ef7b04fea0b5640baedd19589f33ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 100
-  armor: 100
+  hitPoint: 150
+  armor: 200
   rechargeDelay: 5
   rechargeRate: 30
   maxArmor: 0
@@ -2634,7 +2635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messagaeText: Press F:repair
-  useProgress: 1
+  usePlayer: 1
   progressTime: 2
   compMethhod: 
   progress: 0

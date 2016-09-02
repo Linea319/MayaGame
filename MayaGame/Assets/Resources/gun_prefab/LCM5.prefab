@@ -582,7 +582,7 @@ MonoBehaviour:
     mobility: 250
     reload: 300
     magazine: 1
-    totalAmmo: 15
+    totalAmmo: 150
   dam:
     damage: 0
     shock: 250

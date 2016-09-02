@@ -4,6 +4,7 @@ using System.Collections;
 public class Phase : MonoBehaviour {
     GamePhaseManager manager;
     public bool clearFlag;
+    public string taskText;
     public GameObject[] enableObjs;
     public GameObject[] disableObjs;
     public Behaviour[] enableBehaves;
@@ -11,6 +12,7 @@ public class Phase : MonoBehaviour {
     // Use this for initialization
     void Start() {
         manager = GetComponent<GamePhaseManager>();
+        GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetTaskText(taskText);
     }
 
     public virtual void StartPhasae()

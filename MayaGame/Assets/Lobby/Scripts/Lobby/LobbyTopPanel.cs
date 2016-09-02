@@ -14,6 +14,8 @@ namespace Prototype.NetworkLobby
         void Start()
         {
             panelImage = GetComponent<Image>();
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
         }
 
 
@@ -32,6 +34,9 @@ namespace Prototype.NetworkLobby
         public void ToggleVisibility(bool visible)
         {
             isDisplayed = visible;
+            Cursor.visible = visible;
+            //Cursor.lockState = CursorLockMode.Locked;
+
             foreach (Transform t in transform)
             {
                 t.gameObject.SetActive(isDisplayed);

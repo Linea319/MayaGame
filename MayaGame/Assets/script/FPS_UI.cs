@@ -19,6 +19,7 @@ public class FPS_UI : MonoBehaviour {
     public Image yawBar;
     public Image hpBar;
     public Image armorBar;
+    public Text taskText;
 
     float crosshairScale;
     float throttleScale;
@@ -107,5 +108,10 @@ public class FPS_UI : MonoBehaviour {
     {
         messager = messageTarget;
         
+    }
+
+    public void SetTaskText(string text)
+    {
+        taskText.text = text;
     }
 }

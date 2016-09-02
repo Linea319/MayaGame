@@ -82,7 +82,7 @@ public class Payload : NetworkBehaviour {
         canMove = false;
         agent.Stop();
         RpcSetMove(true);
-        timer = Time.time + timeRate;
+        
     } 
 
     [Command]
@@ -90,6 +90,7 @@ public class Payload : NetworkBehaviour {
     {
         canMove = true;
         agent.Resume();
+        timer = Time.time + timeRate;
         RpcSetMove(false);
         
     }

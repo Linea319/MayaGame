@@ -15,6 +15,7 @@ public class ArmorParameter : System.Object
 public class HitManeger : HitManagerDef {
     ExploderObject exploder;
     public int yorokePatern;
+    public float yorokeTime = 2.5f;
 
     // Use this for initialization
     void Start () {
@@ -58,11 +59,12 @@ public class HitManeger : HitManagerDef {
         if (yoroke)
         {
             EnemyAI ai = transform.root.GetComponent<EnemyAI>();
+            if (ai.dead) return;
             ai.moveSpeed *= speedDebufRate;
             ai.attackDamage *= damageDebufRate;
             ai.anim.SetInteger("hitPattern", yorokePatern);
             ai.GetComponent<SyncAnim>().SetTrigger("hit");         
-            ai.StopSend(2.5f);
+            ai.StopSend(yorokeTime);
         }
 
         if(mesh != null)

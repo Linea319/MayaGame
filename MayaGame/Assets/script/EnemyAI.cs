@@ -50,6 +50,8 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     protected bool stopAI;
     [HideInInspector] public float shock;
     protected bool retreat;
+
+    
     
     bool jumpNow;
     float jumpTimer;
@@ -289,6 +291,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     [Server]
      IEnumerator StopOnTime(float time)
     {
+
         Debug.Log("Yoroke");
         stopAI = true;
         nav.Stop();

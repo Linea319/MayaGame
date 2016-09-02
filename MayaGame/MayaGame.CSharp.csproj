@@ -224,6 +224,7 @@
     <Compile Include="Assets\script\magwell.cs" />
     <Compile Include="Assets\script\muzule.cs" />
     <Compile Include="Assets\script\networkNew Folder\DisableNetObj.cs" />
+    <Compile Include="Assets\script\networkNew Folder\EnemySpawner.cs" />
     <Compile Include="Assets\script\networkNew Folder\GamePhaseManager.cs" />
     <Compile Include="Assets\script\networkNew Folder\LobbyManager_Custom.cs" />
     <Compile Include="Assets\script\networkNew Folder\NetAdapter.cs" />

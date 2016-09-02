@@ -37,7 +37,15 @@ public class GamePhaseManager : NetworkBehaviour {
     [Server]
     public IEnumerator Clear()
     {
-        yield return new WaitForSeconds(2.0f); 
-        netMng.SendReturnToLobby();
+        RpcClear();
+        yield return new WaitForSeconds(2.0f);
+        netMng.ServerReturnToLobby();
     }
+
+    [ClientRpc]
+    void RpcClear()
+    {
+        GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetTaskText("Task Complete");
+    }
+    
 }

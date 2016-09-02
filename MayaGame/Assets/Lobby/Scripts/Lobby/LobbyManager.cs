@@ -104,6 +104,7 @@ namespace Prototype.NetworkLobby
 
                 topPanel.ToggleVisibility(true);
                 topPanel.isInGame = false;
+                //Cursor.lockState = CursorLockMode.None;
             }
             else
             {
@@ -114,6 +115,7 @@ namespace Prototype.NetworkLobby
                 //backDelegate = StopGameClbk;
                 topPanel.isInGame = true;
                 topPanel.ToggleVisibility(false);
+                
             }
         }
 
@@ -162,6 +164,7 @@ namespace Prototype.NetworkLobby
         {
             backDelegate();
 			topPanel.isInGame = false;
+            
         }
 
         // ----------------- Server management
