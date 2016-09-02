@@ -16,6 +16,7 @@ public class GamePhaseManager : NetworkBehaviour {
 	void Start () {
         //NetworkManager.RegisterStartPosition(playerSpawn);
         netMng = FindObjectOfType<NetworkLobbyManager>();
+        phase[0].StartPhasae();
 	}
 	
 	// Update is called once per frame
