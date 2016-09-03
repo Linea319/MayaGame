@@ -342,4 +342,9 @@ public class Melee_Wepon : MonoBehaviour, WeponInterface {
             }
         }
     }
+
+    public bool CanReload()
+    {
+        return false;
+    }
 }

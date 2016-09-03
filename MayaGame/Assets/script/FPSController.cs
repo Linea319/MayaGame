@@ -315,7 +315,7 @@ public class FPSController : NetworkBehaviour {
         }
         if (Input.GetButtonDown("Reload"))
         {
-            if (!changeNow && !reload && !run)
+            if (!changeNow && useWepon.CanReload() && !reload && !run)
             {
                 useWepon.Reload();
                 reload = true;

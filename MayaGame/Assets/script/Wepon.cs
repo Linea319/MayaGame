@@ -14,6 +14,7 @@ public interface WeponInterface
     void CanAttack();
     void ShotEffect();
     void SendUI();
+    bool CanReload();
 }
 
 [System.Serializable]
@@ -537,6 +538,10 @@ public class Wepon : MonoBehaviour, WeponInterface
         }
     }
 
+    public bool CanReload()
+    {
+        return true;
+    }
 
 
 }
