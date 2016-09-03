@@ -2126,7 +2126,7 @@ MonoBehaviour:
   anim: {fileID: 9563328}
   AIAnim: {fileID: 9517064}
   syncAnim: {fileID: 11493964}
-  moveSpeed: 4
+  moveSpeed: 2.5
   defDistance: 1
   target: {fileID: 0}
   atackCol:

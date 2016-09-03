@@ -580,7 +580,7 @@ MonoBehaviour:
     range: 150
     startGensui: 75
     mobility: 250
-    reload: 300
+    reload: 200
     magazine: 1
     totalAmmo: 150
   dam:

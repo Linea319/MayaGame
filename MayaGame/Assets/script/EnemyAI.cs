@@ -143,6 +143,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     public virtual void Move()
     {
+        if (dead || stopAI) return;
         Vector3 vec = (transform.position - target.position).normalized;
         vec.y = 0;
         vec = vec.normalized;
@@ -170,6 +171,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     public virtual void Retreat()
     {
+        if (dead || stopAI) return;
         Vector3 vec = (transform.position - target.position).normalized;
         vec.y = 0;
         vec = vec.normalized;
@@ -286,23 +288,25 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     public void StopSend(float time)
     {
         StartCoroutine(StopOnTime(time));
+        AttackEnd(0);
     }
 
     [Server]
      IEnumerator StopOnTime(float time)
     {
 
-        Debug.Log("Yoroke");
+        Debug.Log("Yoroke:"+time);
         stopAI = true;
         nav.Stop();
         attackEmotion = 0f;
         retreatEmotion += 10f;
+        thinkTimer = Time.time + time+0.1f;
         yield return new WaitForSeconds(time);
-        Debug.Log("ReturnYoroke");
+        //Debug.Log("ReturnYoroke");
         stopAI = false;
         nav.Resume();
         //AIAnim.SetTrigger("start");
-        //thinkTimer = Time.time + thinkRate;
+        
         
     } 
 
