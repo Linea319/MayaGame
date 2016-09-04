@@ -1083,7 +1083,7 @@ MonoBehaviour:
     shock: 90
     penetration: 150
     heat: 0
-  ADSRate: 1.25
+  ADSRate: 1.4
   idleAnim: {fileID: 7400016, guid: 00a27141d8475d24aaf45c9705527d3e, type: 3}
   reloadAnim: {fileID: 7400004, guid: 00a27141d8475d24aaf45c9705527d3e, type: 3}
   cockAnim: {fileID: 7400006, guid: 00a27141d8475d24aaf45c9705527d3e, type: 3}

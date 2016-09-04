@@ -21,6 +21,11 @@ public class FPS_UI : MonoBehaviour {
     public Image armorBar;
     public Text taskText;
 
+    //Color change
+    public Material UImat;
+    public Color defColor;
+    public Color hitColor;
+
     float crosshairScale;
     float throttleScale;
     Vector3 pitchDef;
@@ -31,6 +36,8 @@ public class FPS_UI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //UImat.SetColor("Color", defColor);
+        UImat.color = defColor;
         pitchDef = pitchBar.rectTransform.localPosition;
         pitchLimit = pitchBar.rectTransform.sizeDelta.y*2f;
         Debug.Log(pitchLimit);
@@ -114,4 +121,11 @@ public class FPS_UI : MonoBehaviour {
     {
         taskText.text = text;
     }
+
+    public IEnumerator HitColor()
+    {
+        UImat.color = hitColor;
+        yield return new WaitForSeconds(0.5f);
+        UImat.color = defColor;
+    } 
 }

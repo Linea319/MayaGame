@@ -163,7 +163,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         else
         {
             moveTarget = (target.position + vec * distance) + Random.insideUnitSphere * 5f;
-
+            moveTarget.y = target.position.y;
         }
         Debug.DrawLine(moveTarget, transform.position, Color.blue, 1f);
         nav.SetDestination(moveTarget);

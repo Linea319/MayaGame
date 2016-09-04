@@ -1317,6 +1317,9 @@ MonoBehaviour:
   hpBar: {fileID: 11415488}
   armorBar: {fileID: 11472128}
   taskText: {fileID: 11431790}
+  UImat: {fileID: 2100000, guid: ac1c2d63ce1bf434285b08828883ccab, type: 2}
+  defColor: {r: 0, g: 1, b: 0.46206903, a: 0.5882353}
+  hitColor: {r: 1, g: 0, b: 0, a: 0.5882353}
 --- !u!114 &11485918
 MonoBehaviour:
   m_ObjectHideFlags: 1

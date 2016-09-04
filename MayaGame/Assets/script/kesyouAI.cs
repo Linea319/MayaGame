@@ -53,7 +53,7 @@ public class kesyouAI : EnemyAI {
                 }
                 else
                 {
-                    attackEmotion += Time.deltaTime * attackEmotionRate.x;
+                    attackEmotion += Time.deltaTime * attackEmotionRate.x*(distanceEmotion/50f);
                 } 
             }
             else
@@ -64,7 +64,7 @@ public class kesyouAI : EnemyAI {
                 }
                 else
                 {
-                    attackEmotion -= Time.deltaTime * attackEmotionRate.y;
+                    attackEmotion -= Time.deltaTime * attackEmotionRate.y*(50f/distanceEmotion);
                 }
             }
             

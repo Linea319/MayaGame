@@ -174,9 +174,8 @@ public class Wepon : MonoBehaviour, WeponInterface
         */
         overAnim.runtimeAnimatorController = FPSCon.defAnim;
 
-        reloadAnimRate = reloadAnim.length / (parameters["reload"] * 0.01f);
-        //Debug.Log(reloadAnimRate);
-        anim.SetFloat("ReloadSpeed", reloadAnimRate);
+        
+        
 
         overAnim[FPSCon.defAnim.animationClips[2].name] = idleAnim;
         overAnim[FPSCon.defAnim.animationClips[3].name] = reloadAnim;
@@ -184,6 +183,9 @@ public class Wepon : MonoBehaviour, WeponInterface
         overAnim[FPSCon.defAnim.animationClips[6].name] = runAnim;
         // Debug.Log(newAnime.animationClips[1].name);
         anim.runtimeAnimatorController = overAnim;
+        reloadAnimRate = reloadAnim.length / (parameters["reload"] * 0.01f);
+        Debug.Log(reloadAnimRate);
+        anim.SetFloat("ReloadSpeed", reloadAnimRate);
         // Debug.Log(anim.runtimeAnimatorController.animationClips[1].name);
         reload = false;
         SendUI();
@@ -354,6 +356,9 @@ public class Wepon : MonoBehaviour, WeponInterface
         reload = true;
         burst = 3;
         sear = false;
+        reloadAnimRate = reloadAnim.length / (parameters["reload"] * 0.01f);
+        Debug.Log(reloadAnimRate);
+        anim.SetFloat("ReloadSpeed", reloadAnimRate);
 
     }
 

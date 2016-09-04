@@ -20,89 +20,83 @@
 			"RenderType" = "Opaque"
 		}
 
-		//以下、ひとつめのPASS
-		Pass
-			{
-				// このパスの名前があれば
-				Name "FORWARD"
-				Tags {
-					"LightMode" = "ForwardBase"
-				}
-				Stencil{
-				Ref 2
-				Comp always
-				Pass replace
-				Fail replace
-				ZFail keep
-			}
-
-				CGPROGRAM
-				#pragma vertex vert
-				#pragma fragment frag
-				#define UNITY_PASS_FORWARDBASE
-				#define SHOULD_SAMPLE_SH ( defined (LIGHTMAP_OFF) && defined(DYNAMICLIGHTMAP_OFF) )
-				#define _GLOSSYENV 1
-				#include "UnityCG.cginc"
-				#include "AutoLight.cginc"
-				#include "Lighting.cginc"
-				#include "UnityPBSLighting.cginc"
-				#include "UnityStandardBRDF.cginc"
-				#pragma multi_compile_fwdbase_fullshadows
-				#pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
-				#pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
-				#pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
-				#pragma multi_compile_fog
-				#pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
-				#pragma target 3.0
-				#include "pbr_forward.cginc"
-				ENDCG
-			}
-
 		Pass {
-				Name "FORWARD_DELTA"
-				Tags {
-					"LightMode" = "ForwardAdd"
+            Name "DEFERRED"
+            Tags {
+                "LightMode"="Deferred"
+            }
+		
+            
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #define UNITY_PASS_DEFERRED
+            #define SHOULD_SAMPLE_SH ( defined (LIGHTMAP_OFF) && defined(DYNAMICLIGHTMAP_OFF) )
+            #define _GLOSSYENV 1
+            #include "UnityCG.cginc"
+            #include "Lighting.cginc"
+            #include "UnityPBSLighting.cginc"
+            #include "UnityStandardBRDF.cginc"
+            #pragma fragmentoption ARB_precision_hint_fastest
+            #pragma multi_compile_shadowcaster
+            #pragma multi_compile ___ UNITY_HDR_ON
+            #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
+            #pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
+            #pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
+            #pragma multi_compile_fog
+            #pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
+            #pragma target 3.0
+
+            #include "pbr_deferde.cginc"
+            ENDCG
+            }
+
+		//以下、ひとつめのPASS
+
+		Pass{
+				Name "Outline-pre"
+
+				Tags{
+					}
+				Stencil{
+				Ref 10
+				ZFail Replace
 				}
-				Blend One One
 
 				CGPROGRAM
 				#pragma vertex vert
 				#pragma fragment frag
-				#define UNITY_PASS_FORWARDADD
-				#define SHOULD_SAMPLE_SH ( defined (LIGHTMAP_OFF) && defined(DYNAMICLIGHTMAP_OFF) )
-				#define _GLOSSYENV 1
 				#include "UnityCG.cginc"
-				#include "AutoLight.cginc"
-				#include "Lighting.cginc"
 				#include "UnityPBSLighting.cginc"
 				#include "UnityStandardBRDF.cginc"
-				#pragma multi_compile_fwdadd_fullshadows
-				#pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
-				#pragma multi_compile DIRLIGHTMAP_OFF DIRLIGHTMAP_COMBINED DIRLIGHTMAP_SEPARATE
-				#pragma multi_compile DYNAMICLIGHTMAP_OFF DYNAMICLIGHTMAP_ON
-				#pragma multi_compile_fog
+				#pragma fragmentoption ARB_precision_hint_fastest
+				#pragma multi_compile_shadowcaster
 				#pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
 				#pragma target 3.0
-				#include "pbr_forwardDelta.cginc"
+				#include "outline.cginc"
 				ENDCG
 			}
+		
+
 
 		Pass {
 			Name "Outline"
-			Tags {
-				"RenderType" = "Opaque"
+
+			Tags{
 			}
+			//Cull Front
 			ZTest Always
-			Cull Front
-				Stencil{
-				Ref 2
-				Comp notequal
+			Stencil{
+			Ref 10
+			Comp notequal
 			}
 
-			CGPROGRAM
+				CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
 			#include "UnityCG.cginc"
+			#include "UnityPBSLighting.cginc"
+			#include "UnityStandardBRDF.cginc"
 			#pragma fragmentoption ARB_precision_hint_fastest
 			#pragma multi_compile_shadowcaster
 			#pragma exclude_renderers gles3 metal d3d11_9x xbox360 xboxone ps3 ps4 psp2 
@@ -113,4 +107,5 @@
 	}
 	// FallBackの指定を入れておく
 	FallBack "Standard"
+
 }

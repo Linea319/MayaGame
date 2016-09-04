@@ -32,6 +32,7 @@ public class Chase : StateMachineBehaviour
         if (zigzag && zigzagTimer<Time.time)
         {
             float dis = Vector3.Distance(animator.transform.position, target.position);
+            dis = Mathf.Clamp(dis-3,0,dis+1);
             nav.destination = target.position+Random.insideUnitSphere*dis;
             zigzagTimer = Time.time + zigzagTime;
         }

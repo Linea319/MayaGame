@@ -548,9 +548,11 @@
     <None Include="Assets\YEBIS\Shaders\YebisInputRender.shader" />
     <None Include="Assets\model\Holo\hologram.shader" />
     <None Include="Assets\shader\Combine.shader" />
+    <None Include="Assets\shader\XRay-splite.shader" />
     <None Include="Assets\shader\enviromentMap.shader" />
     <None Include="Assets\shader\outline.cginc" />
     <None Include="Assets\shader\outline.shader" />
+    <None Include="Assets\shader\pbr_deferde.cginc" />
     <None Include="Assets\shader\pbr_forward.cginc" />
     <None Include="Assets\shader\pbr_forwardDelta.cginc" />
     <None Include="Assets\shader\test2.shader" />

@@ -34,6 +34,7 @@ public class ZakoAI : EnemyAI {
         base.AttackStart(num);
         if (isServer)
         {
+            anim.SetBool("move", false);
             nav.Stop();
         }
         
