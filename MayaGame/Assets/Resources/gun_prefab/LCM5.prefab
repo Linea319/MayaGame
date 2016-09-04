@@ -581,12 +581,12 @@ MonoBehaviour:
     startGensui: 75
     mobility: 250
     reload: 200
-    magazine: 1
+    magazine: 3
     totalAmmo: 150
   dam:
     damage: 0
-    shock: 250
-    penetration: 500
+    shock: 350
+    penetration: 600
     heat: 0
   ADSRate: 2
   idleAnim: {fileID: 7400028, guid: 78ff6669b9e026a409d331b39928f110, type: 3}

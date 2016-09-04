@@ -8,6 +8,7 @@ public class FPSController : NetworkBehaviour {
     public GameObject UIObj;
     SyncAnim nAnim;
 	CharacterController control;
+    public AudioSource footSound;
 	public float moveSpeed;
 	public float runSpeed;
     public float runEnergy;
@@ -73,7 +74,8 @@ public class FPSController : NetworkBehaviour {
 
     //state
     public bool dead;
-
+    float footStepTimer;
+    bool preGround;
 
     // Use this for initialization
 
@@ -165,18 +167,39 @@ public class FPSController : NetworkBehaviour {
             return;
         }
 		yVec += -9.8f*Time.deltaTime;
+
+        
+
 		if(control.isGrounded){//ground
+
+            if (!preGround)
+            {
+                footSound.Play();
+                yVec = 0;
+            }
+            
+
+            float repeater;
 			if(!run){
 			moveVec = new Vector3(Input.GetAxis("Horizontal")*moveSpeed,yVec,Input.GetAxis("Vertical")*moveSpeed);
 				run = false;
-
+                repeater = 1.0f;
 			}
 			else{
 				moveVec = new Vector3(Input.GetAxis("Horizontal")*moveSpeed*0.5f,yVec,Mathf.Clamp(Input.GetAxis("Vertical"),0f,1f)*runSpeed);
                 
 				run=true;
-			}
-            if (Input.GetButton("Run"))
+                repeater = 0.5f;
+            }
+
+            Vector3 inVec = new Vector3(moveVec.x, 0, moveVec.z);
+            if (inVec.sqrMagnitude > 1 && Mathf.Repeat(Time.time,repeater) <= Time.deltaTime*2)
+            {
+                footSound.Play();
+                Debug.Log("foot");
+            }
+
+                if (Input.GetButton("Run"))
             {
                 stamina -= (runEnergy + staminaRegene) * Time.deltaTime;
                 if (!run)
@@ -389,7 +412,9 @@ public class FPSController : NetworkBehaviour {
         transform.eulerAngles = new Vector3(0,mouseVec.y,0);
         shakeVec = Vector3.Lerp(shakeVec, Vector3.zero,camShakeReturn * Time.deltaTime);
 
-	}
+        preGround = control.isGrounded;
+
+    }
 
     void deathUpdate()
     {

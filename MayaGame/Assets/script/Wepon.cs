@@ -515,7 +515,7 @@ public class Wepon : MonoBehaviour, WeponInterface
                     }
                     
                 }
-                newDam = newDam.multiple(1 - penetrateNum * 0.4f);
+                newDam = newDam.multiple(1 - penetrateNum * 0.3f);
 
                 Vector3 penetratePoint = hitM.HitDamage(newDam, hit, ray);
                 

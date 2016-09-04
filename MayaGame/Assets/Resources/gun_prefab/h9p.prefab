@@ -745,7 +745,7 @@ MonoBehaviour:
   pa:
     accuracy: 250
     recoil: 250
-    rate: 250
+    rate: 350
     range: 40
     startGensui: 15
     mobility: 50
@@ -754,7 +754,7 @@ MonoBehaviour:
     totalAmmo: 900
   dam:
     damage: 0
-    shock: 140
+    shock: 180
     penetration: 80
     heat: 0
   ADSRate: 1
