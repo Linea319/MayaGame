@@ -63,7 +63,7 @@ public class HitManeger : HitManagerDef {
             ai.moveSpeed *= speedDebufRate;
             ai.attackDamage *= damageDebufRate;
             ai.anim.SetInteger("hitPattern", yorokePatern);
-            ai.GetComponent<SyncAnim>().SetTrigger("hit");         
+            ai.syncAnim.SetTrigger("hit");         
             ai.StopSend(yorokeTime);
         }
 

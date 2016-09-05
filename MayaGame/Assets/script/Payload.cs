@@ -2,6 +2,7 @@
 using UnityEngine.Networking;
 using System.Collections;
 
+
 public class Payload : NetworkBehaviour {
     public Transform[] Target;
     public bool canMove;
@@ -11,23 +12,38 @@ public class Payload : NetworkBehaviour {
     UIMessenger messager;
     int targetNum = 0;
     float timer;
-	// Use this for initialization
-	void Start () {
+    bool fragMove = false;
+
+    public override void OnStartServer()
+    {
+        
+    }
+
+    // Use this for initialization
+    void Start () {
+        messager = GetComponent<UIMessenger>();
         if (isServer)
         {
             agent = GetComponent<NavMeshAgent>();
             agent.enabled = true;
             agent.SetDestination(Target[targetNum].position);
             Stop();
+            
         }
-        messager = GetComponent<UIMessenger>();
-        //agent.CalculatePath();
         
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (!isServer) return;
+        if (!isServer)
+        {
+            if (fragMove) {
+                //CmdSetMove();
+                fragMove = false;
+            }
+            return;
+        }
+           
         if (canMove )
         {
             /*
@@ -83,10 +99,17 @@ public class Payload : NetworkBehaviour {
         agent.Stop();
         RpcSetMove(true);
         
-    } 
+    }
+
+    [Client]
+    public void SetMove()
+    {
+        //fragMove = true;
+        CmdSetMove();
+    }
 
     [Command]
-    public void CmdSetMove()
+    void CmdSetMove()
     {
         canMove = true;
         agent.Resume();
@@ -98,6 +121,7 @@ public class Payload : NetworkBehaviour {
     [ClientRpc]
     public void RpcSetMove(bool hyouzi)
     {
+        if(messager != null)
         messager.enabled = hyouzi;
     }
 

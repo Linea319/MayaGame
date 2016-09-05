@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-
+[NetworkSettings(channel = 1, sendInterval = 0.15f)]
 public class SyncPosition : NetworkBehaviour {
 
     [SyncVar]   //ホストから全クライアントへ送られる位置
@@ -15,6 +15,11 @@ public class SyncPosition : NetworkBehaviour {
     //Lerp: ２ベクトル間を補間する
     [SerializeField]
     float lerpRate = 15;
+
+    void Start()
+    {
+        myTransform = transform;
+    }
 
     void FixedUpdate()
     {
@@ -38,6 +43,7 @@ public class SyncPosition : NetworkBehaviour {
 
     //クライアントのみ実行される
     [ServerCallback]
+    
     //位置情報を送るメソッド
     void TransmitPosition()
     {

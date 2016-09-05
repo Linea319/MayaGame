@@ -299,7 +299,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -0.04}
+  m_LocalPosition: {x: 0, y: -0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -396,7 +396,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.25}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -441,7 +441,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118576}
   m_LocalRotation: {x: 0.00000002980235, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -0.17}
+  m_LocalPosition: {x: 0, y: -0, z: -0.0425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -521,7 +521,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197760}
   m_LocalRotation: {x: -0.00000030698715, y: -0.7071397, z: -0.7070739, w: -0.00000032386737}
-  m_LocalPosition: {x: -30.734524, y: -2.25, z: -0.37804124}
+  m_LocalPosition: {x: -0.6640177, y: -4.33939, z: -49.310272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -590,10 +590,11 @@ AudioSource:
   m_GameObject: {fileID: 112974}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 526806758b0c32649b76fe77a8dc20a2,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 5f6ac55dc1e66664ba2865bd6ee32ab9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -601,7 +602,7 @@ AudioSource:
   Priority: 115
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 1
@@ -2868,7 +2869,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 0.50980395, b: 0.3137255, a: 0.5019608}
       minMaxState: 0
     startSize:
-      scalar: 0.3
+      scalar: 0.075
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4601,7 +4602,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 0.50980395, b: 0.3137255, a: 0.1882353}
       minMaxState: 0
     startSize:
-      scalar: 0.8
+      scalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6344,7 +6345,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 0.50980395, b: 0.3137255, a: 0.8627451}
       minMaxState: 0
     startSize:
-      scalar: 0.9
+      scalar: 0.15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6355,18 +6356,18 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.7777778
+          value: 0.6666666
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minMaxState: 3
     startSizeY:
       scalar: 1
@@ -6509,7 +6510,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startRotation:
-      scalar: 0
+      scalar: 0.6981317
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6518,31 +6519,21 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
-          value: 0
+          value: -1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
-      minMaxState: 0
+        m_RotationOrder: 0
+      minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
     maxNumParticles: 11
@@ -8087,7 +8078,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 0.50980395, b: 0.3137255, a: 0.5019608}
       minMaxState: 0
     startSize:
-      scalar: 0.6
+      scalar: 0.15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9627,7 +9618,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedWireframeHidden: 1
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -9715,7 +9706,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedWireframeHidden: 1
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -9759,7 +9750,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedWireframeHidden: 1
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -9803,7 +9794,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedWireframeHidden: 1
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89

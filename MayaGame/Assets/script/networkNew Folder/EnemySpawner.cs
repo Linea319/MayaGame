@@ -42,6 +42,7 @@ public class EnemySpawner : NetworkBehaviour {
         SwitchWave(false);
     }
 
+    [ServerCallback]
     void Update()
     {
         if(Time.time > spawnTimer)
@@ -60,6 +61,7 @@ public class EnemySpawner : NetworkBehaviour {
         }
     }
 
+    [ServerCallback]
     public void Spawn()
     {
 

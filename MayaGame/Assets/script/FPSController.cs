@@ -196,7 +196,7 @@ public class FPSController : NetworkBehaviour {
             if (inVec.sqrMagnitude > 1 && Mathf.Repeat(Time.time,repeater) <= Time.deltaTime*2)
             {
                 footSound.Play();
-                Debug.Log("foot");
+                //Debug.Log("foot");
             }
 
                 if (Input.GetButton("Run"))

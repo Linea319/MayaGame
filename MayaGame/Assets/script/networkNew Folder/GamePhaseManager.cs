@@ -12,7 +12,7 @@ public class GamePhaseManager : NetworkBehaviour {
 
 
 	// Use this for initialization
-    [Server]
+    [ServerCallback]
 	void Start () {
         //NetworkManager.RegisterStartPosition(playerSpawn);
         netMng = FindObjectOfType<NetworkLobbyManager>();
@@ -20,12 +20,12 @@ public class GamePhaseManager : NetworkBehaviour {
 	}
 	
 	// Update is called once per frame
-    [Server]
+    [ServerCallback]
 	void Update () {
 	
 	}
 
-    [Server]
+    [ServerCallback]
     public void NextPhase()
     { phaseCount++;
         if(phaseCount >= phase.Length)
@@ -34,7 +34,7 @@ public class GamePhaseManager : NetworkBehaviour {
         }
     }
 
-    [Server]
+    [ServerCallback]
     public IEnumerator Clear()
     {
         RpcClear();

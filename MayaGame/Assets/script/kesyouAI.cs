@@ -99,14 +99,14 @@ public class kesyouAI : EnemyAI {
     {
         int dir = (int)Random.Range(-2,2);
         anim.SetInteger("dodgeDir",dir);
-        anim.SetTrigger("dodge");
+        syncAnim.SetTrigger("dodge");
         distanceEmotion -= 10f;
     }
 
     public override void Dodge(int dir)
     {
         anim.SetInteger("dodgeDir", dir);
-        anim.SetTrigger("dodge");
+        syncAnim.SetTrigger("dodge");
     }
 
     public override void Retreat()
