@@ -188,6 +188,8 @@
     <Compile Include="Assets\script\Enemy_bullet.cs" />
     <Compile Include="Assets\script\FPSController.cs" />
     <Compile Include="Assets\script\FPS_UI.cs" />
+    <Compile Include="Assets\script\FovSync.cs" />
+    <Compile Include="Assets\script\GiziBuillboard.cs" />
     <Compile Include="Assets\script\GunCustom.cs" />
     <Compile Include="Assets\script\HitEffectManeger.cs" />
     <Compile Include="Assets\script\HitManagerDef.cs" />

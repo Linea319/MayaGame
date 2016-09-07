@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.Networking;
 
@@ -69,8 +70,15 @@ public class FPSController : NetworkBehaviour {
     public HitManagerPlayer hpMng;
     [HideInInspector]
     public RuntimeAnimatorController defAnim;
+    [HideInInspector]
     public UIMessenger otherPlayer;
+    public GameObject tagPrefab;
     Transform focusTr;
+    [SyncVar]
+    public string playerName = "bot";
+    [SyncVar]
+    public int conId;
+    Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
 
     //state
     public bool dead;
@@ -94,6 +102,16 @@ public class FPSController : NetworkBehaviour {
             //Cursor.lockState = CursorLockMode.Confined;
 
         }
+        else
+        {
+            GameObject tag = Instantiate(tagPrefab);
+            tag.transform.parent = transform;
+            tag.transform.localPosition = new Vector3(0, 1f, 0);
+            tag.GetComponentInChildren<Text>().text = playerName;
+
+            tag.GetComponentInChildren<Text>().color = Colors[conId];
+        }
+
 
     }
 

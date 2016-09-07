@@ -2303,6 +2303,8 @@ MonoBehaviour:
   hpMng: {fileID: 0}
   defAnim: {fileID: 0}
   otherPlayer: {fileID: 0}
+  tagPrefab: {fileID: 1000010928020244, guid: be5fb1a87068def48875533be562e18c, type: 2}
+  playerName: bot
   dead: 0
 --- !u!114 &11480728
 MonoBehaviour:

@@ -46,11 +46,13 @@ namespace Prototype.NetworkLobby
         //static Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
         //static Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
 
+        [SyncVar]
+        public int playerId;
 
         public override void OnClientEnterLobby()
         {
             base.OnClientEnterLobby();
-
+            
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(1);
 
             LobbyPlayerList._instance.AddPlayer(this);
@@ -122,8 +124,10 @@ namespace Prototype.NetworkLobby
 
             //have to use child count of player prefab already setup as "this.slot" is not set yet
             if (playerName == "")
-                CmdNameChanged("Player" + (LobbyPlayerList._instance.playerListContentTransform.childCount-1));
-
+            {
+                CmdNameChanged("Player" + (LobbyPlayerList._instance.playerListContentTransform.childCount - 1));
+                CmdSetID(LobbyPlayerList._instance.playerListContentTransform.childCount - 1);
+            }
             //we switch from simple name display to name input
 
             if (colorButton != null)  colorButton.interactable = true;
@@ -295,6 +299,12 @@ namespace Prototype.NetworkLobby
         public void CmdNameChanged(string name)
         {
             playerName = name;
+        }
+
+        [Command]
+        void CmdSetID(int id)
+        {
+            playerId = id;
         }
 
         [Command]
