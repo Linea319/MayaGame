@@ -14,10 +14,7 @@ public class Payload : NetworkBehaviour {
     float timer;
     bool fragMove = false;
 
-    public override void OnStartServer()
-    {
-        
-    }
+
 
     // Use this for initialization
     void Start () {

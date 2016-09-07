@@ -1072,7 +1072,7 @@ MonoBehaviour:
     i14: 145
     i15: 188
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114000012823990084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1148,7 +1148,7 @@ NavMeshAgent:
   m_Radius: 3
   m_Speed: 1
   m_Acceleration: 8
-  avoidancePriority: 30
+  avoidancePriority: 50
   m_AngularSpeed: 90
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 0
@@ -1157,4 +1157,4 @@ NavMeshAgent:
   m_Height: 3.4
   m_BaseOffset: 0.4
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1

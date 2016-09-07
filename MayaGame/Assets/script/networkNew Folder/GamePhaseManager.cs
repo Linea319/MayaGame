@@ -39,7 +39,7 @@ public class GamePhaseManager : NetworkBehaviour {
     {
         RpcClear();
         yield return new WaitForSeconds(2.0f);
-        netMng.ServerReturnToLobby();
+        netMng.SendReturnToLobby();
     }
 
     [ClientRpc]

@@ -3146,7 +3146,7 @@ NavMeshAgent:
   m_Radius: 0.6
   m_Speed: 6
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 70
   m_AngularSpeed: 180
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 0
@@ -3155,7 +3155,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 2
+  m_ObstacleAvoidanceType: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

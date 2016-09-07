@@ -26,6 +26,7 @@ namespace Prototype.NetworkLobby
 
         public RectTransform mainMenuPanel;
         public RectTransform lobbyPanel;
+        public RectTransform ResultPanel;
 
         public LobbyInfoPanel infoPanel;
         public LobbyCountdownPanel countdownPanel;
@@ -69,7 +70,7 @@ namespace Prototype.NetworkLobby
 
         public override void OnLobbyClientSceneChanged(NetworkConnection conn)
         {
-            if (SceneManager.GetSceneAt(0).name == lobbyScene)
+            if (SceneManager.GetSceneAt(0).name == lobbyScene)//lobby‚É–ß‚Á‚½Žž
             {
                 if (topPanel.isInGame)
                 {
@@ -106,7 +107,7 @@ namespace Prototype.NetworkLobby
                 topPanel.isInGame = false;
                 //Cursor.lockState = CursorLockMode.None;
             }
-            else
+            else//game’†
             {
                 ChangeTo(null);
 

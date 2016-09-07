@@ -625,6 +625,14 @@ public class FPSController : NetworkBehaviour {
        target.GetComponent<HitManagerPlayer>().RpcResulect();
     }
 
+    [Command]
+    public void CmdMessagerMethod(GameObject obj, string method)
+    {
+        NetworkIdentity ident = obj.GetComponent<NetworkIdentity>();
+        ident.AssignClientAuthority(connectionToClient);
+        ident.SendMessage(method);
+    }
+
     void SendAnimMove()
     {
 

@@ -1289,10 +1289,13 @@ Prefab:
       propertyPath: m_Name
       value: LobbyManager_FPS
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012562371602, guid: 1d5cb1793aea98e4f93e477395c02f54,
-        type: 2}
-      propertyPath: m_Text
-      value: 
+    - target: {fileID: 1000013314333724, guid: 1d5cb1793aea98e4f93e477395c02f54, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010193790304, guid: 1d5cb1793aea98e4f93e477395c02f54, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d5cb1793aea98e4f93e477395c02f54, type: 2}

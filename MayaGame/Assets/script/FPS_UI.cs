@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using System.Collections;
 
 public class FPS_UI : MonoBehaviour {
@@ -81,6 +82,10 @@ public class FPS_UI : MonoBehaviour {
         if(MessageProgress.fillAmount >= 1 && messager.usePlayer)
         {
             FPSCon.CmdTargetResulect(messager.name);
+        }
+        if (MessageProgress.fillAmount >= 1 && !messager.usePlayer)
+        {
+            FPSCon.CmdMessagerMethod(messager.gameObject,messager.compMethhod);
         }
 
 
