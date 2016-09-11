@@ -54,6 +54,14 @@ namespace Prototype.NetworkLobby
 
         protected LobbyHook _lobbyHooks;
 
+        protected NetworkConnection connection;
+
+        public GameObject[] gamePlayerObject = new GameObject[4];
+        public int gamePlayerNum;
+        public ResultParam[] resuls = new ResultParam[4];
+
+        protected
+
         void Start()
         {
             s_Singleton = this;
@@ -70,37 +78,20 @@ namespace Prototype.NetworkLobby
 
         public override void OnLobbyClientSceneChanged(NetworkConnection conn)
         {
+            connection = conn;
             if (SceneManager.GetSceneAt(0).name == lobbyScene)//lobby‚É–ß‚Á‚½Žž
             {
                 if (topPanel.isInGame)
                 {
-                    ChangeTo(lobbyPanel);
-                    if (_isMatchmaking)
-                    {
-                        if (conn.playerControllers[0].unetView.isServer)
-                        {
-                            backDelegate = StopHostClbk;
-                        }
-                        else
-                        {
-                            backDelegate = StopClientClbk;
-                        }
-                    }
-                    else
-                    {
-                        if (conn.playerControllers[0].unetView.isClient)
-                        {
-                            backDelegate = StopHostClbk;
-                        }
-                        else
-                        {
-                            backDelegate = StopClientClbk;
-                        }
-                    }
+                    //ChangeTo(lobbyPanel);
+                    backDelegate = StopResultClbk;
+                    ChangeTo(ResultPanel);
+                    gamePlayerNum =0;
                 }
                 else
                 {
                     ChangeTo(mainMenuPanel);
+                   
                 }
 
                 topPanel.ToggleVisibility(true);
@@ -113,10 +104,30 @@ namespace Prototype.NetworkLobby
 
                 Destroy(GameObject.Find("MainMenuUI(Clone)"));
 
-                //backDelegate = StopGameClbk;
+                if (conn.playerControllers[0].unetView.isServer)
+                {
+                    backDelegate = StopGameClbk;
+                }
+                else
+                {
+                    backDelegate = StopClientClbk;
+                }
                 topPanel.isInGame = true;
                 topPanel.ToggleVisibility(false);
                 
+            }
+        }
+
+        public override void OnServerSceneChanged(string sceneName)
+        {
+            if (sceneName == "lobby")
+            {
+                ResultPanel panel = ResultPanel.GetComponent<ResultPanel>();
+                for (int i = 0; i < gamePlayerNum; i++)
+                {
+                    Debug.Log("waa");
+                   panel.Add(resuls[i]);
+                }
             }
         }
 
@@ -164,7 +175,7 @@ namespace Prototype.NetworkLobby
         public void GoBackButton()
         {
             backDelegate();
-			topPanel.isInGame = false;
+			topPanel.isInGame = true;
             
         }
 
@@ -217,6 +228,61 @@ namespace Prototype.NetworkLobby
         {
             StopServer();
             ChangeTo(mainMenuPanel);
+        }
+
+        
+        public void StopGameClbk()
+        {
+            /*
+            for (int i = 0; i < gamePlayerNum; i++)
+            {
+                FPSController fps = gamePlayerObject[i].GetComponent<FPSController>();
+                resuls[i] = fps.results;
+            }
+            */
+
+            ServerChangeScene(lobbyScene);
+
+            ChangeTo(ResultPanel);
+            backDelegate = StopResultClbk;
+            topPanel.isInGame = false;
+            //Debug.Log(SendReturnToLobby());
+            //ServerReturnToLobby();
+            //StartCoroutine(endGame());
+        }
+
+        IEnumerator endGame()
+        {
+            yield return new WaitForFixedUpdate();
+            ServerReturnToLobby();
+        }
+
+        public void StopResultClbk()
+        {
+            ChangeTo(lobbyPanel);
+            if (_isMatchmaking)
+            {
+                if (connection.playerControllers[0].unetView.isServer)
+                {
+                    backDelegate = StopHostClbk;
+                }
+                else
+                {
+                    backDelegate = StopClientClbk;
+                }
+            }
+            else
+            {
+                if (connection.playerControllers[0].unetView.isClient)
+                {
+                    backDelegate = StopHostClbk;
+
+                }
+                else
+                {
+                    backDelegate = StopClientClbk;
+                }
+            }
         }
 
         class KickMsg : MessageBase { }
@@ -426,7 +492,9 @@ namespace Prototype.NetworkLobby
             ChangeTo(mainMenuPanel);
             infoPanel.Display("Cient error : " + (errorCode == 6 ? "timeout" : errorCode.ToString()), "Close", null);
         }
-    }
 
+        
+
+    }
     
 }

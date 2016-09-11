@@ -310,6 +310,7 @@ public class Wepon : MonoBehaviour, WeponInterface
 
     public virtual void Shot(float ADSHosei = 1f)
     {
+        //FPSCon.CmdShot();
         float accuracy = (parameters["accuracy"] * 0.01f) ;
         Vector3 randomCone = (myCamera.transform.forward);
         Vector3 move = FPSCon.moveVec;

@@ -78,6 +78,9 @@ public class FPSController : NetworkBehaviour {
     public string playerName = "bot";
     [SyncVar]
     public int conId;
+    [HideInInspector]
+    public ResultParam results;
+
     Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
 
     //state
@@ -136,6 +139,7 @@ public class FPSController : NetworkBehaviour {
         spawnWepon(1);
         spawnWepon(0);
         Initialize();
+        results.name = playerName;
     }
 
     [Client]
@@ -432,6 +436,11 @@ public class FPSController : NetworkBehaviour {
 
         preGround = control.isGrounded;
 
+
+        if(Mathf.Repeat(Time.time, 1) <= Time.deltaTime)
+        {
+            CmdSendResult(results);
+        }
     }
 
     void deathUpdate()
@@ -582,6 +591,7 @@ public class FPSController : NetworkBehaviour {
     [Command]
     public void CmdShot()
     {
+        results.shoot++;
         RpcShotEffect();
     }
 
@@ -604,6 +614,8 @@ public class FPSController : NetworkBehaviour {
     [Command]
     public void CmdSendHP(string uniqueID,string objName, float HP,float hateNum)
     {
+        results.hit++;
+        if(HP <= 0) { results.kill++; }
         GameObject target = GameObject.Find(uniqueID);
         NetAdapter targetAdapter = target.GetComponent<NetAdapter>();
         if(targetAdapter != null ){
@@ -615,6 +627,7 @@ public class FPSController : NetworkBehaviour {
     [Command]
     public void CmdPlayerDeath()
     {
+        results.down++;
         RpcPlayerDeath();
     }
 
@@ -669,6 +682,11 @@ public class FPSController : NetworkBehaviour {
         UICon.SetMessageText(otherPlayer);
     }
 
+    [Command]
+    void CmdSendResult(ResultParam param)
+    {
+        results = param;
+    }
 
 
     }

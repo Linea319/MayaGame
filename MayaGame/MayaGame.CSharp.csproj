@@ -209,6 +209,8 @@
     <Compile Include="Assets\script\SyncPosition.cs" />
     <Compile Include="Assets\script\UI\ParamText.cs" />
     <Compile Include="Assets\script\UI\ParamTextSetter.cs" />
+    <Compile Include="Assets\script\UI\ResultPanel.cs" />
+    <Compile Include="Assets\script\UI\ResultPlayer.cs" />
     <Compile Include="Assets\script\UIMessenger.cs" />
     <Compile Include="Assets\script\Wepon.cs" />
     <Compile Include="Assets\script\WeponController.cs" />

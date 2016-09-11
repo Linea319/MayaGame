@@ -9,12 +9,17 @@ public class SetLoadout : LobbyHook {
     {
         LobbyPlayer lobby = lobbyPlayer.GetComponent<LobbyPlayer>();
         FPSController fpsCon = gamePlayer.GetComponent<FPSController>();
-        fpsCon.weponPath.Clear();
-        fpsCon.weponPath.Add(lobby.loadoutPrim);
-        fpsCon.weponPath.Add(lobby.loadoutSecond);
+        LobbyManager lobbyMng = GetComponent<LobbyManager>();
+        Debug.Log("scenechange");
 
-        fpsCon.playerName = lobby.playerName;
-        fpsCon.conId = lobby.playerId;
-        
+        lobbyMng.gamePlayerObject[lobbyMng.gamePlayerNum] = gamePlayer;
+        lobbyMng.resuls[lobbyMng.gamePlayerNum] = fpsCon.results;
+        lobbyMng.gamePlayerNum++;
+            fpsCon.weponPath.Clear();
+            fpsCon.weponPath.Add(lobby.loadoutPrim);
+            fpsCon.weponPath.Add(lobby.loadoutSecond);
+
+            fpsCon.playerName = lobby.playerName;
+            fpsCon.conId = lobby.playerId;
     }
 }
