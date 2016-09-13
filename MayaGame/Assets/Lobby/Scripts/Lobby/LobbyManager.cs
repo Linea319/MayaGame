@@ -76,6 +76,11 @@ namespace Prototype.NetworkLobby
             SetServerInfo("Offline", "None");
         }
 
+        void Update()
+        {
+            //Debug.Log(resuls[0].shoot);
+        }
+
         public override void OnLobbyClientSceneChanged(NetworkConnection conn)
         {
             connection = conn;
@@ -86,7 +91,8 @@ namespace Prototype.NetworkLobby
                     //ChangeTo(lobbyPanel);
                     backDelegate = StopResultClbk;
                     ChangeTo(ResultPanel);
-                    gamePlayerNum =0;
+                    gamePlayerNum = 0;
+
                 }
                 else
                 {
@@ -120,14 +126,10 @@ namespace Prototype.NetworkLobby
 
         public override void OnServerSceneChanged(string sceneName)
         {
+            base.OnServerSceneChanged(sceneName);
             if (sceneName == "lobby")
             {
-                ResultPanel panel = ResultPanel.GetComponent<ResultPanel>();
-                for (int i = 0; i < gamePlayerNum; i++)
-                {
-                    Debug.Log("waa");
-                   panel.Add(resuls[i]);
-                }
+                
             }
         }
 
@@ -233,19 +235,18 @@ namespace Prototype.NetworkLobby
         
         public void StopGameClbk()
         {
-            /*
+            
             for (int i = 0; i < gamePlayerNum; i++)
             {
                 FPSController fps = gamePlayerObject[i].GetComponent<FPSController>();
                 resuls[i] = fps.results;
+                lobbySlots[i].GetComponent<LobbyPlayer>().RpcSetResultPlayer(resuls[i]);
             }
-            */
-
-            ServerChangeScene(lobbyScene);
-
+            
             ChangeTo(ResultPanel);
             backDelegate = StopResultClbk;
             topPanel.isInGame = false;
+            ServerChangeScene(lobbyScene);
             //Debug.Log(SendReturnToLobby());
             //ServerReturnToLobby();
             //StartCoroutine(endGame());

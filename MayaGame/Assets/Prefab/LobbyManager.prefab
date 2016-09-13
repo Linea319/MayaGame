@@ -1277,6 +1277,7 @@ GameObject:
   - 224: {fileID: 224000010589253824}
   - 222: {fileID: 222000013521644200}
   - 114: {fileID: 114000012427058610}
+  - 114: {fileID: 114000013026123506}
   m_Layer: 5
   m_Name: Result_Panel
   m_TagString: Untagged
@@ -3148,7 +3149,7 @@ MonoBehaviour:
     m_ReactorMaximumReceivedMessages: 1024
     m_ReactorMaximumSentMessages: 1024
     m_MaxPacketSize: 2000
-  m_Channels: 0500000000000000
+  m_Channels: 0300000000000000
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
@@ -4933,6 +4934,20 @@ MonoBehaviour:
   serverListRect: {fileID: 224000014108929384}
   serverEntryPrefab: {fileID: 104980, guid: 9a1af8c2b03c38c43a3e9c2b43db4483, type: 2}
   noServerFound: {fileID: 1000014183853526}
+--- !u!114 &114000013026123506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013314333724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b23657acc7e49346992539d99cc5149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerList: {fileID: 224000012388284834}
+  resultPrefab: {fileID: 1000012182010484, guid: 3783b8d14e1b9824c84644e294c508dc,
+    type: 2}
 --- !u!114 &114000013045300442
 MonoBehaviour:
   m_ObjectHideFlags: 1

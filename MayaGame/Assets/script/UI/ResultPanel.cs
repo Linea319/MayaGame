@@ -13,10 +13,9 @@ public struct ResultParam
     public int hit;
 };
 
-public class ResultPanel : NetworkBehaviour {
+public class ResultPanel : MonoBehaviour {
     public RectTransform playerList;
     public GameObject resultPrefab;
-    [SyncVar]
     int playernum = 0;
     ResultParam[] player = new ResultParam[4];
     
@@ -48,6 +47,7 @@ public class ResultPanel : NetworkBehaviour {
         {
             GameObject obj = Instantiate(resultPrefab);
             obj.GetComponent<RectTransform>().SetParent(playerList,false);
+            NetworkServer.Spawn(obj);
             obj.GetComponent<ResultPlayer>().SetParam(playerNames[i], player[i]);
         }
     }
@@ -59,20 +59,10 @@ public class ResultPanel : NetworkBehaviour {
         obj.GetComponent<ResultPlayer>().SetParam(playerNames[playernum - 1], player[playernum - 1]);
     }
 
-    [ServerCallback]
     public void Add(ResultParam result)
     {
-        Debug.Log("add"+isServer);
-        RpcAddResult(result);
-        AddPlayer(result.name, result);
+        Debug.Log("add");
+        AddPlayer(result.name, result);       
     }
     
-    //rpc
-    [ClientRpc]
-    void RpcAddResult(ResultParam result)
-    {
-        Debug.Log("addrpc");
-        AddPlayer(result.name, result);
-
-    }
 }

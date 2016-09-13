@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -7,9 +8,13 @@ public class ResultPlayer : MonoBehaviour {
     public Text killPanel;
     public Text downPanel;
     public Text accuracyPanel;
+   // [SyncVar]
     string playerName;
+    //[SyncVar]
     int killCount;
+   // [SyncVar]
     int downCount;
+   // [SyncVar]
     int accuracy;
 
     // Use this for initialization
@@ -22,17 +27,24 @@ public class ResultPlayer : MonoBehaviour {
 	
 	}
 
+    //[Server]
     public void SetParam(string name,ResultParam param)
     {
         playerName = name;
         killCount = param.kill;
         downCount = param.down;
         accuracy = param.shoot;
-        SetText();
+        namePanel.text = playerName;
+        killPanel.text = killCount.ToString();
+        downPanel.text = downCount.ToString();
+        accuracyPanel.text = accuracy.ToString();
+        RpcSetText();
     }
 
-    void SetText()
+    //[ClientRpc]
+    void RpcSetText()
     {
+        Debug.Log("text");
         namePanel.text = playerName;
         killPanel.text = killCount.ToString();
         downPanel.text = downCount.ToString();

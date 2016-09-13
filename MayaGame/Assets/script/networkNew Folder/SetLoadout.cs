@@ -13,13 +13,13 @@ public class SetLoadout : LobbyHook {
         Debug.Log("scenechange");
 
         lobbyMng.gamePlayerObject[lobbyMng.gamePlayerNum] = gamePlayer;
-        lobbyMng.resuls[lobbyMng.gamePlayerNum] = fpsCon.results;
+        fpsCon.results = lobbyMng.resuls[lobbyMng.gamePlayerNum];
         lobbyMng.gamePlayerNum++;
-            fpsCon.weponPath.Clear();
-            fpsCon.weponPath.Add(lobby.loadoutPrim);
-            fpsCon.weponPath.Add(lobby.loadoutSecond);
+        fpsCon.weponPath.Clear();
+        fpsCon.weponPath.Add(lobby.loadoutPrim);
+        fpsCon.weponPath.Add(lobby.loadoutSecond);
 
-            fpsCon.playerName = lobby.playerName;
-            fpsCon.conId = lobby.playerId;
+        fpsCon.playerName = lobby.playerName;
+        fpsCon.conId = lobby.playerId;
     }
 }

@@ -49,6 +49,9 @@ namespace Prototype.NetworkLobby
         [SyncVar]
         public int playerId;
 
+       // [SyncVar]
+       // ResultParam results;
+
         public override void OnClientEnterLobby()
         {
             base.OnClientEnterLobby();
@@ -67,11 +70,21 @@ namespace Prototype.NetworkLobby
                 SetupOtherPlayer();
             }
 
+            if (isServer)
+            {
+                
+                //results = LobbyManager.s_Singleton.resuls[playerId];
+                
+                //RpcSetResultPlayer();
+            }
+            
             //setup the player data on UI. The value are SyncVar so the player
             //will be created with the right value currently on server
             OnMyName(playerName);
             OnMyColor(playerColor);
         }
+
+        
 
         public override void OnStartAuthority()
         {
@@ -233,6 +246,13 @@ namespace Prototype.NetworkLobby
             else if (isServer)
                 LobbyManager.s_Singleton.KickPlayer(connectionToClient);
                 
+        }
+
+        [ClientRpc]
+        public void RpcSetResultPlayer(ResultParam result)
+        {
+            Debug.Log("setStart" + result.name);
+            LobbyManager.s_Singleton.ResultPanel.GetComponent<ResultPanel>().Add(result);
         }
 
         public void ToggleJoinButton(bool enabled)

@@ -78,7 +78,7 @@ public class FPSController : NetworkBehaviour {
     public string playerName = "bot";
     [SyncVar]
     public int conId;
-    [HideInInspector]
+    [SyncVar]
     public ResultParam results;
 
     Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
@@ -121,6 +121,7 @@ public class FPSController : NetworkBehaviour {
     public override void OnStartServer()
     {
         //RpcSetWeponPrefab(weponPrefab[0], weponPrefab[1]);
+        results.name = playerName;
     }
 
     public override void OnStartClient()
@@ -139,7 +140,7 @@ public class FPSController : NetworkBehaviour {
         spawnWepon(1);
         spawnWepon(0);
         Initialize();
-        results.name = playerName;
+        
     }
 
     [Client]
@@ -439,7 +440,7 @@ public class FPSController : NetworkBehaviour {
 
         if(Mathf.Repeat(Time.time, 1) <= Time.deltaTime)
         {
-            CmdSendResult(results);
+           // CmdSendResult(results);
         }
     }
 
