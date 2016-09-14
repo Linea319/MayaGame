@@ -249,9 +249,11 @@ namespace Prototype.NetworkLobby
         }
 
         [ClientRpc]
-        public void RpcSetResultPlayer(ResultParam result)
+        public void RpcSetResultPlayer(ResultParam result,bool clearState)
         {
             Debug.Log("setStart" + result.name);
+            result.mission = LobbyManager.s_Singleton.playScene;
+            result.clear = clearState;
             LobbyManager.s_Singleton.ResultPanel.GetComponent<ResultPanel>().Add(result);
         }
 

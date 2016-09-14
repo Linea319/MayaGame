@@ -33,7 +33,10 @@ public class ResultPlayer : MonoBehaviour {
         playerName = name;
         killCount = param.kill;
         downCount = param.down;
-        accuracy = param.shoot;
+        if(param.shoot > 0)
+        {
+            accuracy = param.hit / param.shoot;
+        }       
         namePanel.text = playerName;
         killPanel.text = killCount.ToString();
         downPanel.text = downCount.ToString();

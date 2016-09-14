@@ -59,7 +59,7 @@ namespace Prototype.NetworkLobby
         public GameObject[] gamePlayerObject = new GameObject[4];
         public int gamePlayerNum;
         public ResultParam[] resuls = new ResultParam[4];
-
+        public bool clear;
         protected
 
         void Start()
@@ -92,7 +92,7 @@ namespace Prototype.NetworkLobby
                     backDelegate = StopResultClbk;
                     ChangeTo(ResultPanel);
                     gamePlayerNum = 0;
-
+                    clear = false;
                 }
                 else
                 {
@@ -129,7 +129,7 @@ namespace Prototype.NetworkLobby
             base.OnServerSceneChanged(sceneName);
             if (sceneName == "lobby")
             {
-                
+                clear = false;
             }
         }
 
@@ -240,7 +240,7 @@ namespace Prototype.NetworkLobby
             {
                 FPSController fps = gamePlayerObject[i].GetComponent<FPSController>();
                 resuls[i] = fps.results;
-                lobbySlots[i].GetComponent<LobbyPlayer>().RpcSetResultPlayer(resuls[i]);
+                lobbySlots[i].GetComponent<LobbyPlayer>().RpcSetResultPlayer(resuls[i],clear);
             }
             
             ChangeTo(ResultPanel);
@@ -250,6 +250,7 @@ namespace Prototype.NetworkLobby
             //Debug.Log(SendReturnToLobby());
             //ServerReturnToLobby();
             //StartCoroutine(endGame());
+            
         }
 
         IEnumerator endGame()

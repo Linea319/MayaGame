@@ -7,6 +7,8 @@ using System.Collections;
 public struct ResultParam
 {
     public string name;
+    public string mission;
+    public bool clear;
     public int kill;
     public int down;
     public int shoot;
@@ -15,6 +17,9 @@ public struct ResultParam
 
 public class ResultPanel : MonoBehaviour {
     public RectTransform playerList;
+    public Text missionText;
+    public Text ClearText;
+
     public GameObject resultPrefab;
     int playernum = 0;
     ResultParam[] player = new ResultParam[4];
@@ -62,7 +67,19 @@ public class ResultPanel : MonoBehaviour {
     public void Add(ResultParam result)
     {
         Debug.Log("add");
-        AddPlayer(result.name, result);       
+        AddPlayer(result.name, result);
+        missionText.text = "MISSION:"+result.mission;
+        if (result.clear)
+        {
+            ClearText.text = "CLEAR";
+            ClearText.color = Color.cyan;
+        }
+        else
+        {
+            ClearText.text = "ABORT";
+            ClearText.color = Color.red;
+        }
+           
     }
     
 }

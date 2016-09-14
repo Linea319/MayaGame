@@ -6,7 +6,7 @@ using System.Collections;
 public class GamePhaseManager : NetworkBehaviour {
     public Transform playerSpawn;
     public Phase[] phase;
-    public NetworkLobbyManager netMng;
+    public LobbyManager netMng;
     float spawnRange = 10f;
     int phaseCount = 0;
 
@@ -15,7 +15,7 @@ public class GamePhaseManager : NetworkBehaviour {
     [ServerCallback]
 	void Start () {
         //NetworkManager.RegisterStartPosition(playerSpawn);
-        netMng = FindObjectOfType<NetworkLobbyManager>();
+        netMng = FindObjectOfType<LobbyManager>();
         phase[0].StartPhasae();
 	}
 	
@@ -38,8 +38,9 @@ public class GamePhaseManager : NetworkBehaviour {
     public IEnumerator Clear()
     {
         RpcClear();
+        netMng.clear = true;
         yield return new WaitForSeconds(2.0f);
-        netMng.SendReturnToLobby();
+        netMng.GoBackButton();
     }
 
     [ClientRpc]
