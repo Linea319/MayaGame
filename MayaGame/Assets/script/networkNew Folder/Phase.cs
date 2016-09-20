@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class Phase : MonoBehaviour {
+public class Phase : NetworkBehaviour {
     GamePhaseManager manager;
     public bool clearFlag;
     public string taskText;
@@ -11,13 +12,14 @@ public class Phase : MonoBehaviour {
     public Behaviour[] disableBehaves;
     // Use this for initialization
     void Start() {
-        manager = GetComponent<GamePhaseManager>();
-        GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetTaskText(taskText);
+        
     }
 
     public virtual void StartPhasae()
     {
-        for(int i = 0; i < enableObjs.Length; i++)
+        manager = GetComponent<GamePhaseManager>();
+        GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetTaskText(taskText);
+        for (int i = 0; i < enableObjs.Length; i++)
         {
             enableObjs[i].SetActive(true);
         }
@@ -35,6 +37,7 @@ public class Phase : MonoBehaviour {
         }
     }
 
+    [ServerCallback]  
     public virtual void ClearPhase()
     {
         manager.NextPhase();

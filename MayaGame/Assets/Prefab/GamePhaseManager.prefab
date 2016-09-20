@@ -22,6 +22,7 @@ GameObject:
   - 114: {fileID: 114000013159245520}
   - 114: {fileID: 114000011872868828}
   - 114: {fileID: 114000011209599402}
+  - 114: {fileID: 114000011440818762}
   - 114: {fileID: 114000012893805384}
   m_Layer: 0
   m_Name: GamePhaseManager
@@ -55,12 +56,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearFlag: 0
+  taskText: Move cargo to elevator
   enableObjs: []
   disableObjs: []
   enableBehaves: []
   disableBehaves: []
   cargo: {fileID: 0}
   goal: {fileID: 0}
+--- !u!114 &114000011440818762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011999085618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e207d2f66b8bfd4a8569ca6ffdec994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearFlag: 0
+  taskText: Start Elevator
+  enableObjs: []
+  disableObjs: []
+  enableBehaves:
+  - {fileID: 0}
+  disableBehaves:
+  - {fileID: 0}
+  message: {fileID: 0}
+  elevatorAnim: {fileID: 0}
 --- !u!114 &114000011872868828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +98,7 @@ MonoBehaviour:
   playerSpawn: {fileID: 4000010784354926}
   phase:
   - {fileID: 114000011209599402}
+  - {fileID: 114000011440818762}
   netMng: {fileID: 0}
 --- !u!114 &114000012893805384
 MonoBehaviour:

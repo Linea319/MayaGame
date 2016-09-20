@@ -30,7 +30,11 @@ public class GamePhaseManager : NetworkBehaviour {
     { phaseCount++;
         if(phaseCount >= phase.Length)
         {
-            StartCoroutine( Clear());
+            StartCoroutine(Clear());
+        }
+        else
+        {
+            phase[phaseCount].StartPhasae();
         }
     }
 
