@@ -2260,7 +2260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3046891b4ac600c448ac3520eb2386de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   anim: {fileID: 9556882}
   UIObj: {fileID: 166906, guid: 7fe590647e892b1469c1dfa046e06551, type: 2}
   footSound: {fileID: 82000010528222666}
@@ -2850,6 +2850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagaeText: Press F:repair
   usePlayer: 1
+  noAuth: 0
   progressTime: 2
   compMethhod: 
+  methodObj: {fileID: 0}
   progress: 0

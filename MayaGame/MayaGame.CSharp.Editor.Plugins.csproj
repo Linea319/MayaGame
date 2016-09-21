@@ -136,6 +136,8 @@
     <Compile Include="Assets\Standard Assets\Effects\CinematicEffects(BETA)\TonemappingColorGrading\Editor\TonemappingColorGradingEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Allsky\AllSkyDemoEnvironment\Specular Snow Vertex Colours.shader" />
+    <None Include="Assets\Allsky\allsky_readme.txt" />
     <None Include="Assets\Editor\ImageEffectFetcher\Lib\Ionic.Zip.Unity.XML" />
     <None Include="Assets\Exploder\Demo\Shaders\VertexColor.shader" />
     <None Include="Assets\Exploder\Demo\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
@@ -501,6 +503,7 @@
     <None Include="Assets\shader\Combine.shader" />
     <None Include="Assets\shader\XRay-splite.shader" />
     <None Include="Assets\shader\enviromentMap.shader" />
+    <None Include="Assets\shader\mywater.shader" />
     <None Include="Assets\shader\outline.cginc" />
     <None Include="Assets\shader\outline.shader" />
     <None Include="Assets\shader\pbr_deferde.cginc" />

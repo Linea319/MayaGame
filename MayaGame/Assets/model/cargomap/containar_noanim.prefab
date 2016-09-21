@@ -196,7 +196,7 @@ GameObject:
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 2
+  m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000013702857678
@@ -244,7 +244,7 @@ GameObject:
   m_Name: pasted__pCube7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 2
+  m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000014141388746
@@ -405,10 +405,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010962737264}
-  m_LocalRotation: {x: -0, y: 0.49595308, z: -0, w: 0.8683494}
-  m_LocalPosition: {x: -13.11, y: 0, z: -4.95}
+  m_LocalRotation: {x: -0, y: 0.78107727, z: -0, w: 0.6244345}
+  m_LocalPosition: {x: 16.64, y: 0, z: 6.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 59.427002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 102.426, z: 0}
   m_Children:
   - {fileID: 4000010515242568}
   - {fileID: 4000011811487642}
