@@ -6,7 +6,14 @@ public class Phase_Cargo :Phase {
     public Transform cargo;
     public Transform goal;
 
-	void Update()
+
+    public override void StartPhasae()
+    {
+        base.StartPhasae();
+        
+    }
+
+    void Update()
     {
         if((cargo.position-goal.position).sqrMagnitude < 0.5f)
         {

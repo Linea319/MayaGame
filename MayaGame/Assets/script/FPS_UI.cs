@@ -124,6 +124,7 @@ public class FPS_UI : MonoBehaviour {
 
     public void SetTaskText(string text)
     {
+        Debug.Log(text);
         taskText.text = text;
     }
 

@@ -56,7 +56,7 @@ public class Payload : NetworkBehaviour {
                 Vector3 dir = Target[targetNum].position - transform.position;
                 agent.Stop();
                 transform.Translate(dir.normalized * 1.5f*Time.deltaTime);
-                Debug.Log(dir.normalized+":"+ canMove);
+                //Debug.Log(dir.normalized+":"+ canMove);
                 return;
             }
 

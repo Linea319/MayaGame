@@ -15,8 +15,10 @@ public class Phase : NetworkBehaviour {
         
     }
 
+    
     public virtual void StartPhasae()
     {
+        Debug.Log("Start Phase");
         manager = GetComponent<GamePhaseManager>();
         GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetTaskText(taskText);
         for (int i = 0; i < enableObjs.Length; i++)
@@ -40,7 +42,15 @@ public class Phase : NetworkBehaviour {
     [ServerCallback]  
     public virtual void ClearPhase()
     {
+        clearFlag = true;
         manager.NextPhase();
         this.enabled = false;
+    }
+
+    [ClientRpc]
+    public void RpcStartPhase()
+    {
+        if(!isServer)
+        StartPhasae();
     }
 }

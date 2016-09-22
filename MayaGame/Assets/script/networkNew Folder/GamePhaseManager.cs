@@ -8,16 +8,19 @@ public class GamePhaseManager : NetworkBehaviour {
     public Phase[] phase;
     public LobbyManager netMng;
     float spawnRange = 10f;
-    int phaseCount = 0;
+    public int phaseCount = 0;
 
 
-	// Use this for initialization
-    [ServerCallback]
-	void Start () {
-        //NetworkManager.RegisterStartPosition(playerSpawn);
-        netMng = FindObjectOfType<LobbyManager>();
+    // Use this for initialization
+
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+    //NetworkManager.RegisterStartPosition(playerSpawn);
+    netMng = FindObjectOfType<LobbyManager>();
         phase[0].StartPhasae();
-	}
+        phase[0].RpcStartPhase();
+    }
 	
 	// Update is called once per frame
     [ServerCallback]
@@ -27,14 +30,16 @@ public class GamePhaseManager : NetworkBehaviour {
 
     [ServerCallback]
     public void NextPhase()
-    { phaseCount++;
+    {
+        phaseCount++;
         if(phaseCount >= phase.Length)
         {
             StartCoroutine(Clear());
         }
         else
-        {
+        {           
             phase[phaseCount].StartPhasae();
+            phase[phaseCount].RpcStartPhase();
         }
     }
 
@@ -51,6 +56,12 @@ public class GamePhaseManager : NetworkBehaviour {
     void RpcClear()
     {
         GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetTaskText("Task Complete");
+    }
+
+    [Command]
+    public void CmdNextPhase()
+    {
+        NextPhase();
     }
     
 }
