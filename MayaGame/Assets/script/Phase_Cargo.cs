@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 public class Phase_Cargo :Phase {
@@ -13,10 +14,12 @@ public class Phase_Cargo :Phase {
         
     }
 
+    [ServerCallback]
     void Update()
     {
         if((cargo.position-goal.position).sqrMagnitude < 0.5f)
         {
+            cargo.GetComponent<Payload>().Stop();
             ClearPhase();
         }
     }

@@ -45,6 +45,7 @@ public class Phase : NetworkBehaviour {
         clearFlag = true;
         manager.NextPhase();
         this.enabled = false;
+        RpcClearPhase();
     }
 
     [ClientRpc]
@@ -52,5 +53,12 @@ public class Phase : NetworkBehaviour {
     {
         if(!isServer)
         StartPhasae();
+    }
+
+    [ClientRpc]
+    public void RpcClearPhase()
+    {
+        clearFlag = true;
+        this.enabled = false;
     }
 }

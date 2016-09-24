@@ -277,8 +277,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013296479050}
-  - 191: {fileID: 191000013349467754}
-  - 191: {fileID: 191000011839790696}
   - 195: {fileID: 195000013190100852}
   - 114: {fileID: 114000012823990084}
   - 114: {fileID: 114000010501699708}
@@ -549,7 +547,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013471342300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.56, y: 0.5, z: -37.8}
+  m_LocalPosition: {x: 0.56, y: -14.59, z: 65.25}
   m_LocalScale: {x: 1, y: 1, z: 0.6}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1089,6 +1087,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   canMove: 0
   stopRate: 20
   timeRate: 10
@@ -1110,36 +1113,6 @@ MonoBehaviour:
   compMethhod: SetMove
   methodObj: {fileID: 0}
   progress: 0
---- !u!191 &191000011839790696
-OffMeshLink:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013471342300}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_AreaIndex: 2
-  m_Start: {fileID: 4000011007190098}
-  m_End: {fileID: 4000010607220420}
-  m_CostOverride: 2
-  m_BiDirectional: 0
-  m_Activated: 1
-  m_AutoUpdatePositions: 0
---- !u!191 &191000013349467754
-OffMeshLink:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013471342300}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_AreaIndex: 2
-  m_Start: {fileID: 4000011470440362}
-  m_End: {fileID: 4000010977856206}
-  m_CostOverride: 2
-  m_BiDirectional: 0
-  m_Activated: 1
-  m_AutoUpdatePositions: 0
 --- !u!195 &195000013190100852
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -1148,7 +1121,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1000013471342300}
   m_Enabled: 0
   m_Radius: 3
-  m_Speed: 10
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 90

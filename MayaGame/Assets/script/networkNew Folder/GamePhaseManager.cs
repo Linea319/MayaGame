@@ -8,6 +8,7 @@ public class GamePhaseManager : NetworkBehaviour {
     public Phase[] phase;
     public LobbyManager netMng;
     float spawnRange = 10f;
+    [SyncVar]
     public int phaseCount = 0;
 
 
@@ -31,6 +32,7 @@ public class GamePhaseManager : NetworkBehaviour {
     [ServerCallback]
     public void NextPhase()
     {
+        Debug.Log("next" + isServer);
         phaseCount++;
         if(phaseCount >= phase.Length)
         {
@@ -39,7 +41,7 @@ public class GamePhaseManager : NetworkBehaviour {
         else
         {           
             phase[phaseCount].StartPhasae();
-            phase[phaseCount].RpcStartPhase();
+            RpcNextPhase(phaseCount);
         }
     }
 
@@ -48,7 +50,7 @@ public class GamePhaseManager : NetworkBehaviour {
     {
         RpcClear();
         netMng.clear = true;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(5.0f);
         netMng.GoBackButton();
     }
 
@@ -56,6 +58,12 @@ public class GamePhaseManager : NetworkBehaviour {
     void RpcClear()
     {
         GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetTaskText("Task Complete");
+    }
+
+    [ClientRpc]
+    void RpcNextPhase(int slot)
+    {
+        phase[slot].StartPhasae();
     }
 
     [Command]

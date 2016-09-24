@@ -7,7 +7,7 @@ public class UIMessenger : MonoBehaviour {
     public bool noAuth = false;
     public float progressTime=2f;
     public string compMethhod;
-    public GameObject methodObj;
+    public Behaviour methodObj;
     [HideInInspector] public float progress;
     bool progressNow;
 

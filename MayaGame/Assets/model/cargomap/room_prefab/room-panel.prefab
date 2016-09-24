@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012179555870}
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 15.45, y: 0, z: 44.80405}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalPosition: {x: 25.771826, y: -15.18, z: 133.43076}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagaeText: pressF:Active
   usePlayer: 0
-  progressTime: 2
+  noAuth: 1
+  progressTime: 4
   compMethhod: CmdNext
-  methodObj: {fileID: 1000011999085618, guid: 39f25905675cd9346b14f620fa1badd6, type: 2}
+  methodObj: {fileID: 0}
   progress: 0

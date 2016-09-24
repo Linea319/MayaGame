@@ -14,6 +14,7 @@ public class Payload : NetworkBehaviour {
     float timer;
     bool fragMove = false;
     bool move;
+    Vector3 prePosition;
 
 
 
@@ -33,6 +34,7 @@ public class Payload : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(agent.pathStatus + ":"+agent.desiredVelocity.sqrMagnitude);
         if (!isServer)
         {
             if (fragMove) {
@@ -55,18 +57,17 @@ public class Payload : NetworkBehaviour {
                 
                 Vector3 dir = Target[targetNum].position - transform.position;
                 agent.Stop();
-                transform.Translate(dir.normalized * 1.5f*Time.deltaTime);
-                //Debug.Log(dir.normalized+":"+ canMove);
-                return;
+                transform.Translate(dir.normalized * 1.5f*Time.deltaTime);               
+                
             }
 
-            if (!agent.hasPath || agent.speed <= 0.1f)
+            if ((transform.position - prePosition).magnitude < 0.01f*Time.deltaTime)
             {
                 move = true;
                 agent.updatePosition = false;
             }
-
-            if (Vector3.Distance(transform.position, Target[targetNum].position) < 0.1f)
+            prePosition = transform.position;
+            if (Vector3.Distance(transform.position, Target[targetNum].position) < 0.5f)
             {
                     targetNum++;
                     if (targetNum >= Target.Length)
@@ -74,9 +75,11 @@ public class Payload : NetworkBehaviour {
                         canMove = false;
                     return;
                     }
-                    agent.SetDestination(Target[targetNum].position);
+                agent.SetDestination(Target[targetNum].position);
                 move = false;
+                agent.nextPosition = transform.position;
                 agent.updatePosition = true;
+                agent.Resume();
             }
             
 
@@ -105,6 +108,7 @@ public class Payload : NetworkBehaviour {
     public void Stop()
     {
         canMove = false;
+        move = false;
         agent.Stop();
         RpcSetMove(true);
         

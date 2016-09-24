@@ -18,7 +18,7 @@ public class Phase_Elevator : Phase {
     [ServerCallback]
     void Update()
     {
-        if (move && elevatorAnim.GetCurrentAnimatorStateInfo(0).IsName("elevator")&& elevatorAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.95f)
+        if (move && elevatorAnim.GetCurrentAnimatorStateInfo(0).IsName("elevator")&& elevatorAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.99f)
         {
             ClearPhase();
         }
