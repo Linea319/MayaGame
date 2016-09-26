@@ -500,6 +500,7 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\YEBIS\Shaders\YebisInputRender.shader" />
     <None Include="Assets\model\Holo\hologram.shader" />
+    <None Include="Assets\model\optic\masked.shader" />
     <None Include="Assets\shader\Combine.shader" />
     <None Include="Assets\shader\XRay-splite.shader" />
     <None Include="Assets\shader\enviromentMap.shader" />

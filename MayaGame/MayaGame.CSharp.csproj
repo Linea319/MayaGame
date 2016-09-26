@@ -178,6 +178,7 @@
     <Compile Include="Assets\YEBIS\Scripts\Wrapper\YebisLib.cs" />
     <Compile Include="Assets\YEBIS\Scripts\YebisPostEffects.cs" />
     <Compile Include="Assets\model\bot\AnimEventSender.cs" />
+    <Compile Include="Assets\model\optic\SetRenderQueue.cs" />
     <Compile Include="Assets\script\AnimSendTrigger.cs" />
     <Compile Include="Assets\script\AnimSound.cs" />
     <Compile Include="Assets\script\AttackCall.cs" />
@@ -615,6 +616,7 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\YEBIS\Shaders\YebisInputRender.shader" />
     <None Include="Assets\model\Holo\hologram.shader" />
+    <None Include="Assets\model\optic\masked.shader" />
     <None Include="Assets\shader\Combine.shader" />
     <None Include="Assets\shader\XRay-splite.shader" />
     <None Include="Assets\shader\enviromentMap.shader" />

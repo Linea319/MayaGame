@@ -24,6 +24,14 @@ public class Phase_Elevator : Phase {
         }
     }
 
+    public void Next()
+    {
+        if (isClient)
+        {
+            CmdNext();
+        }
+    }
+
     [Command]
     public void CmdNext()
     {

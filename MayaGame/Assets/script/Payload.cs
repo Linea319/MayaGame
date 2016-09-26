@@ -33,8 +33,9 @@ public class Payload : NetworkBehaviour {
 	}
 	
 	// Update is called once per frame
+    [ServerCallback]
 	void Update () {
-        Debug.Log(agent.pathStatus + ":"+agent.desiredVelocity.sqrMagnitude);
+        //Debug.Log(agent.pathStatus + ":"+agent.desiredVelocity.sqrMagnitude);
         if (!isServer)
         {
             if (fragMove) {

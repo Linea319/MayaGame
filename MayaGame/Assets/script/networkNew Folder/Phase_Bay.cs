@@ -46,12 +46,27 @@ public class Phase_Bay : Phase {
         }
     }
 
+    public void Anim()
+    {
+        if (isClient)
+        {
+            CmdAnim();
+            
+        }
+    }
+
     [Command]
     public void CmdAnim()
     {
         anim.SetBool("down", true);
         anim.speed = 1;
         move = true;
+        //message.enabled = false;
+    }
+
+    [ClientRpc]
+    void RpcAnim()
+    {
         message.enabled = false;
     }
 }

@@ -7173,6 +7173,11 @@ Prefab:
       propertyPath: m_Name
       value: containar_move (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 195000013190100852, guid: 563d0c256d0f8f240b3083cb9f8891bc,
+        type: 2}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 563d0c256d0f8f240b3083cb9f8891bc, type: 2}
   m_IsPrefabParent: 0
@@ -17184,7 +17189,12 @@ Prefab:
     - target: {fileID: 114000013764518972, guid: d3621d596396a2d49987969bd62438a5,
         type: 2}
       propertyPath: compMethhod
-      value: CmdAnim
+      value: Anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013764518972, guid: d3621d596396a2d49987969bd62438a5,
+        type: 2}
+      propertyPath: noAuth
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3621d596396a2d49987969bd62438a5, type: 2}
@@ -17825,8 +17835,7 @@ MonoBehaviour:
   clearFlag: 0
   taskText: Move cargo to elevator
   enableObjs: []
-  disableObjs:
-  - {fileID: 535006905}
+  disableObjs: []
   enableBehaves: []
   disableBehaves: []
   cargo: {fileID: 1399067826}
@@ -18084,7 +18093,7 @@ Prefab:
     - target: {fileID: 114000013764518972, guid: d3621d596396a2d49987969bd62438a5,
         type: 2}
       propertyPath: noAuth
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000014083154008, guid: d3621d596396a2d49987969bd62438a5, type: 2}
       propertyPath: m_LocalScale.y
@@ -18097,6 +18106,11 @@ Prefab:
     - target: {fileID: 4000014083154008, guid: d3621d596396a2d49987969bd62438a5, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013764518972, guid: d3621d596396a2d49987969bd62438a5,
+        type: 2}
+      propertyPath: compMethhod
+      value: Next
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3621d596396a2d49987969bd62438a5, type: 2}
@@ -18782,6 +18796,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000012823990084, guid: 563d0c256d0f8f240b3083cb9f8891bc,
+        type: 2}
+      propertyPath: Target.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013296479050, guid: 563d0c256d0f8f240b3083cb9f8891bc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.56
@@ -25176,7 +25195,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967263
-  m_RenderingPath: 3
+  m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3

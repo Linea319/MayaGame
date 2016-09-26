@@ -85,7 +85,14 @@ public class FPS_UI : MonoBehaviour {
         }
         if (MessageProgress.fillAmount >= 1 && !messager.usePlayer && !messager.noAuth)
         {
-            FPSCon.CmdMessagerMethod(messager.gameObject,messager.compMethhod);
+            if(messager.methodObj != null)
+            {
+                FPSCon.CmdMessagerMethod(messager.methodObj.gameObject, messager.compMethhod);
+            }
+            else
+            {
+                FPSCon.CmdMessagerMethod(messager.gameObject, messager.compMethhod);
+            }
         }
 
 
