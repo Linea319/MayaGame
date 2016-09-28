@@ -31,6 +31,18 @@ public class GunParameter : System.Object
     public int magazine = 0;
     public int totalAmmo = 0;
 
+    public void Add(GunParameter addParm)
+    {
+        accuracy += addParm.accuracy;
+        recoil += addParm.recoil;
+        rate += addParm.rate;
+        range += addParm.range;
+        mobility += addParm.mobility;
+        reload += addParm.reload;
+        magazine += addParm.magazine;
+        totalAmmo += addParm.totalAmmo;
+    }
+
 }
 
 [System.Serializable]
