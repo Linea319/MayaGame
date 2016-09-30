@@ -132,13 +132,15 @@ public class FPSController : NetworkBehaviour {
         if (!debug)
         {
             weponPrefab[0] = Resources.Load(weponPath[0]) as GameObject;
-            weponPrefab[1] = Resources.Load(weponPath[1]) as GameObject;
+            
+            weponPrefab[1] = Resources.Load(weponPath[3]) as GameObject;
         }
 
         Debug.Log(useWeponNum);
         defAnim = anim.runtimeAnimatorController;
         spawnWepon(1);
         spawnWepon(0);
+
         Initialize();
         
     }

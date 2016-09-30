@@ -17,8 +17,10 @@ public class Atachment : MonoBehaviour {
 
     }
 
-    public virtual void initialize()
+    public virtual void initialize(Wepon wep)
     {
         transform.localPosition = offset;
+        wep.pa.Add(hosei);
+        wep.initialize();
     }
 }

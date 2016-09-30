@@ -92,5 +92,18 @@ namespace Prototype.NetworkLobby
                 }
             }
         }
+
+        public void SetAttach(string name,int slot)
+        {
+
+            foreach (LobbyPlayer p in _players)
+            {
+                if (p.isLocalPlayer)
+                {
+                    p.CmdSetAtach(name,slot);
+                }
+            }
+        }
+
     }
 }

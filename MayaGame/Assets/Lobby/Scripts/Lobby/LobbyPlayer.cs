@@ -27,7 +27,15 @@ namespace Prototype.NetworkLobby
         [SyncVar]
         public string loadoutPrim = "gun_prefab/m40";
         [SyncVar]
+        public string primAtach1;
+        [SyncVar]
+        public string primAtach2;
+        [SyncVar]
         public string loadoutSecond = "gun_prefab/h9p";
+        [SyncVar]
+        public string secondAtach1;
+        [SyncVar]
+        public string secondAtach2;
 
         //OnMyName function will be invoked on clients when server change the value of playerName
         [SyncVar(hook = "OnMyName")]
@@ -339,6 +347,27 @@ namespace Prototype.NetworkLobby
         public void CmdSetSecond(string path)
         {
             loadoutSecond = path;
+        }
+
+        [Command]
+        public void CmdSetAtach(string path,int slot)
+        {
+            switch (slot)
+            {
+                case 0:
+                    primAtach1 = path;
+                    break;
+                case 1:
+                    primAtach2 = path;
+                    break;
+                case 2:
+                    secondAtach1 = path;
+                    break;
+                case 3:
+                    secondAtach2 = path;
+                    break;
+            }
+            
         }
 
         //Cleanup thing when get destroy (which happen when client kick or disconnect)

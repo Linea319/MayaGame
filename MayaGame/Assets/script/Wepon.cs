@@ -85,6 +85,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     public Transform ADSPosition;
     public Transform magazineTr;
     public Transform muzuleTr;
+    public Transform opticTr;
     public float ADSTime = 0.3F;
     public FPSController FPSCon;
     public GameObject hitEffect;
@@ -205,10 +206,25 @@ public class Wepon : MonoBehaviour, WeponInterface
         Debug.Log(magPos);
     }
     
+    public void SetAtacch(string path)
+    {
+        GameObject atachment = Instantiate(Resources.Load(path) as GameObject);
+        atachment.transform.parent = transform;
+        atachment.GetComponent<Atachment>().initialize(this);
+    }
+
     public void Setup(int slot)
     {
         mySlot = slot;
         initialize();
+        if(FPSCon.weponPath[slot*3+1].Length > 0)
+        {
+            SetAtacch(FPSCon.weponPath[slot + 1]);
+        }
+        if (FPSCon.weponPath[slot*3 + 2].Length > 0)
+        {
+            SetAtacch(FPSCon.weponPath[slot + 2]);
+        }
     }
 
 

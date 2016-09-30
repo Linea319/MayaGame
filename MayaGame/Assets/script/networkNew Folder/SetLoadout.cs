@@ -17,7 +17,11 @@ public class SetLoadout : LobbyHook {
         lobbyMng.gamePlayerNum++;
         fpsCon.weponPath.Clear();
         fpsCon.weponPath.Add(lobby.loadoutPrim);
+        fpsCon.weponPath.Add(lobby.primAtach1);
+        fpsCon.weponPath.Add(lobby.primAtach2);
         fpsCon.weponPath.Add(lobby.loadoutSecond);
+        fpsCon.weponPath.Add(lobby.secondAtach1);
+        fpsCon.weponPath.Add(lobby.secondAtach2);
 
         fpsCon.playerName = lobby.playerName;
         fpsCon.conId = lobby.playerId;
