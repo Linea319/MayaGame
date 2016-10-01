@@ -10,7 +10,9 @@ public class Optics : Atachment {
         wep.ADSPosition = ADSPosition;
         wep.ADSRate = ADSFov;
         base.initialize(wep);
-        transform.position = wep.opticTr.position + offset;
-       
+        Destroy(wep.opticTr.GetChild(0).gameObject);
+        transform.parent = wep.opticTr;
+        transform.localPosition = offset;
+        Debug.Log(transform.localPosition);
     }
 }

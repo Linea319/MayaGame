@@ -102,6 +102,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     public AnimationClip runAnim;
     public bool noCock;
     public LayerMask wepMask;
+    public Vector3 offsetRot;
 
     bool ADS;
     protected bool reload;
@@ -149,7 +150,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     {
         
         transform.localPosition = Vector3.zero;
-        transform.localEulerAngles = Vector3.zero;
+        transform.localEulerAngles = offsetRot;
         myCamera = Camera.main;
         FPSCon = transform.root.GetComponent<FPSController>();
         camPosition = FPSCon.camPosition;
@@ -209,6 +210,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     public void SetAtacch(string path)
     {
         GameObject atachment = Instantiate(Resources.Load(path) as GameObject);
+        atachment.transform.rotation = transform.rotation;
         atachment.transform.parent = transform;
         atachment.GetComponent<Atachment>().initialize(this);
     }
@@ -217,6 +219,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     {
         mySlot = slot;
         initialize();
+       
         if(FPSCon.weponPath[slot*3+1].Length > 0)
         {
             SetAtacch(FPSCon.weponPath[slot + 1]);

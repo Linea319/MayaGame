@@ -15,6 +15,8 @@ ModelImporter:
     100014: scope
     100016: //RootNode
     100018: mount
+    100020: glass
+    100022: glass_rear
     400000: back
     400002: dyal
     400004: pCube6
@@ -25,6 +27,8 @@ ModelImporter:
     400014: scope
     400016: //RootNode
     400018: mount
+    400020: glass
+    400022: glass_rear
     2300000: dyal
     2300002: pCube6
     2300004: pCylinder3
@@ -33,6 +37,8 @@ ModelImporter:
     2300010: polySurface4
     2300012: mount
     2300014: scope
+    2300016: glass
+    2300018: glass_rear
     3300000: dyal
     3300002: pCube6
     3300004: pCylinder3
@@ -41,6 +47,8 @@ ModelImporter:
     3300010: polySurface4
     3300012: mount
     3300014: scope
+    3300016: glass
+    3300018: glass_rear
     4300000: polySurface2
     4300002: polySurface3
     4300004: polySurface4
@@ -49,6 +57,8 @@ ModelImporter:
     4300010: pCube6
     4300012: mount
     4300014: scope
+    4300016: glass_rear
+    4300018: glass
     9500000: //RootNode
   materials:
     importMaterials: 1
