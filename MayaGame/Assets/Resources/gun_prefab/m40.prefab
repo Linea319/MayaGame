@@ -793,7 +793,7 @@ MonoBehaviour:
     totalAmmo: 1800
   dam:
     damage: 0
-    shock: 90
+    shock: 110
     penetration: 150
     heat: 0
   ADSRate: 1.4
@@ -805,6 +805,8 @@ MonoBehaviour:
   wepMask:
     serializedVersion: 2
     m_Bits: 1
+  offsetRot: {x: 0, y: 0, z: 0}
+  ADS: 0
   selector: 0
   Exploder: {fileID: 0}
 --- !u!198 &19830722
@@ -10127,3 +10129,4 @@ MonoBehaviour:
     totalAmmo: 0
   ADSPosition: {fileID: 4000010871966162}
   ADSFov: 1.2
+  maskObj: {fileID: 0}

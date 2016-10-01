@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012577057106}
   m_LocalRotation: {x: -0.7071062, y: -0.0000015074642, z: -0.0000014327278, w: -0.7071075}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalPosition: {x: -0, y: 65, z: -0}
   m_LocalScale: {x: 276.03745, y: 276.0375, z: 276.0375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -171,7 +171,7 @@ Transform:
   m_GameObject: {fileID: 1000010660083286}
   m_LocalRotation: {x: -0.0000015795229, y: -0.0000020773375, z: -0.00000038359497,
     w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1042}
+  m_LocalPosition: {x: -6.393391, y: -7.1150002, z: -1.1605211}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -323,4 +323,5 @@ MonoBehaviour:
     magazine: 0
     totalAmmo: 0
   ADSPosition: {fileID: 4000011209805682}
-  ADSFov: 1.2
+  ADSFov: 1.5
+  maskObj: {fileID: 0}

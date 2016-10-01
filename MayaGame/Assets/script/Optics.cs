@@ -4,6 +4,8 @@ using System.Collections;
 public class Optics : Atachment {
     public Transform ADSPosition;
     public float ADSFov = 1f;
+    public GameObject maskObj;
+    Wepon wepon;
 
     public override void initialize(Wepon wep)
     {
@@ -14,5 +16,14 @@ public class Optics : Atachment {
         transform.parent = wep.opticTr;
         transform.localPosition = offset;
         Debug.Log(transform.localPosition);
+        wepon = wep;
+    }
+
+    void Update()
+    {
+        if (maskObj != null)
+        {
+            maskObj.SetActive(wepon.ADS);
+        }
     }
 }

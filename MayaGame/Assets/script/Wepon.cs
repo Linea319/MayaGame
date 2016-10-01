@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using Exploder;
+using UnityStandardAssets.CinematicEffects;
 
 public interface WeponInterface
 {
@@ -104,7 +105,8 @@ public class Wepon : MonoBehaviour, WeponInterface
     public LayerMask wepMask;
     public Vector3 offsetRot;
 
-    bool ADS;
+    [HideInInspector]
+    public bool ADS;
     protected bool reload;
     bool sear;
     bool first = true;
@@ -252,7 +254,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         FPSCon.recoilVec = recoilDmp;
         recoilDmp = Vector3.Slerp(recoilDmp, Vector3.zero, 5 * Time.deltaTime);
         recoilOffset = Mathf.Lerp(recoilOffset, 0, 5 * Time.deltaTime);
-
+        ADS = FPSCon.ADS;
         
     }
     void LateUpdate()
@@ -364,8 +366,14 @@ public class Wepon : MonoBehaviour, WeponInterface
         {
             FPSCon.ADS = !FPSCon.ADS;
             FPSCon.ADSTimer = FPSCon.ADSTime;
-            if (FPSCon.ADS) { myCamera.fieldOfView /= ADSRate; }
-            else { myCamera.fieldOfView *= ADSRate; }
+            if (FPSCon.ADS) {
+                myCamera.fieldOfView /= ADSRate;
+                myCamera.GetComponent<DepthOfField>().focus.fStops *= ADSRate;
+            }
+            else {
+                myCamera.fieldOfView *= ADSRate;
+                myCamera.GetComponent<DepthOfField>().focus.fStops /= ADSRate;
+            }
         }
     }
 

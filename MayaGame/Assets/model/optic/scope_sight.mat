@@ -8,11 +8,11 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: scope_sight
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHATEST_ON _EMISSION
+  m_ShaderKeywords: _ALPHABLEND_ON
   m_LightmapFlags: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: 3000
   stringTagMap:
-    RenderType: TransparentCutout
+    RenderType: Transparent
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -49,7 +49,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 4dc4ebdc5560c3c4bb793a72e0b833a8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6fa7aece7986b37459d0229c7998806b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -85,7 +85,7 @@ Material:
       second: 1
     - first:
         name: _DstBlend
-      second: 0
+      second: 10
     - first:
         name: _GlossMapScale
       second: 1
@@ -100,7 +100,7 @@ Material:
       second: 0
     - first:
         name: _Mode
-      second: 1
+      second: 2
     - first:
         name: _OcclusionStrength
       second: 1
@@ -118,23 +118,23 @@ Material:
       second: 1
     - first:
         name: _SrcBlend
-      second: 1
+      second: 5
     - first:
         name: _UVSec
       second: 0
     - first:
         name: _ZWrite
-      second: 1
+      second: 0
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _Emission
       second: {r: 0, g: 0, b: 0, a: 0}
     - first:
         name: _EmissionColor
-      second: {r: 0, g: 0.6691177, b: 0.22611572, a: 1}
+      second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _SpecColor
       second: {r: 1, g: 1, b: 1, a: 1}

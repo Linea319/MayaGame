@@ -1118,7 +1118,7 @@ Animator:
   m_GameObject: {fileID: 1000012300129426}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ddd806a576cc0f748a7da5c95a06e154, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd15224356916fc4eb1f4971057400f0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  weponAnim: {fileID: 0}
+  weponAnim: {fileID: 95000013475751734}
   camPosition: {fileID: 0}
   ADSPosition: {fileID: 4000013070949054}
   magazineTr: {fileID: 4000010883915470}

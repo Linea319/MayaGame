@@ -74,6 +74,7 @@ public class FPSController : NetworkBehaviour {
     public UIMessenger otherPlayer;
     public GameObject tagPrefab;
     Transform focusTr;
+
     [SyncVar]
     public string playerName = "bot";
     [SyncVar]
@@ -96,6 +97,7 @@ public class FPSController : NetworkBehaviour {
         
         myCamera = Camera.main;
         focusTr = myCamera.transform.GetChild(0);
+        
         if (isLocalPlayer)
         {
             GameObject ui = Instantiate(UIObj);
@@ -493,13 +495,15 @@ public class FPSController : NetworkBehaviour {
         {
             myCamera.transform.position = Vector3.Lerp(camPosition.position, ADSPosition.position, 1 - ADSTimer / ADSTime);
             myCamera.transform.rotation = Quaternion.Lerp(camPosition.rotation, ADSPosition.rotation, 2f*(1 - ADSTimer / ADSTime)-0.5f);
-            focusTr.localPosition = new Vector3(0,0, Mathf.Lerp(1, 0.45f, 1 - ADSTimer / ADSTime)); 
+            focusTr.localPosition = new Vector3(0,0, Mathf.Lerp(1, 0.45f, 1 - ADSTimer / ADSTime));
+            
         }
         else
         {
             myCamera.transform.position = Vector3.Lerp(ADSPosition.position, camPosition.position, 1 - ADSTimer / ADSTime);
             myCamera.transform.rotation = Quaternion.Lerp(ADSPosition.rotation, camPosition.rotation, 2f * (1 - ADSTimer / ADSTime) + 0.5f);
             focusTr.localPosition = new Vector3(0,0, Mathf.Lerp(0.45f, 1, 1 - ADSTimer / ADSTime));
+            
         }
         ADSTimer -= Time.deltaTime;
         ADSTimer = Mathf.Clamp(ADSTimer, 0, ADSTime);

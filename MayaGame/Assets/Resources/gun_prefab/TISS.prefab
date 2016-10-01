@@ -1152,7 +1152,7 @@ MonoBehaviour:
     rate: 55
     range: 25
     startGensui: 5
-    mobility: 200
+    mobility: 170
     reload: 100
     magazine: 6
     totalAmmo: 360
@@ -1170,6 +1170,7 @@ MonoBehaviour:
   wepMask:
     serializedVersion: 2
     m_Bits: 1
+  offsetRot: {x: 0, y: 0, z: 0}
   selector: 1
   Exploder: {fileID: 0}
   shotNum: 8
