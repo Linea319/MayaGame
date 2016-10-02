@@ -341,12 +341,16 @@ namespace Prototype.NetworkLobby
         public void CmdSetPrim(string path)
         {
             loadoutPrim = path;
+            primAtach1 = "";
+            primAtach2 = "";
         }
 
         [Command]
         public void CmdSetSecond(string path)
         {
             loadoutSecond = path;
+            secondAtach1 = "";
+            secondAtach2 = "";
         }
 
         [Command]

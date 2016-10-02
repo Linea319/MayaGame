@@ -545,8 +545,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: -0.1}
   hosei:
-    accuracy: 15
-    recoil: 10
+    accuracy: -15
+    recoil: 15
     rate: 0
     range: 0
     startGensui: 0

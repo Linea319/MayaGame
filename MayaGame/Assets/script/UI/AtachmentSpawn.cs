@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class AtachmentSpawn : MonoBehaviour {
     public GameObject[] prefabs;
@@ -14,12 +15,14 @@ public class AtachmentSpawn : MonoBehaviour {
         {
             Destroy(panel.GetChild(i).gameObject);
         }
-
+        SelectManager sMng = panel.GetComponent<SelectManager>();
             for (int i = 0; i < prefabs.Length; i++)
         {
             GameObject obj = Instantiate(prefabs[i]);
             obj.transform.SetParent(panel,false);
-            obj.GetComponent<setAtachment>().initialize(lobbyPanel, slot);
+            obj.GetComponent<setAtachment>().initialize(lobbyPanel, slot,i);
+            sMng.buttons[i] = obj.GetComponent<Button>();
         }
+        sMng.Initialize();
     }
 }

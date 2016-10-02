@@ -10,11 +10,19 @@ public class SelectManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        cButton = buttons[0];
-        PressButton(0);
+        if(buttons[0] != null)
+        {
+            Initialize();
+        }
 
     }
 	
+    public void Initialize()
+    {
+        cButton = buttons[0];
+        PressButton(0);
+    }
+
 	// Update is called once per frame
 	void Update () {
 	

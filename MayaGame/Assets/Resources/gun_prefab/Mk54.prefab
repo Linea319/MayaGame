@@ -544,7 +544,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013033505700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 43.249557, y: 4.7095375, z: 101.29175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 20.666, y: 0, z: 0}
   m_Children:
@@ -561,7 +561,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012299335148}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0205}
+  m_LocalPosition: {x: 0, y: 0.0028, z: -0.0205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_Children:
@@ -687,7 +687,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011763775896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008, y: 0.1242, z: -0.2166}
+  m_LocalPosition: {x: 0.008, y: 0.12, z: -0.2166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1209,6 +1209,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   offsetRot: {x: 20.666, y: 27.166, z: -0.5}
+  ADS: 0
   selector: 1
   Exploder: {fileID: 0}
 --- !u!114 &114000012450428996
@@ -1235,6 +1236,7 @@ MonoBehaviour:
     totalAmmo: 0
   ADSPosition: {fileID: 4000013070949054}
   ADSFov: 1.2
+  maskObj: {fileID: 0}
 --- !u!114 &114000013193506372
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -42,4 +42,17 @@ public class ParamText : MonoBehaviour {
         cTextObj.GetComponent<ParamTextSetter>().SetMeleeParam(obj.name, param, damParam);
         Destroy(obj);
     }
+
+    public void SetAtachParam(string name)
+    {
+        if (name.Length <= 0)
+        {
+            cTextObj.GetComponent<ParamTextSetter>().ResetHosei();
+            return;
+        }
+        GameObject obj = Instantiate(Resources.Load(name, typeof(GameObject))) as GameObject;
+        GunParameter param = obj.GetComponent<Atachment>().hosei;
+        cTextObj.GetComponent<ParamTextSetter>().SetHosei(param);
+        Destroy(obj);
+    }
 }

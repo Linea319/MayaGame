@@ -360,12 +360,17 @@ MonoBehaviour:
   removePlayerButton: {fileID: 114000010022265818}
   localIcone: {fileID: 1000013570891778}
   remoteIcone: {fileID: 1000010107524372}
-  loadoutPrim: m40
-  loadoutSecond: h9p
+  loadoutPrim: gun_prefab/m40
+  primAtach1: 
+  primAtach2: 
+  loadoutSecond: gun_prefab/h9p
+  secondAtach1: 
+  secondAtach2: 
   playerName: 
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   OddRowColor: {r: 0.98039216, g: 0.98039216, b: 0.98039216, a: 1}
   EvenRowColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
+  playerId: 0
 --- !u!114 &114000010507779330
 MonoBehaviour:
   m_ObjectHideFlags: 1
