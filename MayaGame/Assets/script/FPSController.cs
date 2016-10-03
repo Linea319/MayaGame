@@ -124,6 +124,7 @@ public class FPSController : NetworkBehaviour {
     {
         //RpcSetWeponPrefab(weponPrefab[0], weponPrefab[1]);
         results.name = playerName;
+        Debug.Log("server");
     }
 
     public override void OnStartClient()

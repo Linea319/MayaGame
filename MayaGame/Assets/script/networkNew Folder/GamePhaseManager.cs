@@ -18,16 +18,28 @@ public class GamePhaseManager : NetworkBehaviour {
     {
         base.OnStartServer();
     //NetworkManager.RegisterStartPosition(playerSpawn);
-    netMng = FindObjectOfType<LobbyManager>();
-        phase[0].StartPhasae();
-        phase[0].RpcStartPhase();
+    
     }
 	
 	// Update is called once per frame
+
+    void Start()
+    {
+        StartPhase();
+    }
+
     [ServerCallback]
 	void Update () {
 	
 	}
+
+    [ServerCallback]
+    public void StartPhase()
+    {
+        netMng = FindObjectOfType<LobbyManager>();
+        phase[0].StartPhasae();
+        phase[0].RpcStartPhase();
+    }
 
     [ServerCallback]
     public void NextPhase()
