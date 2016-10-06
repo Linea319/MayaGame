@@ -1193,7 +1193,7 @@ MonoBehaviour:
     mobility: 200
     reload: 300
     magazine: 10
-    totalAmmo: 800
+    totalAmmo: 80
   dam:
     damage: 0
     shock: 180
@@ -1210,6 +1210,7 @@ MonoBehaviour:
     m_Bits: 1
   offsetRot: {x: 20.666, y: 27.166, z: -0.5}
   ADS: 0
+  maxAmmo: 0
   selector: 1
   Exploder: {fileID: 0}
 --- !u!114 &114000012450428996

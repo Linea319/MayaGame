@@ -10,6 +10,8 @@ public class GamePhaseManager : NetworkBehaviour {
     float spawnRange = 10f;
     [SyncVar]
     public int phaseCount = 0;
+    HitManagerPlayer[] players = new HitManagerPlayer[4];
+    int playerCount;
 
 
     // Use this for initialization
@@ -30,7 +32,20 @@ public class GamePhaseManager : NetworkBehaviour {
 
     [ServerCallback]
 	void Update () {
-	
+        int count = 0;
+        for(int i = 0; i < playerCount; i++)
+        {
+           
+            if(players[i].hitPoint <= 0)
+            {
+                count++;
+            }
+        }
+        if(count >= playerCount)
+        {
+            netMng.GoBackButton();
+        }
+
 	}
 
     [ServerCallback]
@@ -39,6 +54,14 @@ public class GamePhaseManager : NetworkBehaviour {
         netMng = FindObjectOfType<LobbyManager>();
         phase[0].StartPhasae();
         phase[0].RpcStartPhase();
+
+        GameObject[] playersObj = GameObject.FindGameObjectsWithTag("Player");
+        playerCount = playersObj.Length;
+        for (int j = 0; j < playersObj.Length; j++)
+        {
+            players[j] = playersObj[j].GetComponent<HitManagerPlayer>();
+        }
+
     }
 
     [ServerCallback]

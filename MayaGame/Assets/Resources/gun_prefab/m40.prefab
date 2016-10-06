@@ -629,10 +629,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6bff0ac574645614db04ab82815e53e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dc43153cfc533864a9e3e3d2bf9d6233, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.85
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -790,7 +790,7 @@ MonoBehaviour:
     mobility: 150
     reload: 230
     magazine: 30
-    totalAmmo: 1800
+    totalAmmo: 180
   dam:
     damage: 0
     shock: 110
@@ -807,6 +807,7 @@ MonoBehaviour:
     m_Bits: 1
   offsetRot: {x: 0, y: 0, z: 0}
   ADS: 0
+  maxAmmo: 0
   selector: 0
   Exploder: {fileID: 0}
 --- !u!198 &19830722

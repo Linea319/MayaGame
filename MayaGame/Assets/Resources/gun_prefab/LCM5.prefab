@@ -567,6 +567,7 @@ MonoBehaviour:
   ADSPosition: {fileID: 408166}
   magazineTr: {fileID: 462434}
   muzuleTr: {fileID: 408094}
+  opticTr: {fileID: 0}
   ADSTime: 0.45
   FPSCon: {fileID: 0}
   hitEffect: {fileID: 153812, guid: 6b531ca3616524e4fa6ebfe50fa1b56a, type: 2}
@@ -582,7 +583,7 @@ MonoBehaviour:
     mobility: 250
     reload: 200
     magazine: 1
-    totalAmmo: 150
+    totalAmmo: 20
   dam:
     damage: 0
     shock: 100
@@ -597,6 +598,9 @@ MonoBehaviour:
   wepMask:
     serializedVersion: 2
     m_Bits: 1
+  offsetRot: {x: 0, y: 0, z: 0}
+  ADS: 0
+  maxAmmo: 0
   selector: 1
   Exploder: {fileID: 0}
 --- !u!114 &11455134
@@ -663,7 +667,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129828}
-  serializedVersion: 2
+  serializedVersion: 4
   lengthInSec: 2
   startDelay:
     scalar: 0
@@ -701,12 +705,13 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
-  randomSeed: 0
   looping: 0
   prewarm: 0
   playOnAwake: 0
   moveWithTransform: 1
+  autoRandomSeed: 1
   scalingMode: 1
+  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1

@@ -88,11 +88,14 @@ namespace Prototype.NetworkLobby
             {
                 if (topPanel.isInGame)
                 {
-                    //ChangeTo(lobbyPanel);
+                    
+                   
                     backDelegate = StopResultClbk;
                     ChangeTo(ResultPanel);
+                    
                     gamePlayerNum = 0;
                     clear = false;
+                    Resources.UnloadUnusedAssets();
                 }
                 else
                 {
@@ -261,6 +264,7 @@ namespace Prototype.NetworkLobby
 
         public void StopResultClbk()
         {
+            ResultPanel.SendMessage("Reset");
             ChangeTo(lobbyPanel);
             if (_isMatchmaking)
             {
@@ -285,6 +289,7 @@ namespace Prototype.NetworkLobby
                     backDelegate = StopClientClbk;
                 }
             }
+
         }
 
         class KickMsg : MessageBase { }

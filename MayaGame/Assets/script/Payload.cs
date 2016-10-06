@@ -44,7 +44,7 @@ public class Payload : NetworkBehaviour {
             }
             return;
         }
-           
+
         if (canMove)
         {
             /*
@@ -55,14 +55,14 @@ public class Payload : NetworkBehaviour {
             */
             if (move)
             {
-                
+
                 Vector3 dir = Target[targetNum].position - transform.position;
                 agent.Stop();
-                transform.Translate(dir.normalized * 1.5f*Time.deltaTime);               
-                
+                transform.Translate(dir.normalized * 1.5f * Time.deltaTime);
+
             }
 
-            if ((transform.position - prePosition).magnitude < 0.01f*Time.deltaTime)
+            if ((transform.position - prePosition).magnitude < 0.01f * Time.deltaTime)
             {
                 move = true;
                 agent.updatePosition = false;
@@ -70,19 +70,19 @@ public class Payload : NetworkBehaviour {
             prePosition = transform.position;
             if (Vector3.Distance(transform.position, Target[targetNum].position) < 0.5f)
             {
-                    targetNum++;
-                    if (targetNum >= Target.Length)
-                    {
-                        canMove = false;
+                targetNum++;
+                if (targetNum >= Target.Length)
+                {
+                    canMove = false;
                     return;
-                    }
+                }
                 agent.SetDestination(Target[targetNum].position);
                 move = false;
                 agent.nextPosition = transform.position;
                 agent.updatePosition = true;
                 agent.Resume();
             }
-            
+
 
             if (Time.time > timer)
             {
@@ -95,10 +95,6 @@ public class Payload : NetworkBehaviour {
             }
 
             //agent.Resume();
-        }
-        else
-        {
-            Stop();
         }
 
         
@@ -125,6 +121,7 @@ public class Payload : NetworkBehaviour {
     [Command]
     void CmdSetMove()
     {
+        Debug.Log("cargoCMD");
         canMove = true;
         agent.Resume();
         timer = Time.time + timeRate;
@@ -133,8 +130,9 @@ public class Payload : NetworkBehaviour {
     }
 
     [ClientRpc]
-    public void RpcSetMove(bool hyouzi)
+    void RpcSetMove(bool hyouzi)
     {
+        //Debug.Log("cargoRPC");
         if(messager != null)
         messager.enabled = hyouzi;
     }

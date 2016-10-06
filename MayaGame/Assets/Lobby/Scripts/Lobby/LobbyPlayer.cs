@@ -37,6 +37,9 @@ namespace Prototype.NetworkLobby
         [SyncVar]
         public string secondAtach2;
 
+        [SyncVar]
+        public string item = "item/ammokan";
+
         //OnMyName function will be invoked on clients when server change the value of playerName
         [SyncVar(hook = "OnMyName")]
         public string playerName = "";
@@ -372,6 +375,12 @@ namespace Prototype.NetworkLobby
                     break;
             }
             
+        }
+
+        [Command]
+        public void CmdSetItem(string path)
+        {
+            item = path;
         }
 
         //Cleanup thing when get destroy (which happen when client kick or disconnect)

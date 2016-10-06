@@ -25,7 +25,7 @@ public class ZakoAI : EnemyAI {
 
     public override void Attack()
     {
-        syncAnim.SetTrigger("Attack");
+       syncAnim.SetTrigger("Attack");
     }
 
     public override void AttackStart(int num)
@@ -35,6 +35,7 @@ public class ZakoAI : EnemyAI {
         if (isServer)
         {
             anim.SetBool("move", false);
+            //syncAnim.SetTrigger("Attack");
             nav.Stop();
         }
         

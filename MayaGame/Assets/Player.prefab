@@ -2318,8 +2318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ef7b04fea0b5640baedd19589f33ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 150
-  armor: 200
+  hitPoint: 100
+  armor: 100
   rechargeDelay: 5
   rechargeRate: 30
   maxArmor: 0
@@ -2854,4 +2854,5 @@ MonoBehaviour:
   progressTime: 2
   compMethhod: 
   methodObj: {fileID: 0}
+  TargetTex: {fileID: 2800000, guid: f2e6679d256594448b554c7ec81dfd67, type: 3}
   progress: 0

@@ -23,13 +23,13 @@ public class ResultPanel : MonoBehaviour {
     public GameObject resultPrefab;
     int playernum = 0;
     ResultParam[] player = new ResultParam[4];
-    
+    GameObject[] resultObj = new GameObject[4];
     string[] playerNames = new string[4];
-
+    int count=0;
 	// Use this for initialization
 	void Start () {
         
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -62,6 +62,8 @@ public class ResultPanel : MonoBehaviour {
         GameObject obj = Instantiate(resultPrefab);
         obj.GetComponent<RectTransform>().SetParent(playerList, false);
         obj.GetComponent<ResultPlayer>().SetParam(playerNames[playernum - 1], player[playernum - 1]);
+        resultObj[count] = obj;
+        count++;
     }
 
     public void Add(ResultParam result)
@@ -80,6 +82,17 @@ public class ResultPanel : MonoBehaviour {
             ClearText.color = Color.red;
         }
            
+    }
+
+    public void Reset()
+    {
+        playernum = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            if (resultObj[i] != null) Destroy(resultObj[i]);
+        }
+
+
     }
     
 }

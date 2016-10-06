@@ -105,5 +105,17 @@ namespace Prototype.NetworkLobby
             }
         }
 
+        public void SetItem(string name)
+        {
+
+            foreach (LobbyPlayer p in _players)
+            {
+                if (p.isLocalPlayer)
+                {
+                    p.CmdSetItem(name);
+                }
+            }
+        }
+
     }
 }

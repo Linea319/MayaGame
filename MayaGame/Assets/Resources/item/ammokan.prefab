@@ -88,6 +88,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012000647988}
   - 95: {fileID: 95000013755602800}
+  - 114: {fileID: 114000010951382258}
+  - 114: {fileID: 114000012268107882}
+  - 114: {fileID: 114000012072349566}
+  - 135: {fileID: 135000013646852094}
   m_Layer: 0
   m_Name: ammokan
   m_TagString: Untagged
@@ -154,8 +158,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013628137346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0438, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.145278, y: 0.025, z: -35.08454}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011865287114}
@@ -317,7 +321,7 @@ Animator:
   m_GameObject: {fileID: 1000013628137346}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 22c5503b0a15f0b40ba7b835ef1ecd0f, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 140e30fb33cc3c84fa91bbf949505b5a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -325,3 +329,85 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010951382258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013628137346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b84d327516c751418e59cab538b6064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messagaeText: Press F:Resupply
+  usePlayer: 0
+  noAuth: 1
+  useTarget: 1
+  progressTime: 3
+  compMethhod: Resuply
+  methodObj: {fileID: 114000012268107882}
+  TargetTex: {fileID: 2800000, guid: 7f318b1495a656747ae0c61e383a53a1, type: 3}
+  progress: 0
+--- !u!114 &114000012072349566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013628137346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 215
+    i1: 45
+    i2: 236
+    i3: 223
+    i4: 181
+    i5: 196
+    i6: 48
+    i7: 164
+    i8: 250
+    i9: 132
+    i10: 176
+    i11: 57
+    i12: 92
+    i13: 214
+    i14: 91
+    i15: 195
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114000012268107882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013628137346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7004ca88b7308bd44bb7c8bc778d4ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Percent: 100
+  fullColor: {r: 0, g: 2, b: 0.34482765, a: 1}
+  emptyColor: {r: 2, g: 0, b: 0, a: 1}
+  rend:
+  - {fileID: 23000012503897880}
+  - {fileID: 23000011157659578}
+  - {fileID: 23000013258630614}
+--- !u!135 &135000013646852094
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013628137346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.02
+  m_Center: {x: 0, y: 0, z: 0}

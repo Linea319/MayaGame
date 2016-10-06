@@ -53,7 +53,7 @@ public class FPSController : NetworkBehaviour {
     public GameObject[] weponPrefab;
 
     [HideInInspector] public SyncListString weponPath = new SyncListString();
-    GameObject[] wepons = new GameObject[2];
+    [HideInInspector] public GameObject[] wepons = new GameObject[2];
     float[] changeSpeed = new float[2];
     bool changeNow;
     [HideInInspector]
@@ -67,6 +67,8 @@ public class FPSController : NetworkBehaviour {
     [HideInInspector]
     public float stamina;
     [HideInInspector]
+    public float itemGage;
+    [HideInInspector]
     public HitManagerPlayer hpMng;
     [HideInInspector]
     public RuntimeAnimatorController defAnim;
@@ -74,6 +76,7 @@ public class FPSController : NetworkBehaviour {
     public UIMessenger otherPlayer;
     public GameObject tagPrefab;
     Transform focusTr;
+    int itemNum = 2;
 
     [SyncVar]
     public string playerName = "bot";
@@ -105,7 +108,7 @@ public class FPSController : NetworkBehaviour {
             UICon.FPSCon = this;
             //Cursor.visible = false;
             //Cursor.lockState = CursorLockMode.Confined;
-
+            SendItemText();
         }
         else
         {
@@ -387,8 +390,25 @@ public class FPSController : NetworkBehaviour {
             changeSpeed[num] = wepons[num].GetComponent<WeponInterface>().ReturnChangeSpeed(nowAnim.animationClips[5].length);
             anim.SetFloat("changeSpeed", changeSpeed[num]);
             nAnim.SetTrigger("change");
+            //anim.SetTrigger("change");
             changeNow = true;
             reload = false;
+        }
+
+        if (Input.GetButton("Item"))
+        {
+            itemGage += Time.deltaTime;
+            itemGage = Mathf.Clamp01(itemGage);
+            if(itemGage >= 1 && itemNum>0)
+            {
+                SetItem();
+                itemGage = 0;
+                
+            }
+        }
+        else
+        {
+            itemGage = 0;
         }
 
         if (otherPlayer != null)
@@ -403,7 +423,7 @@ public class FPSController : NetworkBehaviour {
             {
                 otherPlayer.SetProgress(false);
             }
-          bool distOther = (otherPlayer.transform.position - transform.position).sqrMagnitude < 25;
+          bool distOther = (otherPlayer.transform.position - transform.position).sqrMagnitude < 10;
             if (!distOther)
             { 
                 otherPlayer.SetProgress(false);
@@ -542,6 +562,7 @@ public class FPSController : NetworkBehaviour {
                 useWeponNum = 0;
             }
             changeNow = false;
+            nAnim.SetTrigger("EndChange");
             /*wepons[useWeponNum].SetActive(false);
             
             Debug.Log(useWeponNum);
@@ -583,6 +604,23 @@ public class FPSController : NetworkBehaviour {
         useWepon.Setup(num);
     }
 
+    void SetItem()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(myCamera.transform.position, myCamera.transform.forward,out hit,3.0f))
+        {
+            if (Vector3.Angle(hit.normal, Vector3.up) < 30f)
+            {
+               GameObject obj= Instantiate(Resources.Load(weponPath[6]) as GameObject);
+                obj.transform.position = hit.point;
+                NetworkServer.Spawn(obj);
+                itemNum--;
+                SendItemText();
+            }
+           
+        }
+        
+    }
 
     public void spawnWepon(int num)
     {
@@ -694,6 +732,18 @@ public class FPSController : NetworkBehaviour {
     void CmdSendResult(ResultParam param)
     {
         results = param;
+    }
+
+    void SendItemText()
+    {
+        string name="";
+        switch (weponPath[6])
+        {
+            case "item/ammokan":
+                name = "AMMO";
+                break;
+        }
+        UICon.SetWeponText(3, name, itemNum.ToString());
     }
 
 

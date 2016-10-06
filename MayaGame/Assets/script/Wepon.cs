@@ -136,6 +136,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         {"totalAmmo",0 }
     };
     protected int magazine = 0;
+   [HideInInspector] public int maxAmmo;
     public Selector selector;
     public ExploderObject Exploder;
     Transform parent;
@@ -173,6 +174,7 @@ public class Wepon : MonoBehaviour, WeponInterface
             magRot = magazineTr.localRotation;
             magParent = magazineTr.parent;
             magazine = (int)parameters["magazine"];
+            maxAmmo = pa.totalAmmo;
             first = false;
         }
         else

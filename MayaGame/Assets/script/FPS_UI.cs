@@ -21,6 +21,7 @@ public class FPS_UI : MonoBehaviour {
     public Image hpBar;
     public Image armorBar;
     public Text taskText;
+    public Image ItemBar;
 
     //Color change
     public Material UImat;
@@ -93,14 +94,29 @@ public class FPS_UI : MonoBehaviour {
             {
                 FPSCon.CmdMessagerMethod(messager.gameObject, messager.compMethhod);
             }
+            messager.SetProgress(false);
+        }
+        if (MessageProgress.fillAmount >= 1 && messager.useTarget && messager.noAuth)
+        {
+            if (messager.methodObj != null)
+            {
+                messager.methodObj.SendMessage( messager.compMethhod,FPSCon.transform);
+            }
+            else
+            {
+                messager.SendMessage(messager.compMethhod, FPSCon.transform);
+            }
+            messager.SetProgress(false);
         }
 
 
-        yawBar.rectTransform.localPosition = yawDef + new Vector3(yawRate*yawAngle, 0, 0);
+            yawBar.rectTransform.localPosition = yawDef + new Vector3(yawRate*yawAngle, 0, 0);
         //13.3f
 
         hpBar.fillAmount = FPSCon.hpMng.hitPoint / FPSCon.hpMng.maxHP;
         armorBar.fillAmount = FPSCon.hpMng.armor / FPSCon.hpMng.maxArmor;
+
+        ItemBar.fillAmount = FPSCon.itemGage;
 
     }
 
@@ -115,10 +131,10 @@ public class FPS_UI : MonoBehaviour {
                 secondalyText.text = "S:" + name + " " + mag + " / " + total;
                 break;
             case 2:
-                grenadeText.text =  name + " " + mag;
+                grenadeText.text =  name + " " + mag+" ";
                 break;
             case 3:
-                specialText.text =  name + " " + mag + " / " + total;
+                specialText.text =  name + " " + mag+" ";
                 break;
         }
     }

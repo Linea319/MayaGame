@@ -176,6 +176,7 @@
     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\SoftNormalsToVertexColor.cs" />
     <Compile Include="Assets\model\bot\AnimEventSender.cs" />
     <Compile Include="Assets\model\optic\SetRenderQueue.cs" />
+    <Compile Include="Assets\script\AmmoPack.cs" />
     <Compile Include="Assets\script\AnimSendTrigger.cs" />
     <Compile Include="Assets\script\AnimSound.cs" />
     <Compile Include="Assets\script\Atachment.cs" />

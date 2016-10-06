@@ -1122,6 +1122,7 @@ MonoBehaviour:
     totalAmmo: 0
   ADSPosition: {fileID: 4000014276214446}
   ADSFov: 1.2
+  maskObj: {fileID: 0}
 --- !u!114 &114000013853476050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1155,7 +1156,7 @@ MonoBehaviour:
     mobility: 170
     reload: 100
     magazine: 6
-    totalAmmo: 360
+    totalAmmo: 42
   dam:
     damage: 150
     shock: 180
@@ -1171,6 +1172,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   offsetRot: {x: 0, y: 0, z: 0}
+  ADS: 0
+  maxAmmo: 0
   selector: 1
   Exploder: {fileID: 0}
   shotNum: 8

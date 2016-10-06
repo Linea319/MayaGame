@@ -320,7 +320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000014056254892
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +547,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013471342300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: -14.59, z: 65.25}
+  m_LocalPosition: {x: 2.56, y: 0.5, z: -37.8}
   m_LocalScale: {x: 1, y: 1, z: 0.6}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1087,11 +1087,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   canMove: 0
   stopRate: 20
   timeRate: 10
@@ -1112,6 +1107,7 @@ MonoBehaviour:
   progressTime: 2
   compMethhod: SetMove
   methodObj: {fileID: 0}
+  TargetTex: {fileID: 2800000, guid: 51aafd8bb0743a0478fc4faac2f53734, type: 3}
   progress: 0
 --- !u!195 &195000013190100852
 NavMeshAgent:
@@ -1127,7 +1123,7 @@ NavMeshAgent:
   m_AngularSpeed: 90
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 0
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 3.4
   m_BaseOffset: 0.4
