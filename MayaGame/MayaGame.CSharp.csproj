@@ -174,6 +174,7 @@
     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EditorLabel.cs" />
     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EnableCameraDepthInForward.cs" />
     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\SoftNormalsToVertexColor.cs" />
+    <Compile Include="Assets\TextMesh3D.cs" />
     <Compile Include="Assets\model\bot\AnimEventSender.cs" />
     <Compile Include="Assets\model\optic\SetRenderQueue.cs" />
     <Compile Include="Assets\script\AmmoPack.cs" />
@@ -617,6 +618,7 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\ZText.shader" />
     <None Include="Assets\model\Holo\hologram.shader" />
     <None Include="Assets\model\optic\masked.shader" />
     <None Include="Assets\shader\Combine.shader" />

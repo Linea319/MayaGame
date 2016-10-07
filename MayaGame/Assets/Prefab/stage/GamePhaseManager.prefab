@@ -100,6 +100,7 @@ MonoBehaviour:
   - {fileID: 114000011209599402}
   - {fileID: 114000011440818762}
   netMng: {fileID: 0}
+  phaseCount: 0
 --- !u!114 &114000012893805384
 MonoBehaviour:
   m_ObjectHideFlags: 1

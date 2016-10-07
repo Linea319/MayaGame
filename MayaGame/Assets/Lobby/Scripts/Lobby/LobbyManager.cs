@@ -112,10 +112,11 @@ namespace Prototype.NetworkLobby
                 ChangeTo(null);
 
                 Destroy(GameObject.Find("MainMenuUI(Clone)"));
-
+                
                 if (conn.playerControllers[0].unetView.isServer)
                 {
                     backDelegate = StopGameClbk;
+                    
                 }
                 else
                 {
@@ -179,6 +180,7 @@ namespace Prototype.NetworkLobby
         public BackButtonDelegate backDelegate;
         public void GoBackButton()
         {
+            Debug.Log("callback");
             backDelegate();
 			topPanel.isInGame = true;
             
@@ -250,9 +252,7 @@ namespace Prototype.NetworkLobby
             backDelegate = StopResultClbk;
             topPanel.isInGame = false;
             ServerChangeScene(lobbyScene);
-            //Debug.Log(SendReturnToLobby());
-            //ServerReturnToLobby();
-            //StartCoroutine(endGame());
+            
             
         }
 
