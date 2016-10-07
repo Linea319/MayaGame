@@ -40,6 +40,9 @@ namespace Prototype.NetworkLobby
         [SyncVar]
         public string item = "item/ammokan";
 
+        [SyncVar]
+        public GameObject mission;
+
         //OnMyName function will be invoked on clients when server change the value of playerName
         [SyncVar(hook = "OnMyName")]
         public string playerName = "";
@@ -381,6 +384,23 @@ namespace Prototype.NetworkLobby
         public void CmdSetItem(string path)
         {
             item = path;
+        }
+
+        [Server]
+        public void SendMission(GameObject target, int slot)
+        {
+            mission = target;
+            //Debug.Log(target);
+            RpcSetMission(target,slot);
+        }
+
+        [ClientRpc]
+        void RpcSetMission(GameObject obj, int slot)
+        {
+            //Debug.Log(obj);
+            Transform panel = transform.root.GetComponent<LobbyManager>().MissionPanel;
+            panel.GetComponent<MissionPanel>().RpcChangeScene(slot);
+            //Debug.Log(slot);
         }
 
         //Cleanup thing when get destroy (which happen when client kick or disconnect)

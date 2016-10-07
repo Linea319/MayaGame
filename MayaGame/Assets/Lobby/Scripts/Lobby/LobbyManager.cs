@@ -26,6 +26,7 @@ namespace Prototype.NetworkLobby
 
         public RectTransform mainMenuPanel;
         public RectTransform lobbyPanel;
+        public RectTransform MissionPanel;
         public RectTransform ResultPanel;
 
         public LobbyInfoPanel infoPanel;
@@ -43,6 +44,11 @@ namespace Prototype.NetworkLobby
         //of players, so that even client know how many player there is.
         [HideInInspector]
         public int _playerNumber = 0;
+        [HideInInspector]
+        public bool isHost;
+
+        [HideInInspector]
+        public LobbyPlayer hostPlayer;
 
         //used to disconnect a client properly when exiting the matchmaker
         [HideInInspector]
@@ -56,6 +62,8 @@ namespace Prototype.NetworkLobby
 
         protected NetworkConnection connection;
 
+        
+
         public GameObject[] gamePlayerObject = new GameObject[4];
         public int gamePlayerNum;
         public ResultParam[] resuls = new ResultParam[4];
@@ -68,12 +76,14 @@ namespace Prototype.NetworkLobby
             _lobbyHooks = GetComponent<Prototype.NetworkLobby.LobbyHook>();
             currentPanel = mainMenuPanel;
 
-            backButton.gameObject.SetActive(false);
+            //backButton.gameObject.SetActive(false);
+            backDelegate = GameQuitClbk;
             GetComponent<Canvas>().enabled = true;
 
             DontDestroyOnLoad(gameObject);
 
             SetServerInfo("Offline", "None");
+
         }
 
         void Update()
@@ -157,9 +167,10 @@ namespace Prototype.NetworkLobby
             }
             else
             {
-                backButton.gameObject.SetActive(false);
+                //backButton.gameObject.SetActive(false);
                 SetServerInfo("Offline", "None");
                 _isMatchmaking = false;
+                Network.Disconnect();
             }
         }
 
@@ -201,6 +212,7 @@ namespace Prototype.NetworkLobby
         public void SimpleBackClbk()
         {
             ChangeTo(mainMenuPanel);
+            backDelegate = GameQuitClbk;
         }
                  
         public void StopHostClbk()
@@ -217,6 +229,8 @@ namespace Prototype.NetworkLobby
 
             
             ChangeTo(mainMenuPanel);
+            backDelegate = GameQuitClbk;
+            isHost = false;
         }
 
         public void StopClientClbk()
@@ -229,12 +243,15 @@ namespace Prototype.NetworkLobby
             }
 
             ChangeTo(mainMenuPanel);
+            backDelegate = GameQuitClbk;
         }
 
         public void StopServerClbk()
         {
             StopServer();
             ChangeTo(mainMenuPanel);
+            isHost = false;
+            backDelegate = GameQuitClbk;
         }
 
         
@@ -254,6 +271,11 @@ namespace Prototype.NetworkLobby
             ServerChangeScene(lobbyScene);
             
             
+        }
+
+        public void GameQuitClbk()
+        {
+            Application.Quit();
         }
 
         IEnumerator endGame()
@@ -316,6 +338,8 @@ namespace Prototype.NetworkLobby
             ChangeTo(lobbyPanel);
             backDelegate = StopHostClbk;
             SetServerInfo("Hosting", networkAddress);
+            Debug.Log("host");
+            isHost = true;
         }
 
 		public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo)
@@ -350,8 +374,10 @@ namespace Prototype.NetworkLobby
 
         //we want to disable the button JOIN if we don't have enough player
         //But OnLobbyClientConnect isn't called on hosting player. So we override the lobbyPlayer creation
+
         public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
         {
+
             GameObject obj = Instantiate(lobbyPlayerPrefab.gameObject) as GameObject;
 
             LobbyPlayer newPlayer = obj.GetComponent<LobbyPlayer>();
@@ -360,12 +386,15 @@ namespace Prototype.NetworkLobby
 
             for (int i = 0; i < lobbySlots.Length; ++i)
             {
+                
                 LobbyPlayer p = lobbySlots[i] as LobbyPlayer;
 
                 if (p != null)
                 {
                     p.RpcUpdateRemoveButton();
                     p.ToggleJoinButton(numPlayers + 1 >= minPlayers);
+
+                    
                 }
             }
 
@@ -485,6 +514,7 @@ namespace Prototype.NetworkLobby
                 backDelegate = StopClientClbk;
                 SetServerInfo("Client", networkAddress);
             }
+            //isHost = false;
         }
 
 

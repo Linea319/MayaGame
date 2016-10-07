@@ -17,7 +17,7 @@ namespace Prototype.NetworkLobby
         public Text ParameterText;
 
         protected VerticalLayoutGroup _layout;
-        protected List<LobbyPlayer> _players = new List<LobbyPlayer>();
+        public List<LobbyPlayer> _players = new List<LobbyPlayer>();
 
         public void OnEnable()
         {
@@ -51,6 +51,11 @@ namespace Prototype.NetworkLobby
             addButtonRow.transform.SetAsLastSibling();
 
             PlayerListModified();
+
+            if (player.isServer)
+            {
+                transform.root.GetComponent<LobbyManager>().hostPlayer = player;
+            }
         }
 
         public void RemovePlayer(LobbyPlayer player)
@@ -116,6 +121,7 @@ namespace Prototype.NetworkLobby
                 }
             }
         }
+
 
     }
 }

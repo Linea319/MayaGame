@@ -35,7 +35,15 @@ namespace Prototype.NetworkLobby
         {
             isDisplayed = visible;
             Cursor.visible = visible;
-            //Cursor.lockState = CursorLockMode.Locked;
+            if (visible)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            
 
             foreach (Transform t in transform)
             {
