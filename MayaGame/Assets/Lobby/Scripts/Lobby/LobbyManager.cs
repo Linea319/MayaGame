@@ -260,9 +260,12 @@ namespace Prototype.NetworkLobby
             
             for (int i = 0; i < gamePlayerNum; i++)
             {
-                FPSController fps = gamePlayerObject[i].GetComponent<FPSController>();
-                resuls[i] = fps.results;
-                lobbySlots[i].GetComponent<LobbyPlayer>().RpcSetResultPlayer(resuls[i],clear);
+                if (gamePlayerObject[i] != null)
+                {
+                    FPSController fps = gamePlayerObject[i].GetComponent<FPSController>();
+                    resuls[i] = fps.results;
+                    lobbySlots[i].GetComponent<LobbyPlayer>().RpcSetResultPlayer(resuls[i], clear);
+                }
             }
             
             ChangeTo(ResultPanel);

@@ -86,6 +86,7 @@ public class FPSController : NetworkBehaviour {
     public ResultParam results;
 
     Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
+    HitEffectManeger effecter;
 
     //state
     public bool dead;
@@ -119,7 +120,7 @@ public class FPSController : NetworkBehaviour {
 
             tag.GetComponentInChildren<Text>().color = Colors[conId];
         }
-
+        effecter = FindObjectOfType<HitEffectManeger>();
 
     }
 
@@ -727,6 +728,24 @@ public class FPSController : NetworkBehaviour {
         otherPlayer = messe;
         UICon.SetMessageText(otherPlayer);
     }
+
+    [Command]
+    public void CmdHitEffect(Vector3 position,Quaternion rot,EffectType type)
+    {
+        RpcHitEffect(position, rot, type);
+    }
+
+    [ClientRpc]
+    void RpcHitEffect(Vector3 position, Quaternion rot, EffectType type)
+    {
+        if (!isLocalPlayer)
+        {
+            GameObject efect = Instantiate<GameObject>(effecter.ReturnEffect(type));
+            efect.transform.position = position;
+            efect.transform.rotation = rot;
+        }
+    }
+
 
     [Command]
     void CmdSendResult(ResultParam param)

@@ -41,7 +41,7 @@ namespace Prototype.NetworkLobby
         public string item = "item/ammokan";
 
         [SyncVar]
-        public GameObject mission;
+        public int missionSlot;
 
         //OnMyName function will be invoked on clients when server change the value of playerName
         [SyncVar(hook = "OnMyName")]
@@ -86,12 +86,14 @@ namespace Prototype.NetworkLobby
 
             if (isServer)
             {
-                
+
                 //results = LobbyManager.s_Singleton.resuls[playerId];
-                
+
                 //RpcSetResultPlayer();
+                
             }
-            
+
+
             //setup the player data on UI. The value are SyncVar so the player
             //will be created with the right value currently on server
             OnMyName(playerName);
@@ -387,15 +389,15 @@ namespace Prototype.NetworkLobby
         }
 
         [Server]
-        public void SendMission(GameObject target, int slot)
+        public void SendMission(int slot)
         {
-            mission = target;
+            missionSlot = slot;
             //Debug.Log(target);
-            RpcSetMission(target,slot);
+            RpcSetMission(slot);
         }
 
         [ClientRpc]
-        void RpcSetMission(GameObject obj, int slot)
+        void RpcSetMission(int slot)
         {
             //Debug.Log(obj);
             Transform panel = transform.root.GetComponent<LobbyManager>().MissionPanel;

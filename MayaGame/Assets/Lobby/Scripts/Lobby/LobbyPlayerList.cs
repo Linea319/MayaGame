@@ -56,6 +56,7 @@ namespace Prototype.NetworkLobby
             {
                 transform.root.GetComponent<LobbyManager>().hostPlayer = player;
             }
+
         }
 
         public void RemovePlayer(LobbyPlayer player)
@@ -69,6 +70,10 @@ namespace Prototype.NetworkLobby
             int i = 0;
             foreach (LobbyPlayer p in _players)
             {
+                if (p.isServer)
+                {
+                    p.SendMission(p.missionSlot);
+                }
                 p.OnPlayerListChanged(i);
                 ++i;
             }

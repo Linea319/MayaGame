@@ -7,7 +7,7 @@ public class LoadoutChanger : MonoBehaviour {
     GameObject cPanel;
 	// Use this for initialization
 	void Start () {
-	
+        cPanel = panels[0];
 	}
 	
 	// Update is called once per frame

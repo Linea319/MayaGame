@@ -49,7 +49,7 @@ public class MissionPanel : MonoBehaviour {
         image.sprite = sceneImage[cSlot];
         objective.text = sceneObject[cSlot];
         overview.text = sceneOverview[cSlot];
-        lobbyMng.hostPlayer.SendMission(gameObject, cSlot);
+        lobbyMng.hostPlayer.SendMission(cSlot);
         }
 
     }

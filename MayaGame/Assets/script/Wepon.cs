@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections.Generic;
 using Exploder;
 using UnityStandardAssets.CinematicEffects;
@@ -537,6 +538,7 @@ public class Wepon : MonoBehaviour, WeponInterface
                 efect.transform.position = hit.point;
                 efect.transform.LookAt(efect.transform.position + hit.normal);
                 efect.transform.parent = hit.transform;
+                
             }
 
 
@@ -548,6 +550,7 @@ public class Wepon : MonoBehaviour, WeponInterface
                 efect.transform.position = hit.point;
                 efect.transform.LookAt(efect.transform.position + hit.normal);
                 efect.transform.parent = hit.transform;
+                FPSCon.CmdHitEffect(efect.transform.position, efect.transform.rotation, hitM.effectType);
 
                 DamageParameter newDam = dam; 
 
@@ -580,6 +583,7 @@ public class Wepon : MonoBehaviour, WeponInterface
                 efect.transform.position = hit.point;
                 efect.transform.LookAt(efect.transform.position + hit.normal);
                 efect.transform.parent = hit.transform;
+                FPSCon.CmdHitEffect(efect.transform.position, efect.transform.rotation, EffectType.misc);
 
             }
         }
