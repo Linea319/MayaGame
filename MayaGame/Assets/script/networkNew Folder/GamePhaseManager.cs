@@ -12,7 +12,7 @@ public class GamePhaseManager : NetworkBehaviour {
     public int phaseCount = 0;
     HitManagerPlayer[] players = new HitManagerPlayer[4];
     int playerCount;
-
+    bool backScene;
 
     // Use this for initialization
 
@@ -41,8 +41,9 @@ public class GamePhaseManager : NetworkBehaviour {
                 count++;
             }
         }
-        if(count >= playerCount)
+        if(count >= playerCount && !backScene)
         {
+            backScene = true;
             netMng.GoBackButton();
         }
 
@@ -51,6 +52,7 @@ public class GamePhaseManager : NetworkBehaviour {
     [ServerCallback]
     public void StartPhase()
     {
+        backScene = false;
         netMng = FindObjectOfType<LobbyManager>();
         phase[0].StartPhasae();
         phase[0].RpcStartPhase();

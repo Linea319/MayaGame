@@ -2132,7 +2132,7 @@ MonoBehaviour:
   atackCol:
   - {fileID: 135000013743356934}
   - {fileID: 135000012497727694}
-  attackDamage: 25
+  attackDamage: 10
   jumpDelay: 1
   attackEmotionRate: {x: 0, y: 0}
   dead: 0

@@ -2296,10 +2296,14 @@ MonoBehaviour:
   weponPrefab:
   - {fileID: 126710, guid: 2d524612a4c882e4eb3e03990fd3f19d, type: 2}
   - {fileID: 1000014172697622, guid: 47917f9720e95d1439d2a416be48cd8a, type: 2}
+  wepons:
+  - {fileID: 0}
+  - {fileID: 0}
   recoilVec: {x: 0, y: 0, z: 0}
   reload: 0
   UICon: {fileID: 0}
   stamina: 0
+  itemGage: 0
   hpMng: {fileID: 0}
   defAnim: {fileID: 0}
   otherPlayer: {fileID: 0}
@@ -2851,6 +2855,7 @@ MonoBehaviour:
   messagaeText: Press F:repair
   usePlayer: 1
   noAuth: 0
+  useTarget: 0
   progressTime: 2
   compMethhod: 
   methodObj: {fileID: 0}

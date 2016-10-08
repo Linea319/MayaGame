@@ -98,8 +98,6 @@ namespace Prototype.NetworkLobby
             {
                 if (topPanel.isInGame)
                 {
-                    
-                   
                     backDelegate = StopResultClbk;
                     ChangeTo(ResultPanel);
                     
@@ -191,7 +189,7 @@ namespace Prototype.NetworkLobby
         public BackButtonDelegate backDelegate;
         public void GoBackButton()
         {
-            Debug.Log("callback");
+            Debug.Log(backDelegate.Method.Name);
             backDelegate();
 			topPanel.isInGame = true;
             
@@ -271,9 +269,16 @@ namespace Prototype.NetworkLobby
             ChangeTo(ResultPanel);
             backDelegate = StopResultClbk;
             topPanel.isInGame = false;
+            
+            StartCoroutine(ReturnLobby());
+        }
+
+        IEnumerator ReturnLobby()
+        {
+            Debug.Log("return");
+            yield return new WaitForSeconds(0.1f);
+            //ServerReturnToLobby();
             ServerChangeScene(lobbyScene);
-            
-            
         }
 
         public void GameQuitClbk()

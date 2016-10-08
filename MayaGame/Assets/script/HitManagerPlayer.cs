@@ -33,6 +33,7 @@ public class HitManagerPlayer :NetworkBehaviour{
     }
 	
 	// Update is called once per frame
+    [ServerCallback]
 	void Update () {
         if (!controller.isLocalPlayer) return;
 	if(Time.time > rechargeTimer)
@@ -53,7 +54,7 @@ public class HitManagerPlayer :NetworkBehaviour{
         if (!controller.isLocalPlayer) return;
         //Debug.Log("hit:"+damage);
         CmdSetDamage(damage);
-        rechargeTimer = Time.time + rechargeDelay;
+        //rechargeTimer = Time.time + rechargeDelay;
         StartCoroutine_Auto( controller.UICon.HitColor());
 
     }
@@ -74,10 +75,12 @@ public class HitManagerPlayer :NetworkBehaviour{
         rechargeTimer = Time.time + rechargeDelay;
     }
 
+
     public void Death()
     {
         controller.dead = true;
         messenger.enabled = true;
+        Camera.main.fieldOfView = 70;
     }
 
     [Client]

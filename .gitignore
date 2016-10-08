@@ -55,3 +55,7 @@ Temp
 *.userprefs
 *.exr
 MayaGame/Assets/map/mp_cargoship/LightingData.asset
+MayaGame/Assets/map/ShootingRange/LightingData.asset
+MayaGame/Assets/map/ShootingRange/Lightmap-0_comp_dir.exr.meta
+MayaGame/Assets/map/ShootingRange/Lightmap-1_comp_light.exr.meta
+MayaGame/Assets/map/ShootingRange/ReflectionProbe-0.exr.meta

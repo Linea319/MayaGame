@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackStart: 0
   attackEnd: 0
-  attackNum: {x: 2, y: 6}
+  attackNum: {x: 2, y: 4}
   attackDelay: 0.2
 --- !u!114 &114000014168679770
 MonoBehaviour:

@@ -180,16 +180,17 @@ public class FPSController : NetworkBehaviour {
 	void Update () {
         if (!isLocalPlayer)
         {
-            if (Time.time > CheckTimer)
-            {
                 SendAnimMove();
-                CheckTimer = Time.time + 0.1f;
-            }
             return;
         }
         else {
-            inputVector = new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical"));
-            CmdSetInput( inputVector);
+            if (Time.time > CheckTimer)
+            {
+                inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                CmdSetInput(inputVector);
+                CheckTimer = Time.time + 0.1f;
+            }
+            
         }
          
             if (Pause.pause) return;
