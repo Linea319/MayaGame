@@ -1190,7 +1190,7 @@ MonoBehaviour:
     rate: 200
     range: 100
     startGensui: 40
-    mobility: 200
+    mobility: 150
     reload: 300
     magazine: 10
     totalAmmo: 80
