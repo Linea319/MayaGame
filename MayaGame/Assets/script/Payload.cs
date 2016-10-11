@@ -62,12 +62,13 @@ public class Payload : NetworkBehaviour {
 
             }
 
-            if ((transform.position - prePosition).magnitude < 0.01f * Time.deltaTime)
+            if ((transform.position - prePosition).magnitude < 0.001f * Time.deltaTime)
             {
                 move = true;
                 agent.updatePosition = false;
             }
-            prePosition = transform.position;
+
+            
             if (Vector3.Distance(transform.position, Target[targetNum].position) < 0.5f)
             {
                 targetNum++;
@@ -97,9 +98,9 @@ public class Payload : NetworkBehaviour {
             //agent.Resume();
         }
 
-        
+        prePosition = transform.position;
 
-	}
+    }
 
     [Server]
     public void Stop()
@@ -125,6 +126,8 @@ public class Payload : NetworkBehaviour {
         canMove = true;
         agent.Resume();
         timer = Time.time + timeRate;
+        move = false;
+        agent.updatePosition = true;
         RpcSetMove(false);
         
     }
