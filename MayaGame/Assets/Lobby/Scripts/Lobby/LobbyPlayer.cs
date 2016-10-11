@@ -148,7 +148,7 @@ namespace Prototype.NetworkLobby
 
             ChangeReadyButtonColor(JoinColor);
 
-            readyButton.transform.GetChild(0).GetComponent<Text>().text = "READY";
+            readyButton.transform.GetChild(0).GetComponent<Text>().text = "NOT READY";
             readyButton.interactable = true;
 
             //have to use child count of player prefab already setup as "this.slot" is not set yet
@@ -198,7 +198,7 @@ namespace Prototype.NetworkLobby
                 Text textComponent = readyButton.transform.GetChild(0).GetComponent<Text>();
                 textComponent.text = "READY";
                 textComponent.color = ReadyColor;
-                readyButton.interactable = false;
+                //readyButton.interactable = false;
                 if (colorButton != null) colorButton.interactable = false;
                 nameInput.interactable = false;
             }
@@ -207,7 +207,7 @@ namespace Prototype.NetworkLobby
                 ChangeReadyButtonColor(isLocalPlayer ? JoinColor : NotReadyColor);
 
                 Text textComponent = readyButton.transform.GetChild(0).GetComponent<Text>();
-                textComponent.text = isLocalPlayer ? "NOt READY" : "...";
+                textComponent.text = isLocalPlayer ? "NOT READY" : "...";
                 textComponent.color = Color.white;
                 readyButton.interactable = isLocalPlayer;
                 if (colorButton != null) colorButton.interactable = isLocalPlayer;
@@ -245,7 +245,17 @@ namespace Prototype.NetworkLobby
 
         public void OnReadyClicked()
         {
-            SendReadyToBeginMessage();
+            Debug.Log("click" + readyToBegin);
+            if (!readyToBegin)
+            {
+                SendReadyToBeginMessage();
+            }
+            else
+            {
+                SendNotReadyToBeginMessage();
+            }
+
+
         }
 
         public void OnNameChanged(string str)

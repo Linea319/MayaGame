@@ -15,6 +15,7 @@ namespace Prototype.NetworkLobby
 
         static public LobbyManager s_Singleton;
 
+        
 
         [Header("Unity UI Lobby")]
         [Tooltip("Time in second between all players ready & match start")]
@@ -68,7 +69,7 @@ namespace Prototype.NetworkLobby
         public int gamePlayerNum;
         public ResultParam[] resuls = new ResultParam[4];
         public bool clear;
-        protected
+        protected bool gameStart;
 
         void Start()
         {
@@ -455,6 +456,7 @@ namespace Prototype.NetworkLobby
 
         public override void OnLobbyServerPlayersReady()
         {
+            Debug.Log("clickReady");
 			bool allready = true;
 			for(int i = 0; i < lobbySlots.Length; ++i)
 			{
@@ -462,15 +464,31 @@ namespace Prototype.NetworkLobby
 					allready &= lobbySlots[i].readyToBegin;
 			}
 
-			if(allready)
-				StartCoroutine(ServerCountdownCoroutine());
+            if (allready)
+                StartCoroutine(ServerCountdownCoroutine());
+            //else if (gameStart)
+                //StopAllCoroutines();
+                
+        }
+
+        bool CheckAllReady()
+        {
+            bool allready = true;
+            for (int i = 0; i < lobbySlots.Length; ++i)
+            {
+                if (lobbySlots[i] != null)
+                    allready &= lobbySlots[i].readyToBegin;
+            }
+
+            return allready;
         }
 
         public IEnumerator ServerCountdownCoroutine()
         {
+            gameStart = true;
             float remainingTime = prematchCountdown;
             int floorTime = Mathf.FloorToInt(remainingTime);
-
+            bool ready = true;
             while (remainingTime > 0)
             {
                 yield return null;
@@ -481,7 +499,8 @@ namespace Prototype.NetworkLobby
                 if (newFloorTime != floorTime)
                 {//to avoid flooding the network of message, we only send a notice to client when the number of plain seconds change.
                     floorTime = newFloorTime;
-
+                    ready = CheckAllReady();
+                    Debug.Log(ready);                  
                     for (int i = 0; i < lobbySlots.Length; ++i)
                     {
                         if (lobbySlots[i] != null)
@@ -500,7 +519,8 @@ namespace Prototype.NetworkLobby
                 }
             }
 
-            ServerChangeScene(playScene);
+            if(ready)
+                ServerChangeScene(playScene);
         }
 
         
