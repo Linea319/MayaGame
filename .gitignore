@@ -59,3 +59,10 @@ MayaGame/Assets/map/ShootingRange/LightingData.asset
 MayaGame/Assets/map/ShootingRange/Lightmap-0_comp_dir.exr.meta
 MayaGame/Assets/map/ShootingRange/Lightmap-1_comp_light.exr.meta
 MayaGame/Assets/map/ShootingRange/ReflectionProbe-0.exr.meta
+MayaGame/Assets/map/ShootingRange/LightingData.asset.meta
+MayaGame/Assets/map/ShootingRange/Lightmap-0_comp_light.exr.meta
+MayaGame/Assets/map/ShootingRange/Lightmap-1_comp_dir.exr.meta
+MayaGame/Assets/map/ShootingRange/Lightmap-2_comp_dir.exr.meta
+MayaGame/Assets/map/ShootingRange/Lightmap-2_comp_light.exr.meta
+MayaGame/Assets/map/ShootingRange/ReflectionProbe-1.exr.meta
+MayaGame/Assets/map/ShootingRange/ReflectionProbe-2.exr.meta

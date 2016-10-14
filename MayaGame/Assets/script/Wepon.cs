@@ -214,6 +214,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     
     public void SetAtacch(string path)
     {
+       
         GameObject atachment = Instantiate(Resources.Load(path) as GameObject);
         atachment.transform.rotation = transform.rotation;
         atachment.transform.parent = transform;
@@ -227,11 +228,11 @@ public class Wepon : MonoBehaviour, WeponInterface
        
         if(FPSCon.weponPath[slot*3+1].Length > 0)
         {
-            SetAtacch(FPSCon.weponPath[slot + 1]);
+            SetAtacch(FPSCon.weponPath[slot*3 + 1]);
         }
         if (FPSCon.weponPath[slot*3 + 2].Length > 0)
         {
-            SetAtacch(FPSCon.weponPath[slot + 2]);
+            SetAtacch(FPSCon.weponPath[slot*3 + 2]);
         }
     }
 
