@@ -42,7 +42,7 @@ public class UIMessenger : MonoBehaviour {//メソッド呼び出しはFPS_UIで
     {
         if (Vector3.Angle(Camera.main.transform.forward, (transform.position - Camera.main.transform.position)) < Camera.main.fov)
         {
-            Vector2 vec = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 5f);
+            Vector2 vec = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2.5f);
             vec = new Vector2(vec.x, Screen.height - vec.y);
             Vector2 texVec = new Vector2(TargetTex.width * 0.3f, TargetTex.height * 0.3f);
             Rect nRect = new Rect(vec - texVec * 0.5f, texVec);

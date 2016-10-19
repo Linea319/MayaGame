@@ -613,15 +613,21 @@ public class FPSController : NetworkBehaviour {
         {
             if (Vector3.Angle(hit.normal, Vector3.up) < 30f)
             {
-               GameObject obj= Instantiate(Resources.Load(weponPath[6]) as GameObject);
-                obj.transform.position = hit.point;
-                NetworkServer.Spawn(obj);
+                CmdSpawn(hit.point);
                 itemNum--;
                 SendItemText();
             }
            
         }
         
+    }
+
+    [Command]
+    void CmdSpawn( Vector3 pos)
+    {
+        GameObject obj = Instantiate(Resources.Load(weponPath[6]) as GameObject);
+        obj.transform.position = pos;
+        NetworkServer.Spawn(obj);
     }
 
     public void spawnWepon(int num)

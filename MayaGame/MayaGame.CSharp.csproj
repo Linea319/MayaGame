@@ -192,6 +192,7 @@
     <Compile Include="Assets\script\FovSync.cs" />
     <Compile Include="Assets\script\GiziBuillboard.cs" />
     <Compile Include="Assets\script\GunCustom.cs" />
+    <Compile Include="Assets\script\HealthPack.cs" />
     <Compile Include="Assets\script\HitEffectManeger.cs" />
     <Compile Include="Assets\script\HitManagerDef.cs" />
     <Compile Include="Assets\script\HitManagerPlayer.cs" />

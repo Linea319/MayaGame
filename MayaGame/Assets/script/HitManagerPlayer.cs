@@ -113,4 +113,10 @@ public class HitManagerPlayer :NetworkBehaviour{
         messenger.SetProgress(false);
         messenger.enabled = false;
     }
+
+    [Command]
+    public void CmdHeal()
+    {
+            hitPoint = maxHP;
+    }
 }
