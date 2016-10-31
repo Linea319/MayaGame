@@ -62,12 +62,6 @@ public class Payload : NetworkBehaviour {
 
             }
 
-            if ((transform.position - prePosition).magnitude < 0.001f * Time.deltaTime)
-            {
-                move = true;
-                agent.updatePosition = false;
-            }
-
             
             if (Vector3.Distance(transform.position, Target[targetNum].position) < 0.5f)
             {
@@ -84,6 +78,11 @@ public class Payload : NetworkBehaviour {
                 agent.Resume();
             }
 
+            if ((transform.position - prePosition) != Vector3.zero && (transform.position - prePosition).magnitude < 0.001f * Time.deltaTime)
+            {
+                move = true;
+                agent.updatePosition = false;
+            }
 
             if (Time.time > timer)
             {

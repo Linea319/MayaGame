@@ -26,13 +26,22 @@ public class HitManeger : HitManagerDef {
     public override void Initialize()
     {
         exploder = FindObjectOfType<ExploderObject>();
-        if (mesh == null)
+             
+        if (col == null)
         {
-            meshBounds = gameObject.GetComponent<Renderer>().bounds;
+            col = GetComponent<Collider>();
+            if (col == null) return;
         }
-        colSize = meshBounds.size.magnitude;
+        if(mesh == null)
+        {
+            mesh = GetComponent<Renderer>();
+        }
+
+        colSize = col.bounds.size.magnitude;
+        meshBounds = col.bounds;
         sizeMagnitude = meshBounds.extents.magnitude;
-        
+        maxHitPoint = hitPoint;
+
         net = transform.root.GetComponent<NetAdapter>();
         
         if (net.isClient && GetComponent<SkinColSetter>() == null)

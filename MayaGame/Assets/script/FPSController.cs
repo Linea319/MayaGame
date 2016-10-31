@@ -19,6 +19,7 @@ public class FPSController : NetworkBehaviour {
 	[HideInInspector]
 	public Vector3 mouseVec;
 	public float jumpPower;
+    public float jumpEnergy;
     public float speed;
     public float stepDistance;
     public float stepEnergy;
@@ -204,11 +205,11 @@ public class FPSController : NetworkBehaviour {
         
 
 		if(control.isGrounded){//ground
-
+            yVec = Mathf.Clamp(yVec, -1f, 10f);
             if (!preGround)
             {
                 footSound.Play();
-                yVec = 0;
+               
             }
             
 
@@ -276,7 +277,7 @@ public class FPSController : NetworkBehaviour {
                 run = false;
             }
 			//control.Move(transform.rotation*(moveVec*Time.deltaTime));
-			if(Input.GetButtonDown("Jump")){
+			if(Input.GetButtonDown("Jump") && stamina > jumpEnergy){
 				StartCoroutine(JumpStart());
 			}
 
@@ -539,6 +540,7 @@ public class FPSController : NetworkBehaviour {
         nAnim.SetTrigger("jump");
         yield return new WaitForSeconds(0.2f);
         yVec = jumpPower;
+        stamina -= jumpEnergy;
     }
 
 	void Step(){

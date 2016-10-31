@@ -2271,7 +2271,8 @@ MonoBehaviour:
   chara: {fileID: 194424}
   rotPoint: {fileID: 446598}
   mouseVec: {x: 0, y: 0, z: 0}
-  jumpPower: 7
+  jumpPower: 5
+  jumpEnergy: 20
   speed: 0
   stepDistance: 1
   stepEnergy: 28

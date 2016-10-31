@@ -17,6 +17,7 @@ public class SkinColSetter : MonoBehaviour {
         HitManeger hit = obj.AddComponent<HitManeger>();
         HitManeger hitOri = GetComponent<HitManeger>();
         hit.mesh = mesh;
+        hit.col = col;
         hit.meshBounds = mesh.bounds;
         hit.armor = hitOri.armor;
         hit.hitPoint = hitOri.hitPoint;
