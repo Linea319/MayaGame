@@ -3191,7 +3191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011151865454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4050179, y: 0.44841182, z: -14.845933}
+  m_LocalPosition: {x: 2.6314712, y: 2.9132164, z: -29.30001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -5182,7 +5182,7 @@ MonoBehaviour:
   shock: 0
   bullet: {fileID: 1000013905553688, guid: aebeaff805b0c5447920d15c36923f53, type: 2}
   bulletSpeed: 50
-  spread: 4
+  spread: 6
   gunPos: {fileID: 4000012786315586}
   eyeMask:
     serializedVersion: 2
@@ -5199,9 +5199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 1000
+  hitPoint: 2000
   armor:
-    shockResist: 1
+    shockResist: 2
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
@@ -5232,15 +5232,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 400
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 1
   speedDebufRate: 1
-  damageDebufRate: 1
+  damageDebufRate: 0.8
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -5296,15 +5296,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 600
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 1
   speedDebufRate: 1
-  damageDebufRate: 1
+  damageDebufRate: 0.8
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -5361,15 +5361,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 200
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 0
   speedDebufRate: 1
-  damageDebufRate: 1
+  damageDebufRate: 0.75
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -5394,10 +5394,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 500
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 0
@@ -5427,10 +5427,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 500
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 0
@@ -5540,11 +5540,11 @@ MonoBehaviour:
   effectType: 1
   hitPoint: 300
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 0
+  yoroke: 1
   speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
@@ -5584,15 +5584,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 400
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 1
   speedDebufRate: 1
-  damageDebufRate: 1
+  damageDebufRate: 0.8
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -5662,10 +5662,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 200
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 0
@@ -5697,8 +5697,8 @@ MonoBehaviour:
   effectType: 1
   hitPoint: 300
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 0
@@ -5728,9 +5728,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 1000
+  hitPoint: 2000
   armor:
-    shockResist: 1
+    shockResist: 2
     armorResist: 1
     heatResist: 1
   DestroyObj: {fileID: 0}
@@ -5763,13 +5763,13 @@ MonoBehaviour:
   effectType: 1
   hitPoint: 300
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 0
+  yoroke: 1
   speedDebufRate: 1
-  damageDebufRate: 1
+  damageDebufRate: 0.75
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -5827,13 +5827,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 250
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
-  yoroke: 0
+  yoroke: 1
   speedDebufRate: 1
   damageDebufRate: 1
   col: {fileID: 0}
@@ -5847,7 +5847,7 @@ MonoBehaviour:
   maxHitPoint: 0
   lastDamage: 0
   yorokePatern: 0
-  yorokeTime: 2.5
+  yorokeTime: 3
 --- !u!114 &114000013355423342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5884,8 +5884,8 @@ MonoBehaviour:
   effectType: 1
   hitPoint: 300
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 0
@@ -5915,15 +5915,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 600
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 1
   speedDebufRate: 1
-  damageDebufRate: 1
+  damageDebufRate: 0.8
   col: {fileID: 0}
   meshBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -5959,10 +5959,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectType: 1
-  hitPoint: 300
+  hitPoint: 200
   armor:
-    shockResist: 1
-    armorResist: 1
+    shockResist: 0.8
+    armorResist: 1.2
     heatResist: 1
   DestroyObj: {fileID: 0}
   yoroke: 0

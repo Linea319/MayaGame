@@ -70,7 +70,13 @@ public class kesyouAI : EnemyAI {
             
         }
 
-        if (atack || retreat)
+        Vector3 tarVec = transform.forward;
+        if (target != null)
+        {
+            tarVec = target.position - transform.position;
+        }
+
+        if (atack || retreat || tarVec.magnitude*0.5f < distance*distance)
         {
             //anim.SetBool("move", false);
             canRot = true;
@@ -79,10 +85,12 @@ public class kesyouAI : EnemyAI {
 
         if (canRot)
         {
-            Vector3 tarVec = target.position - transform.position;
+            
             tarVec.y = 0f;
             Quaternion newRot = Quaternion.LookRotation(tarVec, Vector3.up);
             transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * 6);
+            float dir = Vector3.Dot(tarVec, transform.right);
+            anim.SetFloat("walkDir", dir);
         }
 
         //emotion
@@ -93,6 +101,8 @@ public class kesyouAI : EnemyAI {
 
         AIAnim.SetFloat("atacking", attackEmotion);
         AIAnim.SetFloat("retreate", retreatEmotion);
+        anim.SetFloat("speed", moveSpeed / 5f);
+        
     }
 
     public override void Dodge()

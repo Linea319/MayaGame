@@ -39,6 +39,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     protected float distanceEmotion=50f;
     protected float attackEmotion = 0f;
     protected float retreatEmotion = 0f;
+    protected float distance;
 
     //hate
     protected float hatepool;
@@ -147,7 +148,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         Vector3 vec = (transform.position - target.position).normalized;
         vec.y = 0;
         vec = vec.normalized;
-        float distance = defDistance * (1f - distanceEmotion / 100f);
+        distance = defDistance * (1f - distanceEmotion / 100f);
         Collider[] points = Physics.OverlapSphere(target.position + vec * distance, 10f, mask);
         
         int posNum = 0;
@@ -175,7 +176,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         Vector3 vec = (transform.position - target.position).normalized;
         vec.y = 0;
         vec = vec.normalized;
-        float distance = defDistance * (retreatEmotion / 100f) * 0.5f;
+        distance = defDistance * (retreatEmotion / 100f) * 0.5f;
         //Collider[] points = Physics.OverlapSphere(transform.position + vec * distance, 10f, mask); 
         moveTarget = (transform.position + vec * distance)+ Random.insideUnitSphere * 5f;
         nav.SetDestination(moveTarget);

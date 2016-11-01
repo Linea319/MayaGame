@@ -367,6 +367,9 @@ ModelImporter:
     7400004: tank_shot
     7400006: tank_walk
     7400008: tank_down
+    7400010: tank_death
+    7400012: tank_left
+    7400014: tank_right
     9500000: //RootNode
     13700000: arm_L
     13700002: arm_R
@@ -1826,7 +1829,7 @@ ModelImporter:
     - serializedVersion: 16
       name: tank_down
       takeName: Take 001
-      firstFrame: 80
+      firstFrame: 70
       lastFrame: 90
       wrapMode: 0
       orientationOffsetY: 0
@@ -1836,9 +1839,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -2151,6 +2154,1026 @@ ModelImporter:
       - path: kessyou_tank:group2/kessyou_tank:crystal_shot:pCylinder5
         weight: 0
       - path: kessyou_tank:group2/kessyou_tank:crystal_shot:pCylinder12
+        weight: 0
+      - path: kosi
+        weight: 0
+      - path: neck
+        weight: 0
+      - path: shin_L
+        weight: 0
+      - path: shin_R
+        weight: 0
+      - path: shoulder_L
+        weight: 0
+      - path: shoulder_R
+        weight: 0
+      - path: thin_L
+        weight: 0
+      - path: thin_R
+        weight: 0
+      - path: uparm_L
+        weight: 0
+      - path: uparm_R
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: tank_death
+      takeName: Take 001
+      firstFrame: 95
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: arm_L
+        weight: 0
+      - path: arm_R
+        weight: 0
+      - path: bodt1
+        weight: 0
+      - path: body2
+        weight: 0
+      - path: body3
+        weight: 0
+      - path: body4
+        weight: 0
+      - path: body5
+        weight: 0
+      - path: foot
+        weight: 0
+      - path: frame
+        weight: 0
+      - path: hand
+        weight: 0
+      - path: head
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_ChestEndEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_ChestOriginEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_HeadEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg/kessyou_tank:Character1_Ctrl_LeftFoot
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg/kessyou_tank:Character1_Ctrl_LeftFoot/kessyou_tank:Character1_Ctrl_LeftToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg/kessyou_tank:Character1_Ctrl_RightFoot
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg/kessyou_tank:Character1_Ctrl_RightFoot/kessyou_tank:Character1_Ctrl_RightToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2/kessyou_tank:Character1_Ctrl_LeftHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2/kessyou_tank:Character1_Ctrl_LeftHandIndex3/kessyou_tank:Character1_Ctrl_LeftHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2/kessyou_tank:Character1_Ctrl_LeftHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2/kessyou_tank:Character1_Ctrl_LeftHandMiddle3/kessyou_tank:Character1_Ctrl_LeftHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2/kessyou_tank:Character1_Ctrl_LeftHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2/kessyou_tank:Character1_Ctrl_LeftHandRing3/kessyou_tank:Character1_Ctrl_LeftHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2/kessyou_tank:Character1_Ctrl_LeftHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2/kessyou_tank:Character1_Ctrl_LeftHandThumb3/kessyou_tank:Character1_Ctrl_LeftHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_Neck
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_Neck/kessyou_tank:Character1_Ctrl_Head
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2/kessyou_tank:Character1_Ctrl_RightHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2/kessyou_tank:Character1_Ctrl_RightHandIndex3/kessyou_tank:Character1_Ctrl_RightHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2/kessyou_tank:Character1_Ctrl_RightHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2/kessyou_tank:Character1_Ctrl_RightHandMiddle3/kessyou_tank:Character1_Ctrl_RightHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2/kessyou_tank:Character1_Ctrl_RightHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2/kessyou_tank:Character1_Ctrl_RightHandRing3/kessyou_tank:Character1_Ctrl_RightHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2/kessyou_tank:Character1_Ctrl_RightHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2/kessyou_tank:Character1_Ctrl_RightHandThumb3/kessyou_tank:Character1_Ctrl_RightHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_HipsEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftAnkleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftElbowEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftFootEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandIndexEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandRingEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandThumbEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHipEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftKneeEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftShoulderEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftWristEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightAnkleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightElbowEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightFootEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandIndexEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandMiddleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandRingEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandThumbEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHipEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightKneeEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightShoulderEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightWristEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Reference
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg/kessyou_tank:Character1_LeftFoot
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg/kessyou_tank:Character1_LeftFoot/kessyou_tank:Character1_LeftToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg/kessyou_tank:Character1_RightFoot
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg/kessyou_tank:Character1_RightFoot/kessyou_tank:Character1_RightToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2/kessyou_tank:Character1_LeftHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2/kessyou_tank:Character1_LeftHandIndex3/kessyou_tank:Character1_LeftHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2/kessyou_tank:Character1_LeftHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2/kessyou_tank:Character1_LeftHandMiddle3/kessyou_tank:Character1_LeftHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2/kessyou_tank:Character1_LeftHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2/kessyou_tank:Character1_LeftHandRing3/kessyou_tank:Character1_LeftHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2/kessyou_tank:Character1_LeftHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2/kessyou_tank:Character1_LeftHandThumb3/kessyou_tank:Character1_LeftHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_Neck
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_Neck/kessyou_tank:Character1_Head
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2/kessyou_tank:Character1_RightHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2/kessyou_tank:Character1_RightHandIndex3/kessyou_tank:Character1_RightHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2/kessyou_tank:Character1_RightHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2/kessyou_tank:Character1_RightHandMiddle3/kessyou_tank:Character1_RightHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2/kessyou_tank:Character1_RightHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2/kessyou_tank:Character1_RightHandRing3/kessyou_tank:Character1_RightHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2/kessyou_tank:Character1_RightHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2/kessyou_tank:Character1_RightHandThumb3/kessyou_tank:Character1_RightHandThumb4
+        weight: 0
+      - path: kosi
+        weight: 0
+      - path: neck
+        weight: 0
+      - path: shin_L
+        weight: 0
+      - path: shin_R
+        weight: 0
+      - path: shoulder_L
+        weight: 0
+      - path: shoulder_R
+        weight: 0
+      - path: thin_L
+        weight: 0
+      - path: thin_R
+        weight: 0
+      - path: uparm_L
+        weight: 0
+      - path: uparm_R
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: tank_left
+      takeName: Take 001
+      firstFrame: 155
+      lastFrame: 175
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: arm_L
+        weight: 0
+      - path: arm_R
+        weight: 0
+      - path: bodt1
+        weight: 0
+      - path: body2
+        weight: 0
+      - path: body3
+        weight: 0
+      - path: body4
+        weight: 0
+      - path: body5
+        weight: 0
+      - path: foot
+        weight: 0
+      - path: frame
+        weight: 0
+      - path: hand
+        weight: 0
+      - path: head
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_ChestEndEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_ChestOriginEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_HeadEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg/kessyou_tank:Character1_Ctrl_LeftFoot
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg/kessyou_tank:Character1_Ctrl_LeftFoot/kessyou_tank:Character1_Ctrl_LeftToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg/kessyou_tank:Character1_Ctrl_RightFoot
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg/kessyou_tank:Character1_Ctrl_RightFoot/kessyou_tank:Character1_Ctrl_RightToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2/kessyou_tank:Character1_Ctrl_LeftHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2/kessyou_tank:Character1_Ctrl_LeftHandIndex3/kessyou_tank:Character1_Ctrl_LeftHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2/kessyou_tank:Character1_Ctrl_LeftHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2/kessyou_tank:Character1_Ctrl_LeftHandMiddle3/kessyou_tank:Character1_Ctrl_LeftHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2/kessyou_tank:Character1_Ctrl_LeftHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2/kessyou_tank:Character1_Ctrl_LeftHandRing3/kessyou_tank:Character1_Ctrl_LeftHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2/kessyou_tank:Character1_Ctrl_LeftHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2/kessyou_tank:Character1_Ctrl_LeftHandThumb3/kessyou_tank:Character1_Ctrl_LeftHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_Neck
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_Neck/kessyou_tank:Character1_Ctrl_Head
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2/kessyou_tank:Character1_Ctrl_RightHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2/kessyou_tank:Character1_Ctrl_RightHandIndex3/kessyou_tank:Character1_Ctrl_RightHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2/kessyou_tank:Character1_Ctrl_RightHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2/kessyou_tank:Character1_Ctrl_RightHandMiddle3/kessyou_tank:Character1_Ctrl_RightHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2/kessyou_tank:Character1_Ctrl_RightHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2/kessyou_tank:Character1_Ctrl_RightHandRing3/kessyou_tank:Character1_Ctrl_RightHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2/kessyou_tank:Character1_Ctrl_RightHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2/kessyou_tank:Character1_Ctrl_RightHandThumb3/kessyou_tank:Character1_Ctrl_RightHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_HipsEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftAnkleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftElbowEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftFootEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandIndexEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandRingEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandThumbEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHipEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftKneeEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftShoulderEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftWristEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightAnkleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightElbowEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightFootEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandIndexEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandMiddleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandRingEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandThumbEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHipEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightKneeEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightShoulderEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightWristEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Reference
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg/kessyou_tank:Character1_LeftFoot
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg/kessyou_tank:Character1_LeftFoot/kessyou_tank:Character1_LeftToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg/kessyou_tank:Character1_RightFoot
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg/kessyou_tank:Character1_RightFoot/kessyou_tank:Character1_RightToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2/kessyou_tank:Character1_LeftHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2/kessyou_tank:Character1_LeftHandIndex3/kessyou_tank:Character1_LeftHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2/kessyou_tank:Character1_LeftHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2/kessyou_tank:Character1_LeftHandMiddle3/kessyou_tank:Character1_LeftHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2/kessyou_tank:Character1_LeftHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2/kessyou_tank:Character1_LeftHandRing3/kessyou_tank:Character1_LeftHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2/kessyou_tank:Character1_LeftHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2/kessyou_tank:Character1_LeftHandThumb3/kessyou_tank:Character1_LeftHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_Neck
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_Neck/kessyou_tank:Character1_Head
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2/kessyou_tank:Character1_RightHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2/kessyou_tank:Character1_RightHandIndex3/kessyou_tank:Character1_RightHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2/kessyou_tank:Character1_RightHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2/kessyou_tank:Character1_RightHandMiddle3/kessyou_tank:Character1_RightHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2/kessyou_tank:Character1_RightHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2/kessyou_tank:Character1_RightHandRing3/kessyou_tank:Character1_RightHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2/kessyou_tank:Character1_RightHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2/kessyou_tank:Character1_RightHandThumb3/kessyou_tank:Character1_RightHandThumb4
+        weight: 0
+      - path: kosi
+        weight: 0
+      - path: neck
+        weight: 0
+      - path: shin_L
+        weight: 0
+      - path: shin_R
+        weight: 0
+      - path: shoulder_L
+        weight: 0
+      - path: shoulder_R
+        weight: 0
+      - path: thin_L
+        weight: 0
+      - path: thin_R
+        weight: 0
+      - path: uparm_L
+        weight: 0
+      - path: uparm_R
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: tank_right
+      takeName: Take 001
+      firstFrame: 185
+      lastFrame: 205
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: arm_L
+        weight: 0
+      - path: arm_R
+        weight: 0
+      - path: bodt1
+        weight: 0
+      - path: body2
+        weight: 0
+      - path: body3
+        weight: 0
+      - path: body4
+        weight: 0
+      - path: body5
+        weight: 0
+      - path: foot
+        weight: 0
+      - path: frame
+        weight: 0
+      - path: hand
+        weight: 0
+      - path: head
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_ChestEndEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_ChestOriginEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_HeadEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg/kessyou_tank:Character1_Ctrl_LeftFoot
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_LeftUpLeg/kessyou_tank:Character1_Ctrl_LeftLeg/kessyou_tank:Character1_Ctrl_LeftFoot/kessyou_tank:Character1_Ctrl_LeftToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg/kessyou_tank:Character1_Ctrl_RightFoot
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_RightUpLeg/kessyou_tank:Character1_Ctrl_RightLeg/kessyou_tank:Character1_Ctrl_RightFoot/kessyou_tank:Character1_Ctrl_RightToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2/kessyou_tank:Character1_Ctrl_LeftHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandIndex1/kessyou_tank:Character1_Ctrl_LeftHandIndex2/kessyou_tank:Character1_Ctrl_LeftHandIndex3/kessyou_tank:Character1_Ctrl_LeftHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2/kessyou_tank:Character1_Ctrl_LeftHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandMiddle1/kessyou_tank:Character1_Ctrl_LeftHandMiddle2/kessyou_tank:Character1_Ctrl_LeftHandMiddle3/kessyou_tank:Character1_Ctrl_LeftHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2/kessyou_tank:Character1_Ctrl_LeftHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandRing1/kessyou_tank:Character1_Ctrl_LeftHandRing2/kessyou_tank:Character1_Ctrl_LeftHandRing3/kessyou_tank:Character1_Ctrl_LeftHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2/kessyou_tank:Character1_Ctrl_LeftHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_LeftShoulder/kessyou_tank:Character1_Ctrl_LeftArm/kessyou_tank:Character1_Ctrl_LeftForeArm/kessyou_tank:Character1_Ctrl_LeftHand/kessyou_tank:Character1_Ctrl_LeftHandThumb1/kessyou_tank:Character1_Ctrl_LeftHandThumb2/kessyou_tank:Character1_Ctrl_LeftHandThumb3/kessyou_tank:Character1_Ctrl_LeftHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_Neck
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_Neck/kessyou_tank:Character1_Ctrl_Head
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2/kessyou_tank:Character1_Ctrl_RightHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandIndex1/kessyou_tank:Character1_Ctrl_RightHandIndex2/kessyou_tank:Character1_Ctrl_RightHandIndex3/kessyou_tank:Character1_Ctrl_RightHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2/kessyou_tank:Character1_Ctrl_RightHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandMiddle1/kessyou_tank:Character1_Ctrl_RightHandMiddle2/kessyou_tank:Character1_Ctrl_RightHandMiddle3/kessyou_tank:Character1_Ctrl_RightHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2/kessyou_tank:Character1_Ctrl_RightHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandRing1/kessyou_tank:Character1_Ctrl_RightHandRing2/kessyou_tank:Character1_Ctrl_RightHandRing3/kessyou_tank:Character1_Ctrl_RightHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2/kessyou_tank:Character1_Ctrl_RightHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_Hips/kessyou_tank:Character1_Ctrl_Spine/kessyou_tank:Character1_Ctrl_Spine1/kessyou_tank:Character1_Ctrl_RightShoulder/kessyou_tank:Character1_Ctrl_RightArm/kessyou_tank:Character1_Ctrl_RightForeArm/kessyou_tank:Character1_Ctrl_RightHand/kessyou_tank:Character1_Ctrl_RightHandThumb1/kessyou_tank:Character1_Ctrl_RightHandThumb2/kessyou_tank:Character1_Ctrl_RightHandThumb3/kessyou_tank:Character1_Ctrl_RightHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_HipsEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftAnkleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftElbowEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftFootEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandIndexEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandRingEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHandThumbEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftHipEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftKneeEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftShoulderEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_LeftWristEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightAnkleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightElbowEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightFootEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandIndexEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandMiddleEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandRingEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHandThumbEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightHipEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightKneeEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightShoulderEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Ctrl_Reference/kessyou_tank:Character1_Ctrl_RightWristEffector
+        weight: 0
+      - path: kessyou_tank:Character1_Reference
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg/kessyou_tank:Character1_LeftFoot
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_LeftUpLeg/kessyou_tank:Character1_LeftLeg/kessyou_tank:Character1_LeftFoot/kessyou_tank:Character1_LeftToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg/kessyou_tank:Character1_RightFoot
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_RightUpLeg/kessyou_tank:Character1_RightLeg/kessyou_tank:Character1_RightFoot/kessyou_tank:Character1_RightToeBase
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2/kessyou_tank:Character1_LeftHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandIndex1/kessyou_tank:Character1_LeftHandIndex2/kessyou_tank:Character1_LeftHandIndex3/kessyou_tank:Character1_LeftHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2/kessyou_tank:Character1_LeftHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandMiddle1/kessyou_tank:Character1_LeftHandMiddle2/kessyou_tank:Character1_LeftHandMiddle3/kessyou_tank:Character1_LeftHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2/kessyou_tank:Character1_LeftHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandRing1/kessyou_tank:Character1_LeftHandRing2/kessyou_tank:Character1_LeftHandRing3/kessyou_tank:Character1_LeftHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2/kessyou_tank:Character1_LeftHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_LeftShoulder/kessyou_tank:Character1_LeftArm/kessyou_tank:Character1_LeftForeArm/kessyou_tank:Character1_LeftHand/kessyou_tank:Character1_LeftHandThumb1/kessyou_tank:Character1_LeftHandThumb2/kessyou_tank:Character1_LeftHandThumb3/kessyou_tank:Character1_LeftHandThumb4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_Neck
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_Neck/kessyou_tank:Character1_Head
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand
+        weight: 1
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2/kessyou_tank:Character1_RightHandIndex3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandIndex1/kessyou_tank:Character1_RightHandIndex2/kessyou_tank:Character1_RightHandIndex3/kessyou_tank:Character1_RightHandIndex4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2/kessyou_tank:Character1_RightHandMiddle3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandMiddle1/kessyou_tank:Character1_RightHandMiddle2/kessyou_tank:Character1_RightHandMiddle3/kessyou_tank:Character1_RightHandMiddle4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2/kessyou_tank:Character1_RightHandRing3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandRing1/kessyou_tank:Character1_RightHandRing2/kessyou_tank:Character1_RightHandRing3/kessyou_tank:Character1_RightHandRing4
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2/kessyou_tank:Character1_RightHandThumb3
+        weight: 0
+      - path: kessyou_tank:Character1_Reference/kessyou_tank:Character1_Hips/kessyou_tank:Character1_Spine/kessyou_tank:Character1_Spine1/kessyou_tank:Character1_RightShoulder/kessyou_tank:Character1_RightArm/kessyou_tank:Character1_RightForeArm/kessyou_tank:Character1_RightHand/kessyou_tank:Character1_RightHandThumb1/kessyou_tank:Character1_RightHandThumb2/kessyou_tank:Character1_RightHandThumb3/kessyou_tank:Character1_RightHandThumb4
         weight: 0
       - path: kosi
         weight: 0

@@ -17890,8 +17890,8 @@ MonoBehaviour:
   - {fileID: 1910032084}
   enemySpawnRate:
   - 60
-  - 10
   - 30
+  - 10
   defSpawnLimit: 3
   waveSpawnLimit: 6
   spawnRateMin: 6
@@ -18101,6 +18101,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 198604, guid: 48d3223ee0e88d34b9fd9bd19732f1dd, type: 2}
   - {fileID: 192460, guid: 5e8451c6e2954ad4497f48d9a1a7aca5, type: 2}
+  - {fileID: 1000011151865454, guid: 2796b01f1abd3fc468505d26ba526b38, type: 2}
   spawnPoint:
   - {fileID: 2140729662}
   - {fileID: 1261638978}
@@ -18111,8 +18112,9 @@ MonoBehaviour:
   - {fileID: 372725797}
   - {fileID: 734471206}
   enemySpawnRate:
-  - 65
-  - 35
+  - 60
+  - 30
+  - 10
   defSpawnLimit: 4
   waveSpawnLimit: 8
   spawnRateMin: 6
