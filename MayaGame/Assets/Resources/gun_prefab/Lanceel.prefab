@@ -575,7 +575,7 @@ MonoBehaviour:
   WeponCollieder: {fileID: 6589894}
   wepMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4097
   chargeEffect: {fileID: 19819998}
   chargeCompEffect: {fileID: 19825942}
   selector: 0

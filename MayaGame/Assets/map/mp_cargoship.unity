@@ -17889,9 +17889,9 @@ MonoBehaviour:
   - {fileID: 418551593}
   - {fileID: 1910032084}
   enemySpawnRate:
-  - 60
+  - 55
   - 30
-  - 10
+  - 15
   defSpawnLimit: 3
   waveSpawnLimit: 6
   spawnRateMin: 6
@@ -18112,9 +18112,9 @@ MonoBehaviour:
   - {fileID: 372725797}
   - {fileID: 734471206}
   enemySpawnRate:
-  - 60
+  - 55
   - 30
-  - 10
+  - 15
   defSpawnLimit: 4
   waveSpawnLimit: 8
   spawnRateMin: 6

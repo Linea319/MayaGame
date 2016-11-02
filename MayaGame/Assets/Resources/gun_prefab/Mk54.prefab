@@ -1207,7 +1207,7 @@ MonoBehaviour:
   noCock: 0
   wepMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4097
   offsetRot: {x: 20.666, y: 27.166, z: -0.5}
   ADS: 0
   maxAmmo: 0
