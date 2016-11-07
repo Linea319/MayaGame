@@ -78,6 +78,8 @@ public class FPSController : NetworkBehaviour {
     public GameObject tagPrefab;
     Transform focusTr;
     int itemNum = 2;
+    [HideInInspector]
+    public bool hasBag;
 
     [SyncVar]
     public string playerName = "bot";
@@ -85,6 +87,7 @@ public class FPSController : NetworkBehaviour {
     public int conId;
     [SyncVar]
     public ResultParam results;
+    float moveHosei = 1.0f;
 
     Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
     HitEffectManeger effecter;
@@ -110,6 +113,8 @@ public class FPSController : NetworkBehaviour {
             UICon.FPSCon = this;
             //Cursor.visible = false;
             //Cursor.lockState = CursorLockMode.Confined;
+            wepons[0].GetComponent<WeponInterface>().SendUI();
+            wepons[1].GetComponent<WeponInterface>().SendUI();
             SendItemText();
         }
         else
@@ -276,6 +281,7 @@ public class FPSController : NetworkBehaviour {
                 moveVec *= 0.5f;
                 run = false;
             }
+            moveVec *= moveHosei;
 			//control.Move(transform.rotation*(moveVec*Time.deltaTime));
 			if(Input.GetButtonDown("Jump") && stamina > jumpEnergy){
 				StartCoroutine(JumpStart());
@@ -402,7 +408,7 @@ public class FPSController : NetworkBehaviour {
         {
             itemGage += Time.deltaTime;
             itemGage = Mathf.Clamp01(itemGage);
-            if(itemGage >= 1 && itemNum>0)
+            if(itemGage >= 1)
             {
                 SetItem();
                 itemGage = 0;
@@ -610,14 +616,19 @@ public class FPSController : NetworkBehaviour {
 
     void SetItem()
     {
+        if (hasBag)
+        {
+            SetBag(false);
+            return;
+        }
         RaycastHit hit;
         if(Physics.Raycast(myCamera.transform.position, myCamera.transform.forward,out hit,3.0f))
         {
-            if (Vector3.Angle(hit.normal, Vector3.up) < 30f)
-            {
-                CmdSpawn(hit.point);
-                itemNum--;
-                SendItemText();
+            if (Vector3.Angle(hit.normal, Vector3.up) < 30f && itemNum > 0)
+            {              
+                    CmdSpawn(hit.point);
+                    itemNum--;
+                    SendItemText();           
             }
            
         }
@@ -736,6 +747,19 @@ public class FPSController : NetworkBehaviour {
         if (messe == null || !messe.enabled) return;
         otherPlayer = messe;
         UICon.SetMessageText(otherPlayer);
+    }
+
+    public void SetBag(bool sw,float moveRate=1.0f)
+    {
+        hasBag = sw;
+        moveHosei = moveRate;
+        if (!sw)
+        {
+            GameObject obj = Instantiate(Resources.Load("item/bag") as GameObject);
+            obj.transform.position = transform.position+transform.forward*0.25f;
+            obj.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 10f;
+            NetworkServer.Spawn(obj);
+        }
     }
 
     [Command]

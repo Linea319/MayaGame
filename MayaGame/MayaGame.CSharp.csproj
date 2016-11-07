@@ -183,6 +183,7 @@
     <Compile Include="Assets\script\Atachment.cs" />
     <Compile Include="Assets\script\AttackCall.cs" />
     <Compile Include="Assets\script\AttackCall_stand.cs" />
+    <Compile Include="Assets\script\Bag.cs" />
     <Compile Include="Assets\script\CamStabilaizer.cs" />
     <Compile Include="Assets\script\DamagetoColor.cs" />
     <Compile Include="Assets\script\EnemyAI.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Assets\script\SkinColSetter.cs" />
     <Compile Include="Assets\script\SyncPosition.cs" />
     <Compile Include="Assets\script\UI\AtachmentSpawn.cs" />
+    <Compile Include="Assets\script\UI\IpHolder.cs" />
     <Compile Include="Assets\script\UI\LoadoutChanger.cs" />
     <Compile Include="Assets\script\UI\MissionPanel.cs" />
     <Compile Include="Assets\script\UI\PanelSetActive.cs" />
