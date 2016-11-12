@@ -290,7 +290,14 @@ public class FPSController : NetworkBehaviour {
             if (Input.GetButtonDown("Crouch"))
             {
                 crouch = !crouch;
-                
+                if (crouch)
+                {
+                    control.height = 1.4f;
+                }
+                else
+                {
+                    control.height = 1.9f;
+                }
             }
            
 			//Vector2 inputVec = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
@@ -343,7 +350,7 @@ public class FPSController : NetworkBehaviour {
 			moveVec = (tmpVec+(transform.rotation*(inputVec)));
             Vector3 sVec = new Vector3(moveVec.x,0,moveVec.z);
             speed = sVec.magnitude;
-            crouch = false;
+            //crouch = false;
             if (run)
             {
                 run = false;

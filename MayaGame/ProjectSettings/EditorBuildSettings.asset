@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/map/mp_cargoship.unity
   - enabled: 1
     path: Assets/map/ShootingRange.unity
+  - enabled: 1
+    path: Assets/map/mp_metro.unity
