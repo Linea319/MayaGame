@@ -1905,7 +1905,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.102486, y: 0.78536606, z: -34.912365}
+  m_LocalPosition: {x: 85.76727, y: -1.5220416, z: 3.067483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2309,6 +2309,7 @@ MonoBehaviour:
   defAnim: {fileID: 0}
   otherPlayer: {fileID: 0}
   tagPrefab: {fileID: 1000010928020244, guid: be5fb1a87068def48875533be562e18c, type: 2}
+  hasBag: 0
   playerName: bot
   conId: 0
   dead: 0
@@ -2704,7 +2705,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d08285c3d93957844b044e8ed2ff4ea9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1.2
   Loop: 0
   Mute: 0
@@ -2779,7 +2780,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d08285c3d93957844b044e8ed2ff4ea9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1.2
   Loop: 0
   Mute: 0
