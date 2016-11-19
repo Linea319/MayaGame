@@ -217,6 +217,11 @@ Prefab:
       propertyPath: goal
       value: 
       objectReference: {fileID: 2001079488}
+    - target: {fileID: 114000011209599402, guid: 39f25905675cd9346b14f620fa1badd6,
+        type: 2}
+      propertyPath: taskText
+      value: Test
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000011440818762, guid: 39f25905675cd9346b14f620fa1badd6, type: 2}
     - {fileID: 114000012893805384, guid: 39f25905675cd9346b14f620fa1badd6, type: 2}
@@ -7001,7 +7006,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1001 &1709249530
 Prefab:
   m_ObjectHideFlags: 0

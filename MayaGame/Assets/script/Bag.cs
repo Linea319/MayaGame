@@ -17,6 +17,12 @@ public class Bag : NetworkBehaviour {
     public void Kaisyu(Transform player)
     {
         player.GetComponent<FPSController>().SetBag(true,moveDebuf);
+        CmdDestroy();
+    }
+
+    [Command]
+    void CmdDestroy()
+    {
         NetworkServer.Destroy(gameObject);
     }
 }

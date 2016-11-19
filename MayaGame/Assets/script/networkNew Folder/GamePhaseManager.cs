@@ -11,36 +11,54 @@ public class GamePhaseManager : NetworkBehaviour {
     [SyncVar]
     public int phaseCount = 0;
     HitManagerPlayer[] players = new HitManagerPlayer[4];
-    int playerCount;
+    [SyncVar]
+    public int playerCount;
     bool backScene;
-
+    bool goStart = false;
+    public int loadCount;
     // Use this for initialization
 
     public override void OnStartServer()
     {
         base.OnStartServer();
-    //NetworkManager.RegisterStartPosition(playerSpawn);
-    
+        //NetworkManager.RegisterStartPosition(playerSpawn);
+        netMng = FindObjectOfType<LobbyManager>();
+        playerCount = netMng.numPlayers;
     }
 	
 	// Update is called once per frame
 
     void Start()
     {
-        StartPhase();
+        //StartPhase();
+        
+        //playerCount = playersObj.Length;
+        
+        //GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetFriend();
+
     }
 
     [ServerCallback]
 	void Update () {
+        if (!goStart)
+        {
+            if (loadCount >= playerCount) {
+                goStart = true;
+                StartCoroutine(StartPhase());
+            }
+            return;
+        }
+
         int count = 0;
         for(int i = 0; i < playerCount; i++)
         {
-           
+
             if(players[i].hitPoint <= 0)
             {
                 count++;
             }
         }
+
         if(count >= playerCount && !backScene)
         {
             backScene = true;
@@ -50,20 +68,19 @@ public class GamePhaseManager : NetworkBehaviour {
 	}
 
     [ServerCallback]
-    public void StartPhase()
+    public IEnumerator StartPhase()
     {
+        yield return new WaitForSeconds(0.2f);
         backScene = false;
-        netMng = FindObjectOfType<LobbyManager>();
+        
         phase[0].StartPhasae();
         phase[0].RpcStartPhase();
-
+        RpcStartPhase();
         GameObject[] playersObj = GameObject.FindGameObjectsWithTag("Player");
-        playerCount = playersObj.Length;
         for (int j = 0; j < playersObj.Length; j++)
         {
             players[j] = playersObj[j].GetComponent<HitManagerPlayer>();
         }
-
     }
 
     [ServerCallback]
@@ -107,6 +124,14 @@ public class GamePhaseManager : NetworkBehaviour {
     public void CmdNextPhase()
     {
         NextPhase();
+    }
+
+
+    [ClientRpc]
+    void RpcStartPhase()
+    {
+        Debug.Log("friend");
+        GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>().SetFriend();
     }
     
 }

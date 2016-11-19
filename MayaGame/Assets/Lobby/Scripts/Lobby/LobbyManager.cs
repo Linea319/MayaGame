@@ -122,6 +122,7 @@ namespace Prototype.NetworkLobby
 
                 Destroy(GameObject.Find("MainMenuUI(Clone)"));
                 
+
                 if (conn.playerControllers[0].unetView.isServer)
                 {
                     backDelegate = StopGameClbk;

@@ -22,6 +22,8 @@ public class FPS_UI : MonoBehaviour {
     public Image armorBar;
     public Text taskText;
     public Image ItemBar;
+    public RectTransform friendPanel;
+    public GameObject friendPrefab;
 
     //Color change
     public Material UImat;
@@ -88,11 +90,11 @@ public class FPS_UI : MonoBehaviour {
         {
             if(messager.methodObj != null)
             {
-                FPSCon.CmdMessagerMethod(messager.methodObj.gameObject, messager.compMethhod);
+                FPSCon.CmdMessagerMethod(messager.methodObj.gameObject, messager.compMethhod,messager.useTarget);
             }
             else
             {
-                FPSCon.CmdMessagerMethod(messager.gameObject, messager.compMethhod);
+                FPSCon.CmdMessagerMethod(messager.gameObject, messager.compMethhod, messager.useTarget);
             }
             messager.SetProgress(false);
         }
@@ -157,4 +159,24 @@ public class FPS_UI : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         UImat.color = defColor;
     } 
+
+    public void SetFriend()
+    {
+        
+        GameObject[] playersObj = GameObject.FindGameObjectsWithTag("Player");
+        Debug.Log("Friend: "+ playersObj.Length);
+        for (int j = 0; j < playersObj.Length; j++)
+        {
+            FPSController con = playersObj[j].GetComponent<FPSController>();
+            if (!con.isLocalPlayer)
+            {
+                GameObject panel = Instantiate(friendPrefab) as GameObject;
+                panel.GetComponent<RectTransform>().SetParent(friendPanel,false);
+                FriendUI ui = panel.GetComponent<FriendUI>();
+                ui.player = con;
+                ui.playerHp = con.hpMng;
+                ui.pname.text = con.playerName;
+            }
+        }
+    }
 }

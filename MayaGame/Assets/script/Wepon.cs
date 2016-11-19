@@ -520,6 +520,7 @@ public class Wepon : MonoBehaviour, WeponInterface
             string name = gameObject.name;
             name = name.Replace("(Clone)", "");
             FPSCon.UICon.SetWeponText(mySlot, name, magazine.ToString(), pa.totalAmmo.ToString());
+            FPSCon.CmdSetAmmo((float)pa.totalAmmo/(float)maxAmmo);
             //Debug.Log("UISet");
         }
         //Debug.Log("UI");

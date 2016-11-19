@@ -79,6 +79,7 @@ public class FPSController : NetworkBehaviour {
     Transform focusTr;
     int itemNum = 2;
     [HideInInspector]
+    [SyncVar]
     public bool hasBag;
 
     [SyncVar]
@@ -87,6 +88,10 @@ public class FPSController : NetworkBehaviour {
     public int conId;
     [SyncVar]
     public ResultParam results;
+    [SyncVar]
+    public float primammo;
+    [SyncVar]
+    public float subammo;
     float moveHosei = 1.0f;
 
     Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
@@ -96,6 +101,8 @@ public class FPSController : NetworkBehaviour {
     public bool dead;
     float footStepTimer;
     bool preGround;
+    [HideInInspector]
+    public bool startup;
 
     // Use this for initialization
 
@@ -115,7 +122,7 @@ public class FPSController : NetworkBehaviour {
             //Cursor.lockState = CursorLockMode.Confined;
             wepons[0].GetComponent<WeponInterface>().SendUI();
             wepons[1].GetComponent<WeponInterface>().SendUI();
-            SendItemText();
+            SendItemText();          
         }
         else
         {
@@ -123,11 +130,20 @@ public class FPSController : NetworkBehaviour {
             tag.transform.parent = transform;
             tag.transform.localPosition = new Vector3(0, 1f, 0);
             tag.GetComponentInChildren<Text>().text = playerName;
-
             tag.GetComponentInChildren<Text>().color = Colors[conId];
         }
         effecter = FindObjectOfType<HitEffectManeger>();
+        //CompStartup();
+    }
 
+    void CompStartup()
+    {
+        GamePhaseManager mng = FindObjectOfType<GamePhaseManager>();
+        if (mng != null)
+        {
+            mng.loadCount++;
+            startup = true;
+        }
     }
 
     public override void OnStartServer()
@@ -179,11 +195,15 @@ public class FPSController : NetworkBehaviour {
             }
         }
         nAnim = this.GetComponent<SyncAnim>();
-       
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (!startup)
+        {
+            CompStartup();
+        }
+
         if (!isLocalPlayer)
         {
                 SendAnimMove();
@@ -210,7 +230,7 @@ public class FPSController : NetworkBehaviour {
         
 
 		if(control.isGrounded){//ground
-            yVec = Mathf.Clamp(yVec, -1f, 10f);
+            yVec = Mathf.Clamp(yVec, -2.5f, 10f);
             if (!preGround)
             {
                 footSound.Play();
@@ -731,11 +751,19 @@ public class FPSController : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdMessagerMethod(GameObject obj, string method)
+    public void CmdMessagerMethod(GameObject obj, string method,bool useTr)
     {
         NetworkIdentity ident = obj.GetComponent<NetworkIdentity>();
         ident.AssignClientAuthority(connectionToClient);
-        ident.SendMessage(method);
+        if (useTr)
+        {
+            ident.SendMessage(method,transform);
+        }
+        else
+        {
+            ident.SendMessage(method);
+        }
+        
     }
 
     void SendAnimMove()
@@ -762,11 +790,17 @@ public class FPSController : NetworkBehaviour {
         moveHosei = moveRate;
         if (!sw)
         {
-            GameObject obj = Instantiate(Resources.Load("item/bag") as GameObject);
-            obj.transform.position = transform.position+transform.forward*0.25f;
-            obj.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 10f;
-            NetworkServer.Spawn(obj);
+            CmdSpawnBag(Camera.main.transform.forward);
         }
+    }
+
+    [Command]
+    void CmdSpawnBag(Vector3 vec)
+    {
+        GameObject obj = Instantiate(Resources.Load("item/bag") as GameObject);
+        obj.transform.position = transform.position + transform.forward * 0.25f;
+        obj.GetComponent<Rigidbody>().velocity = vec * 10f;
+        NetworkServer.Spawn(obj);
     }
 
     [Command]
@@ -793,6 +827,19 @@ public class FPSController : NetworkBehaviour {
         results = param;
     }
 
+    [Command]
+    public void CmdSetAmmo(float ammo)
+    {
+        if(useWeponNum == 0)
+        {
+            primammo = ammo;
+        }
+        if(useWeponNum == 1)
+        {
+            subammo = ammo;
+        }
+    }
+
     void SendItemText()
     {
         string name="";
@@ -800,6 +847,9 @@ public class FPSController : NetworkBehaviour {
         {
             case "item/ammokan":
                 name = "AMMO";
+                break;
+            case "item/healthbox":
+                name = "REPAIR";
                 break;
         }
         UICon.SetWeponText(3, name, itemNum.ToString());

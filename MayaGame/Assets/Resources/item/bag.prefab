@@ -249,7 +249,7 @@ MonoBehaviour:
     i14: 230
     i15: 216
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114000014003636790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagaeText: Press F:Get
   usePlayer: 0
-  noAuth: 1
+  noAuth: 0
   useTarget: 1
   progressTime: 1.5
   compMethhod: Kaisyu
