@@ -177,6 +177,7 @@
     <Compile Include="Assets\TextMesh3D.cs" />
     <Compile Include="Assets\model\bot\AnimEventSender.cs" />
     <Compile Include="Assets\model\optic\SetRenderQueue.cs" />
+    <Compile Include="Assets\model\prop\doorOpen.cs" />
     <Compile Include="Assets\script\AmmoPack.cs" />
     <Compile Include="Assets\script\AnimSendTrigger.cs" />
     <Compile Include="Assets\script\AnimSound.cs" />
@@ -236,6 +237,7 @@
     <Compile Include="Assets\script\behavior\decideParameter.cs" />
     <Compile Include="Assets\script\behavior\move.cs" />
     <Compile Include="Assets\script\canvasCamera.cs" />
+    <Compile Include="Assets\script\graphic\WorldTile.cs" />
     <Compile Include="Assets\script\grip.cs" />
     <Compile Include="Assets\script\gun.cs" />
     <Compile Include="Assets\script\handguard.cs" />
