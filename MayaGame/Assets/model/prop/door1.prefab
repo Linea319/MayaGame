@@ -119,7 +119,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7388997125017f24b911837cf86cde16, type: 2}
+  - {fileID: 2100000, guid: 20e7c985e89170449818d3fe17c580f0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -148,7 +148,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7388997125017f24b911837cf86cde16, type: 2}
+  - {fileID: 2100000, guid: 20e7c985e89170449818d3fe17c580f0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -219,6 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95000011649232518}
+  openTime: 0
+  openObject: {fileID: 0}
 --- !u!114 &114000010158700308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -264,9 +266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagaeText: Press F:Open
   usePlayer: 0
-  noAuth: 1
-  useTarget: 1
-  progressTime: 2
+  noAuth: 0
+  useTarget: 0
+  progressTime: 5
   compMethhod: Open
   methodObj: {fileID: 114000010072919774}
   TargetTex: {fileID: 0}
