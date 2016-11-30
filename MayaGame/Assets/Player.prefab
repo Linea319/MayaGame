@@ -1906,7 +1906,7 @@ Transform:
   m_GameObject: {fileID: 189380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 85.76727, y: -1.5220416, z: 3.067483}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 484678}
@@ -2312,7 +2312,10 @@ MonoBehaviour:
   hasBag: 0
   playerName: bot
   conId: 0
+  primammo: 0
+  subammo: 0
   dead: 0
+  startup: 0
 --- !u!114 &11480728
 MonoBehaviour:
   m_ObjectHideFlags: 1

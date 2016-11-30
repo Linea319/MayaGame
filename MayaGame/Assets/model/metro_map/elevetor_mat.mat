@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MetroTile
+  m_Name: elevetor_mat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: -268295101, guid: df811d5a8e153f845b27796c3ea7583b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 244209a6cb17932429032b77ff6e0ed8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -48,13 +48,13 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: -1253496881, guid: df811d5a8e153f845b27796c3ea7583b, type: 3}
+        m_Texture: {fileID: 2800000, guid: cd4eecd3bde84df49ae806bc31083d67, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
       second:
-        m_Texture: {fileID: 1114533240, guid: df811d5a8e153f845b27796c3ea7583b, type: 3}
+        m_Texture: {fileID: 2800000, guid: ed3851096f3bc0b43b742f2bfd9727eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
