@@ -68,9 +68,9 @@ public class HitManeger : HitManagerDef {
         if (yoroke)
         {
             EnemyAI ai = transform.root.GetComponent<EnemyAI>();
+            ai.Debuf(speedDebufRate,damageDebufRate);
             if (ai.dead) return;
-            ai.moveSpeed *= speedDebufRate;
-            ai.attackDamage *= damageDebufRate;
+            
             ai.anim.SetInteger("hitPattern", yorokePatern);
             ai.syncAnim.SetTrigger("hit");         
             ai.StopSend(yorokeTime);

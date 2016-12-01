@@ -21,6 +21,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     //parameter
     public float moveSpeed = 4f;
     public float defDistance = 25f;
+    public float turnSpeed = 180f;
 
     protected UnityEngine.AI.NavMeshAgent nav;
     float thinkTimer;
@@ -64,9 +65,10 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         nav.enabled = true;
         nav.speed = moveSpeed;
+        nav.angularSpeed = turnSpeed;
         //nav.updatePosition = false;
         //nav.updateRotation = false;
-	}
+    }
 
     // Update is called once per frame
     [ServerCallback]
@@ -188,6 +190,15 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         //retreatEmotion *= 0.5f;
         retreat = true;
         nav.Resume();
+    }
+
+    public void Debuf(float moveRate,float attackRate)
+    {
+        moveSpeed *= moveRate;
+        turnSpeed *= moveRate;
+        nav.speed = moveSpeed;
+        nav.angularSpeed = turnSpeed;
+        attackDamage *= attackRate;
     }
 
     public virtual void Dodge()
