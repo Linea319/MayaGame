@@ -55,7 +55,7 @@ public class HitManagerPlayer :NetworkBehaviour{
         //Debug.Log("hit:"+damage);
         CmdSetDamage(damage);
         //rechargeTimer = Time.time + rechargeDelay;
-        StartCoroutine_Auto( controller.UICon.HitColor());
+        StartCoroutine( controller.UICon.HitColor());
 
     }
 

@@ -8,7 +8,7 @@ public class Payload : NetworkBehaviour {
     public bool canMove;
     public float stopRate;
     public float timeRate;
-    NavMeshAgent agent;
+    UnityEngine.AI.NavMeshAgent agent;
     UIMessenger messager;
     int targetNum = 0;
     float timer;
@@ -23,7 +23,7 @@ public class Payload : NetworkBehaviour {
         messager = GetComponent<UIMessenger>();
         if (isServer)
         {
-            agent = GetComponent<NavMeshAgent>();
+            agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
             agent.enabled = true;
             agent.SetDestination(Target[targetNum].position);
             Stop();

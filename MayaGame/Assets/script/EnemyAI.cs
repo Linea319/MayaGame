@@ -22,7 +22,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     public float moveSpeed = 4f;
     public float defDistance = 25f;
 
-    protected NavMeshAgent nav;
+    protected UnityEngine.AI.NavMeshAgent nav;
     float thinkTimer;
     public Transform target;
     Vector3 moveTarget;
@@ -61,7 +61,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     [ServerCallback]
     void Start () {
 
-        nav = GetComponent<NavMeshAgent>();
+        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         nav.enabled = true;
         nav.speed = moveSpeed;
         //nav.updatePosition = false;
@@ -107,7 +107,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     public void Jump()
     {
-        OffMeshLinkData data = nav.currentOffMeshLinkData;
+        UnityEngine.AI.OffMeshLinkData data = nav.currentOffMeshLinkData;
         Vector3 endPos = data.endPos;
         Vector3 startPos = data.startPos;
         float height = Mathf.Abs(endPos.y - startPos.y);
