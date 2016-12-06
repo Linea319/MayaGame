@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e76e0b1436c770142aceffb6b9609ae8
-timeCreated: 1480091902
+timeCreated: 1481046109
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -10,13 +10,13 @@ SubstanceImporter:
     prototypeName: gravel
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+    shaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECULARHIGHLIGHTS_OFF
     renderQueue: -1
     lightmapFlags: 1
     inputs:
     - name: $randomseed
       value:
-        scalar[0]: 524
+        scalar[0]: 1580
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -107,7 +107,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: height
       value:
-        scalar[0]: 1
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -178,7 +178,7 @@ SubstanceImporter:
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 5, y: 5}
+      scale: {x: 5, y: 12}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42
@@ -189,7 +189,7 @@ SubstanceImporter:
           name: _BumpMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 5, y: 10}
           offset: {x: 0, y: 0}
       - first:
           name: _DetailAlbedoMap
@@ -213,31 +213,31 @@ SubstanceImporter:
           name: _EmissionMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 5, y: 12}
           offset: {x: 0, y: 0}
       - first:
           name: _MainTex
         second:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 5, y: 12}
           offset: {x: 0, y: 0}
       - first:
           name: _MetallicGlossMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 5, y: 10}
           offset: {x: 0, y: 0}
       - first:
           name: _OcclusionMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 5, y: 10}
           offset: {x: 0, y: 0}
       - first:
           name: _ParallaxMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 5, y: 10}
           offset: {x: 0, y: 0}
       floats:
       - first:
@@ -278,7 +278,7 @@ SubstanceImporter:
         second: 0
       - first:
           name: _SpecularHighlights
-        second: 1
+        second: 0
       - first:
           name: _SrcBlend
         second: 1
@@ -307,7 +307,7 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     - name: gravel_metallic
-      alphaSource: 7
+      alphaSource: 10
       filterMode: 1
       aniso: 1
       wrapMode: 0
@@ -343,13 +343,13 @@ SubstanceImporter:
       wrapMode: 0
     textureAssignments:
     - shaderProp:
-        name: _MainTex
-      material: {instanceID: 0}
-      baseUID: 3805554655
-    - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
       baseUID: 3805554649
+    - shaderProp:
+        name: _MainTex
+      material: {instanceID: 0}
+      baseUID: 3805554655
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}

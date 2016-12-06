@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: df811d5a8e153f845b27796c3ea7583b
-timeCreated: 1480007209
+timeCreated: 1481045115
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -10,9 +10,9 @@ SubstanceImporter:
     prototypeName: MetroTile
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP
     renderQueue: -1
-    lightmapFlags: 1
+    lightmapFlags: 0
     inputs:
     - name: $outputsize
       value:
@@ -23,7 +23,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: $randomseed
       value:
-        scalar[0]: 288
+        scalar[0]: 7686
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -65,7 +65,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Tile_Rough
       value:
-        scalar[0]: 0.156863
+        scalar[0]: 0.15
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -91,7 +91,7 @@ SubstanceImporter:
           name: _BumpMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 1}
+          scale: {x: 5, y: 10}
           offset: {x: 0, y: 0}
       - first:
           name: _DetailAlbedoMap
@@ -127,7 +127,7 @@ SubstanceImporter:
           name: _MetallicGlossMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 1}
+          scale: {x: 5, y: 10}
           offset: {x: 0, y: 0}
       - first:
           name: _OcclusionMap
@@ -156,7 +156,7 @@ SubstanceImporter:
         second: 0
       - first:
           name: _GlossMapScale
-        second: 1
+        second: 0
       - first:
           name: _Glossiness
         second: 0.5
@@ -209,7 +209,7 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     - name: MetroTile_metallic
-      alphaSource: 7
+      alphaSource: 10
       filterMode: 1
       aniso: 1
       wrapMode: 0
@@ -290,18 +290,28 @@ SubstanceImporter:
         (Clone) (Clone) (Clone) (Clone) (Clone) (Clone) (Clone) (Clone) (Clone) (Clone)
         (Clone) (Clone) (Clone) (Clone) (Clone) (Clone) (Clone)
       alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: MetroTile_roughness
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: MetroTile_unity_metalic
+      alphaSource: 10
       filterMode: 1
       aniso: 1
       wrapMode: 0
     textureAssignments:
     - shaderProp:
-        name: _MainTex
-      material: {instanceID: 0}
-      baseUID: 2031573143
-    - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
       baseUID: 2031573141
+    - shaderProp:
+        name: _MainTex
+      material: {instanceID: 0}
+      baseUID: 2031573143
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
