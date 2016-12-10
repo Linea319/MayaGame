@@ -87,6 +87,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Allegorithmic\MaterialLayering\Plugins\SimpleJSON.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
@@ -282,6 +283,8 @@
     <Compile Include="Assets\test\VRblade\lineController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Allegorithmic\MaterialLayering\README.txt" />
+    <None Include="Assets\Allegorithmic\MaterialLayering\Shaders\AlgMaterialLayering.shader" />
     <None Include="Assets\Allsky\AllSkyDemoEnvironment\Specular Snow Vertex Colours.shader" />
     <None Include="Assets\Allsky\allsky_readme.txt" />
     <None Include="Assets\Editor\ImageEffectFetcher\Lib\Ionic.Zip.Unity.XML" />

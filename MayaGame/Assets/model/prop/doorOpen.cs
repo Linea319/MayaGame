@@ -10,12 +10,15 @@ public class doorOpen : NetworkBehaviour {
     Collider mycol;
     public Animator anim;
     public float openTime = 0f;
+    [SyncVar]
     float timer = 0;
     public GameObject openObject;
+    FPS_UI ui;
 	// Use this for initialization
 	void Start () {
         mycol = GetComponent<Collider>();
-	}
+        ui = GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>();
+    }
 	
     
     public void Open()
@@ -42,6 +45,8 @@ public class doorOpen : NetworkBehaviour {
     void RpcOpen()
     {
         mycol.enabled = false;
+        string[] msg = new string[2];
+        ui.SetTaskInfo(msg);
     }
 
     [ClientRpc]
@@ -51,6 +56,7 @@ public class doorOpen : NetworkBehaviour {
         {
             openObject.SetActive(true);
         }
+        GetComponent<UIMessenger>().enabled = false;       
     }
 
     // Update is called once per frame
@@ -58,6 +64,13 @@ public class doorOpen : NetworkBehaviour {
         if (isClient)
         {
             anim.SetBool("open", open);
+            if(openStart && Time.time < timer)
+            {
+                string[] msg = new string[2];
+                msg[0] = "Hacking...";
+                msg[1] = (timer - Time.time).ToString("f1");
+                ui.SetTaskInfo(msg);
+            }
         }
         if (isServer)
         {

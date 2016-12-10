@@ -22,6 +22,8 @@ public class FPS_UI : MonoBehaviour {
     public Image armorBar;
     public Text taskText;
     public Image ItemBar;
+    public Text[] taskInfo; 
+
     public RectTransform friendPanel;
     public GameObject friendPrefab;
 
@@ -177,6 +179,14 @@ public class FPS_UI : MonoBehaviour {
                 ui.playerHp = con.hpMng;
                 ui.pname.text = con.playerName;
             }
+        }
+    }
+
+    public void SetTaskInfo(string[] message)
+    {
+        for (int i = 0; i < message.Length; i++)
+        {
+            taskInfo[i].text = message[i];
         }
     }
 }
