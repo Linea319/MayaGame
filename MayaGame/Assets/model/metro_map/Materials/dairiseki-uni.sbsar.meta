@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7f675c7428ded724e8b432e2aef68ade
-timeCreated: 1481360305
+timeCreated: 1481466927
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -10,9 +10,9 @@ SubstanceImporter:
     prototypeName: dairiseki
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP
+    shaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
     renderQueue: -1
-    lightmapFlags: 4
+    lightmapFlags: 1
     inputs:
     - name: $outputsize
       value:
@@ -30,14 +30,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: rock_rough
       value:
-        scalar[0]: 0.5
+        scalar[0]: 0.2
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_rough
       value:
-        scalar[0]: 0.8
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -195,7 +195,7 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     - name: dairiseki_metallic
-      alphaSource: 10
+      alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
