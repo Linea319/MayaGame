@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 756508124aa4d88498d8ac0b6b5ea0d8
-timeCreated: 1481391883
+timeCreated: 1481725052
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -10,9 +10,9 @@ SubstanceImporter:
     prototypeName: concrete_smooth
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
-    lightmapFlags: 5
+    lightmapFlags: 1
     inputs:
     - name: concrete_color
       value:
@@ -118,7 +118,7 @@ SubstanceImporter:
           name: _DetailAlbedoMap
         second:
           texture: {instanceID: 0}
-          scale: {x: 1, y: 1}
+          scale: {x: 0.5, y: 0.5}
           offset: {x: 0, y: 0}
       - first:
           name: _DetailMask
