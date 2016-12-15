@@ -1,26 +1,19 @@
 fileFormatVersion: 2
-guid: 654eee5864e139748b075af681a2b444
-timeCreated: 1481803128
+guid: 8e5ac3a8790f8604e84387c7c4b137dd
+timeCreated: 1481819336
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
   materialInstances:
   - serializedVersion: 16
-    name: New_Graph
-    prototypeName: New_Graph
+    name: Plastic_Gun
+    prototypeName: Plastic_Gun
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: 
     renderQueue: -1
     lightmapFlags: 5
     inputs:
-    - name: tile_num
-      value:
-        scalar[0]: 4.3
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
     - name: $outputsize
       value:
         scalar[0]: 8
@@ -35,51 +28,51 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-    - name: grunge
+    - name: Color
+      value:
+        scalar[0]: 0.027451
+        scalar[1]: 0.027451
+        scalar[2]: 0.027451
+        scalar[3]: 1
+        texture: {instanceID: 0}
+    - name: fiber_height
       value:
         scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-    - name: grounge_opacity
+    - name: Roughness
       value:
-        scalar[0]: 0.75
+        scalar[0]: 0.435294
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-    - name: tile_color
+    - name: Emboss_Intensity
       value:
-        scalar[0]: 0.784314
-        scalar[1]: 0.764096
-        scalar[2]: 0.66128
+        scalar[0]: 0.15
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Emboss_Light_Angle
+      value:
+        scalar[0]: 0.138889
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Emboss_Highlight_Color
+      value:
+        scalar[0]: 1
+        scalar[1]: 1
+        scalar[2]: 1
         scalar[3]: 1
         texture: {instanceID: 0}
-    - name: tile_rough
-      value:
-        scalar[0]: 0.0980392
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: tile_metal
+    - name: Emboss_Shadow_Color
       value:
         scalar[0]: 0
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: frame_color
-      value:
-        scalar[0]: 0.784314
-        scalar[1]: 0.784314
-        scalar[2]: 0.784314
-        scalar[3]: 1
-        texture: {instanceID: 0}
-    - name: frame_rough
-      value:
-        scalar[0]: 0.0980392
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -205,18 +198,23 @@ SubstanceImporter:
           name: _EmissionColor
         second: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
-    - name: New_Graph_basecolor
+    - name: Plastic_Gun_basecolor
       alphaSource: 6
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: New_Graph_normal
+    - name: Plastic_Gun_normal
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: New_Graph_metallic
+    - name: Plastic_Gun_metallic
       alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Plastic_Gun_height
+      alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
@@ -224,15 +222,19 @@ SubstanceImporter:
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 679316570
+      baseUID: 4126175421
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 679316568
+      baseUID: 4126175423
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 679316574
+      baseUID: 4126175417
+    - shaderProp:
+        name: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 4159628640
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -241,8 +243,8 @@ SubstanceImporter:
       textureFormat: 0
       loadingBehavior: 1
   - serializedVersion: 16
-    name: tilewall
-    prototypeName: New_Graph
+    name: plastic_wall
+    prototypeName: Plastic_Gun
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: 
@@ -263,58 +265,51 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-    - name: grunge
+    - name: Color
       value:
-        scalar[0]: 0.1
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: grounge_opacity
-      value:
-        scalar[0]: 1
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: tile_color
-      value:
-        scalar[0]: 0.84342563
-        scalar[1]: 0.85819113
-        scalar[2]: 0.88235295
+        scalar[0]: 0.8602941
+        scalar[1]: 0.82233995
+        scalar[2]: 0.7654087
         scalar[3]: 1
         texture: {instanceID: 0}
-    - name: tile_rough
+    - name: fiber_height
       value:
-        scalar[0]: 0.55
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
-    - name: tile_metal
+    - name: Roughness
+      value:
+        scalar[0]: 0.3
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Emboss_Intensity
+      value:
+        scalar[0]: 0.15
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Emboss_Light_Angle
+      value:
+        scalar[0]: 0.138889
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: Emboss_Highlight_Color
       value:
         scalar[0]: 1
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: frame_color
-      value:
-        scalar[0]: 0.36465517
-        scalar[1]: 0.375
-        scalar[2]: 0.3529412
+        scalar[1]: 1
+        scalar[2]: 1
         scalar[3]: 1
         texture: {instanceID: 0}
-    - name: frame_rough
+    - name: Emboss_Shadow_Color
       value:
-        scalar[0]: 0.2
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: tile_num
-      value:
-        scalar[0]: 2.6
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -440,18 +435,23 @@ SubstanceImporter:
           name: _EmissionColor
         second: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
-    - name: tilewall_basecolor
+    - name: plastic_wall_basecolor
       alphaSource: 6
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: tilewall_normal
+    - name: plastic_wall_normal
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: tilewall_metallic
+    - name: plastic_wall_metallic
       alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: plastic_wall_height
+      alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
@@ -459,15 +459,19 @@ SubstanceImporter:
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 679316570
+      baseUID: 4126175421
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 679316568
+      baseUID: 4126175423
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 679316574
+      baseUID: 4126175417
+    - shaderProp:
+        name: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 4159628640
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
