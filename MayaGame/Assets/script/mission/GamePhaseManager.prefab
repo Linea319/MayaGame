@@ -16,14 +16,14 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010784354926}
-  - 114: {fileID: 114000013159245520}
-  - 114: {fileID: 114000011872868828}
-  - 114: {fileID: 114000011209599402}
-  - 114: {fileID: 114000011440818762}
-  - 114: {fileID: 114000012893805384}
+  - component: {fileID: 4000010784354926}
+  - component: {fileID: 114000013159245520}
+  - component: {fileID: 114000011872868828}
+  - component: {fileID: 114000011209599402}
+  - component: {fileID: 114000011440818762}
+  - component: {fileID: 114000012893805384}
   m_Layer: 0
   m_Name: GamePhaseManager
   m_TagString: Untagged
@@ -40,10 +40,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.62, y: 1.06, z: -41.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114000011209599402
 MonoBehaviour:
   m_ObjectHideFlags: 1

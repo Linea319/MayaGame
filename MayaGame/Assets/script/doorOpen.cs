@@ -67,7 +67,7 @@ public class doorOpen : NetworkBehaviour {
             if(openStart && Time.time < timer)
             {
                 string[] msg = new string[2];
-                msg[0] = "Hacking...";
+                msg[0] = "Door Hacking...";
                 msg[1] = (timer - Time.time).ToString("f1");
                 ui.SetTaskInfo(msg);
             }

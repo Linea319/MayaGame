@@ -102,10 +102,19 @@ public class AlgLayeredMaterialEditor : MaterialEditor
                 foreach (JSONNode maskStackJson in masksJson.Childs)
                 {
                     string opacity = maskStackJson["Opacity"];
+                    if(opacity == null)
+                    {
+                        opacity = maskStackJson["•s“§–¾“x"];
+                    }
+
                     if (opacity != null)
                     {
                         m_Masks.Add(opacity);
                         Utils.Log("Added mask " + opacity);
+                    }
+                    else
+                    {
+                        Debug.LogError("nomask");
                     }
                 }
             }

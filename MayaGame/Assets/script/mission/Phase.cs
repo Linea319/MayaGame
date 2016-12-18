@@ -61,4 +61,5 @@ public class Phase : NetworkBehaviour {
         clearFlag = true;
         this.enabled = false;
     }
+
 }

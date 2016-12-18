@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -69,9 +66,6 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -202,7 +196,6 @@
     <Compile Include="Assets\TextMesh3D.cs" />
     <Compile Include="Assets\model\bot\AnimEventSender.cs" />
     <Compile Include="Assets\model\optic\SetRenderQueue.cs" />
-    <Compile Include="Assets\model\prop\doorOpen.cs" />
     <Compile Include="Assets\script\AmmoPack.cs" />
     <Compile Include="Assets\script\AnimSendTrigger.cs" />
     <Compile Include="Assets\script\AnimSound.cs" />
@@ -217,6 +210,7 @@
     <Compile Include="Assets\script\FPSController.cs" />
     <Compile Include="Assets\script\FPS_UI.cs" />
     <Compile Include="Assets\script\FovSync.cs" />
+    <Compile Include="Assets\script\GetBag.cs" />
     <Compile Include="Assets\script\GiziBuillboard.cs" />
     <Compile Include="Assets\script\GunCustom.cs" />
     <Compile Include="Assets\script\HealthPack.cs" />
@@ -232,8 +226,6 @@
     <Compile Include="Assets\script\PartsSave.cs" />
     <Compile Include="Assets\script\Pause.cs" />
     <Compile Include="Assets\script\Payload.cs" />
-    <Compile Include="Assets\script\Phase_Cargo.cs" />
-    <Compile Include="Assets\script\Phase_Elevator.cs" />
     <Compile Include="Assets\script\SendTrigger.cs" />
     <Compile Include="Assets\script\Shotgun.cs" />
     <Compile Include="Assets\script\SkinColSetter.cs" />
@@ -262,6 +254,7 @@
     <Compile Include="Assets\script\behavior\decideParameter.cs" />
     <Compile Include="Assets\script\behavior\move.cs" />
     <Compile Include="Assets\script\canvasCamera.cs" />
+    <Compile Include="Assets\script\doorOpen.cs" />
     <Compile Include="Assets\script\graphic\WorldTile.cs" />
     <Compile Include="Assets\script\grip.cs" />
     <Compile Include="Assets\script\gun.cs" />
@@ -270,14 +263,19 @@
     <Compile Include="Assets\script\lower.cs" />
     <Compile Include="Assets\script\magazine.cs" />
     <Compile Include="Assets\script\magwell.cs" />
+    <Compile Include="Assets\script\mission\BagTrigger.cs" />
+    <Compile Include="Assets\script\mission\GamePhaseManager.cs" />
+    <Compile Include="Assets\script\mission\Phase.cs" />
+    <Compile Include="Assets\script\mission\Phase_Bay.cs" />
+    <Compile Include="Assets\script\mission\Phase_Cargo.cs" />
+    <Compile Include="Assets\script\mission\Phase_Correct.cs" />
+    <Compile Include="Assets\script\mission\Phase_Elevator.cs" />
+    <Compile Include="Assets\script\mission\Phase_Hack.cs" />
     <Compile Include="Assets\script\muzule.cs" />
     <Compile Include="Assets\script\networkNew Folder\DisableNetObj.cs" />
     <Compile Include="Assets\script\networkNew Folder\EnemySpawner.cs" />
-    <Compile Include="Assets\script\networkNew Folder\GamePhaseManager.cs" />
     <Compile Include="Assets\script\networkNew Folder\LobbyManager_Custom.cs" />
     <Compile Include="Assets\script\networkNew Folder\NetAdapter.cs" />
-    <Compile Include="Assets\script\networkNew Folder\Phase.cs" />
-    <Compile Include="Assets\script\networkNew Folder\Phase_Bay.cs" />
     <Compile Include="Assets\script\networkNew Folder\SetLoadout.cs" />
     <Compile Include="Assets\script\networkNew Folder\SyncAnim.cs" />
     <Compile Include="Assets\script\networkNew Folder\spawnTest.cs" />

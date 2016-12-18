@@ -33,7 +33,7 @@ public class Phase_Bay : Phase {
                 if (Random.Range(0, 100) < stopRate)
                 {
                     anim.speed = 0;
-                    message.enabled = true;
+                    RpcStop();
                 }
                 timer += stopTime;
             }
@@ -44,6 +44,12 @@ public class Phase_Bay : Phase {
             }
             
         }
+    }
+
+    [ClientRpc]
+    void RpcStop()
+    {
+        message.enabled = true;
     }
 
     public void Anim()

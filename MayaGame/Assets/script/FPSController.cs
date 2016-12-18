@@ -757,11 +757,11 @@ public class FPSController : NetworkBehaviour {
         ident.AssignClientAuthority(connectionToClient);
         if (useTr)
         {
-            ident.SendMessage(method,transform);
+            obj.SendMessage(method,transform);
         }
         else
         {
-            ident.SendMessage(method);
+            obj.SendMessage(method);
         }
         
     }
@@ -791,6 +791,25 @@ public class FPSController : NetworkBehaviour {
         if (!sw)
         {
             CmdSpawnBag(Camera.main.transform.forward);
+            UICon.SetTaskInfoSingle("", 2);
+        }
+        else
+        {
+            UICon.SetTaskInfoSingle("Have Bag", 2);
+        }
+    }
+
+    public void CmdSetBag(bool sw, float moveRate)
+    {
+        RpcSetBag(sw,moveRate);
+    }
+
+    [ClientRpc]
+    void RpcSetBag(bool sw, float moveRate)
+    {
+        if (isLocalPlayer)
+        {
+            SetBag(sw, moveRate);
         }
     }
 

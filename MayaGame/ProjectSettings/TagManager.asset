@@ -8,6 +8,7 @@ TagManager:
   - UseObject
   - FxTemporaire
   - Fire
+  - bag
   layers:
   - Default
   - TransparentFX
