@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class Phase_Hack : Phase {
-    public UIMessenger message;
+    public UIMessenger[] message;
     //public Renderer serverRender;
     public Color startColor;
     public Color endColor;
@@ -17,6 +17,7 @@ public class Phase_Hack : Phase {
     [SyncVar]
     public float hackTimer;
     FPS_UI uicon;
+    int cMessage=0;
 
     // Update is called once per frame
     void Start()
@@ -27,7 +28,7 @@ public class Phase_Hack : Phase {
     public override void StartPhasae()
     {
         base.StartPhasae();
-        message.enabled = true;
+        message[0].enabled = true;
         timer = stopTime+Time.time;
         hackTimer = hackTime;
 
@@ -54,14 +55,15 @@ public class Phase_Hack : Phase {
     [ClientRpc]
     void RpcHack()
     {
-        message.enabled = false;
+        message[cMessage].enabled = false;
         Debug.Log("rpchack");
     }
 
     [ClientRpc]
     void RpcStop()
     {
-        message.enabled = true;
+        cMessage = Random.Range(0, message.Length);
+        message[cMessage].enabled = true;
     }
 
     void Update()
@@ -92,6 +94,7 @@ public class Phase_Hack : Phase {
             }
             if(isClient)
             {
+                //Debug.Log("clienthack");
                 string[] msg = new string[2];
                 msg[0] = "Server Hacking...";
                 msg[1] = (hackTimer).ToString("f1");

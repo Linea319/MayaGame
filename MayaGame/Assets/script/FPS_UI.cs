@@ -196,6 +196,7 @@ public class FPS_UI : MonoBehaviour {
 
     public void SetTaskInfo(string[] message)
     {
+        Debug.Log("taskWrite");
         for (int i = 0; i < message.Length; i++)
         {
             taskInfo[i].text = message[i];

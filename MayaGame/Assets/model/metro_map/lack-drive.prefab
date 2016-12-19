@@ -595,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagaeText: Press F:GetHDD
   usePlayer: 0
-  noAuth: 0
+  noAuth: 1
   useTarget: 1
   progressTime: 2
   compMethhod: Kaisyu

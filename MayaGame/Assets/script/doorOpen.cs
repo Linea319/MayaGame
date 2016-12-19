@@ -36,7 +36,7 @@ public class doorOpen : NetworkBehaviour {
         }
         else
         {
-            timer = Time.time + openTime;
+            timer = openTime;
             openStart = true;
             RpcOpenStart();
         }
@@ -47,6 +47,7 @@ public class doorOpen : NetworkBehaviour {
         mycol.enabled = false;
         string[] msg = new string[2];
         ui.SetTaskInfo(msg);
+        open = true;
     }
 
     [ClientRpc]
@@ -64,20 +65,24 @@ public class doorOpen : NetworkBehaviour {
         if (isClient)
         {
             anim.SetBool("open", open);
-            if(openStart && Time.time < timer)
+            if(openStart && 0 < timer && !open)
             {
                 string[] msg = new string[2];
                 msg[0] = "Door Hacking...";
-                msg[1] = (timer - Time.time).ToString("f1");
+                msg[1] = (timer).ToString("f1");
                 ui.SetTaskInfo(msg);
             }
         }
         if (isServer)
         {
-            if (openStart && Time.time > timer)
+            if (openStart &&  !open)
             {
-                open = true;
-                RpcOpen();
+                timer -= Time.deltaTime;
+                if (0 >= timer)
+                {
+                    open = true;
+                    RpcOpen();
+                }
             }
         }
 	}
