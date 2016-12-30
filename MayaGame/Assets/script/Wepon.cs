@@ -348,7 +348,7 @@ public class Wepon : MonoBehaviour, WeponInterface
     public virtual void Shot(float ADSHosei = 1f)
     {
         //FPSCon.CmdShot();
-        float accuracy = (parameters["accuracy"] * 0.01f) ;
+        float accuracy = (parameters["accuracy"] * 0.005f) ;
         Vector3 randomCone = (myCamera.transform.forward);
         Vector3 move = FPSCon.moveVec;
         move.y = 0;
@@ -358,7 +358,7 @@ public class Wepon : MonoBehaviour, WeponInterface
         if (FPSCon.ADS) { accuracy *= 0.2f * ADSHosei; }
         accuracy = Mathf.Clamp(accuracy, 0.001f, 10f);
         //Debug.Log(accuracy);
-        randomCone = Quaternion.Euler(new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy))) * randomCone;
+        randomCone = Quaternion.Euler(new Vector3(NormalRandom(accuracy), NormalRandom(accuracy), NormalRandom(accuracy))) * randomCone;
 
         Ray ray = new Ray(myCamera.transform.position, randomCone);
         ShootHit(ray, parameters["range"], 0);
@@ -596,5 +596,16 @@ public class Wepon : MonoBehaviour, WeponInterface
         return true;
     }
 
+    private float NormalRandom(float range)
+    {
+        float sum=0;
+        for(int i = 0; i < 12; i++)
+        {
+            sum += Random.value;
+        }
+        float val = (sum-6f)*range;
+        //Debug.Log(val);
+        return val;
+    }
 
 }

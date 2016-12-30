@@ -48,6 +48,7 @@ public class EnemySpawner : NetworkBehaviour {
         if(Time.time > spawnTimer)
         {
             int spawnNum = Random.Range(1, sameSpawnMax);
+            //int seed = Random.Range(-1000000, 1000000);
             for(int x = 0; x < spawnNum; x++)
             {
                 Spawn();
@@ -64,7 +65,7 @@ public class EnemySpawner : NetworkBehaviour {
     [ServerCallback]
     public void Spawn()
     {
-
+        
         if (spawnCount >= cSpawnLimit) return;
         int posId = Random.Range(0, spawnPoint.Length);
         int count = 0;
@@ -75,7 +76,7 @@ public class EnemySpawner : NetworkBehaviour {
             if (posId >= spawnPoint.Length) posId = 0;
         }
 
-        float spawnPrefabNum = Random.Range(0, 100f);
+        float spawnPrefabNum = Random.value*100f;
         //Debug.Log("SpawnRate" + spawnPrefabNum);
         float spawnCache = 0;
         int prefabId=0;
@@ -112,6 +113,7 @@ public class EnemySpawner : NetworkBehaviour {
 
     bool CanSpawn(int spawnId)
     {
+        if (!spawnPoint[spawnId].gameObject.activeInHierarchy) return false;
         Vector3 spawnPos = spawnPoint[spawnId].position;
         int okNum = 0;
         for (int i = 0; i < playerNum; i++)

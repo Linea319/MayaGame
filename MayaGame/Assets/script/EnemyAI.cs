@@ -21,8 +21,9 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     //parameter
     public float moveSpeed = 4f;
     public float defDistance = 25f;
+    public float turnSpeed = 180f;
 
-    protected NavMeshAgent nav;
+    protected UnityEngine.AI.NavMeshAgent nav;
     float thinkTimer;
     public Transform target;
     Vector3 moveTarget;
@@ -61,12 +62,13 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
     [ServerCallback]
     void Start () {
 
-        nav = GetComponent<NavMeshAgent>();
+        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         nav.enabled = true;
         nav.speed = moveSpeed;
+        nav.angularSpeed = turnSpeed;
         //nav.updatePosition = false;
         //nav.updateRotation = false;
-	}
+    }
 
     // Update is called once per frame
     [ServerCallback]
@@ -78,7 +80,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         }
 
         currentHate -= 25 * Time.deltaTime;
-        nav.speed = Mathf.Lerp(moveSpeed, 0, shock / 100f);
+        //nav.speed = Mathf.Lerp(moveSpeed, 0, shock / 100f);
         shock = Mathf.Lerp(shock, 0, Time.deltaTime*0.5f);
 
 	    if(Time.time > thinkTimer)
@@ -89,13 +91,13 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             retreat = false;
         }
 
-        if((moveTarget-transform.position).sqrMagnitude > 1f)
+        if((moveTarget-transform.position).sqrMagnitude > 1000f)
         {
-            
+            nav.speed = moveSpeed * 2.5f;
         }
         else
         {
-
+            nav.speed = moveSpeed;
         }
 
         if (nav.isOnOffMeshLink)
@@ -107,7 +109,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
 
     public void Jump()
     {
-        OffMeshLinkData data = nav.currentOffMeshLinkData;
+        UnityEngine.AI.OffMeshLinkData data = nav.currentOffMeshLinkData;
         Vector3 endPos = data.endPos;
         Vector3 startPos = data.startPos;
         float height = Mathf.Abs(endPos.y - startPos.y);
@@ -188,6 +190,15 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         //retreatEmotion *= 0.5f;
         retreat = true;
         nav.Resume();
+    }
+
+    public void Debuf(float moveRate,float attackRate)
+    {
+        moveSpeed *= moveRate;
+        turnSpeed *= moveRate;
+        nav.speed = moveSpeed;
+        nav.angularSpeed = turnSpeed;
+        attackDamage *= attackRate;
     }
 
     public virtual void Dodge()

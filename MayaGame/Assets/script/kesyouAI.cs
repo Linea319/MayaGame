@@ -8,8 +8,7 @@ public class kesyouAI : EnemyAI {
     public float spread;
     public Transform gunPos;
     public LayerMask eyeMask;
-    bool canRot;
-
+    bool canRot; 
 
     [ServerCallback]
     public override void Update()
@@ -88,7 +87,7 @@ public class kesyouAI : EnemyAI {
             
             tarVec.y = 0f;
             Quaternion newRot = Quaternion.LookRotation(tarVec, Vector3.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * 6);
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * (turnSpeed/60f));
             float dir = Vector3.Dot(tarVec, transform.right);
             anim.SetFloat("walkDir", dir);
         }

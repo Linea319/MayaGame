@@ -8,7 +8,7 @@ public class Chase : StateMachineBehaviour
     [Range(0,1)]
     public float zigzagRate;
     EnemyAI ai;
-    NavMeshAgent nav;
+    UnityEngine.AI.NavMeshAgent nav;
     Transform target;
     float zigzagTimer=0;
 
@@ -22,7 +22,7 @@ public class Chase : StateMachineBehaviour
         {
             ai.SearchTarget();
         }
-        nav = animator.transform.root.GetComponent<NavMeshAgent>();
+        nav = animator.transform.root.GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = ai.target;
     }
 

@@ -271,7 +271,7 @@ namespace Prototype.NetworkLobby
             ChangeTo(ResultPanel);
             backDelegate = StopResultClbk;
             topPanel.isInGame = false;
-            
+            Cursor.lockState = CursorLockMode.Confined;
             StartCoroutine(ReturnLobby());
         }
 

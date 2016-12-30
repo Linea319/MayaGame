@@ -15,44 +15,35 @@ Material:
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 42c82083dd1523e4cab9b42552bcddbb, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 42c82083dd1523e4cab9b42552bcddbb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-      data:
-        first:
-          name: _Cutoff
-        second: 0.5
-      data:
-        first:
-          name: _Shininess
-        second: 0.078125
-      data:
-        first:
-          name: _InvFade
-        second: 1.0128732
-      data:
-        first:
-          name: _ScrollSpeed
-        second: 8
+    - first:
+        name: _Cutoff
+      second: 0.5
+    - first:
+        name: _InvFade
+      second: 1.0128732
+    - first:
+        name: _ScrollSpeed
+      second: 8
+    - first:
+        name: _Shininess
+      second: 0.078125
     m_Colors:
-      data:
-        first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 0.89552236, g: 0.8687903, b: 0.8687903, a: 1}
-      data:
-        first:
-          name: _TintColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _EmisColor
-        second: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _EmisColor
+      second: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+    - first:
+        name: _SpecColor
+      second: {r: 0.89552236, g: 0.8687903, b: 0.8687903, a: 1}
+    - first:
+        name: _TintColor
+      second: {r: 1, g: 1, b: 1, a: 1}

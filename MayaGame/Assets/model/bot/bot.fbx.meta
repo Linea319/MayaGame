@@ -180,6 +180,7 @@ ModelImporter:
     7400018: H9P_cock
     7400020: jump
     7400022: air
+    7400024: pose
     9500000: //RootNode
     13700000: arm
     13700002: body1
@@ -2224,6 +2225,138 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: pose
+      takeName: Take 001
+      firstFrame: 115
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bots
+        weight: 1
+      - path: bots/arm
+        weight: 1
+      - path: bots/body1
+        weight: 1
+      - path: bots/fingers
+        weight: 1
+      - path: bots/head
+        weight: 1
+      - path: bots/leg
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/spine
+        weight: 1
+      - path: hip/spine/chest
+        weight: 1
+      - path: hip/spine/chest/head 1
+        weight: 1
+      - path: hip/spine/chest/head 1/head_end
+        weight: 1
+      - path: hip/spine/chest/shoulder_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L/finger3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/finger1_L/finger2_L/finger3_L/finger4_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L/sum2_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_L/upperArm1_L/upperArm2_L/upperArm3_L/foreArm_L/hand1_L/hand2_L/palm_L/sum1_L/sum2_L/sum3_L
+        weight: 1
+      - path: hip/spine/chest/shoulder_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R/finger3_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/finger1_R/finger2_R/finger3_R/finger4_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R/sum2_R
+        weight: 1
+      - path: hip/spine/chest/shoulder_R/upperArm1_R/upperArm2_R/upperArm3_R/foreArm_R/hand1_R/hand2_R/palm_R/sum1_R/sum2_R/sum3_R
+        weight: 1
+      - path: hip/upperLeg_L
+        weight: 1
+      - path: hip/upperLeg_L/lowLeg_L
+        weight: 1
+      - path: hip/upperLeg_L/lowLeg_L/foot_L
+        weight: 1
+      - path: hip/upperLeg_L/lowLeg_L/foot_L/footEnd_L
+        weight: 1
+      - path: hip/upperLeg_R
+        weight: 1
+      - path: hip/upperLeg_R/lowLeg_R
+        weight: 1
+      - path: hip/upperLeg_R/lowLeg_R/foot_R
+        weight: 1
+      - path: hip/upperLeg_R/lowLeg_R/foot_R/footEnd_R
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/hipRig
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -2249,6 +2382,7 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -2259,7 +2393,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: hip
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1

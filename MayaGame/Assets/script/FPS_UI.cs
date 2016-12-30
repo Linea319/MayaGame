@@ -22,6 +22,8 @@ public class FPS_UI : MonoBehaviour {
     public Image armorBar;
     public Text taskText;
     public Image ItemBar;
+    public Text[] taskInfo; 
+
     public RectTransform friendPanel;
     public GameObject friendPrefab;
 
@@ -110,9 +112,21 @@ public class FPS_UI : MonoBehaviour {
             }
             messager.SetProgress(false);
         }
+        if (MessageProgress.fillAmount >= 1 && !messager.useTarget && messager.noAuth)
+        {
+            if (messager.methodObj != null)
+            {
+                messager.methodObj.SendMessage(messager.compMethhod);
+            }
+            else
+            {
+                messager.SendMessage(messager.compMethhod);
+            }
+            messager.SetProgress(false);
+        }
 
 
-            yawBar.rectTransform.localPosition = yawDef + new Vector3(yawRate*yawAngle, 0, 0);
+        yawBar.rectTransform.localPosition = yawDef + new Vector3(yawRate*yawAngle, 0, 0);
         //13.3f
 
         hpBar.fillAmount = FPSCon.hpMng.hitPoint / FPSCon.hpMng.maxHP;
@@ -178,5 +192,19 @@ public class FPS_UI : MonoBehaviour {
                 ui.pname.text = con.playerName;
             }
         }
+    }
+
+    public void SetTaskInfo(string[] message)
+    {
+        //Debug.Log("taskWrite");
+        for (int i = 0; i < message.Length; i++)
+        {
+            taskInfo[i].text = message[i];
+        }
+    }
+
+    public void SetTaskInfoSingle(string message,int num)
+    {
+            taskInfo[num].text = message;
     }
 }
