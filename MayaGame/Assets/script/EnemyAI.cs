@@ -80,7 +80,7 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
         }
 
         currentHate -= 25 * Time.deltaTime;
-        nav.speed = Mathf.Lerp(moveSpeed, 0, shock / 100f);
+        //nav.speed = Mathf.Lerp(moveSpeed, 0, shock / 100f);
         shock = Mathf.Lerp(shock, 0, Time.deltaTime*0.5f);
 
 	    if(Time.time > thinkTimer)
@@ -91,13 +91,13 @@ public class EnemyAI : NetworkBehaviour,BehaveInterface
             retreat = false;
         }
 
-        if((moveTarget-transform.position).sqrMagnitude > 1f)
+        if((moveTarget-transform.position).sqrMagnitude > 1000f)
         {
-            
+            nav.speed = moveSpeed * 2.5f;
         }
         else
         {
-
+            nav.speed = moveSpeed;
         }
 
         if (nav.isOnOffMeshLink)

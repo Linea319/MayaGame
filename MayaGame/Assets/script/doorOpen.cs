@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using UnityEngine.AI;
 
 public class doorOpen : NetworkBehaviour {
     [SyncVar]
@@ -14,10 +15,20 @@ public class doorOpen : NetworkBehaviour {
     float timer = 0;
     public GameObject openObject;
     FPS_UI ui;
-	// Use this for initialization
-	void Start () {
+    NavMeshObstacle obstacle;
+
+    // Use this for initialization
+    void Start () {
         mycol = GetComponent<Collider>();
         ui = GameObject.Find("UI-Canvas(Clone)").GetComponent<FPS_UI>();
+        if (isServer)
+        {
+
+            obstacle = gameObject.AddComponent<NavMeshObstacle>();
+            obstacle.center = mycol.bounds.center;
+            obstacle.size = mycol.bounds.size;
+            obstacle.carving = true;
+        }
     }
 	
     
@@ -32,6 +43,7 @@ public class doorOpen : NetworkBehaviour {
         if (openTime <= 0)
         {
             open = true;
+            obstacle.enabled = false;
             RpcOpen();
         }
         else
@@ -81,6 +93,7 @@ public class doorOpen : NetworkBehaviour {
                 if (0 >= timer)
                 {
                     open = true;
+                    obstacle.enabled = false;
                     RpcOpen();
                 }
             }

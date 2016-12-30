@@ -17,6 +17,7 @@ public class Phase_Hack : Phase {
     [SyncVar]
     public float hackTimer;
     FPS_UI uicon;
+    [SyncVar]
     int cMessage=0;
 
     // Update is called once per frame
@@ -62,7 +63,6 @@ public class Phase_Hack : Phase {
     [ClientRpc]
     void RpcStop()
     {
-        cMessage = Random.Range(0, message.Length);
         message[cMessage].enabled = true;
     }
 
@@ -77,6 +77,7 @@ public class Phase_Hack : Phase {
                 {
                     if (Random.Range(0, 100) < stopRate)
                     {
+                        cMessage = Random.Range(0, message.Length);
                         RpcStop();
                         hack = false;
                     }
